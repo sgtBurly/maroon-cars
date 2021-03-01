@@ -10,7 +10,6 @@ function App() {
       <About />
       </div>
     </BasketProvider>
-  );
 }
 
 export default App;
