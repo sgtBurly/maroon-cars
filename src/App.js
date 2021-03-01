@@ -2,6 +2,7 @@ import React from 'react';
 import { BasketProvider } from './contexts/BasketContext';
 import Home from './pages/Home';
 import About from './pages/About';
+import PaymentPage from "./pages/PaymentPage"
 
 function App() {
   return(
@@ -9,6 +10,7 @@ function App() {
         <BasketProvider>
           <Home />
           <About />
+    <PaymentPage />
         </BasketProvider>
       </div>
   )
