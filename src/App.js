@@ -1,17 +1,14 @@
-import React from 'react';
-import { BasketProvider } from './contexts/BasketContext';
-import Home from './pages/Home';
-import About from './pages/About';
+import Navbar from './components/Navbar.js'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
-  return(
-      <div className="App">
-        <BasketProvider>
-          <Home />
-          <About />
-        </BasketProvider>
-      </div>
-  )
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
