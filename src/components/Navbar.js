@@ -11,7 +11,7 @@ export default function Navbar() {
             <div className={styles.links}>
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
-                <NavLink to="/PaymentPage"><i class="fas fa-shopping-cart"></i></NavLink>
+                <NavLink to="/PaymentPage"><i className="fas fa-shopping-cart"></i></NavLink>
             </div>
 
         </div>

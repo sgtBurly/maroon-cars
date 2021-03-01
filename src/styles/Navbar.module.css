@@ -26,3 +26,7 @@ h1 {
 .links a:hover {
     font-weight: bold;
 }
+
+i.fas.fa-shopping-cart {
+    color: black;
+}
