@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import {BasketContext} from "./contexts/BasketContext";
 
-
-
 const PaymentPage = () => {
 
     let [ FirstName, setFirstName ] = useState(`First name...`);
@@ -16,11 +14,6 @@ const PaymentPage = () => {
         <div className="PaymentPage">
             <section className="SummaryWrapper">
                 <div className="SummaryCard">
-                    <img src={props.image} alt="image of car"/>
-                    <h3>{props.make}</h3>
-                    <p>{props.shortDesc}</p>
-                    <p>{props.year}</p>
-                    <h2>{props.price}</h2>
                 </div>
             </section>
             <section className="FormWrapper">
