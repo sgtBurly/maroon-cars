@@ -18,7 +18,7 @@ const PaymentPage = () => {
                     </div>
                 </section>
                 <section className={styles.FormWrapper}>
-                    <form>
+                    <form className={styles.Form}>
                         <input type="text" placeholder={FirstName}/>
                         <input type="text" placeholder={LastName}/>
                         <input type="text" placeholder={Address}/>

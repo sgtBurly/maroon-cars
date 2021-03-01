@@ -18,3 +18,7 @@
     height: 500px;
     margin-bottom: 5rem;
 }
+
+.Form {
+    display: flex;
+}
