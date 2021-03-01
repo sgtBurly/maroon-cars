@@ -1,5 +1,15 @@
+import React from 'react';
+import { BasketProvider } from './contexts/BasketContext';
+
 function App() {
-  return <div className="App"></div>;
+
+  return (
+    < BasketProvider>
+      <div className="App">
+
+      </div>
+    </BasketProvider>
+  );
 }
 
 export default App;
