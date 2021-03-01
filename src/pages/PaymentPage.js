@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "../styles/PaymentPage.module.css";
 
 const PaymentPage = () => {
 
@@ -11,19 +12,21 @@ const PaymentPage = () => {
 
     return ( 
         <div className="PaymentPage">
-            <section className="SummaryWrapper">
-                <div className="SummaryCard">
-                </div>
-            </section>
-            <section className="FormWrapper">
-                <form>
-                    <input type="text" placeholder={FirstName}/>
-                    <input type="text" placeholder={LastName}/>
-                    <input type="text" placeholder={Address}/>
-                    <input type="text" placeholder={City}/>
-                    <input type="text" placeholder={ZipCode}/>
-                    <input type="text" placeholder={Country}/>
-                </form>
+            <section className={styles.PaymentPage}>
+                <section className={styles.SummaryWrapper}>
+                    <div className="SummaryCard">
+                    </div>
+                </section>
+                <section className={styles.FormWrapper}>
+                    <form>
+                        <input type="text" placeholder={FirstName}/>
+                        <input type="text" placeholder={LastName}/>
+                        <input type="text" placeholder={Address}/>
+                        <input type="text" placeholder={City}/>
+                        <input type="text" placeholder={ZipCode}/>
+                        <input type="text" placeholder={Country}/>
+                    </form>
+                </section>
                 <button>Complete Purchase</button>
             </section>
         </div>

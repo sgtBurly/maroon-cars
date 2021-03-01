@@ -1,0 +1,20 @@
+.PaymentPage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.SummaryWrapper {
+    border: 2px solid #488B49;
+    width: 80%;
+    height: 200px;
+    margin-bottom: 10rem;
+}
+
+.FormWrapper {
+    border: 2px solid #488B49;
+    width: 80%;
+    height: 500px;
+    margin-bottom: 5rem;
+}
