@@ -3,14 +3,14 @@ import React, { useState, createContext} from 'react';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
-    // const [cars, setCars] = useState([
-    //     {objects come here}
-    // ]);
 
-    //const values come here
+
+    const values = {
+
+    }
 
 return (
-    <BasketContext.Provider /*value = {values}*/>
+    <BasketContext.Provider value = {values}>
         {props.children}
     </BasketContext.Provider>
 )
