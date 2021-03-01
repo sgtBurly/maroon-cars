@@ -4,12 +4,14 @@ import Home from './pages/Home';
 import About from './pages/About';
 
 function App() {
-    < BasketProvider>
+  return(
       <div className="App">
-      <Home />
-      <About />
+        <BasketProvider>
+          <Home />
+          <About />
+        </BasketProvider>
       </div>
-    </BasketProvider>
+  )
 }
 
 export default App;
