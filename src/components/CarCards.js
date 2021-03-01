@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 
 const CarCards = () => {
 // Possible variables from carContext
-const { carInfo } = useContext(CarContext);
+const { cars } = useContext(CarContext);
     return (
         <div className="card" style="width 18rem;">
             <img className="card-img-top" src="..." alt="Card image cap"/>
