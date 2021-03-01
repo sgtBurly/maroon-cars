@@ -1,12 +1,14 @@
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
+import data from '../json/cars.json'
 
 export const CarContext = createContext();
 
 const CarContextProvider = (props) => {
 
+  const [cars, setCars] = useState(data);
 
   const values = {
-
+    cars
   }
 
   return (
