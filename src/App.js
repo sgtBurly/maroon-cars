@@ -1,12 +1,13 @@
 import React from 'react';
 import { BasketProvider } from './contexts/BasketContext';
+import Home from './pages/Home';
+import About from './pages/About';
 
 function App() {
-
-  return (
     < BasketProvider>
       <div className="App">
-
+      <Home />
+      <About />
       </div>
     </BasketProvider>
   );
