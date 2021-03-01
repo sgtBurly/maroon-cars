@@ -1,4 +1,4 @@
-import { CarCard } from "./CarCard";
+import CarCard from "./CarCard";
 
 const CardWrapper = () => {
     return (

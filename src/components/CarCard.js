@@ -1,12 +1,13 @@
 import { CarContext } from "../contexts/CarContext";
-import { assets } from "../../public/assets/car-pictures";
+import React, { useContext } from 'react';
 
 //importing bootstrap, not sure if correct
 import Card from 'react-bootstrap/Card';
 
-const CarCards = () => {
+const CarCard = () => {
 // Possible variables from carContext
 const { cars } = useContext(CarContext);
+
     return (
         <div className="card" style="width 18rem;">
             <img className="card-img-top" src="..." alt="Card image cap"/>
@@ -16,7 +17,7 @@ const { cars } = useContext(CarContext);
                 <a href="#" className="btn btn-primary">Go somewhere</a>
             </div>
         </div>
-    )
+    );
 }
 
-export default CarCards;
+export default CarCard;
