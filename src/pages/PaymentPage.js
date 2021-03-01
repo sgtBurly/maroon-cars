@@ -15,7 +15,9 @@ const PaymentPage = () => {
     return ( 
         <div className="PaymentPage">
             <section className="SummaryWrapper">
+                <div className="SummaryCard">
 
+                </div>
             </section>
             <section className="FormWrapper">
                 <form>
@@ -26,7 +28,7 @@ const PaymentPage = () => {
                     <input type="text" placeholder={ZipCode}/>
                     <input type="text" placeholder={Country}/>
                 </form>
-                <button onClick={(() => paymentHandler())}>Complete Purchase</button>
+                <button>Complete Purchase</button>
             </section>
         </div>
      );
