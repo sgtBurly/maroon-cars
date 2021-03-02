@@ -12,7 +12,7 @@ const About = () => {
           by lust of sovereignty, formed a conspiracy among the nobility, and
           persuaded the people to go forth from their territories with all their
           possessions, [saying] that it would be very easy, since they excelled
-          all in valor,
+          all in valor.
         </p>
         <div className={AboutStyles.contact_info_wrapper}>
           <h2>Contact Us</h2>
