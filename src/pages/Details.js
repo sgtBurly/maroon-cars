@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-
+import styles from '../styles/Details.module.css'
 
 const Details = () => {
 
@@ -17,14 +17,21 @@ const Details = () => {
 
 
   return (
-    <div className="car-details">
-      <img src={`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`} alt={`picture of ${car.make} ${car.model}`} />
-      <p>{car.make}</p>
-      <p>{car.model}</p>
-      <p>{car.year}</p>
-      <p>{car.descLong}</p>
-      <p>{car.price}</p>
-      <p>{car.miles}</p>
+    <div className={styles.carDetailsWrapper}>
+      <div className={styles.imgContainer}>
+        <img src={`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`} alt={`picture of ${car.make} ${car.model}`} />
+      </div>
+        <div className={styles.infoContainer}>
+          <h1>{car.make} {car.model}</h1>
+          <p className={styles.price}>${car.price}</p>
+          <p>Model year: {car.year}</p>
+          <p>Miles: {car.miles}</p>
+          <p className={styles.desc}>{car.descLong}</p>
+          <p>City: {car.city}</p>
+          <p>VIN: {car.vin}</p>
+          {/* Adding 'Add to cart'-button with functionality later */}
+          <button className={styles.button}>Add to cart</button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,45 @@
+.carDetailsWrapper {
+  max-width: 1000px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.imgContainer {
+  margin: 0 auto;
+}
+
+.imgContainer img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.infoContainer {
+  margin: 1rem auto;
+  background-color: #ebeae8;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+.infoContainer p {
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+.price {
+  color: #488b49;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+p.desc {
+  margin: 0 auto;
+  font-size: 1rem;
+  max-width: 85%;
+  text-align: justify;
+}
+.button {
+  background-color: #FFBE0B;
+  margin: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
