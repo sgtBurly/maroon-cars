@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import {BasketContext} from "./contexts/BasketContext";
-
 const PaymentPage = () => {
 
     let [ FirstName, setFirstName ] = useState(`First name...`);
