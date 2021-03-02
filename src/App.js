@@ -1,5 +1,4 @@
 import CarContextProvider from "./contexts/CarContext";
-import { BasketProvider } from './contexts/BasketContext';
 import React from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
