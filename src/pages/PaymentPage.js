@@ -7,7 +7,7 @@ const PaymentPage = () => {
     let [ LastName, setLastName ] = useState(`Last name...`);
     let [ Address, setAddress ] = useState(`Address...`);
     let [ City, setCity ] = useState(`City...`);
-    let [ ZipCode, seZipCode ] = useState(`Zip code...`);
+    let [ ZipCode, setZipCode ] = useState(`Zip code...`);
     let [ Country, setCountry ] = useState(`Country...`);
 
     return ( 
@@ -18,6 +18,7 @@ const PaymentPage = () => {
                     </div>
                 </section>
                 <section className={styles.FormWrapper}>
+                    <h2>Please fill in your information</h2>
                     <form className={styles.Form}>
                         <input type="text" placeholder={FirstName}/>
                         <input type="text" placeholder={LastName}/>

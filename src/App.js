@@ -10,7 +10,7 @@ function App() {
         <BasketProvider>
           <Home />
           <About />
-    <PaymentPage />
+          <PaymentPage />
         </BasketProvider>
       </div>
   )

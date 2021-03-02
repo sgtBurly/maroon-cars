@@ -21,4 +21,10 @@
 
 .Form {
     display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 0.5rem;
+    margin: 1rem;
 }
