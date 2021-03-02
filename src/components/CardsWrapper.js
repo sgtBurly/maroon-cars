@@ -1,13 +1,20 @@
 import CarCard from "./CarCard";
+import { CarContext } from "../contexts/CarContext";
+import { useContext } from 'react';
 
-const CardWrapper = () => {
+function CardWrapper() {
+    //cars from carContext
+    const { cars } = useContext(CarContext);
+
     return (
-        //looping carCards
+        //looping CarCards
         <div className="card-wrapper">
-            {CarCard.map((card, i) => (
-                <CarCard card={card} key={i} />
+            {cars && cars.map((car, i) => (
+                //sending props to CarCard
+                <CarCard key={i} data={car} />
             ))}
         </div>
+
     )
 }
 

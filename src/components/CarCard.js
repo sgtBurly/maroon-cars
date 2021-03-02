@@ -1,12 +1,8 @@
-import { CarContext } from "../contexts/CarContext";
-import React, { useContext } from 'react';
-
 //importing bootstrap, not sure if correct
 import Card from 'react-bootstrap/Card';
 
-const CarCard = () => {
-// Possible variables from carContext
-const { cars } = useContext(CarContext);
+//receiving props from parent CardsWrapper 
+function CarCard(props) {
 
     return (
         <div className="card" style="width 18rem;">
