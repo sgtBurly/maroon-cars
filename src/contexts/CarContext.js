@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect } from 'react'
-// import data from '../json/cars.json'
 
 export const CarContext = createContext();
 
