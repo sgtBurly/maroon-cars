@@ -16,8 +16,8 @@ const ConfirmOrder = () => {
           </div>
         </div>
         <div className={ConfirmOrderStyles.bottom_wrapper}>
-          <button className={ConfirmOrderStyles.button}>Ok</button>
-          <button className={ConfirmOrderStyles.button}>Print</button>
+          <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
+          <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>
         </div>
       </div>
     </div>

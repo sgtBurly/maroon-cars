@@ -27,10 +27,31 @@
 .button {
   height: 65px;
   width: 120px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0.2rem;
+  border: solid transparent 1px;
+  margin: 0.2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
+
 .h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+}
+.ok {
+  background-color: green;
+}
+.ok:hover {
+  background-color: rgb(6, 83, 6);
+  cursor: pointer;
+}
+.print {
+  background-color: #FFBE0B;
+}
+.print:hover {
+  background-color: #ca9708;
+  cursor: pointer;
 }
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
