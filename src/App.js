@@ -5,6 +5,7 @@ import About from './pages/About';
 import Navbar from './components/Navbar.js'
 import { BrowserRouter, Route } from 'react-router-dom'
 import BasketProvider from './contexts/BasketContext.js';
+import ConfirmOrder from "./components/ConfirmOrder";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
+          <ConfirmOrder />
       </CarContextProvider>
         </BasketProvider>
       </BrowserRouter>

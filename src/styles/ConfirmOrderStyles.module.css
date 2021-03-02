@@ -1,0 +1,69 @@
+.main_wrapper {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.info_card {
+  height: 300px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.bottom_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.info_row {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  height: 65px;
+  width: 120px;
+}
+.h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 350.98px) {
+  .info_card {
+    height: 300px;
+    width: 250px;
+    border: solid green 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px)  {
+  .info_card {
+    width: 500px;
+    font-size: 2rem;
+  }
+  .h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+  .info_card {
+    width: 600px;
+  }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
