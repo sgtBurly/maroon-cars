@@ -4,21 +4,28 @@ import Home from './pages/Home';
 import About from './pages/About';
 import PaymentPage from "./pages/PaymentPage"
 import Navbar from './components/Navbar.js'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
+import BasketProvider from './contexts/BasketContext.js';
+import Home from './pages/Home'
+import About from './pages/About'
+
 
 function App() {
-  return(
-      <div className="App">
+  return (
+    <div className="App">
+      <BrowserRouter>
         <BasketProvider>
-          <BrowserRouter>
+          <Navbar />
+          <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/about">
             <About />
-            <PaymentPage />
-            <Navbar />
-          </BrowserRouter>
+          </Route>
         </BasketProvider>
-      </div>
-  )
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
