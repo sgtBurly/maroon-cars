@@ -12,10 +12,10 @@ function App() {
         <BasketProvider>
           <Home />
           <About />
-    <PaymentPage />
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+          <PaymentPage />
+          <BrowserRouter>
+          <Navbar />
+          </BrowserRouter>
         </BasketProvider>
       </div>
   )

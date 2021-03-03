@@ -1,12 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import {BasketContext} from "../contexts/BasketContext";
+
 const PaymentPage = () => {
 
-    let [ FirstName, setFirstName ] = useState(`First name...`);
-    let [ LastName, setLastName ] = useState(`Last name...`);
-    let [ Address, setAddress ] = useState(`Address...`);
-    let [ City, setCity ] = useState(`City...`);
-    let [ ZipCode, seZipCode ] = useState(`Zip code...`);
-    let [ Country, setCountry ] = useState(`Country...`);
+    const {handleUserData} = useContext(BasketContext)
+
+    let [ FirstName, setFirstName ] = useState("");
+    let [ LastName, setLastName ] = useState("");
+    let [ Address, setAddress ] = useState("");
+    let [ City, setCity ] = useState("");
+    let [ ZipCode, setZipCode ] = useState("");
+    let [ Country, setCountry ] = useState("");
+
+        const updateUserFName = e => {
+            setFirstName(e.target.value);
+       }
+   
+       const updateUserLName = e => {
+           setLastName(e.target.value);
+       }
+   
+       const updateUserAddress = e => {
+       setAddress(e.target.value);
+       }
+   
+       const updateUserCity = e => {
+           setCity(e.target.value);
+       }
+       
+       const updateUserCipCode = e => {
+           setZipCode(e.target.value);
+       }
+   
+       const updateUserCountry = e => {
+           setCountry(e.target.value);
+       }
+
+       const handleSubmit = (e) => {
+
+        e.preventDefault();
+        
+        const userCredentials = {
+            FirstName, 
+            LastName,
+            Address,
+            City,
+            ZipCode,
+            Country
+        };
+
+        handleUserData(userCredentials);
+    }
+       
 
     return ( 
         <div className="PaymentPage">
@@ -15,15 +60,15 @@ const PaymentPage = () => {
                 </div>
             </section>
             <section className="FormWrapper">
-                <form>
-                    <input type="text" placeholder={FirstName}/>
-                    <input type="text" placeholder={LastName}/>
-                    <input type="text" placeholder={Address}/>
-                    <input type="text" placeholder={City}/>
-                    <input type="text" placeholder={ZipCode}/>
-                    <input type="text" placeholder={Country}/>
+                <form id="UserForm" onSubmit={handleSubmit}>
+                    <input type="text" onChange={updateUserFName} placeholder="First name..." reqiered/>
+                    <input type="text" onChange={updateUserLName} placeholder="Last name..." reqiered/>
+                    <input type="text" onChange={updateUserAddress} placeholder="Address..." reqiered/>
+                    <input type="text" onChange={updateUserCity} placeholder="City..." reqiered/>
+                    <input type="text" onChange={updateUserCipCode} placeholder="Zip code..." reqiered/>
+                    <input type="text" onChange={updateUserCountry} placeholder="Country..." reqiered/>
+                    <button  form="UserForm">Purchase</button>
                 </form>
-                <button>Complete Purchase</button>
             </section>
         </div>
      );
