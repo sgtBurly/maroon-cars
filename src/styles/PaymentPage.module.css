@@ -26,7 +26,7 @@
     flex-direction: column;
 }
 
-.Form h3, h2 {
+.Form h3, h2, h3 {
     padding: 0rem 1rem;
     color: #488B49;
 }

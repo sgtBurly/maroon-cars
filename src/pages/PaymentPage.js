@@ -15,6 +15,8 @@ const PaymentPage = () => {
             <section className={styles.PaymentPage}>
                 <section className={styles.SummaryWrapper}>
                     <div className="SummaryCard">
+                        <h2>Summary</h2>
+                        <h3>Your basket is empty :(</h3>
                     </div>
                 </section>
                 <section className={styles.FormWrapper}>
