@@ -1,4 +1,5 @@
 import React from 'react';
+import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         </div>
         <img src="/assets/hero-image.jpg" alt="car in sunset"/>
       </div>
+      <CardsWrapper />
     </div>
   );
 }
