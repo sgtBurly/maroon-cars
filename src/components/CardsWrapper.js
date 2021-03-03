@@ -11,6 +11,7 @@ function CardWrapper() {
         //looping CarCards
 
         <div className="container">
+            <h2 className={CardsWrapperStyles.cardHeading}>Find your dream car bellow:</h2>
             <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
                 {cars && cars.map((car, i) => (

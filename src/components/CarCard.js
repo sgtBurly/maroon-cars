@@ -5,14 +5,14 @@ import CarCardStyles from '../styles/CarCardStyles.module.css';
 function CarCard(props) {
 
     return (
-        <div className="col-lg-4 col-sm-6">
-            <div className="card h-100" style={{width: "18rem;"}}>
-                <img className="card-img-top" src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
+        <div className="col-lg-4 col-sm-6 mb-3">
+            <div className={`${CarCardStyles.cardHover} card h-100`}>
+                <img className={`${CarCardStyles.imgHover} card-img-top`} src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
                 <div className="card-body">
                     <h5 className="card-title">{props.data.make} - {props.data.model}</h5>
-                    <p className="card-text">Price: {props.data.price}</p>
-                    <p className="card-text" className={CarCardStyles.marginCard}>{props.data.descShort}</p>
-                    <a href="#" className={CarCardStyles.btnCard}>Buy</a>
+                    <p className={CarCardStyles.price}>Price: {props.data.price}</p>
+                    <p className={`${CarCardStyles.marginCard} card-text`}>{props.data.descShort}</p>
+                    <button type="button" className={CarCardStyles.btnCard}>Buy</button>
                 </div>
             </div>
         </div>

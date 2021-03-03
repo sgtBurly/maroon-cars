@@ -11,3 +11,16 @@
 .marginCard {
     margin-bottom: 40px;
 }
+
+.price {
+    font-weight: 900;
+}
+
+.cardHover:hover {
+    transform: translatey(-10px);
+    cursor: -webkit-grab; cursor: grab;
+}
+
+.imgHover:hover {
+    opacity: 0.3;
+}
