@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from './components/Navbar.js'
 import { BrowserRouter, Route } from 'react-router-dom'
+import Footer from './components/Footer.js'
 import BasketProvider from './contexts/BasketContext.js';
 import Details from './pages/Details'
 
@@ -24,6 +25,7 @@ function App() {
             </Route>
           </CarContextProvider>
         </BasketProvider>
+        <Footer />
       </BrowserRouter>
     </div>
   );
