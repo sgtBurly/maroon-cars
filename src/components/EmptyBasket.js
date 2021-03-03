@@ -5,8 +5,10 @@ function EmptyBasket() {
     return(
         <div className={styles.emptyWrapper}>
             <div className={styles.empty}>
-                <h1 className={styles.noMarginTop}>Oups your basket is empty!</h1>
-                <p>Click <Link to="/" className={styles.linkStyle}>here</Link> to continue shopping.</p>
+                <h2 className={styles.noMarginTop}>Oops! Your basket is empty!</h2>
+                <Link to="/" className={styles.linkStyle}>
+                    <button>Find a car</button>
+                </Link>
             </div>
         </div>
     )
