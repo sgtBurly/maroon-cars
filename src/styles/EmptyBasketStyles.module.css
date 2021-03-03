@@ -1,0 +1,26 @@
+.emptyWrapper {
+    width: 50%;
+    margin: auto;
+}
+
+.empty {
+    text-align: center;
+    border: solid 5px #FFBE0B;
+    padding: 2rem 1rem 2rem 1rem;
+}
+
+.noMarginTop {
+    margin-top: 0;
+}
+
+.linkStyle {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+}
+
+.linkStyle:hover {
+    color: #488B49;
+    text-decoration: underline;
+
+}
