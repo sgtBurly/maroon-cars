@@ -1,11 +1,15 @@
 import React from 'react';
+import style from '../styles/Hero.module.css'
 
 const Home = () => {
   return (
     <div>
-      <h1>This is homepage</h1>
+      <div className={style.imageContainer}>
+        <img src="/assets/hero-image.jpg" alt="car in sunset"/>
+      </div>
     </div>
   );
 }
 
 export default Home;
+
