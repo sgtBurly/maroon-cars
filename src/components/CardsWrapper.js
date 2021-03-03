@@ -1,6 +1,7 @@
 import CarCard from "./CarCard";
 import { CarContext } from "../contexts/CarContext";
 import { useContext } from 'react';
+import CardsWrapperStyles from '../styles/CardsWrapperStyles.module.css';
 
 function CardWrapper() {
     //cars from carContext
@@ -8,12 +9,18 @@ function CardWrapper() {
 
     return (
         //looping CarCards
-        <div className="card-wrapper">
-            {cars && cars.map((car, i) => (
-                //sending props to CarCard
-                <CarCard key={i} data={car} />
-            ))}
+
+        <div className="container">
+            <div className={CardsWrapperStyles.greenBorder}>
+                <div className="row">
+                {cars && cars.map((car, i) => (
+                    //sending props to CarCard
+                    <CarCard key={i} data={car} />
+                ))}
+                </div>
+            </div>
         </div>
+
 
     )
 }
