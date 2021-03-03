@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFBE0B;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+}
+
+h1 {
+    font-family: 'Ultra';
+    margin: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.links {
+    margin: 1rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+.links a:hover {
+    font-weight: bold;
+}
+
+i.fas.fa-shopping-cart {
+    color: black;
+}
