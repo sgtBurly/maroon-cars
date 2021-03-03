@@ -15,6 +15,9 @@ const Details = (props) => {
     }
   }, [cars]);
 
+  // Later, functionality to add carobject to basket goes here!
+  const handleClick = () => console.log('Added the car to your cart!')
+
   const renderDetails = () => {
     return (
       <div className={styles.carDetailsWrapper}>
@@ -30,7 +33,7 @@ const Details = (props) => {
             <p>City: {detailCar.city}</p>
             <p>VIN: {detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
-            <button className={styles.button}>Add to cart</button>
+            <button className={styles.button} onClick={handleClick} >Add to cart</button>
         </div>
       </div>
     )
