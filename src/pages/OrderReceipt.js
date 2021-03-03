@@ -7,19 +7,36 @@ const orderReceipt = () => {
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   let yyyy = today.getFullYear();
   today = mm + '/' + dd + '/' + yyyy;
-  //window.print();
+  window.print();
 
   return (
     <div className={ReceiptStyles.main_wrapper}>
-    <div className={ReceiptStyles.info_card}>
-      <h4>Receipt of purchase</h4>
-      <p className={ReceiptStyles.p}>Model:<span>{/* Put model-data here */}</span></p>
-      <p className={ReceiptStyles.p}>Make:<span>{/* Put make-data here */}</span></p>
-      <p className={ReceiptStyles.p}>Year:<span>{/* Put year-data here */}</span></p>
-      <p className={ReceiptStyles.p}>VIN:<span>{/* Put vin-data here */}</span></p>
-      <p className={ReceiptStyles.p}>Price:<span>{/* Put price-data here */}</span></p>
-      <p className={ReceiptStyles.date}>Purchased made: {today}</p>
-    </div>
+      <div className={ReceiptStyles.info_card}>
+        <div className={ReceiptStyles.top_row}>
+          <div className={ReceiptStyles.title_wrapper}>
+            <h3>Receipt of Purchase</h3>
+            <p>Date of purchase: {today}</p>
+          </div>
+          <div className={ReceiptStyles.company_info}>
+            <h5>Maroon Cars C</h5>
+            <p>E-mail: maroonCars@hotmail.com</p>
+            <p>Phone: +467892321</p>
+            <p>Twitter: @MaroonCars</p>
+          </div>
+        </div>
+        <div className={ReceiptStyles.bottom_row}>
+          <div className={ReceiptStyles.items_wrapper}>
+            <h6>Purchase info</h6>
+          </div>
+          <p className={ReceiptStyles.orderInfo}>1. Model<span>DATA</span></p>
+          <p className={ReceiptStyles.orderInfo}>2. Make<span>DATA</span></p>
+          <p className={ReceiptStyles.orderInfo}>3. VIN<span>DATA</span></p>
+          <p className={ReceiptStyles.orderInfo}>4. Year<span>DATA</span></p>
+          <div className={ReceiptStyles.total_wrapper}>
+            <p>Total: <span>Money</span></p>
+          </div>
+        </div>
+      </div>
   </div>
   );
 }
