@@ -27,11 +27,11 @@ const Details = (props) => {
           <div className={styles.infoContainer}>
             <h1>{detailCar.make} {detailCar.model}</h1>
             <p className={styles.price}>${detailCar.price}</p>
-            <p>Model year: {detailCar.year}</p>
-            <p>Miles: {detailCar.miles}</p>
+            <p><span>Year: </span>{detailCar.year}</p>
+            <p><span>Miles: </span>{detailCar.miles}</p>
             <p className={styles.desc}>{detailCar.descLong}</p>
-            <p>City: {detailCar.city}</p>
-            <p>VIN: {detailCar.vin}</p>
+            <p><span>City: </span>{detailCar.city}</p>
+            <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
         </div>

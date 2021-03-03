@@ -11,6 +11,9 @@
 .imgContainer img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
 }
 .infoContainer {
   margin: 1rem auto;
@@ -20,7 +23,7 @@
   padding: 0.5rem;
 }
 .infoContainer p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin: 1rem;
 }
 .price {
@@ -35,11 +38,20 @@ p.desc {
   text-align: justify;
 }
 .button {
+  width: 150px;
+  height: 50px;
+  margin: 1rem auto;
+  border: 2px solid black;
+  border-radius: 5px;
   background-color: #FFBE0B;
-  margin: 1rem;
-  padding: 1rem;
-  border: none;
-  border-radius: 20px;
-  font-size: 1.3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+p.vin {
+  font-size: 0.8rem;
+}
+
+span {
   font-weight: bold;
 }
