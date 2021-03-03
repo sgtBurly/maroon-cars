@@ -10,7 +10,7 @@ function CardWrapper() {
     return (
         //looping CarCards
 
-        <div className="container">
+        <div className="container mt-4">
             <h2 className={CardsWrapperStyles.cardHeading}>Find your dream car below:</h2>
             <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
