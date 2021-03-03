@@ -1,39 +1,43 @@
 import { useContext, useState, useEffect } from 'react';
+import { CarContext } from '../contexts/CarContext'
 import styles from '../styles/Details.module.css'
 
-const Details = () => {
+const Details = (props) => {
 
-  const car = {
-    make: "Chevrolet",
-    model: "Camaro",
-    year: 1973,
-    vin: "1D4PT5GK0BW487259",
-    city: "Santa Rosa",
-    descShort: "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
-    descLong: "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-    price: 554963,
-    miles: 15432
+  const { cars } = useContext(CarContext);
+  const [detailCar, setDetailCar] = useState(null);
+
+  // Find the car with corresponding vin in the cars-array and setDetailCar to show the right car.
+  // Not strict equality because params are always strings.
+  useEffect( () => {
+    if(cars) {
+      setDetailCar(cars.find(car => car.vin == props.match.params.vin));
+    }
+  }, [cars]);
+
+  const renderDetails = () => {
+    return (
+      <div className={styles.carDetailsWrapper}>
+        <div className={styles.imgContainer}>
+          <img src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
+        </div>
+          <div className={styles.infoContainer}>
+            <h1>{detailCar.make} {detailCar.model}</h1>
+            <p className={styles.price}>${detailCar.price}</p>
+            <p>Model year: {detailCar.year}</p>
+            <p>Miles: {detailCar.miles}</p>
+            <p className={styles.desc}>{detailCar.descLong}</p>
+            <p>City: {detailCar.city}</p>
+            <p>VIN: {detailCar.vin}</p>
+            {/* Adding 'Add to cart'-button with functionality later */}
+            <button className={styles.button}>Add to cart</button>
+        </div>
+      </div>
+    )
   }
 
-
-  return (
-    <div className={styles.carDetailsWrapper}>
-      <div className={styles.imgContainer}>
-        <img src={`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`} alt={`picture of ${car.make} ${car.model}`} />
-      </div>
-        <div className={styles.infoContainer}>
-          <h1>{car.make} {car.model}</h1>
-          <p className={styles.price}>${car.price}</p>
-          <p>Model year: {car.year}</p>
-          <p>Miles: {car.miles}</p>
-          <p className={styles.desc}>{car.descLong}</p>
-          <p>City: {car.city}</p>
-          <p>VIN: {car.vin}</p>
-          {/* Adding 'Add to cart'-button with functionality later */}
-          <button className={styles.button}>Add to cart</button>
-      </div>
-    </div>
-  );
+  // If detailCar is set the JSX from the renderDetails will show and if detailCar is null an empty div will be renderd
+  return detailCar ? renderDetails() : <div></div>;
 }
 
 export default Details;
