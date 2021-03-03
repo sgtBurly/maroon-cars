@@ -3,7 +3,8 @@ import React from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Navbar from './components/Navbar.js'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+import Footer from './components/Footer.js'
 import BasketProvider from './contexts/BasketContext.js';
 
 
@@ -23,6 +24,7 @@ function App() {
       </CarContextProvider>
         </BasketProvider>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }
