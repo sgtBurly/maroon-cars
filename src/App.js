@@ -1,24 +1,29 @@
+import CarContextProvider from "./contexts/CarContext";
 import React from 'react';
-import { BasketProvider } from './contexts/BasketContext';
 import Home from './pages/Home';
 import About from './pages/About';
-import PaymentPage from "./pages/PaymentPage"
 import Navbar from './components/Navbar.js'
 import { BrowserRouter } from 'react-router-dom'
 import Footer from './components/Footer.js'
+import BasketProvider from './contexts/BasketContext.js';
+
 
 function App() {
-  return(
-      <div className="App">
-        <BasketProvider>
-          <Home />
-          <About />
-    <PaymentPage />
+  return (
+    <div className="App">
       <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+        <BasketProvider>
+      <CarContextProvider>
+          <Navbar />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+      </CarContextProvider>
         </BasketProvider>
-  )
+      </BrowserRouter>
       <Footer />
     </div>
   );
