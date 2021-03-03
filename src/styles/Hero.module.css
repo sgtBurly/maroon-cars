@@ -5,3 +5,22 @@
 img {
     width: 100%;
 }
+
+div.greeting {
+    padding-left: 3rem;
+}
+
+div.greeting h2 {
+    position: absolute;
+    top: 150px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: 5px;
+}
+
+div.greeting span {
+    font-size: 1.2rem;
+}
+
