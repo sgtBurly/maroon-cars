@@ -1,9 +1,12 @@
 import React from 'react';
+import ReceiptStyles from '../styles/ReceiptStyles.module.css'
 
 const orderReceipt = () => {
   return (
-    <div>
-      <h1>This is order receipt page</h1>
+    <div className={ReceiptStyles.main_wrapper}>
+      <div>
+        
+      </div>
     </div>
   );
 }
