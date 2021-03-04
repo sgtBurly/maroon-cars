@@ -1,8 +1,10 @@
-import React, { useState, useContext, useHistory } from "react";
+import React, { useState, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import {BasketContext} from "../contexts/BasketContext";
 
 const PaymentPage = () => {
 
+    const history = useHistory();
     const {handleUserData} = useContext(BasketContext)
 
     const [ FirstName, setFirstName ] = useState("");
@@ -47,24 +49,23 @@ const PaymentPage = () => {
     //When user submits, prevent page reload and store the user credentials of user in new variable.
     const handleSubmit = (e) => {
 
-    e.preventDefault();
-    
-    const userCredentials = {
-        FirstName, 
-        LastName,
-        Email,
-        Address,
-        City,
-        ZipCode,
-        Country
-    };
-
+        e.preventDefault();
+        
+        const userCredentials = {
+            FirstName, 
+            LastName,
+            Email,
+            Address,
+            City,
+            ZipCode,
+            Country
+        };
     //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
         handleUserData(userCredentials);
     }
      
     const redirectToConfirmPage = () => {
-
+        history.push("/");
     }
 
     return ( 
