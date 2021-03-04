@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from 'react-router-dom';
 const PaymentPage = () => {
 
     let [ FirstName, setFirstName ] = useState(`First name...`);
@@ -9,7 +8,7 @@ const PaymentPage = () => {
     let [ ZipCode, seZipCode ] = useState(`Zip code...`);
     let [ Country, setCountry ] = useState(`Country...`);
 
-    return (
+    return ( 
         <div className="PaymentPage">
             <section className="SummaryWrapper">
                 <div className="SummaryCard">
@@ -24,10 +23,7 @@ const PaymentPage = () => {
                     <input type="text" placeholder={ZipCode}/>
                     <input type="text" placeholder={Country}/>
                 </form>
-                <NavLink to="orderReceipt">
-                    <button>Complete Purchase</button>
-                </NavLink>
-
+                <button>Complete Purchase</button>
             </section>
         </div>
      );
