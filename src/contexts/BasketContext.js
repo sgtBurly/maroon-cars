@@ -3,11 +3,14 @@ import React, { useState, createContext} from 'react';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
+
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState([]);
 
-    // method to call by the "add to cart"-buttons.
+    //Test console.log
+    console.log('In BasketContext, customerBasket right now: ', customerBasket);
 
+    // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
 
