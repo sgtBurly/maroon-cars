@@ -16,6 +16,11 @@ const clickToRender = () => {
     historyHook.push(`/details/${props.data.vin}`)
 }
 
+const handleClick = (e) => {
+    e.stopPropagation();
+    addToBasket(props.data);
+}
+
     return (
         <div className="col-lg-4 col-sm-6 mb-3">
             {/* adding clickToRender functon on carCard */}
@@ -25,7 +30,7 @@ const clickToRender = () => {
                     <h5 className="card-title">{props.data.make} - {props.data.model}</h5>
                     <p className={CarCardStyles.price}>Price: {props.data.price}</p>
                     <p className={`${CarCardStyles.marginCard} card-text`}>{props.data.descShort}</p>
-                    <button type="button" className={CarCardStyles.btnCard} onClick={() => addToBasket(props.data)}>Add to cart</button>
+                    <button type="button" className={CarCardStyles.btnCard} onClick={handleClick}>Add to cart</button>
                 </div>
             </div>
         </div>
