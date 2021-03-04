@@ -7,8 +7,8 @@ import OrderReceipt from './pages/OrderReceipt';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Footer from './components/Footer.js';
 import BasketProvider from './contexts/BasketContext.js';
-import PaymentPage from "./pages/PaymentPage";
-
+import Details from './pages/Details';
+import PaymentPage from './pages/PaymentPage';
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
             <OrderReceipt />
           </Route>
       </CarContextProvider>
+            <Route exact path="/details/:vin" component={Details} />
         </BasketProvider>
         <Footer />
       </BrowserRouter>
