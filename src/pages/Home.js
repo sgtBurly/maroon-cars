@@ -12,9 +12,10 @@ const Home = () => {
         </div>
         <img src="/assets/hero-image.jpg" alt="car in sunset"/>
       </div>
+      <CarCarousel/>
       <CardsWrapper />
       <h1>This is homepage</h1>
-      <CarCarousel/>
+
     </div>
   );
 }
