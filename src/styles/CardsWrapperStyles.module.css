@@ -1,0 +1,9 @@
+.greenBorder {
+    border: solid 1px lightgreen;
+    /* padding-bottom: 60px; */
+}
+
+.cardHeading {
+    text-align: center;
+    margin-bottom: 2rem;
+}

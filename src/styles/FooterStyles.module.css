@@ -1,0 +1,15 @@
+.main_wrapper {
+  position: absolute;
+  bottom: 0px;
+  background-color: #FFBE0B;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.h3 {
+  font-weight: bold;
+  font-family: 'Ultra';
+}
