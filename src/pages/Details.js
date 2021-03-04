@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { CarContext } from '../contexts/CarContext'
 import styles from '../styles/Details.module.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Details = (props) => {
 
@@ -16,7 +17,8 @@ const Details = (props) => {
   }, [cars]);
 
   // Later, functionality to add carobject to basket goes here!
-  const handleClick = () => console.log('Added the car to your cart!')
+  const handleClick = () => toast.success('Succesfully added to your cart!')
+
 
   const renderDetails = () => {
     return (
@@ -34,6 +36,7 @@ const Details = (props) => {
             <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
+            <Toaster position="top-right"/>
         </div>
       </div>
     )
