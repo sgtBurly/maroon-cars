@@ -15,6 +15,7 @@ const PaymentPage = () => {
     const [ ZipCode, setZipCode ] = useState("");
     const [ Country, setCountry ] = useState("");
     const [Email, setEmail] = useState("");
+    const [PaymentMethod, setPaymentMethod] = useState("");
 
 
     //OnChange in input triggers these functions, which updates the corresponding useState variable.
@@ -46,12 +47,19 @@ const PaymentPage = () => {
         setCountry(e.target.value);
     }
 
+    const updatePaymentMethod = e => {
+        setPaymentMethod(e.target.value);
+        console.log("This is updated payment method :", PaymentMethod);
+    }
 
     //When user submits, prevent page reload and store the user credentials of user in new variable.
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        
+
+        //redirect user to confirm page
+        history.push("/");
+
         const userCredentials = {
             FirstName, 
             LastName,
@@ -59,55 +67,55 @@ const PaymentPage = () => {
             Address,
             City,
             ZipCode,
-            Country
+            Country,
+            PaymentMethod
         };
     //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
         handleUserData(userCredentials);
     }
-     
-    const redirectToConfirmPage = () => {
-        history.push("/");
-    }
 
     return ( 
-        <div className="PaymentPage">
+        <div className={styles.PaymentPage}>
             <section className={styles.SummaryWrapper}>
-                <div className="SummaryCard">
+                <div className={styles.SummaryCard}>
                 </div>
-            </section>
             <h3>Total: </h3>
-            <section className="UserFormWrapper">
-                <h3>Who art thou?</h3>
-                <form id="UserForm" onSubmit={handleSubmit}>
-                    <input type="text" onChange={updateUserFName} placeholder="First name..." reqiered/>
-                    <input type="text" onChange={updateUserLName} placeholder="Last name..." reqiered/>
-                    <input type="text" onChange={updateUserEmail} placeholder="Email..." required />
-                    <input type="text" onChange={updateUserAddress} placeholder="Address..." reqiered/>
-                    <input type="text" onChange={updateUserCity} placeholder="City..." reqiered/>
-                    <input type="text" onChange={updateUserCipCode} placeholder="Zip code..." reqiered/>
-                    <input type="text" onChange={updateUserCountry} placeholder="Country..." reqiered/>
-                    <button onClick={redirectToConfirmPage} form="UserForm">Purchase</button>
-                </form>
             </section>
-            <h3>How payeth thee?</h3>
-            <section className="PaymentFormWrapper">
-                <form id="PaymentFormWrapper">
-                    <label>
-                    <i class="fab fa-cc-visa"></i>
-                        <input type="radio" value="Visa" name="paymentmethod" required />Visa
-                    </label>
-                    <label>
-                    <i class="fab fa-bitcoin"></i>
-                        <input type="radio" value="Bitcoin" name="paymentmethod" required />Bitcoin
-                    </label>
-                    <label>
-                    <i class="fab fa-cc-paypal"></i>
-                        <input type="radio" value="PayPal" name="paymentmethod" required />PayPal
-                    </label>
-                    <label>
-                    <i class="fab fa-cc-amex"></i>
-                        <input type="radio" value="AmEx" name="paymentmethod" required />American Express
-                    </label>
+            <section className={styles.UserFormWrapper}>
+                <h3>Who art thou?</h3>
+                <form className={styles.UserForm} onSubmit={handleSubmit}>
+                    <div className={styles.ContactInfo}>
+                        <input type="text" onChange={updateUserFName} placeholder="First name..." reqiered/>
+                        <input type="text" onChange={updateUserLName} placeholder="Last name..." reqiered/>
+                        <input type="text" onChange={updateUserEmail} placeholder="Email..." required />
+                        <input type="text" onChange={updateUserAddress} placeholder="Address..." reqiered/>
+                        <input type="text" onChange={updateUserCity} placeholder="City..." reqiered/>
+                        <input type="text" onChange={updateUserCipCode} placeholder="Zip code..." reqiered/>
+                        <input type="text" onChange={updateUserCountry} placeholder="Country..." reqiered/>
+                    </div>
+                    <div className={styles.PaymentOptions}>
+                        <label>
+                            <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
+                        <i class="fab fa-cc-visa"></i>
+                            Visa
+                        </label>
+                        <label>
+                            <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
+                        <i class="fab fa-bitcoin"></i>
+                            Bitcoin
+                        </label>
+                        <label>
+                            <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
+                        <i class="fab fa-cc-paypal"></i>
+                            PayPal
+                        </label>
+                        <label>
+                            <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
+                        <i class="fab fa-cc-amex"></i>
+                            American Express
+                        </label>
+                    </div>
+                        <button className={styles.completePurchaseBtn}>Purchase</button>
                 </form>
             </section>
         </div>

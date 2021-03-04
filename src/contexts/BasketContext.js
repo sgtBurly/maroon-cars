@@ -8,7 +8,6 @@ export const BasketProvider = (props) => {
 
     const userData = [
     // method to call by the "add to cart"-buttons.
-
     ];
     const addToBasket = car => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
@@ -24,6 +23,7 @@ export const BasketProvider = (props) => {
             console.log('From addToBasket in BasketContext: This was added to your cart: ', car);
         }
         console.log(customerBasket);
+    }
 
     const handleUserData = (props) => {
         userData.push(props);
@@ -31,11 +31,12 @@ export const BasketProvider = (props) => {
         console.log("This is userData : ", userData); 
     };
 
-    }
 
     const values = {
         customerBasket,
-        addToBasket
+        addToBasket,
+        handleUserData,
+        userData
     }
 
     return (
