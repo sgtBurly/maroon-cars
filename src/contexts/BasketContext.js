@@ -4,13 +4,14 @@ export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
 
-    const [userData, setUserData] = useState({
+    const userData = [
 
-    });
+    ];
 
     const handleUserData = (props) => {
-        setUserData("Name: ", props.FirstName);
-        console.log("This is user Data : ", userData);   
+        userData.push(props);
+        console.log("This is props : ", props);
+        console.log("This is userData : ", userData); 
     };
 
     const values = {
