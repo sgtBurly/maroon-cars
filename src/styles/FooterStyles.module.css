@@ -1,8 +1,8 @@
 .main_wrapper {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
   background-color: #FFBE0B;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   display: flex;
   justify-content: center;
