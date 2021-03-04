@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import {BasketContext} from "../contexts/BasketContext";
+import styles from "../styles/PaymentPage.module.css";
 
 const PaymentPage = () => {
 
@@ -70,7 +71,7 @@ const PaymentPage = () => {
 
     return ( 
         <div className="PaymentPage">
-            <section className="SummaryWrapper">
+            <section className={styles.SummaryWrapper}>
                 <div className="SummaryCard">
                 </div>
             </section>
