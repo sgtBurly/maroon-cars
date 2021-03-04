@@ -4,7 +4,7 @@ export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
     // The cart holding the array with the "saved" cars
-    const [customerBasket, setCostumerBasket] = useState([]);
+    const [customerBasket, setCustomerBasket] = useState([]);
 
     // method to call by the "add to cart"-buttons.
 
@@ -16,7 +16,7 @@ export const BasketProvider = (props) => {
             // Replace with toaster!
             console.log('From addToBasket in BasketContext: The car is already added to your cart...');
         } else {
-            setCostumerBasket(prevState => [car, ...prevState]);
+            setCustomerBasket(prevState => [car, ...prevState]);
 
             // Replace with toaster!
             console.log('From addToBasket in BasketContext: This was added to your cart: ', car);
