@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { BasketContext } from '../contexts/BasketContext';
 import CarCardStyles from '../styles/CarCardStyles.module.css';
 import { useHistory } from "react-router-dom";
 
 //receiving props from parent CardsWrapper
 function CarCard(props) {
+
+    const { addToBasket } = useContext(BasketContext);
 
 //Saving the history hook in a variable
 const historyHook = useHistory();
@@ -11,6 +14,11 @@ const historyHook = useHistory();
 const clickToRender = () => {
     //Using the cars unique vin-number to push to new route with the historyHook variable
     historyHook.push(`/details/${props.data.vin}`)
+}
+
+const handleClick = (e) => {
+    e.stopPropagation();
+    addToBasket(props.data);
 }
 
     return (
@@ -22,7 +30,7 @@ const clickToRender = () => {
                     <h5 className="card-title">{props.data.make} - {props.data.model}</h5>
                     <p className={CarCardStyles.price}>Price: {props.data.price}</p>
                     <p className={`${CarCardStyles.marginCard} card-text`}>{props.data.descShort}</p>
-                    <button type="button" className={CarCardStyles.btnCard}>Buy</button>
+                    <button type="button" className={CarCardStyles.btnCard} onClick={handleClick}>Add to cart</button>
                 </div>
             </div>
         </div>
