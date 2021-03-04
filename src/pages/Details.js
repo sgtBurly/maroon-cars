@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import { CarContext } from '../contexts/CarContext'
 import styles from '../styles/Details.module.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Details = (props) => {
 
@@ -23,6 +24,7 @@ const Details = (props) => {
       addToBasket(detailCar);
   }
 
+
   const renderDetails = () => {
     return (
       <div className={styles.carDetailsWrapper}>
@@ -39,6 +41,7 @@ const Details = (props) => {
             <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
+            <Toaster position="top-right"/>
         </div>
       </div>
     )

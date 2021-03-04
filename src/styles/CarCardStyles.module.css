@@ -1,0 +1,26 @@
+.btnCard {
+    background-color: #FFBE0B;
+    color: black;
+    padding: 0.3rem 1.1rem 0.3rem 1.1rem;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    border: 1px solid black;
+}
+.marginCard {
+    margin-bottom: 40px;
+}
+
+.price {
+    font-weight: 900;
+}
+
+.cardHover:hover {
+    transform: translatey(-10px);
+    cursor: -webkit-grab; cursor: grab;
+}
+
+.imgHover:hover {
+    opacity: 0.3;
+}
