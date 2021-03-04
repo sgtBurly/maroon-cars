@@ -8,3 +8,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
+
+.App {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}

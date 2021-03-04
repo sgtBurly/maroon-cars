@@ -1,32 +1,28 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #FFBE0B;
-    position: fixed;
-    width: 100vw;
 }
-
-h1 {
-    font-family: 'Ultra';
-    margin: 0.8rem;
-    padding-left: 0.5rem;
-}
-
-.links {
-    margin: 1rem;
-}
-
-.links a {
-    text-decoration: none;
-    color: black;
-    padding: 1rem;
-}
-
-.links a:hover {
+.navbar a:hover {
     font-weight: bold;
+}
+
+span.font {
+    font-family: 'Ultra';
+    font-size: 1.8rem;
 }
 
 i.fas.fa-shopping-cart {
     color: black;
+
+}
+
+.clr {
+    color: black !important;
+}
+
+.border {
+    border-color: transparent !important;
+}
+
+.toggleButton {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
