@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Footer from './components/Footer.js'
 import BasketProvider from './contexts/BasketContext.js';
 import Details from './pages/Details'
+import Card from "./components/Card";
 
 
 function App() {
