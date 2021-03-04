@@ -32,7 +32,6 @@
 }
 .about_text {
   width: 50%;
-
 }
 .ul {
   display: flex;
@@ -64,7 +63,6 @@
   .ul {
     flex-direction: row;
     justify-content: space-between;
-
   }
   .about_text {
     width: 100%;
