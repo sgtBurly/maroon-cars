@@ -7,14 +7,19 @@ export const BasketProvider = (props) => {
     const [customerBasket, setCostumerBasket] = useState([]);
 
     // method to call by the "add to cart"-buttons.
-    // If the car is already in the customerBasket it is not added again and if the customerBasket is empty the car is always added. 
+
     const addToBasket = car => {
+        // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
+
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
-            console.log('The car is already added to your cart...');
+            // Replace with toaster!
+            console.log('From addToBasket in BasketContext: The car is already added to your cart...');
         } else {
-            console.log('This was added to your cart: ', car);
             setCostumerBasket(prevState => [car, ...prevState]);
+
+            // Replace with toaster!
+            console.log('From addToBasket in BasketContext: This was added to your cart: ', car);
         }
         console.log(customerBasket);
     }

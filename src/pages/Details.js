@@ -18,9 +18,8 @@ const Details = (props) => {
     }
   }, [cars]);
 
-  // Later, functionality to add carobject to basket goes here!
   const handleClick = () => {
-      console.log('Sending to BasketContext...');
+      console.log('From DetailsPage: Sending car to BasketContext...');
       addToBasket(detailCar);
   }
 
