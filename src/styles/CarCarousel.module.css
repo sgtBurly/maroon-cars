@@ -3,6 +3,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 100px;
 }
 
@@ -12,7 +14,15 @@
 }
 
 .carousel_info {
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 75%;
+
+}
+
+.sales_icon {
+  width: 300px;
 
 }
 /* Medium devices (tablets, 768px and up) */

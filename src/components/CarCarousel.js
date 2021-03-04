@@ -11,38 +11,36 @@ const CarCarousel = () => {
     <Carousel.Item className={`${CarouselStyles.carousel_item}`}>
         <img
             className={`d-block w-100 ${CarouselStyles.carousel_image}`}
-            src="https://images.unsplash.com/photo-1612832020223-a496c2b69497?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            src="../assets/car-pictures/Dodge-Ram 3500 Club-1997.jpg"
             alt="First slide"
         />
     <Carousel.Caption className={CarouselStyles.carousel_info}>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item className={`${CarouselStyles.carousel_item}`}>
     <img
       className={`d-block w-100 ${CarouselStyles.carousel_image}`}
-      src="https://images.unsplash.com/photo-1611095966422-50a79dd5313b?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+      src="../assets/car-pictures/Audi-80-1989.jpg"
       alt="Second slide"
     />
     <Carousel.Caption className={CarouselStyles.carousel_info}>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
     </Carousel.Caption>
     </Carousel.Item >
     <Carousel.Item className={`${CarouselStyles.carousel_item}`}>
     <img
       className={`d-block w-100 ${CarouselStyles.carousel_image}`}
-      src="https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+      src="../assets/car-pictures/Ford-Festiva-1993.jpg"
       alt="Third slide"
     />
     <Carousel.Caption className={CarouselStyles.carousel_info}>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
     </Carousel.Caption>
   </Carousel.Item>
   </Carousel>
-  </div>
+
+</div>
     );
 }
 
