@@ -1,13 +1,18 @@
 .navbar {
     background-color: #FFBE0B;
-} 
+}
+.navbar a:hover {
+    font-weight: bold;
+}
 
-.font {
+span.font {
     font-family: 'Ultra';
+    font-size: 1.8rem;
 }
 
 i.fas.fa-shopping-cart {
     color: black;
+
 }
 
 .clr {
