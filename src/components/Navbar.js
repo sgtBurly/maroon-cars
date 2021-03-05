@@ -21,7 +21,6 @@ export default function Navbar() {
                         <ReactBootstrap.Nav.Link  className={styles.clr} href="/">Home</ReactBootstrap.Nav.Link>
                         <ReactBootstrap.Nav.Link className={styles.clr} href="/about">About</ReactBootstrap.Nav.Link>
                         <ReactBootstrap.Nav.Link className={`${styles.clr} d-none d-sm-inline-block`} href="paymentPage"><i className="fas fa-shopping-cart fa-lg"></i><BasketValue /></ReactBootstrap.Nav.Link>
-                        
                     </ReactBootstrap.Nav>
                 </ReactBootstrap.Navbar.Collapse>
             </ReactBootstrap.Navbar>
