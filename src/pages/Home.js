@@ -16,7 +16,6 @@ const Home = () => {
       </div>
       <CarCarousel/>
       <CardsWrapper />
-      <Toaster position="top-center"/>
     </div>
   );
 }
