@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Footer from './components/Footer.js'
 import BasketProvider from './contexts/BasketContext.js';
 import Details from './pages/Details'
+import PaymentPage from "./pages/PaymentPage";
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/details/:vin" component={Details} />
+            <Route exact path="/payment">
+              <PaymentPage />
+            </Route>
             <Route exact path="/about">
               <About />
             </Route>

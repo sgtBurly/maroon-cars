@@ -14,8 +14,6 @@ const Home = () => {
       </div>
       <CarCarousel/>
       <CardsWrapper />
-      <h1>This is homepage</h1>
-
     </div>
   );
 }
