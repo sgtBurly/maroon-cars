@@ -8,7 +8,7 @@ const PaymentForm = () => {
     const history = useHistory();
 
     // Import function from BasketContext, for sending user input
-    //const { handlePurchase } = useContext(BasketContext)
+    const { handlePurchase } = useContext(BasketContext);
 
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
@@ -70,7 +70,7 @@ const PaymentForm = () => {
         };
         console.log('Purchase complete! UserCredentials', userCredentials)
       //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
-      //  handlePurchase(userCredentials);
+      handlePurchase(userCredentials);
     }
 
     return (

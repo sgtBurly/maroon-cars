@@ -26,9 +26,14 @@ export const BasketProvider = (props) => {
         console.log(customerBasket);
     }
 
+    const handlePurchase = (userData) => {
+        console.log('From BasketContext/handlePurchase. Recieved userdata', userData );
+    }
+
     const values = {
         customerBasket,
-        addToBasket
+        addToBasket,
+        handlePurchase
     }
 
     return (
