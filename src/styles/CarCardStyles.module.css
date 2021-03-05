@@ -24,6 +24,6 @@
 }
 
 .iconWrapper:hover {
-    cursor: copy;
+    cursor: pointer;
     color: #FFBE0B;
 }
