@@ -1,0 +1,55 @@
+.PaymentForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.PaymentForm h3, h2 {
+    padding: 0rem 1rem;
+    color: #353839;
+}
+
+.FormWrapper {
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 5rem;
+    border: 1.5px solid #488b49;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Form .textInput {
+    padding: 0.5rem;
+    margin: 2rem 1rem 0 1rem;
+    border-radius: 3px;
+    background-color: #fefefe;
+    border: 1.5px solid #353839;
+}
+
+.PaymentOptions, .DeliveryOptions {
+    margin: 3rem auto 0 1rem;
+}
+
+.PaymentOptions .RadioWrapper, .DeliveryOptions .RadioWrapper {
+    margin: 7px;
+}
+
+.PaymentOptions i, .DeliveryOptions i {
+    margin-left: 7px;
+    margin-right: 5px;
+}
+
+
+.completePurchaseBtn {
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #FFBE0B;
+    font-weight: bold;
+}

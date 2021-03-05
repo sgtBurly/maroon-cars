@@ -1,6 +1,9 @@
 import React from 'react';
 import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
+import CarCarousel from '../components/CarCarousel'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Home = () => {
   return (
@@ -11,6 +14,7 @@ const Home = () => {
         </div>
         <img src="/assets/hero-image.jpg" alt="car in sunset"/>
       </div>
+      <CarCarousel/>
       <CardsWrapper />
     </div>
   );
