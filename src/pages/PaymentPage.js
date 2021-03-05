@@ -10,14 +10,13 @@ const PaymentPage = () => {
     if (customerBasket.length < 1) {
         return <EmptyBasket />
     } else {
-
-    return (
-        <div className="PaymentPage">
-            <h1>Payment page</h1>
-            {/* Summary component will go here */}
-            <PaymentForm />
-        </div>
-    );
+        return (
+            <div className="PaymentPage">
+                <h1>Payment page</h1>
+                {/* Summary component will go here */}
+                <PaymentForm />
+            </div>
+        );
     }
 }
 
