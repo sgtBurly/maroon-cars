@@ -41,7 +41,7 @@ const Details = (props) => {
             <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
-            <Toaster position="top-right"/>
+            <Toaster position="top-center"/>
         </div>
       </div>
     )
