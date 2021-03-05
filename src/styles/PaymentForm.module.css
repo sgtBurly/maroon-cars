@@ -46,7 +46,7 @@
 
 
 .completePurchaseBtn {
-    height: 50px;
+    padding: 1rem;
     margin: 1rem auto;
     border: 2px solid black;
     border-radius: 5px;
