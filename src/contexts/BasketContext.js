@@ -1,4 +1,5 @@
 import React, { useState, createContext} from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export const BasketContext = createContext();
 
@@ -16,14 +17,12 @@ export const BasketProvider = (props) => {
 
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
-            // Replace with toaster!
-            console.log('From addToBasket in BasketContext: The car is already added to your cart...');
+            toast.error('The car is already in your cart!')
         } else {
             setCustomerBasket(prevState => [car, ...prevState]);
-
-            // Replace with toaster!
-            console.log('From addToBasket in BasketContext: This was added to your cart: ', car);
+            toast.success('Successfully added to your cart!')
         }
+        // This array is empty when there should be 1 item? Works when adding the car for the second time...?
         console.log(customerBasket);
     }
 

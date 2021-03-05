@@ -8,6 +8,8 @@ import Footer from './components/Footer.js'
 import BasketProvider from './contexts/BasketContext.js';
 import Details from './pages/Details'
 import PaymentPage from "./pages/PaymentPage";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       <BrowserRouter>
         <BasketProvider>
           <CarContextProvider>
+            <Toaster position="top-center"/>
             <Navbar />
             <Route exact path="/">
               <Home />
