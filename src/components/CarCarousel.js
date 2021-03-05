@@ -17,11 +17,7 @@ const CarCarousel = () => {
        discountedCars.map(disCar => {
         return (
           <Carousel.Item className={`${CarouselStyles.carousel_item}`}>
-          <img
-              className={`d-block w-100 ${CarouselStyles.carousel_image}`}
-              src="../assets/car-pictures/Dodge-Ram 3500 Club-1997.jpg"
-              alt="First slide"
-          />
+           <img src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
       <Carousel.Caption className={CarouselStyles.carousel_info}>
           <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
       </Carousel.Caption>
