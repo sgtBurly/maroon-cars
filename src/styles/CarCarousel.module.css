@@ -22,7 +22,7 @@
 }
 
 .sales_icon {
-  width: 300px;
+  width: 150px;
 
 }
 /* Medium devices (tablets, 768px and up) */
@@ -36,6 +36,10 @@
 
   }
 
+  .sales_icon {
+    width: 300px;
+
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
