@@ -45,11 +45,9 @@ const PaymentForm = () => {
     }
     const updatePaymentMethod = e => {
         setPaymentMethod(e.target.value);
-        console.log("This is updated payment method :", PaymentMethod);
     }
     const updateDeliveryMethod = e => {
       setDeliveryMethod(e.target.value);
-      console.log('This is from updateDeliveryMethod');
     }
 
     //When user submits, prevent page reload and store the user credentials of user in new variable.
@@ -68,7 +66,6 @@ const PaymentForm = () => {
             PaymentMethod,
             DeliveryMethod
         };
-        console.log('Purchase complete! UserCredentials', userCredentials)
       //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
       handlePurchase(userCredentials);
     }

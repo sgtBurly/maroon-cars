@@ -7,10 +7,8 @@ export const BasketProvider = (props) => {
 
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState([]);
-
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
     const [latestPurchase, setLatestPurchase] = useState({});
-
 
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
@@ -23,22 +21,22 @@ export const BasketProvider = (props) => {
             setCustomerBasket(prevState => [car, ...prevState]);
             toast.success('Successfully added to your cart!')
         }
-        // This array is empty when there should be 1 item? Works when adding the car for the second time...?
-        console.log(customerBasket);
     }
 
     const handlePurchase = (userData) => {
+        // Just for TESTing - delete when testing is done
         console.log('From BasketContext/handlePurchase. Recieved userdata', userData );
+
         // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
         setLatestPurchase({
             userData,
             carsPurchased: [...customerBasket]
         });
-        //reset/empty the customerBasket
+        //resets the customerBasket
         setCustomerBasket([]);
     }
 
-    // TEST
+    // For TESTing - delete when test is done
     useEffect(() => {
         console.log('from useEffect', latestPurchase);
     }, [latestPurchase])
