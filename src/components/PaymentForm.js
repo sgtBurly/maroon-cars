@@ -6,7 +6,9 @@ import styles from "../styles/PaymentForm.module.css";
 const PaymentForm = () => {
 
     const history = useHistory();
-    const {handleUserData} = useContext(BasketContext)
+
+    // Import function from BasketContext, for sending user input
+    //const { handlePurchase } = useContext(BasketContext)
 
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
@@ -54,8 +56,7 @@ const PaymentForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         //redirect user to confirm page, add right link when component exist!!
-        history.push("/");
-
+        // history.push("/confirm");
         const userCredentials = {
             FirstName,
             LastName,
@@ -64,10 +65,12 @@ const PaymentForm = () => {
             City,
             ZipCode,
             Country,
-            PaymentMethod
+            PaymentMethod,
+            DeliveryMethod
         };
-    //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
-        handleUserData(userCredentials);
+        console.log('Purchase complete! UserCredentials', userCredentials)
+      //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
+      //  handlePurchase(userCredentials);
     }
 
     return (
@@ -105,7 +108,7 @@ const PaymentForm = () => {
                         </label>
                         <label>
                             <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i class="fab fa-cc-amex"></i>
+                            <i className="fab fa-cc-amex"></i>
                             American Express
                         </label>
                     </div>
