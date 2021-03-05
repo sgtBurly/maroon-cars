@@ -1,5 +1,4 @@
 import React, { useState, createContext} from 'react';
-
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
@@ -27,9 +26,18 @@ export const BasketProvider = (props) => {
         console.log(customerBasket);
     }
 
+    //Func for calculating price in basket
+    const calcBasket = (customerBasket) => {
+        // reduce method looping over every price in cusomerbasket and adding it
+        const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
+        return basketPrice;
+    }
+    calcBasket(customerBasket);
+
     const values = {
         customerBasket,
-        addToBasket
+        addToBasket,
+        calcBasket
     }
 
     return (
