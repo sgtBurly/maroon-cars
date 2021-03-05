@@ -53,8 +53,6 @@ const PaymentForm = () => {
     //When user submits, prevent page reload and store the user credentials of user in new variable.
     const handleSubmit = (e) => {
         e.preventDefault();
-        //redirect user to confirm page, add right link when component exist!!
-        // history.push("/confirm");
         const userCredentials = {
             FirstName,
             LastName,
@@ -68,6 +66,9 @@ const PaymentForm = () => {
         };
       //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
       handlePurchase(userCredentials);
+
+      //redirect user to confirm page, add right link when component exist!!
+        // history.push("/confirm");
     }
 
     return (
