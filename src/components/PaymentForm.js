@@ -35,7 +35,7 @@ const PaymentForm = () => {
     const updateUserCity = e => {
         setCity(e.target.value);
     }
-    const updateUserCipCode = e => {
+    const updateUserZipCode = e => {
         setZipCode(e.target.value);
     }
     const updateUserCountry = e => {
@@ -44,6 +44,10 @@ const PaymentForm = () => {
     const updatePaymentMethod = e => {
         setPaymentMethod(e.target.value);
         console.log("This is updated payment method :", PaymentMethod);
+    }
+    const updateDeliveryMethod = e => {
+      setDeliveryMethod(e.target.value);
+      console.log('This is from updateDeliveryMethod');
     }
 
     //When user submits, prevent page reload and store the user credentials of user in new variable.
@@ -69,54 +73,56 @@ const PaymentForm = () => {
     return (
         <div className={styles.PaymentForm}>
             <section className={styles.FormWrapper}>
-            <h2>Please fill the form to complete your purchase</h2>
+              <h2>Please fill the form to complete your purchase</h2>
                         <h3>Personal information</h3>
-                <h3>Who art thou?</h3>
                 <form className={styles.Form} onSubmit={handleSubmit}>
                     <div className={styles.ContactInfo}>
-                        <input type="text" onChange={updateUserFName} placeholder="First name..." reqiered/>
-                        <input type="text" onChange={updateUserLName} placeholder="Last name..." reqiered/>
+                        <input type="text" onChange={updateUserFName} placeholder="First name..." required/>
+                        <input type="text" onChange={updateUserLName} placeholder="Last name..." required/>
                         <input type="text" onChange={updateUserEmail} placeholder="Email..." required />
-                        <input type="text" onChange={updateUserAddress} placeholder="Address..." reqiered/>
-                        <input type="text" onChange={updateUserCity} placeholder="City..." reqiered/>
-                        <input type="text" onChange={updateUserCipCode} placeholder="Zip code..." reqiered/>
-                        <input type="text" onChange={updateUserCountry} placeholder="Country..." reqiered/>
+                        <input type="text" onChange={updateUserAddress} placeholder="Address..." required/>
+                        <input type="text" onChange={updateUserCity} placeholder="City..." required/>
+                        <input type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
+                        <input type="text" onChange={updateUserCountry} placeholder="Country..." required/>
                     </div>
+
                     <div className={styles.PaymentOptions}>
+                      <h3>Payment method</h3>
                         <label>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i className="fab fa-cc-visa"></i>
+                            <i className="fab fa-cc-visa"></i>
                             Visa
                         </label>
                         <label>
                             <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i className="fab fa-bitcoin"></i>
+                            <i className="fab fa-bitcoin"></i>
                             Bitcoin
                         </label>
                         <label>
                             <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i className="fab fa-cc-paypal"></i>
+                            <i className="fab fa-cc-paypal"></i>
                             PayPal
                         </label>
                         <label>
                             <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-amex"></i>
                             American Express
                         </label>
                     </div>
-                    <h3>Payment method</h3>
-                            <select name="payment method" id="payment">
-                                <option value="card">Card</option>
-                                <option value="swish">Swish</option>
-                                <option value="klarna">Klarna</option>
-                            </select>
-                            <input type="text" placeholder="Card/swish/klarna number"/>
 
-                        <h3>Delivery method</h3>
-                            <select name="delivery method" id="delivery">
-                                <option>Home delivery</option>
-                                <option>Pick up at store</option>
-                            </select>
+                    <div className={styles.DeliveryOptions}>
+                      <h3>Delivery method</h3>
+                        <label>
+                            <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />
+                            <i className="fas fa-truck"></i>
+                            Home delivery
+                        </label>
+                        <label>
+                            <input type="radio" value="store" onChange={updateDeliveryMethod} name="deliverymethod" required />
+                            <i className="fas fa-warehouse"></i>
+                            Pick up at store
+                        </label>
+                      </div>
 
                       <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
                 </form>
