@@ -1,5 +1,4 @@
-.carDetailsWrapper {
-  max-width: 1000px;
+.detailsPage {
   margin: 1rem auto;
   text-align: center;
 }
@@ -9,34 +8,40 @@
 }
 
 .imgContainer img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 400px;
+  max-height: auto;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
+
 .infoContainer {
+  max-width: 800px;
   margin: 1rem auto;
-  background-color: #ebeae8;
+  background-color: #FBFAF5;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 10px;
   padding: 0.5rem;
 }
+
 .infoContainer p {
   font-size: 1.2rem;
   margin: 1rem;
 }
+
 .price {
   color: #488b49;
   font-weight: bold;
   font-size: 1.5rem;
 }
+
 p.desc {
   margin: 0 auto;
   font-size: 1rem;
   max-width: 85%;
   text-align: justify;
 }
+
 .button {
   width: 150px;
   height: 50px;
@@ -46,6 +51,15 @@ p.desc {
   background-color: #FFBE0B;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.iconWrapper i {
+  height: 2rem;
+  width: auto;
+}
+
+.iconWrapper {
+  width: 3rem;
 }
 
 p.vin {
