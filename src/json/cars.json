@@ -20,7 +20,8 @@
     "descLong": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
     "price": 299379,
     "miles": 12346,
-    "discount" : true
+    "discount": true
+
   },
   {
     "make": "Mercury",
@@ -31,7 +32,8 @@
     "descShort": "purus sit amet nulla quisque arcu libero rutrum ac lobortis",
     "descLong": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
     "price": 486455,
-    "miles": 15226
+    "miles": 15226,
+    "discount": true
   },
   {
     "make": "Ford",
@@ -42,8 +44,8 @@
     "descShort": "metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus",
     "descLong": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
     "price": 413322,
-    "miles": 14266,
-    "discount" : true
+    "miles": 14266
+
   },
   {
     "make": "Panoz",
