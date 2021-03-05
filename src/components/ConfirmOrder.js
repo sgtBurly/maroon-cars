@@ -1,4 +1,5 @@
 import ConfirmOrderStyles from '../styles/ConfirmOrderStyles.module.css'
+import { Link } from 'react-router-dom';
 
 const ConfirmOrder = () => {
   return (
@@ -16,8 +17,13 @@ const ConfirmOrder = () => {
           </div>
         </div>
         <div className={ConfirmOrderStyles.bottom_wrapper}>
-          <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
-          <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>
+          <Link to="/">
+            <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
+          </Link>
+          <Link to="/orderReceipt">
+            <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>
+          </Link>
+
         </div>
       </div>
     </div>
