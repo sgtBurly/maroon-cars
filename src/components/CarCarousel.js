@@ -1,6 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel'
 import { CarContext } from '../contexts/CarContext';
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
+import { Link } from 'react-router-dom';
 import CarouselStyles from '../styles/CarCarousel.module.css'
 
 const CarCarousel = () => {
@@ -16,12 +17,23 @@ const CarCarousel = () => {
        {
        discountedCars.map(disCar => {
         return (
-          <Carousel.Item className={`${CarouselStyles.carousel_item}`}>
-           <img src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
-      <Carousel.Caption className={CarouselStyles.carousel_info}>
+
+          <Carousel.Item className={`${CarouselStyles.carousel_item}` }>
+
+            <img src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
+
+
+
+          <Carousel.Caption className={CarouselStyles.carousel_info}>
           <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
-      </Carousel.Caption>
-      </Carousel.Item>
+          <Link to={`/details/${disCar.vin}`}>
+            <button className={CarouselStyles.carousel_button}>Buy now!</button>
+          </Link>
+
+          </Carousel.Caption>
+          </Carousel.Item>
+
+
         )
       })}
 
