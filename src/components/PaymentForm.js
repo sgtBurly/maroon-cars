@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import {BasketContext} from "../contexts/BasketContext";
-import styles from "../styles/PaymentPage.module.css";
+import styles from "../styles/PaymentForm.module.css";
 
 const PaymentForm = () => {
 
@@ -14,39 +14,33 @@ const PaymentForm = () => {
     const [ City, setCity ] = useState("");
     const [ ZipCode, setZipCode ] = useState("");
     const [ Country, setCountry ] = useState("");
-    const [Email, setEmail] = useState("");
-    const [PaymentMethod, setPaymentMethod] = useState("");
+    const [ Email, setEmail] = useState("");
+    const [ PaymentMethod, setPaymentMethod] = useState("");
+    const [ DeliveryMethod, setDeliveryMethod] = useState("");
 
 
     //OnChange in input triggers these functions, which updates the corresponding useState variable.
     const updateUserFName = e => {
         setFirstName(e.target.value);
     }
-
     const updateUserLName = e => {
         setLastName(e.target.value);
     }
-
     const updateUserEmail = e => {
         setEmail(e.target.value);
     }
-
     const updateUserAddress = e => {
     setAddress(e.target.value);
     }
-
     const updateUserCity = e => {
         setCity(e.target.value);
     }
-    
     const updateUserCipCode = e => {
         setZipCode(e.target.value);
     }
-
     const updateUserCountry = e => {
         setCountry(e.target.value);
     }
-
     const updatePaymentMethod = e => {
         setPaymentMethod(e.target.value);
         console.log("This is updated payment method :", PaymentMethod);
@@ -54,14 +48,12 @@ const PaymentForm = () => {
 
     //When user submits, prevent page reload and store the user credentials of user in new variable.
     const handleSubmit = (e) => {
-
         e.preventDefault();
-
-        //redirect user to confirm page
+        //redirect user to confirm page, add right link when component exist!!
         history.push("/");
 
         const userCredentials = {
-            FirstName, 
+            FirstName,
             LastName,
             Email,
             Address,
@@ -74,16 +66,13 @@ const PaymentForm = () => {
         handleUserData(userCredentials);
     }
 
-    return ( 
-        <div className={styles.PaymentPage}>
-            <section className={styles.SummaryWrapper}>
-                <div className={styles.SummaryCard}>
-                </div>
-            <h3>Total: </h3>
-            </section>
-            <section className={styles.UserFormWrapper}>
+    return (
+        <div className={styles.PaymentForm}>
+            <section className={styles.FormWrapper}>
+            <h2>Please fill the form to complete your purchase</h2>
+                        <h3>Personal information</h3>
                 <h3>Who art thou?</h3>
-                <form className={styles.UserForm} onSubmit={handleSubmit}>
+                <form className={styles.Form} onSubmit={handleSubmit}>
                     <div className={styles.ContactInfo}>
                         <input type="text" onChange={updateUserFName} placeholder="First name..." reqiered/>
                         <input type="text" onChange={updateUserLName} placeholder="Last name..." reqiered/>
@@ -96,17 +85,17 @@ const PaymentForm = () => {
                     <div className={styles.PaymentOptions}>
                         <label>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i class="fab fa-cc-visa"></i>
+                        <i className="fab fa-cc-visa"></i>
                             Visa
                         </label>
                         <label>
                             <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i class="fab fa-bitcoin"></i>
+                        <i className="fab fa-bitcoin"></i>
                             Bitcoin
                         </label>
                         <label>
                             <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
-                        <i class="fab fa-cc-paypal"></i>
+                        <i className="fab fa-cc-paypal"></i>
                             PayPal
                         </label>
                         <label>
@@ -115,7 +104,21 @@ const PaymentForm = () => {
                             American Express
                         </label>
                     </div>
-                        <button className={styles.completePurchaseBtn}>Purchase</button>
+                    <h3>Payment method</h3>
+                            <select name="payment method" id="payment">
+                                <option value="card">Card</option>
+                                <option value="swish">Swish</option>
+                                <option value="klarna">Klarna</option>
+                            </select>
+                            <input type="text" placeholder="Card/swish/klarna number"/>
+
+                        <h3>Delivery method</h3>
+                            <select name="delivery method" id="delivery">
+                                <option>Home delivery</option>
+                                <option>Pick up at store</option>
+                            </select>
+
+                      <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
                 </form>
             </section>
         </div>
