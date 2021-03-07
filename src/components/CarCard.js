@@ -24,9 +24,9 @@ const handleClick = (e) => {
     return (
         <div className="col-lg-4 col-sm-6 mb-3">
             <div className={`${CarCardStyles.carCard} h-100`} onClick={clickToRender}>
-                <img className={`${CarCardStyles.imgHover} card-img-top`} src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
+                <img className={`${CarCardStyles.img} card-img-top`} src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
                 <div className="card-body">
-                    <h5 className="card-title"><span>{props.data.make} - {props.data.model}</span></h5>
+                    <h5 className="card-title"><span>{props.data.make}  {props.data.model}</span></h5>
                     <p className={CarCardStyles.price}><span>Price: </span>{props.data.price}</p>
                     <p className={`${CarCardStyles.descShort} card-text`}>{props.data.descShort}</p>
                     <span className={CarCardStyles.iconWrapper}>

@@ -2,13 +2,7 @@
     margin-bottom: 40px;
 }
 
-p.price {
-    /* color: #488B49; */
-    /* font-weight: 900; */
-}
-
 span {
-    color: black;
     font-weight: 900;
 }
 
@@ -23,16 +17,27 @@ span {
 
 .carCard:hover {
     transform: translatey(-5px);
-    box-shadow: 0 8px 16px 8px #ffbe0b7e;
+    box-shadow: 0 0px 20px 8px #ffbe0b7e;
     cursor: pointer;
     opacity: 1.0;
 }
 
-.imgHover {
+.carCard:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: #FFBE0B;
+    transition: 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
 }
 
-.imgHover:hover {
-    /* transition: all 0.3s ease-out; */
+.carCard:hover:after { 
+    width: 100%; 
+    left: 0; 
 }
 
 .iconWrapper {
