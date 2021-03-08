@@ -1,5 +1,16 @@
 .flex {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem auto;
+    background-color: #ebeae8;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+.desc, .carInfo, .carPrice, .removeBtn{
+    max-width: 200px;
+    padding: 5px;
 }
 
 .cardWrapperContainer {
@@ -18,8 +29,44 @@
     padding: 20px;
 }
 
-.carImageContainer {
-    max-width: 20%;
+.carImage {
+    border-radius: 5px;
 }
 
-.carImage {}
+.fat {
+    font-weight: bolder;
+}
+
+.desc {
+    width: 300px;
+}
+.cardWrapperContainer {
+    margin-bottom: 5px;
+}
+
+.float {
+    float: right;
+}
+
+.trashBtn {
+    border: none;
+    background-color: #ebeae8;
+}
+
+.trashBtn:hover {
+    cursor: pointer;
+    color: #ff0b0b;
+    background-color: #ebeae8;
+}
+
+@media (min-width: 676px) {
+    .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .desc, .carInfo, .carPrice{
+        max-width: 300px;
+    }
+}

@@ -18,21 +18,30 @@ const Card = () => {
                             <img className={styles.carImage}
                                 src={`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
                                 alt={`picture of ${car.make} ${car.model}`}
+                                width="200"
                             />
                         </div>
-                        <div>
-                            <span>Make: {car.make} Model: {car.model}</span>
-                            <p>Year: {car.year}</p>
+                        <div className={styles.carInfo}>
+                            <p><span className={styles.fat}>Make: </span>{car.make}</p>
+                            <p><span className={styles.fat}>Model: </span>{car.model}</p>
+                            <p><span className={styles.fat}>Year: </span>{car.year}</p>
                         </div>
-                        <p>Short description: {car.descShort}</p>
-                        <div>
-                            <p>Price: {car.price}</p>
-                            <button  className="trash-btn">
-                                <i className="fas fa-trash"></i>
+                        <div className={styles.desc}>
+                            <p>{car.descShort}</p>
+                        </div>
+                        <div className={styles.carPrice}>
+                            <p><span className={styles.fat}>Price: </span>{car.price}</p>
+                        </div>
+                        <div className={styles.removeBtn}>
+                            <button  className={styles.trashBtn}>
+                                <i class="fas fa-times"></i>
                             </button>
                         </div>
                     </div>
                 ))}
+                <div>
+                    <p className={styles.float}><span className={styles.fat}>Total price: </span>5 Guldkorn$$$$</p>
+                </div>
             </div>
         </div>
     );
