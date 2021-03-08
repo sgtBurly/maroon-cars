@@ -25,10 +25,16 @@ export const BasketProvider = (props) => {
         // This array is empty when there should be 1 item? Works when adding the car for the second time...?
         console.log(customerBasket);
     }
+// created removeFromBasket to remove each clicked item from customerBasket by using filter method.
+    const removeFromBasket = carVin => {
+       const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
+       setCustomerBasket(newCustomerBasket);
+    }
 
     const values = {
         customerBasket,
-        addToBasket
+        addToBasket,
+        removeFromBasket
     }
 
     return (
