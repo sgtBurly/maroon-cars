@@ -8,13 +8,17 @@
   text-align: center;
   margin: 1rem;
 }
+.h4 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
 .main_wrapper {
   min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   margin-bottom: 1rem;
 }
 .main_wrapper hr {
@@ -37,6 +41,10 @@
   display: flex;
   justify-content: space-between;
   margin: 0.7rem 0;
+}
+.info_date {
+  text-align: right;
+  font-size: 1rem;
 }
 .info_bold {
   font-weight: bold;
