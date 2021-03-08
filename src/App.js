@@ -10,7 +10,7 @@ import Details from './pages/Details'
 import PaymentPage from "./pages/PaymentPage";
 import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
-
+import OrderReceipt from "./pages/OrderReceipt";
 
 
 function App() {
