@@ -26,8 +26,7 @@ const Card = () => {
                         <p>Short description: {car.descShort}</p>
                         <div>
                             <p>Price: {car.price}</p>
-                            // used anonymous function for removeFromBasket
-                            <button  className="trash-btn" onClick={() => removeFromBasket(car.vin) }>
+                            <button  className="trash-btn" onClick={() => removeFromBasket(car.vin)}>
                                 <i className="fas fa-trash"></i>
                             </button>
                         </div>
