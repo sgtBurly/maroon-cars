@@ -35,22 +35,22 @@ const Details = (props) => {
     return (
       <div className={styles.detailsPage}>
         <div className={styles.carDetailsWrapper}>
-          <div className={styles.iconWrapper} onClick={handleBackButton}>
-            <i class="fas fa-chevron-left fa-lg"></i>
-          </div>
           <div className={styles.imgContainer}>
             <img src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
           </div>
           <div className={styles.infoContainer}>
-              <h1>{detailCar.make} {detailCar.model}</h1>
-              <p className={styles.desc}>{detailCar.descLong}</p>
-              <p className={styles.price}>${detailCar.price}</p>
-              <p><span>Year: </span>{detailCar.year}</p>
-              <p><span>City: </span>{detailCar.city}</p>
-              <p><span>Miles: </span>{detailCar.miles}</p>
-              <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
-              {/* Adding 'Add to cart'-button with functionality later */}
-              <button className={styles.button} onClick={handleClick} >Add to cart</button>
+            <h1>{detailCar.make}</h1>
+            <h3>{detailCar.model}</h3>
+            <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p>
+            <button className={styles.button} onClick={handleClick} >Add to cart</button>
+            <ul className={styles.detailedInfoWrapper}>
+              <li><span>Year: </span>{detailCar.year}</li>
+              <li><span>City: </span>{detailCar.city}</li>
+              <li><span>Miles: </span>{detailCar.miles}</li>
+              <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
+            </ul>
+            <p className={styles.descHeader}>Description:</p>
+            <p className={styles.desc}>{detailCar.descLong}</p>
           </div>
         </div>
       </div>
