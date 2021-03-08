@@ -124,7 +124,6 @@ const PaymentForm = () => {
                             Pick up at store
                         </label>
                       </div>
-                      {/*Added link here, ta bort denna kommentaren efter testning:)  */}
                         <Link to="/checkout">
                         <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
                         </Link>
