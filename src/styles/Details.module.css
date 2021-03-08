@@ -6,6 +6,7 @@
 
 .imgContainer {
   margin: 0 auto;
+  position: relative;
 }
 
 .imgContainer img {
@@ -14,6 +15,16 @@
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
+}
+.saleIcon {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 130px;
+  height: 130px;
+}
+.saleIcon img {
+  box-shadow: none;
 }
 .infoContainer {
   margin: 1rem auto;
