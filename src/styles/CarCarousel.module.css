@@ -1,0 +1,118 @@
+.main_wrapper {
+  min-height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.carousel_image {
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.carousel_info {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+
+}
+.price_wrapper {
+  padding: 1.5rem;
+  background-color: #fed02c;
+  border-radius: 0.3rem;
+}
+.sales_icon {
+  width: 150px;
+
+}
+
+.carousel_button {
+  display: inline-block;
+  padding: 1em 1em;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  border: solid transparent 1px;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.15s;
+  background-color: transparent;
+  background-color: #fed02c;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.carousel_button:hover {
+  color: #fed02c;
+  border-color: #fed02c;
+  background-color: #ffffff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  font-weight: 600;
+
+}
+.carousel_button:active {
+  color: #fed02c;
+  border-color: #fed02c;
+  background-color: #ffffff;
+
+}
+@media all and (max-width:30em){
+  .carousel_button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+  .carousel_item {
+    height: 600px;
+
+  }
+  .carousel_info {
+    margin-bottom: 2rem;
+
+  }
+
+  .sales_icon {
+    width: 300px;
+
+  }
+  .carousel_button {
+
+    padding: 1.5em 3em;
+
+  }
+}
+
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .caro_wrapper {
+    width: 75%;
+  }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1444px) {
+  .carousel_info {
+    margin-bottom: 3rem;
+
+  }
+  .caro_wrapper {
+   max-width: 1000px;
+  }
+}

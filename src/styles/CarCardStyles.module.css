@@ -1,0 +1,29 @@
+.marginCard {
+    margin-bottom: 40px;
+}
+
+.price {
+    font-weight: 900;
+}
+
+.cardHover:hover {
+    transform: translatey(-10px);
+    cursor: -webkit-grab; cursor: grab;
+}
+
+.imgHover:hover {
+    opacity: 0.3;
+}
+
+.iconWrapper {
+    font-size: 2rem;
+    color: #488B49;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.iconWrapper:hover {
+    cursor: pointer;
+    color: #FFBE0B;
+}
