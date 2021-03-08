@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
+import { BasketContext } from '../contexts/BasketContext';
 import { CarContext } from '../contexts/CarContext'
 import styles from '../styles/Details.module.css'
 import toast, { Toaster } from 'react-hot-toast';
@@ -8,6 +9,8 @@ const Details = (props) => {
   const { cars } = useContext(CarContext);
   const [detailCar, setDetailCar] = useState(null);
 
+  const { addToBasket } = useContext(BasketContext);
+
   // Find the car with corresponding vin in the cars-array and setDetailCar to show the right car.
   // Not strict equality because params are always strings.
   useEffect( () => {
@@ -16,8 +19,10 @@ const Details = (props) => {
     }
   }, [cars]);
 
-  // Later, functionality to add carobject to basket goes here!
-  const handleClick = () => toast.success('Succesfully added to your cart!')
+  const handleClick = () => {
+      console.log('From DetailsPage: Sending car to BasketContext...');
+      addToBasket(detailCar);
+  }
 
 
   const renderDetails = () => {
@@ -36,7 +41,6 @@ const Details = (props) => {
             <p className={styles.vin}><span>VIN: </span>{detailCar.vin}</p>
             {/* Adding 'Add to cart'-button with functionality later */}
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
-            <Toaster position="top-right"/>
         </div>
       </div>
     )
