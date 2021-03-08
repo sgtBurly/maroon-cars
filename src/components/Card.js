@@ -32,7 +32,7 @@ const Card = () => {
                             <p><span className={styles.fat}>Price: </span>{car.price}</p>
                         </div>
                         <div className={styles.removeBtn}>
-                            <button  className={styles.trashBtn}>
+                            <button  className={styles.trashBtn} onClick={() => removeFromBasket(car.vin)}>
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
