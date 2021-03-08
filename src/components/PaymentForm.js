@@ -73,38 +73,37 @@ const PaymentForm = () => {
 
     return (
         <div className={styles.PaymentForm}>
+            <h2>Please fill the form to complete your purchase</h2>
             <section className={styles.FormWrapper}>
-              <h2>Please fill the form to complete your purchase</h2>
-                        <h3>Personal information</h3>
                 <form className={styles.Form} onSubmit={handleSubmit}>
                     <div className={styles.ContactInfo}>
-                        <input type="text" onChange={updateUserFName} placeholder="First name..." required/>
-                        <input type="text" onChange={updateUserLName} placeholder="Last name..." required/>
-                        <input type="text" onChange={updateUserEmail} placeholder="Email..." required />
-                        <input type="text" onChange={updateUserAddress} placeholder="Address..." required/>
-                        <input type="text" onChange={updateUserCity} placeholder="City..." required/>
-                        <input type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
-                        <input type="text" onChange={updateUserCountry} placeholder="Country..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserEmail} placeholder="Email..." required />
+                        <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
+                        <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
                     </div>
 
                     <div className={styles.PaymentOptions}>
                       <h3>Payment method</h3>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
                             <i className="fab fa-cc-visa"></i>
                             Visa
                         </label>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
                             <i className="fab fa-bitcoin"></i>
                             Bitcoin
                         </label>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
                             <i className="fab fa-cc-paypal"></i>
                             PayPal
                         </label>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
                             <i className="fab fa-cc-amex"></i>
                             American Express
@@ -113,12 +112,12 @@ const PaymentForm = () => {
 
                     <div className={styles.DeliveryOptions}>
                       <h3>Delivery method</h3>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />
                             <i className="fas fa-truck"></i>
                             Home delivery
                         </label>
-                        <label>
+                        <label className={styles.RadioWrapper}>
                             <input type="radio" value="store" onChange={updateDeliveryMethod} name="deliverymethod" required />
                             <i className="fas fa-warehouse"></i>
                             Pick up at store
