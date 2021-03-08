@@ -30,9 +30,13 @@ export const BasketProvider = (props) => {
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
         const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
+        
+        console.log('The total price of all cars in your basket rn is:', basketPrice);
         return basketPrice;
     }
+    
     calcBasket(customerBasket);
+
 
     const values = {
         customerBasket,
