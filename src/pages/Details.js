@@ -20,7 +20,6 @@ const Details = (props) => {
   }, [cars]);
 
   const handleClick = () => {
-      console.log('From DetailsPage: Sending car to BasketContext...');
       addToBasket(detailCar);
   }
 
@@ -30,10 +29,15 @@ const Details = (props) => {
       <div className={styles.carDetailsWrapper}>
         <div className={styles.imgContainer}>
           <img src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
+          {/* Sale icon shows if car is discounted */}
+          {detailCar.discount && <div className={styles.saleIcon}>
+            <img src={`/assets/sale-icon.png`} alt="sale icon"/>
+          </div>}
         </div>
           <div className={styles.infoContainer}>
             <h1>{detailCar.make} {detailCar.model}</h1>
-            <p className={styles.price}>${detailCar.price}</p>
+            {detailCar.discount ? <p className={styles.salePrice}>${detailCar.price}</p> : <p className={styles.price}>${detailCar.price}</p>}
+
             <p><span>Year: </span>{detailCar.year}</p>
             <p><span>Miles: </span>{detailCar.miles}</p>
             <p className={styles.desc}>{detailCar.descLong}</p>
