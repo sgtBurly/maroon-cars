@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import {BasketContext} from "../contexts/BasketContext";
 import styles from "../styles/PaymentForm.module.css";
+import {Link} from "react-router-dom";
 
 const PaymentForm = () => {
 
@@ -123,8 +124,9 @@ const PaymentForm = () => {
                             Pick up at store
                         </label>
                       </div>
-
-                      <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
+                        <Link to="/checkout">
+                        <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
+                        </Link>
                 </form>
             </section>
         </div>
