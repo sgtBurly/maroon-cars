@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReceiptStyles from '../styles/ReceiptStyles.module.css'
 
-const orderReceipt = () => {
+const OrderReceipt = () => {
   let today = new Date();
   let dd = String(today.getDate()).padStart(2, '0');
   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
   let yyyy = today.getFullYear();
   today = mm + '/' + dd + '/' + yyyy;
-  window.print();
+
+  useEffect(() => {
+    window.print();
+  });
 
   return (
     <div className={ReceiptStyles.main_wrapper}>
@@ -39,6 +42,7 @@ const orderReceipt = () => {
       </div>
   </div>
   );
+
 }
 
-export default orderReceipt;
+export default OrderReceipt;
