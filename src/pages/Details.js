@@ -36,7 +36,8 @@ const Details = (props) => {
         </div>
           <div className={styles.infoContainer}>
             <h1>{detailCar.make} {detailCar.model}</h1>
-            <p className={styles.price}>${detailCar.price}</p>
+            {detailCar.discount ? <p className={styles.salePrice}>${detailCar.price}</p> : <p className={styles.price}>${detailCar.price}</p>}
+
             <p><span>Year: </span>{detailCar.year}</p>
             <p><span>Miles: </span>{detailCar.miles}</p>
             <p className={styles.desc}>{detailCar.descLong}</p>
