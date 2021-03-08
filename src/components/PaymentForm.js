@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import {BasketContext} from "../contexts/BasketContext";
 import styles from "../styles/PaymentForm.module.css";
-import {Link} from "react-router-dom";
 
 const PaymentForm = () => {
 
@@ -69,7 +68,7 @@ const PaymentForm = () => {
       handlePurchase(userCredentials);
 
       //redirect user to confirm page, add right link when component exist!!
-        // history.push("/confirm");
+        history.push("/checkout");
     }
 
     return (
@@ -123,10 +122,8 @@ const PaymentForm = () => {
                             <i className="fas fa-warehouse"></i>
                             Pick up at store
                         </label>
-                      </div>
-                        <Link to="/checkout">
-                        <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
-                        </Link>
+                    </div>
+                    <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
                 </form>
             </section>
         </div>

@@ -21,6 +21,11 @@ export const BasketProvider = (props) => {
             toast.success('Successfully added to your cart!')
         }
     }
+// created removeFromBasket to remove each clicked item from customerBasket by using filter method.
+    const removeFromBasket = carVin => {
+       const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
+       setCustomerBasket(newCustomerBasket);
+    }
 
     const handlePurchase = (userData) => {
         // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
@@ -36,17 +41,18 @@ export const BasketProvider = (props) => {
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
         const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
-        
+
         console.log('The total price of all cars in your basket rn is:', basketPrice);
         return basketPrice;
     }
-    
+
     calcBasket(customerBasket);
 
 
     const values = {
         customerBasket,
         addToBasket,
+        removeFromBasket,
         handlePurchase,
         calcBasket
     }
