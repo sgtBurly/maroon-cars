@@ -24,9 +24,6 @@ export const BasketProvider = (props) => {
     }
 
     const handlePurchase = (userData) => {
-        // Just for TESTing - delete when testing is done
-        console.log('From BasketContext/handlePurchase. Recieved userdata', userData );
-
         // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
         setLatestPurchase({
             userData,
@@ -35,14 +32,6 @@ export const BasketProvider = (props) => {
         //resets the customerBasket
         setCustomerBasket([]);
     }
-
-    // For TESTing - delete when test is done
-    useEffect(() => {
-        console.log('from useEffect', latestPurchase);
-    }, [latestPurchase])
-    useEffect(() => {
-        console.log('from useEffect', customerBasket);
-    }, [customerBasket])
 
     const values = {
         customerBasket,
