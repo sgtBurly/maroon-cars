@@ -1,7 +1,7 @@
 import React, { useContext }from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import { CarContext } from '../contexts/CarContext'
-import styles from "../styles/CardsWrapperStyles.module.css";
+import styles from "../styles/BasketCard.module.css";
 
 
 // looping over car items(got info from BasketContext), map them to be able to render every chosen item including it's details
