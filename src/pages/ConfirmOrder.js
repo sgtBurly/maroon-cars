@@ -4,6 +4,7 @@ import ConfirmOrderStyles from '../styles/ConfirmOrderStyles.module.css'
 
 const ConfirmOrder = () => {
 
+  const { calcBasket } = useContext(BasketContext);
 //  const { latestPurchase, calcBasket } = useContext(BasketContext);
 
 //   setLatestPurchase({
@@ -49,7 +50,7 @@ const ConfirmOrder = () => {
       }
     ]
   }
-  console.log(latestPurchase)
+  console.log(latestPurchase);
 
   const handleOkClick = () => {
     console.log('You clicked OK...');
@@ -65,21 +66,45 @@ const ConfirmOrder = () => {
     <div className={ConfirmOrderStyles.main_wrapper}>
       <h2 className={ConfirmOrderStyles.h2}>Thank you for your purchase!</h2>
       <div className={ConfirmOrderStyles.info_card}>
+        <h3 className={ConfirmOrderStyles.h3}>Your order</h3>
+        <div>
+          <p>{`${latestPurchase.userData.FirstName} ${latestPurchase.userData.LastName}`}</p>
+          <p>{latestPurchase.userData.Email}</p>
+          <h4>Billing address</h4>
+          
+              <p>{latestPurchase.userData.Address}</p>
+              <p>{`${latestPurchase.userData.City} ${latestPurchase.userData.ZipCode}`}</p>
+              <p>{latestPurchase.userData.Country}</p>
+        </div>
+        <div className={ConfirmOrderStyles.info_row}>
+            <p>Payment method:</p>
+            {latestPurchase.userData.PaymentMethod[0].toUpperCase() + latestPurchase.userData.PaymentMethod.slice(1)}
+        </div>
+        <div className={ConfirmOrderStyles.info_row}>
+            <p>Delivery method:</p>
+            {latestPurchase.userData.DeliveryMethod === 'store' ? <p>Pick up at store</p> : <p>Home delivery</p> }
+        </div>
         <div className={ConfirmOrderStyles.top_wrapper}>
-          <h3>Cars purchased</h3>
+          <h4>Your cars</h4>
           {latestPurchase.carsPurchased.map(car => (
-            <div key={car.vin}>
-              <div className={ConfirmOrderStyles.info_row}>
+            <div className={ConfirmOrderStyles.carInfo} key={car.vin}>
+              <div className={`${ConfirmOrderStyles.info_row} ${ConfirmOrderStyles.info_bold}`}>
                 <p>{car.make}-{car.model}</p>
-                <p>{car.price}</p>
+                <p>$ {car.price}</p>
              </div>
               <div className={ConfirmOrderStyles.info_row}>
-                <p>{car.year}</p>
-                <p>{car.vin}</p>
+                {/* <p>{car.year}</p> */}
+                <p>VIN: {car.vin}</p>
               </div>
             </div>
           ))}
+          <hr />
+          <div className={ConfirmOrderStyles.info_row}>
+            <h3>Total price</h3>
+            <p className={ConfirmOrderStyles.totalPrice}>$ {calcBasket(latestPurchase.carsPurchased)}</p>
+          </div>
         </div>
+
         <div className={ConfirmOrderStyles.bottom_wrapper}>
           <button onClick={() => handleOkClick} className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
           <button onClick={() => handlePrintClick} className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>

@@ -1,13 +1,31 @@
+.h2 {
+  margin: 1.5rem;
+  text-align: center;
+}
+.h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem;
+}
 .main_wrapper {
   min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  margin-bottom: 1rem;
+}
+.main_wrapper hr {
+  border-color: #488b4983;
+  margin: 1rem;
+
+}
+.main_wrapper p {
+  margin-bottom: 0.2rem;
 }
 .info_card {
-  /* height: 300px; */
-  /* width: 350px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -15,14 +33,18 @@
   padding: 1rem;
   font-size: 1rem;
 }
-
-.bottom_wrapper {
-  display: flex;
-  justify-content: center;
-}
 .info_row {
   display: flex;
   justify-content: space-between;
+  margin: 0.7rem 0;
+}
+.info_bold {
+  font-weight: bold;
+}
+.bottom_wrapper {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
 }
 .button {
   height: 65px;
@@ -34,11 +56,13 @@
   font-weight: bold;
   font-size: 1.5rem;
 }
-
-.h2 {
+.carInfo {
   margin-bottom: 1.5rem;
-  font-size: 1.2rem;
 }
+.totalPrice {
+  font-size: 1.5rem;
+}
+
 .ok {
   background-color: green;
 }
@@ -56,8 +80,6 @@
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
   .info_card {
-    height: 300px;
-    width: 250px;
     border: solid green 3px;
     display: flex;
     flex-direction: column;
@@ -69,10 +91,7 @@
 @media (min-width: 576px)  {
   .info_card {
     width: 500px;
-    font-size: 2rem;
-  }
-  .h2 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
   }
 }
 
