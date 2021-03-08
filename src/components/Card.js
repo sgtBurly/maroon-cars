@@ -2,7 +2,7 @@ import React, { useContext }from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import { CarContext } from '../contexts/CarContext'
 
-// loopa over car items(got info from BasketContext), map them to be able to render every chosen car plus their pictures
+// looping over car items(got info from BasketContext), map them to be able to render every chosen item including it's details
 const Card = () => {
     const {customerBasket} = useContext(BasketContext);
 
@@ -22,10 +22,10 @@ const Card = () => {
                 <div>
                     <p>Price: {car.price}</p>
                     <button  className="trash-btn">
-                    <i className="fas fa-trash"></i>
-                </button>
+                        <i className="fas fa-trash"></i>
+                    </button>
+                </div>
             </div>
-        </div>
         ))}
     </div>
 );
