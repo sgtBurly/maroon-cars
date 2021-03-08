@@ -6,8 +6,11 @@
     background-color: red;
     color: white;
     text-align: center;
-    width: 1.6rem;
+    width: 1.3rem;
     border-radius: 50%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-size: 1rem;
     border: solid 1px black;
     position: absolute;
     bottom: 95%;
