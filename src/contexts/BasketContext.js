@@ -1,15 +1,13 @@
-import React, { useState, createContext} from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
 
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState([]);
-
-    //Test console.log
-    console.log('In BasketContext, customerBasket right now: ', customerBasket);
+    // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
+    const [latestPurchase, setLatestPurchase] = useState({});
 
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
@@ -22,13 +20,35 @@ export const BasketProvider = (props) => {
             setCustomerBasket(prevState => [car, ...prevState]);
             toast.success('Successfully added to your cart!')
         }
-        // This array is empty when there should be 1 item? Works when adding the car for the second time...?
-        console.log(customerBasket);
     }
+
+    const handlePurchase = (userData) => {
+        // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
+        setLatestPurchase({
+            userData,
+            carsPurchased: [...customerBasket]
+        });
+        //resets the customerBasket
+        setCustomerBasket([]);
+    }
+
+    //Func for calculating price in basket
+    const calcBasket = (customerBasket) => {
+        // reduce method looping over every price in cusomerbasket and adding it
+        const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
+        
+        console.log('The total price of all cars in your basket rn is:', basketPrice);
+        return basketPrice;
+    }
+    
+    calcBasket(customerBasket);
+
 
     const values = {
         customerBasket,
-        addToBasket
+        addToBasket,
+        handlePurchase,
+        calcBasket
     }
 
     return (

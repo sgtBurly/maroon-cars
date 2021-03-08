@@ -9,6 +9,7 @@ import BasketProvider from './contexts/BasketContext.js';
 import Details from './pages/Details'
 import PaymentPage from "./pages/PaymentPage";
 import toast, { Toaster } from 'react-hot-toast';
+import ConfirmOrder from "./pages/ConfirmOrder";
 
 
 
@@ -29,6 +30,9 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/checkout">
+            <ConfirmOrder />
             </Route>
           </CarContextProvider>
         </BasketProvider>
