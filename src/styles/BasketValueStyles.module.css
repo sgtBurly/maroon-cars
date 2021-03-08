@@ -1,0 +1,19 @@
+.valueWrapper {
+    position: relative;
+}
+
+.count {
+    background-color: red;
+    color: white;
+    text-align: center;
+    width: 1.6rem;
+    border-radius: 50%;
+    border: solid 1px black;
+    position: absolute;
+    bottom: 80%;
+    left: 20px;
+}
+
+.price {
+    margin-bottom: 0;
+}

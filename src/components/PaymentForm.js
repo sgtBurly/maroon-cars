@@ -8,7 +8,7 @@ const PaymentForm = () => {
     const history = useHistory();
 
     // Import function from BasketContext, for sending user input
-    //const { handlePurchase } = useContext(BasketContext)
+    const { handlePurchase } = useContext(BasketContext);
 
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
@@ -45,18 +45,14 @@ const PaymentForm = () => {
     }
     const updatePaymentMethod = e => {
         setPaymentMethod(e.target.value);
-        console.log("This is updated payment method :", PaymentMethod);
     }
     const updateDeliveryMethod = e => {
       setDeliveryMethod(e.target.value);
-      console.log('This is from updateDeliveryMethod');
     }
 
     //When user submits, prevent page reload and store the user credentials of user in new variable.
     const handleSubmit = (e) => {
         e.preventDefault();
-        //redirect user to confirm page, add right link when component exist!!
-        // history.push("/confirm");
         const userCredentials = {
             FirstName,
             LastName,
@@ -68,9 +64,11 @@ const PaymentForm = () => {
             PaymentMethod,
             DeliveryMethod
         };
-        console.log('Purchase complete! UserCredentials', userCredentials)
       //Fire handle function expressed in BasketContext and send userCredentials variable as prop.
-      //  handlePurchase(userCredentials);
+      handlePurchase(userCredentials);
+
+      //redirect user to confirm page, add right link when component exist!!
+        // history.push("/confirm");
     }
 
     return (
