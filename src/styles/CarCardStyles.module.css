@@ -12,7 +12,7 @@ span {
     transition: all 0.3s ease-out;
     border-radius: 5px;
     position: relative;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .carCard:hover {
@@ -22,7 +22,7 @@ span {
     opacity: 1.0;
 }
 
-.carCard:after {    
+.carCard:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -35,9 +35,9 @@ span {
     width: 0;
 }
 
-.carCard:hover:after { 
-    width: 100%; 
-    left: 0; 
+.carCard:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 .iconWrapper {
