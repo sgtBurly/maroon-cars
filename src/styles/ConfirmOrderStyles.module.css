@@ -6,8 +6,8 @@
   flex-direction: column;
 }
 .info_card {
-  height: 300px;
-  width: 350px;
+  /* height: 300px; */
+  /* width: 350px; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -36,7 +36,7 @@
 }
 
 .h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.2rem;
 }
 .ok {
