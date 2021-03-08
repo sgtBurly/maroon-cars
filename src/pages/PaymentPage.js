@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PaymentForm from "../components/PaymentForm";
 import EmptyBasket from "../components/EmptyBasket";
 import { BasketContext } from '../contexts/BasketContext';
+import Card from '../components/Card'
 
 
 const PaymentPage = () => {
@@ -13,7 +14,7 @@ const PaymentPage = () => {
         return (
             <div className="PaymentPage">
                 <h1>Payment page</h1>
-                {/* Summary component will go here */}
+                < Card />
                 <PaymentForm />
             </div>
         );
