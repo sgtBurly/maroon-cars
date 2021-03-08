@@ -6,6 +6,7 @@
 
 .imgContainer {
   margin: 0 auto;
+  position: relative;
 }
 
 .imgContainer img {
@@ -15,6 +16,16 @@
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
+.saleIcon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+}
+.saleIcon img {
+  box-shadow: none;
+}
 .infoContainer {
   margin: 1rem auto;
   background-color: #ebeae8;
@@ -23,13 +34,18 @@
   padding: 0.5rem;
 }
 .infoContainer p {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   margin: 1rem;
 }
 .price {
   color: #488b49;
   font-weight: bold;
   font-size: 1.5rem;
+}
+.salePrice {
+  color: #FFBE0B;
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 p.desc {
   margin: 0 auto;
@@ -54,4 +70,13 @@ p.vin {
 
 span {
   font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+  .saleIcon {
+    top: 50px;
+    left: 50px;
+    width: 130px;
+    height: 130px;
+  }
 }
