@@ -47,7 +47,7 @@ export const BasketProvider = (props) => {
     const values = {
         customerBasket,
         addToBasket,
-        handlePurchase
+        handlePurchase,
         calcBasket
     }
 
