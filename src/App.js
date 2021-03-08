@@ -31,7 +31,9 @@ function App() {
             <Route exact path="/about">
               <About />
             </Route>
-          <ConfirmOrder />
+            <Route exact path="/checkout">
+            <ConfirmOrder />
+            </Route>
           </CarContextProvider>
         </BasketProvider>
         <Footer />
