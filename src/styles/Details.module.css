@@ -20,19 +20,14 @@
   position: relative;
   width: 100%;
   box-shadow: 10px 4px 8px 5px rgba(0,0,0,0.2);
-  
 }
 
 /* car image */
 .imgContainer img.car {
   border-radius: 5px;
-  position: sticky;
-  top: 7rem;
+  /* position: sticky;
+  top: 7rem; */
   width: 100%;
-  /* max-height: auto; */
-  /* box-shadow: 10px 4px 8px 5px rgba(0,0,0,0.2); */
-  /* margin: 1rem auto; */
-  /* box-shadow: rgba(38, 43, 35, 0.15) 1.95px 1.95px 2.6px; */
 }
 
 /* sale icon-image wrapper */
@@ -53,18 +48,19 @@
 /* main info cointainer */
 .infoContainer {
   max-width: 400px;
-  /* margin: 2rem auto; */
+  margin: 0rem auto;
   background-color: #FBFAF5;
   /* box-shadow: rgba(35,  43,43, 0.15) 1.95px 1.95px 2.6px; */
   /* border-radius: 5px; */
   padding: 0.5rem;
-  text-align: left;
+  text-align: start;
 }
 
 /* Make Model */
 .infoContainer h3 {
   padding: 0;
   text-shadow: 1px 1px 3px #03030391;
+  text-align: start;
 }
 
 
@@ -114,8 +110,6 @@
   background: #FFBE0B;
 }
 
-
-
 /* Detailed info box */
 ul.detailedInfoWrapper {
   /* border: 1.5px solid #232b2b; */
@@ -124,6 +118,7 @@ ul.detailedInfoWrapper {
   padding: 1rem;
   margin: 2rem auto;
   list-style: none;
+  text-align: start;
 }
 
 .detailedInfoWrapper li {
@@ -136,24 +131,34 @@ ul.detailedInfoWrapper {
   /* margin: 1rem; */
 }
 
+.price span {
+  font-size: 0.8rem;
+}
+
 /* When normal price, this is on: */
-.price {
+p.price {
   color: #488b49;
   font-weight: bold;
   font-size: 1.2rem;
   padding: 0;
   margin-top: 1rem;
+  text-align: start;
+
 }
 
 /* If car is on sale, this runs: */
-.salePrice {
+p.salePrice {
   color: #FFBE0B;
   font-weight: bold;
   font-size: 1.8rem;
+  text-align: start;
 }
 
-.price span {
-  font-size: 0.8rem;
+
+/* Description */
+.descHeader {
+  font-weight: bold;
+  text-align: start;
 }
 
 p.desc {
@@ -161,11 +166,6 @@ p.desc {
   font-size: 1rem;
   max-width: 85%;
   text-align: justify;
-}
-
-
-.descHeader {
-  font-weight: bold;
 }
 
 /* "Year", "City", "Miles" */
@@ -176,9 +176,51 @@ span {
 
 
 
+@media screen and (min-width: 576px) {
+  .infoContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* When normal price, this is on: */
+  p.price {
+    color: #488b49;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-top: 1rem;
+    text-align: start;
+
+  }
+
+  /* If car is on sale, this runs: */
+  p.salePrice {
+    color: #FFBE0B;
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: start;
+    display: inline-block;
+  }
+
+}
+
+
+
+
+
 
 
 @media screen and (min-width: 768px) {
+  .carDetailsWrapper {
+    /* text-align: center; */
+    display: flex;
+    /* flex-flow: column; */
+    /* margin: auto; */
+    /* justify-content: space-between; */
+  }
+
+
+
   .imgContainer {
     /* margin: 0 auto;
     position: relative; */
@@ -194,5 +236,13 @@ span {
     /* margin: 1rem auto; */
     /* box-shadow: rgba(38, 43, 35, 0.15) 1.95px 1.95px 2.6px; */
     object-fit: cover;
+  }
+
+  .infoContainer {
+    max-width: 400px;
+    margin: 0rem auto;
+    background-color: #FBFAF5;
+    padding: 0.5rem;
+    text-align: center;
   }
 }
