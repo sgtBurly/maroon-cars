@@ -42,12 +42,13 @@ const Details = (props) => {
           </div>}
         </div>
           <div className={styles.infoContainer}>
-            <h3>{detailCar.make} {detailCar.model}</h3>
-            {/* <h4>{detailCar.model}</h4> */}
-
-
-            { detailCar.discount ?  <p className={styles.salePrice}>$ {detailCar.price}<span> inc. VAT </span></p>
-            : <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p> }
+            <div className={styles.headerPriceWrapper}>
+              <h3>{detailCar.make} {detailCar.model}</h3>
+              
+              {/* Make different style on price depending on discount true or false */}
+              { detailCar.discount ?  <p className={styles.salePrice}>$ {detailCar.price}<span> inc. VAT </span></p>
+              : <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p> }
+            </div>
             
 
             <button className={styles.button} onClick={handleClick} >Add to cart</button>
@@ -57,8 +58,10 @@ const Details = (props) => {
               <li><span>Miles: </span>{detailCar.miles}</li>
               <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
             </ul>
-            <p className={styles.descHeader}>Description:</p>
-            <p className={styles.desc}>{detailCar.descLong}</p>
+            <div className={styles.descWrapper}>
+              <p className={styles.descHeader}>Description:</p>
+              <p className={styles.desc}>{detailCar.descLong}</p>
+            </div>
           </div>
         </div>
       </div>
