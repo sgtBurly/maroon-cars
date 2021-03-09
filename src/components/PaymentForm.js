@@ -68,7 +68,7 @@ const PaymentForm = () => {
       handlePurchase(userCredentials);
 
       //redirect user to confirm page, add right link when component exist!!
-        // history.push("/confirm");
+        history.push("/checkout");
     }
 
     return (
@@ -122,9 +122,8 @@ const PaymentForm = () => {
                             <i className="fas fa-warehouse"></i>
                             Pick up at store
                         </label>
-                      </div>
-
-                      <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
+                    </div>
+                    <button type="submit" className={styles.completePurchaseBtn}>Complete purchase</button>
                 </form>
             </section>
         </div>

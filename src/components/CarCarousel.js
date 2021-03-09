@@ -17,12 +17,16 @@ const CarCarousel = () => {
         return (
           <Carousel.Item className={`${CarouselStyles.carousel_item}` }>
             <img src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
-          <Carousel.Caption className={CarouselStyles.carousel_info}>
-            <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/>
-          <Link to={`/details/${disCar.vin}`}>
-            <button className={CarouselStyles.carousel_button}>Read more</button>
-          </Link>
-          </Carousel.Caption>
+
+            <Link to={`/details/${disCar.vin}`}>
+              {/* <button className={CarouselStyles.carousel_button}>Read more</button> */}
+              <Carousel.Caption className={CarouselStyles.carousel_info}>
+              {/* <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/> */}
+              <span className={CarouselStyles.sale}>Sale!
+                <p className={CarouselStyles.see_more}>See more >> </p>
+              </span>
+              </Carousel.Caption>
+            </Link>
           </Carousel.Item>
         )
       })}

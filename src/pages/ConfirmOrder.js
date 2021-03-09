@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import ConfirmOrderStyles from '../styles/ConfirmOrderStyles.module.css'
+import { Link } from 'react-router-dom';
 
 const ConfirmOrder = () => {
 
@@ -103,6 +104,15 @@ const ConfirmOrder = () => {
         <div className={`${ConfirmOrderStyles.info_row} ${ConfirmOrderStyles.info_bold}`}>
           <h3>Total price</h3>
           <p className={ConfirmOrderStyles.totalPrice}>$ {calcBasket(latestPurchase.carsPurchased)}</p>
+        </div>
+        <div className={ConfirmOrderStyles.bottom_wrapper}>
+          <Link to="/">
+            <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
+          </Link>
+          <Link to="/orderReceipt">
+            <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>
+          </Link>
+
         </div>
       </div>
       <div className={ConfirmOrderStyles.bottom_wrapper}>
