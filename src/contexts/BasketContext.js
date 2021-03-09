@@ -29,7 +29,7 @@ export const BasketProvider = (props) => {
             carsPurchased: [...customerBasket],
             timestamp: new Date()
         });
-        console.log("This is the timestamp " + latestPurchase.timestamp)
+
         //resets the customerBasket
         setCustomerBasket([]);
     }
@@ -52,7 +52,8 @@ export const BasketProvider = (props) => {
         customerBasket,
         addToBasket,
         handlePurchase,
-        calcBasket
+        calcBasket,
+        latestPurchase
     }
 
     return (
