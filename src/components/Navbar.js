@@ -10,7 +10,7 @@ export default function Navbar() {
     return (
         // <div className={styles.navbar} sticky="top">
             <ReactBootstrap.Navbar collapseOnSelect sticky="top" className={`navbar ${styles.navbar}`} expand="sm" variant="light">
-                <ReactBootstrap.Navbar.Brand><span className={styles.font}>Maroon Cars</span></ReactBootstrap.Navbar.Brand>
+                <ReactBootstrap.Navbar.Brand as={Link} to="/"><span className={styles.font}>Maroon Cars</span></ReactBootstrap.Navbar.Brand>
                 <div className="d-flex">
                     <ReactBootstrap.Nav.Link className={`${styles.clr} d-sm-none`} as={Link} to="/payment"><i className="fas fa-shopping-cart fa-lg"><BasketValue/></i></ReactBootstrap.Nav.Link>
                     <ReactBootstrap.Navbar.Toggle className={`${styles.border} navbar-light`} aria-controls="responsive-navbar-nav">
