@@ -1,118 +1,129 @@
 .main_wrapper {
-  min-height: 90%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 5rem;
 }
 
-.carousel_image {
+.caro_wrapper {
   width: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .carousel_info {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  width: 75%;
-
-}
-.price_wrapper {
-  padding: 1.5rem;
-  background-color: #fed02c;
-  border-radius: 0.3rem;
-}
-.sales_icon {
-  width: 150px;
-
+  align-items: flex-end;
 }
 
-.carousel_button {
-  display: inline-block;
-  padding: 1em 1em;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  border: solid transparent 1px;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.3rem;
-  box-sizing: border-box;
-  text-decoration: none;
+span.sale {
+	position: relative;
+  top: -25px;
+  right: 25px;
+	display: inline-block;
+	background: #FFBE0B;
+	color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
+  font-size: 1.4rem;
+	height: 4.5rem;
+	width: 4.5rem;
+	text-align: center;
+	line-height: 4.5rem;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: larger;
-  letter-spacing: 0.1rem;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.15s;
-  background-color: transparent;
-  background-color: #fed02c;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  opacity: 0.85;
+	transform: rotate(-20deg);
+	animation: beat 1.25s ease infinite alternate;
 
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
 }
-.carousel_button:hover {
-  color: #fed02c;
-  border-color: #fed02c;
-  background-color: #ffffff;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  font-weight: 600;
 
+p.see_more {
+  font-size: 0.6rem;
+  line-height: 0rem;
+  position: relative;
+  top: -30%;
+  text-transform: lowercase;
 }
-.carousel_button:active {
-  color: #fed02c;
-  border-color: #fed02c;
-  background-color: #ffffff;
 
+span.sale:before, 
+span.sale:after {
+  content:"";
+  position: absolute;
+  background: inherit;
+  height: 100%;
+  width: inherit;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(30deg);
 }
-@media all and (max-width:30em){
-  .carousel_button {
-    display: block;
-    margin: 0.4em auto;
-  }
+
+span.sale::after {
+  transform: rotate(60deg);
+  height: 100%;
+  left: 0;
+  top: 0;
 }
+
+
+@keyframes beat {
+  from {	transform: rotate(-15deg) scale(1); }
+  to {	transform: rotate(10deg) scale(1.3); }
+}
+
+span.sale:hover {
+  color: #FFBE0B;
+  background-color: white;
+  opacity: 1.0;
+}
+
+
+span.sale:hover:after {
+  width: 100%;
+}
+
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px)  {
+  .main_wrapper {
+    max-width: 768px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+  
   .carousel_item {
-    height: 600px;
-
-  }
-  .carousel_info {
-    margin-bottom: 2rem;
-
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
   }
 
-  .sales_icon {
-    width: 300px;
-
+  span.sale {
+    height: 5.5rem;
+    width: 5.5rem;
+    line-height: 5.5rem;
+    font-size: 1.8rem;
   }
-  .carousel_button {
 
-    padding: 1.5em 3em;
-
-  }
 }
-
-
-
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .caro_wrapper {
-    width: 75%;
+  .main_wrapper {
+    max-width: 800px;
   }
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1444px) {
-  .carousel_info {
-    margin-bottom: 3rem;
+  .main_wrapper {
+    max-width: 850px;
+  }
 
-  }
-  .caro_wrapper {
-   max-width: 1000px;
-  }
 }
