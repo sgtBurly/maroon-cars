@@ -4,7 +4,7 @@ import { BasketContext } from '../contexts/BasketContext';
 
 const OrderReceipt = () => {
 
-  const { latestPurchase } = useContext(BasketContext);
+  const { latestPurchase, calcBasket } = useContext(BasketContext);
 
   useEffect(() => {
     console.log(latestPurchase.timestamp)
@@ -15,15 +15,15 @@ const OrderReceipt = () => {
     <div className={ReceiptStyles.main_wrapper}>
       <div className={ReceiptStyles.info_card}>
         <div className={ReceiptStyles.top_row}>
-          <div className={ReceiptStyles.title_wrapper}>
-            <h3>Receipt of Purchase</h3>
-            <p>Date of purchase: {JSON.stringify(latestPurchase.timestamp)}</p>
-          </div>
           <div className={ReceiptStyles.company_info}>
-            <h5>Maroon Cars C</h5>
+            <p className={ReceiptStyles.logo}>Maroon Cars ©️</p>
             <p>E-mail: maroonCars@hotmail.com</p>
             <p>Phone: +467892321</p>
             <p>Twitter: @MaroonCars</p>
+          </div>
+          <div className={ReceiptStyles.title_wrapper}>
+            <h3>Receipt of Purchase</h3>
+            <p>Date of purchase: {JSON.stringify(latestPurchase.timestamp)}</p>
           </div>
         </div>
         <div className={ReceiptStyles.bottom_row}>
@@ -34,7 +34,7 @@ const OrderReceipt = () => {
             latestPurchase.carsPurchased.map(purchasedCar => {
               orderNumber++;
               return (
-                <div>
+                <div key={purchasedCar.vin}>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. Make<span>{purchasedCar.make}</span></p>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. VIN<span>{purchasedCar.vin}</span></p>
@@ -45,7 +45,7 @@ const OrderReceipt = () => {
           }
 
           <div className={ReceiptStyles.total_wrapper}>
-            <p>Total: <span>Money</span></p>
+            <p>Total: <span>$ {calcBasket(latestPurchase.carsPurchased)}</span></p>
           </div>
         </div>
       </div>
