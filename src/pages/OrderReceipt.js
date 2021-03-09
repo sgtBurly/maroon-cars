@@ -26,6 +26,12 @@ const OrderReceipt = () => {
             <h3>Receipt of Purchase</h3>
           </div>
         </div>
+        <div className={ReceiptStyles.orderItem}>
+            <p className={ReceiptStyles.orderInfo}>Customer: <span>{`${latestPurchase.userData.FirstName} ${latestPurchase.userData.LastName}`}</span></p>
+            <p className={ReceiptStyles.orderInfo}>Payment method: <span>{latestPurchase.userData.PaymentMethod}</span></p>
+            <p className={ReceiptStyles.orderInfo}>Delivery method: {latestPurchase.userData.DeliveryMethod === 'home' ? <span>Home delivery</span> : <span>Pick up at store</span>}</p>
+            <hr />
+          </div>
         <div className={ReceiptStyles.bottom_row}>
           <div className={ReceiptStyles.items_wrapper}>
             <h6>Purchase info</h6>
