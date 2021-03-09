@@ -16,7 +16,7 @@ const CarCarousel = () => {
        discountedCars.map(disCar => {
         return (
           <Carousel.Item className={`${CarouselStyles.carousel_item}` }>
-            <img src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
+            <img className={CarouselStyles.carouselImg} src={`/assets/car-pictures/${disCar.make}-${disCar.model}-${disCar.year}.jpg`} alt={`discounted car ${disCar.make} ${disCar.model}`} />
 
             <Link to={`/details/${disCar.vin}`}>
               {/* <button className={CarouselStyles.carousel_button}>Read more</button> */}
