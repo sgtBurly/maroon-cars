@@ -10,34 +10,29 @@
   font-size: 0.75rem;
   text-align: right;
   margin: 0.5rem 0;
-  /* padding-top: 1rem; */
 }
 .company_info p{
   margin: 0;
   margin-top: 0.3rem;
 }
+.title_wrapper {
+  margin: 1.5rem 0;
+}
 .title_wrapper h3 {
   text-align: center;
-  /* font-size: 2rem; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
+  font-size: 1.8rem;
 }
 .title_wrapper p {
-  /* text-align: left; */
+  font-size: 0.9rem;
+  text-align: right;
 }
 .info_card {
-  /* height: auto; */
   width: 95%;
   margin: 1rem auto;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-evenly; */
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 0.5rem;
   padding: 1rem;
-  font-size: 1rem;
-  /* align-items: center; */
+  /* font-size: 1rem; */
 }
 .top_row {
   /* height: 50%; */
@@ -56,21 +51,25 @@
   /* justify-content: space-between; */
 }
 .items_wrapper {
-  width: 100%;
-  height: 50px;
+  padding: 0.5rem;
   background-color: #ffbe0b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
-
-
+.orderItem {
+  margin: 1rem 0
+}
+.orderItem p {
+  margin: 0;
+}
+.orderItem hr {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
 .orderInfo  {
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
   font-family: 'Cutive Mono', monospace;
 }
 .orderInfo span {
@@ -79,28 +78,29 @@
 }
 .total_wrapper {
   /* margin-left: 0.5rem; */
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
+  text-align: right;
 }
-.company_info h5 {
-  font-size: 1.5rem;
-}
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 350.98px) {
-  .info_card {
-    height: 300px;
-    width: 200px;
-    border: solid green 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
+.total_wrapper span {
+  margin-left: 2rem;
+  font-size: 1.3rem;
 }
 
 @media print {
   footer {
     margin: 0 !important;
+    position: relative;
   }
+  body {
+    max-height: 100%;
+  }
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 350.98px) {
+  
 }
 
 /* Small devices (landscape phones, 576px and up) */

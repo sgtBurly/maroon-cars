@@ -22,8 +22,8 @@ const OrderReceipt = () => {
             <p>Twitter: @MaroonCars</p>
           </div>
           <div className={ReceiptStyles.title_wrapper}>
+            <p>{`${latestPurchase.timestamp.toDateString()} ${latestPurchase.timestamp.getHours()}:${latestPurchase.timestamp.getMinutes()}`}</p>
             <h3>Receipt of Purchase</h3>
-            <p>Date of purchase: {JSON.stringify(latestPurchase.timestamp)}</p>
           </div>
         </div>
         <div className={ReceiptStyles.bottom_row}>
@@ -34,16 +34,16 @@ const OrderReceipt = () => {
             latestPurchase.carsPurchased.map(purchasedCar => {
               orderNumber++;
               return (
-                <div key={purchasedCar.vin}>
-                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
+                <div className={ReceiptStyles.orderItem} key={purchasedCar.vin}>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. Make<span>{purchasedCar.make}</span></p>
+                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. VIN<span>{purchasedCar.vin}</span></p>
-                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Year<span>{purchasedCar.year}</span></p>
+                  {/* <p className={ReceiptStyles.orderInfo}>{orderNumber}. Year<span>{purchasedCar.year}</span></p> */}
+                  <hr />
                 </div>
               )
             })
           }
-
           <div className={ReceiptStyles.total_wrapper}>
             <p>Total: <span>$ {calcBasket(latestPurchase.carsPurchased)}</span></p>
           </div>
