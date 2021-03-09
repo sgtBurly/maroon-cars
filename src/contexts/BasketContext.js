@@ -21,6 +21,11 @@ export const BasketProvider = (props) => {
             toast.success('Successfully added to your cart!')
         }
     }
+// created removeFromBasket to remove each clicked item from customerBasket by using filter method.
+    const removeFromBasket = carVin => {
+       const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
+       setCustomerBasket(newCustomerBasket);
+    }
 
     const handlePurchase = (userData) => {
         // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
@@ -51,6 +56,7 @@ export const BasketProvider = (props) => {
     const values = {
         customerBasket,
         addToBasket,
+        removeFromBasket,
         handlePurchase,
         calcBasket,
         latestPurchase

@@ -10,7 +10,7 @@ import Details from './pages/Details'
 import PaymentPage from "./pages/PaymentPage";
 import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
-
+import OrderReceipt from "./pages/OrderReceipt";
 
 
 function App() {
@@ -24,6 +24,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+          <Route exact path="/orderReceipt">
+            <OrderReceipt />
+          </Route>
             <Route exact path="/details/:vin" component={Details} />
             <Route exact path="/payment">
               <PaymentPage />
