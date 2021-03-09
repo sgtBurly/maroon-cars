@@ -54,7 +54,8 @@ export const BasketProvider = (props) => {
         addToBasket,
         removeFromBasket,
         handlePurchase,
-        calcBasket
+        calcBasket,
+        latestPurchase
     }
 
     return (
