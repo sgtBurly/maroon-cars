@@ -1,3 +1,4 @@
+
 .h2 {
   margin: 1.5rem;
   text-align: center;
@@ -6,7 +7,7 @@
   font-size: 1.6rem;
   font-weight: bold;
   text-align: center;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 .h4 {
   margin: 1rem 0 0.5rem 0;
@@ -23,7 +24,7 @@
 }
 .main_wrapper hr {
   border-color: #488b4983;
-  margin: 1rem;
+  margin: 1rem 0;
 
 }
 .main_wrapper p {
@@ -34,8 +35,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 1rem;
   font-size: 1rem;
+  padding: 0 1rem;
 }
 .info_row {
   display: flex;
@@ -50,19 +51,23 @@
   font-weight: bold;
 }
 .bottom_wrapper {
-  margin: 2rem;
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
 }
 .button {
   height: 65px;
   width: 120px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
   border-radius: 0.2rem;
   border: solid transparent 1px;
   margin: 0.2rem;
   font-weight: bold;
   font-size: 1.5rem;
+  display: inline-block;
+  color: #333;
+  line-height: 65px;
+  text-align: center;
 }
 .carInfo {
   margin-bottom: 1.5rem;
@@ -85,10 +90,11 @@
   background-color: #ca9708;
   cursor: pointer;
 }
+
+
 /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 350.98px) {
+@media (min-width: 350.98px) {
   .info_card {
-    border: solid green 3px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -98,7 +104,6 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px)  {
   .info_card {
-    width: 500px;
     font-size: 1.2rem;
   }
 }
@@ -106,7 +111,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px)  {
   .info_card {
-    width: 600px;
+    width: 50%;
   }
  }
 

@@ -54,18 +54,18 @@ const ConfirmOrder = () => {
             <h3>Total price</h3>
             <p className={ConfirmOrderStyles.totalPrice}>$ {calcBasket(latestPurchase.carsPurchased)}</p>
           </div>
+          </div>
           <div className={ConfirmOrderStyles.bottom_wrapper}>
-            <Link to="/">
-              <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}>Ok</button>
+            <Link className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`} to="/">
+              Ok
             </Link>
-            <Link to="/orderReceipt">
-              <button className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}>Print</button>
+            <Link className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`} to="/orderReceipt">
+              Print
             </Link>
 
           </div>
-          </div>
         </div>
-      </div>
+        </div>
     );
   }
 
