@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
-import ReceiptStyles from '../styles/ReceiptStyles.module.css'
+import React, { useEffect, useContext } from 'react';
+import ReceiptStyles from '../styles/ReceiptStyles.module.css';
+import { BasketContext } from '../contexts/BasketContext';
 
 const OrderReceipt = () => {
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, '0');
-  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  let yyyy = today.getFullYear();
-  today = mm + '/' + dd + '/' + yyyy;
+
+  const { latestPurchase } = useContext(BasketContext);
 
   useEffect(() => {
     window.print();
@@ -18,7 +16,7 @@ const OrderReceipt = () => {
         <div className={ReceiptStyles.top_row}>
           <div className={ReceiptStyles.title_wrapper}>
             <h3>Receipt of Purchase</h3>
-            <p>Date of purchase: {today}</p>
+            <p>Date of purchase: {latestPurchase.timestamp}</p>
           </div>
           <div className={ReceiptStyles.company_info}>
             <h5>Maroon Cars C</h5>
@@ -31,10 +29,10 @@ const OrderReceipt = () => {
           <div className={ReceiptStyles.items_wrapper}>
             <h6>Purchase info</h6>
           </div>
-          <p className={ReceiptStyles.orderInfo}>1. Model<span>DATA</span></p>
-          <p className={ReceiptStyles.orderInfo}>2. Make<span>DATA</span></p>
-          <p className={ReceiptStyles.orderInfo}>3. VIN<span>DATA</span></p>
-          <p className={ReceiptStyles.orderInfo}>4. Year<span>DATA</span></p>
+          <p className={ReceiptStyles.orderInfo}>1. Model<span>{latestPurchase.carsPurchased.model}</span></p>
+          <p className={ReceiptStyles.orderInfo}>2. Make<span>{latestPurchase.carsPurchased.make}</span></p>
+          <p className={ReceiptStyles.orderInfo}>3. VIN<span>{latestPurchase.carsPurchased.vin}</span></p>
+          <p className={ReceiptStyles.orderInfo}>4. Year<span>{latestPurchase.carsPurchased.year}</span></p>
           <div className={ReceiptStyles.total_wrapper}>
             <p>Total: <span>Money</span></p>
           </div>
