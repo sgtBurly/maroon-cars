@@ -40,7 +40,7 @@
   font-size: 1.2rem;
 }
 .ok {
-  background-color: green;
+  background-color: #488b49;
 }
 .ok:hover {
   background-color: rgb(6, 83, 6);
@@ -58,7 +58,7 @@
   .info_card {
     height: 300px;
     width: 250px;
-    border: solid green 3px;
+    border: solid #488b49 3px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
