@@ -31,11 +31,15 @@ export const BasketProvider = (props) => {
         // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
         setLatestPurchase({
             userData,
-            carsPurchased: [...customerBasket]
+            carsPurchased: [...customerBasket],
+            timestamp: new Date()
         });
+        console.log("This is the timestamp " + latestPurchase.timestamp)
         //resets the customerBasket
         setCustomerBasket([]);
     }
+
+    useEffect(()=> console.log(latestPurchase), [latestPurchase])
 
     //Func for calculating price in basket
     const calcBasket = (customerBasket) => {
