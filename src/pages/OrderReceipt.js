@@ -7,16 +7,17 @@ const OrderReceipt = () => {
   const { latestPurchase } = useContext(BasketContext);
 
   useEffect(() => {
+    console.log(latestPurchase.timestamp)
     window.print();
   });
-
+  let orderNumber = 0;
   return (
     <div className={ReceiptStyles.main_wrapper}>
       <div className={ReceiptStyles.info_card}>
         <div className={ReceiptStyles.top_row}>
           <div className={ReceiptStyles.title_wrapper}>
             <h3>Receipt of Purchase</h3>
-            <p>Date of purchase: {latestPurchase.timestamp}</p>
+            <p>Date of purchase: {JSON.stringify(latestPurchase.timestamp)}</p>
           </div>
           <div className={ReceiptStyles.company_info}>
             <h5>Maroon Cars C</h5>
@@ -29,10 +30,20 @@ const OrderReceipt = () => {
           <div className={ReceiptStyles.items_wrapper}>
             <h6>Purchase info</h6>
           </div>
-          <p className={ReceiptStyles.orderInfo}>1. Model<span>{latestPurchase.carsPurchased.model}</span></p>
-          <p className={ReceiptStyles.orderInfo}>2. Make<span>{latestPurchase.carsPurchased.make}</span></p>
-          <p className={ReceiptStyles.orderInfo}>3. VIN<span>{latestPurchase.carsPurchased.vin}</span></p>
-          <p className={ReceiptStyles.orderInfo}>4. Year<span>{latestPurchase.carsPurchased.year}</span></p>
+          {
+            latestPurchase.carsPurchased.map(purchasedCar => {
+              orderNumber++;
+              return (
+                <div>
+                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
+                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Make<span>{purchasedCar.make}</span></p>
+                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. VIN<span>{purchasedCar.vin}</span></p>
+                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Year<span>{purchasedCar.year}</span></p>
+                </div>
+              )
+            })
+          }
+
           <div className={ReceiptStyles.total_wrapper}>
             <p>Total: <span>Money</span></p>
           </div>
