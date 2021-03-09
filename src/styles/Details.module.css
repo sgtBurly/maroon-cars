@@ -26,7 +26,6 @@
   box-shadow: rgba(35,  43,43, 0.15) 1.95px 1.95px 2.6px;
 }
 
-}
 .saleIcon {
   position: absolute;
   top: 20px;
@@ -51,6 +50,8 @@
   border: 1.5px solid #232b2b;
   padding: 1rem;
   margin: 2rem 3.2rem 2rem auto;
+}
+
 .infoContainer p {
   /* font-size: 1.2rem; */
   margin: 1rem;
