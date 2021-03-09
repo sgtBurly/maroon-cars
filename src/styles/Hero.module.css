@@ -1,17 +1,22 @@
 
 .imageContainer {
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/assets/hero-image.jpg");
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../");
 }
 
 .imageContainer img {
-    width: 100%;
+    height: auto;
+    background-position: center;
 }
 
 div .greeting {
     position: absolute;
-    top: 120px;
-    
+    top: 340px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.637);
+    border-radius: 5px;
 } 
 
 /*media queries for big screen*/
@@ -23,22 +28,11 @@ div.greeting {
 }
 
 div.greeting h2 {
-    position: absolute;
     top: 150px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.637);
-    border-radius: 5px;
 }
 
 div.greeting span {
     font-size: 1.2rem;
 }
-
-}
-
-/*mediaqueries for small screen */
-@media (min-width: 375px) { 
 
 }

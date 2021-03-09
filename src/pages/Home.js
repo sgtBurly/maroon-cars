@@ -12,7 +12,7 @@ const Home = () => {
         <div className={style.greeting}>
           <h2>Welcome to Maroon Cars<br></br><span>Find the perfect car for you!</span></h2>
         </div>
-        {/* <img src="/assets/hero-image.jpg" alt="car in sunset"/> */}
+          <img src="/assets/hero-image.jpg" alt="car in sunset"/>
       </div>
       <CarCarousel/>
       <CardsWrapper />
