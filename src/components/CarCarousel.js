@@ -23,7 +23,7 @@ const CarCarousel = () => {
               <Carousel.Caption className={CarouselStyles.carousel_info}>
               {/* <img alt="sales icon" src="../assets/sale-icon.png" className={CarouselStyles.sales_icon}/> */}
               <span className={CarouselStyles.sale}>Sale!
-                <p className={CarouselStyles.see_more}>See more >> </p>
+                <p className={CarouselStyles.see_more}>See more</p>
               </span>
               </Carousel.Caption>
             </Link>
