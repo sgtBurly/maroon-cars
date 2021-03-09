@@ -1,10 +1,22 @@
+
 .imageContainer {
     width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/assets/hero-image.jpg");
 }
 
 .imageContainer img {
     width: 100%;
 }
+
+div .greeting {
+    position: absolute;
+    top: 120px;
+    
+} 
+
+/*media queries for big screen*/
+@media (min-width: 1200px) { 
+
 
 div.greeting {
     padding-left: 3rem;
@@ -24,3 +36,9 @@ div.greeting span {
     font-size: 1.2rem;
 }
 
+}
+
+/*mediaqueries for small screen */
+@media (min-width: 375px) { 
+
+}
