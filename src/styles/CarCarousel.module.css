@@ -1,58 +1,155 @@
 .main_wrapper {
-  min-height: 90%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 1rem;
+  /* border: 1px solid red; */
 }
 
-.carousel_image {
+.caro_wrapper {
   width: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.carousel_item {
+  width: 100%;
+}
+
+.carouselImg {
+  min-width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 .carousel_info {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
-  width: 75%;
-
 }
 
-.sales_icon {
-  width: 300px;
+span.sale {
+	position: relative;
+  top: -25px;
+  right: 25px;
+	display: inline-block;
+	background: #FFBE0B;
+	color: #FBFAF5;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
+  font-size: 1.4rem;
+	height: 4.5rem;
+	width: 4.5rem;
+	text-align: center;
+	line-height: 4.5rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+	transform: rotate(-20deg);
+	animation: beat 1.25s ease infinite alternate;
 
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+	transition: all 0.3s;
 }
+
+p.see_more {
+  font-size: 0.6rem;
+  line-height: 0rem;
+  position: relative;
+  top: -30%;
+  text-transform: lowercase;
+}
+
+span.sale:before,
+span.sale:after {
+  content:"";
+  position: absolute;
+  background: inherit;
+  height: 100%;
+  width: inherit;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotate(30deg);
+}
+
+span.sale::after {
+  transform: rotate(60deg);
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+
+@keyframes beat {
+  from {	transform: rotate(-15deg) scale(1); }
+  to {	transform: rotate(10deg) scale(1.3); }
+}
+
+span.sale:hover {
+  color: #FFBE0B;
+  background-color: #FBFAF5;
+  opacity: 1.0;
+}
+
+
+span.sale:hover:after {
+  width: 100%;
+}
+
+@media (min-width: 500px)  {
+  .carouselImg {
+    height: 300px;
+  }
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px)  {
-  .carousel_item {
-    height: 600px;
-
+  .main_wrapper {
+    max-width: 768px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
   }
-  .carousel_info {
-    margin-bottom: 2rem;
 
+  .carousel_item {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+  span.sale {
+    height: 5.5rem;
+    width: 5.5rem;
+    line-height: 5.5rem;
+    font-size: 1.8rem;
+  }
+
+  .carouselImg {
+    min-width: 100%;
+    height: 400px;
+    object-fit: cover;
   }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .caro_wrapper {
-    width: 75%;
+  .main_wrapper {
+    max-width: 800px;
+  }
+
+  .carouselImg {
+    height: 470px;
   }
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1444px) {
-  .carousel_info {
-    margin-bottom: 3rem;
+  .main_wrapper {
+    max-width: 850px;
+  }
 
-  }
-  .caro_wrapper {
-   max-width: 1000px;
-  }
 }

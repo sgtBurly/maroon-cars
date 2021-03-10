@@ -52,6 +52,12 @@
 .image {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
+.h2 {
+  margin: 0.75rem;
+}
+.h1 {
+  margin-top: 3rem;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
   .about_text {
@@ -75,6 +81,9 @@
 
   .right_inner_wrapper {
     margin-left: 0.5rem;
+  }
+  .h1 {
+    margin-top: 0rem;
   }
 }
 

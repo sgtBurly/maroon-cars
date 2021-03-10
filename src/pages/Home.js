@@ -2,6 +2,8 @@ import React from 'react';
 import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
 import CarCarousel from '../components/CarCarousel'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Home = () => {
   return (
@@ -14,8 +16,6 @@ const Home = () => {
       </div>
       <CarCarousel/>
       <CardsWrapper />
-      <h1>This is homepage</h1>
-
     </div>
   );
 }
