@@ -4,11 +4,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5rem;
+  margin-top: 1rem;
+  /* border: 1px solid red; */
 }
 
 .caro_wrapper {
   width: 100%;
+}
+
+.carousel_item {
+  width: 100%;
+}
+
+.carouselImg {
+  min-width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 
 .carousel_info {
@@ -24,7 +35,7 @@ span.sale {
   right: 25px;
 	display: inline-block;
 	background: #FFBE0B;
-	color: white;
+	color: #FBFAF5;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
   font-size: 1.4rem;
 	height: 4.5rem;
@@ -50,7 +61,7 @@ p.see_more {
   text-transform: lowercase;
 }
 
-span.sale:before, 
+span.sale:before,
 span.sale:after {
   content:"";
   position: absolute;
@@ -78,7 +89,7 @@ span.sale::after {
 
 span.sale:hover {
   color: #FFBE0B;
-  background-color: white;
+  background-color: #FBFAF5;
   opacity: 1.0;
 }
 
@@ -87,6 +98,11 @@ span.sale:hover:after {
   width: 100%;
 }
 
+@media (min-width: 500px)  {
+  .carouselImg {
+    height: 300px;
+  }
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px)  {
@@ -96,7 +112,7 @@ span.sale:hover:after {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 5px;
   }
-  
+
   .carousel_item {
     max-width: 100%;
     overflow: hidden;
@@ -110,12 +126,22 @@ span.sale:hover:after {
     font-size: 1.8rem;
   }
 
+  .carouselImg {
+    min-width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .main_wrapper {
     max-width: 800px;
+  }
+
+  .carouselImg {
+    height: 470px;
   }
 
 }

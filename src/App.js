@@ -24,9 +24,9 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-          <Route exact path="/orderReceipt">
-            <OrderReceipt />
-          </Route>
+            <Route exact path="/orderReceipt">
+              <OrderReceipt />
+            </Route>
             <Route exact path="/details/:vin" component={Details} />
             <Route exact path="/payment">
               <PaymentPage />

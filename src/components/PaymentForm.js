@@ -9,7 +9,6 @@ const PaymentForm = () => {
 
     // Import function from BasketContext, for sending user input
     const { handlePurchase } = useContext(BasketContext);
-
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
     const [ Address, setAddress ] = useState("");
@@ -19,7 +18,6 @@ const PaymentForm = () => {
     const [ Email, setEmail] = useState("");
     const [ PaymentMethod, setPaymentMethod] = useState("");
     const [ DeliveryMethod, setDeliveryMethod] = useState("");
-
 
     //OnChange in input triggers these functions, which updates the corresponding useState variable.
     const updateUserFName = e => {
@@ -73,53 +71,61 @@ const PaymentForm = () => {
 
     return (
         <div className={styles.PaymentForm}>
-            <h2>Please fill the form to complete your purchase</h2>
+            <h2 className={styles.h2}>Please fill out the form to complete your purchase</h2>
             <section className={styles.FormWrapper}>
                 <form className={styles.Form} onSubmit={handleSubmit}>
                     <div className={styles.ContactInfo}>
-                        <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name..." required/>
-                        <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name..." required/>
-                        <input className={styles.textInput} type="text" onChange={updateUserEmail} placeholder="Email..." required />
-                        <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address..." required/>
-                        <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City..." required/>
-                        <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
-                        <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
+                        <div className={styles.inputWrapper}>
+                            <input className={`${styles.textInput} ${styles.eMail_input}`} type="text" onChange={updateUserEmail} placeholder="Email..." required />
+                        </div>
+                        <div className={styles.inputWrapper}>
+                            <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name..." required/>
+                            <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name..." required/>
+                        </div>
+                        <div className={styles.inputWrapper}>
+                            <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address..." required/>
+                            <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City..." required/>
+                        </div>
+                        <div className={styles.inputWrapper}>
+                            <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
+                            <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
+                        </div>
                     </div>
-
+                    <h3>Payment method</h3>
                     <div className={styles.PaymentOptions}>
-                      <h3>Payment method</h3>
+
+
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-visa"></i>
+                            <i className="fab fa-cc-visa fa-3x"></i>
                             Visa
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-bitcoin"></i>
+                            <i className="fab fa-bitcoin fa-3x"></i>
                             Bitcoin
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-paypal"></i>
+                            <i className="fab fa-cc-paypal fa-3x"></i>
                             PayPal
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-amex"></i>
+                            <i className="fab fa-cc-amex fa-3x"></i>
                             American Express
                         </label>
                     </div>
-
+                    <h3>Delivery method</h3>
                     <div className={styles.DeliveryOptions}>
-                      <h3>Delivery method</h3>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />
-                            <i className="fas fa-truck"></i>
+                            <i className="fas fa-truck fa-3x"></i>
                             Home delivery
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="store" onChange={updateDeliveryMethod} name="deliverymethod" required />
-                            <i className="fas fa-warehouse"></i>
+                            <i className="fas fa-warehouse fa-3x"></i>
                             Pick up at store
                         </label>
                     </div>
