@@ -3,15 +3,15 @@
 }
 
 .count {
-    background-color: red;
-    color: white;
+    background-color: #ff1407;
+    color: #232b2b;
     text-align: center;
     width: 1.3rem;
     border-radius: 50%;
     padding-top: 1px;
     padding-bottom: 1px;
     font-size: 1rem;
-    border: solid 1px black;
+    border: solid 1px #232b2b;
     position: absolute;
     bottom: 95%;
     left: 20px;

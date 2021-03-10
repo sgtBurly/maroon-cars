@@ -77,7 +77,7 @@
 }
 
 .ok {
-  background-color: green;
+  background-color: #488b49;
 }
 .ok:hover {
   background-color: rgb(6, 83, 6);
@@ -95,6 +95,9 @@
 /* Extra small devices (portrait phones, less than 576px) */
 @media (min-width: 350.98px) {
   .info_card {
+    height: 300px;
+    width: 250px;
+    border: solid #488b49 3px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
