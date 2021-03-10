@@ -8,8 +8,8 @@
     border-radius: 10px;
     padding: 0.5rem;
     text-align: center;
-
 }
+
 .desc, .carInfo, .carPrice, .removeBtn{
     padding: 5px;
 }
@@ -99,15 +99,11 @@ h2 {
 }
 
 @media (min-width: 576px) {
-
     h2 {
         display: block;
-    }
-
-    
+    }   
 
     .float {
         float: right;
     }
-
 }
