@@ -49,9 +49,14 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+
     flex-direction: row;
     flex-wrap: wrap;
 
+}
+.DeliveryOptions {
+    align-items: center;
+    justify-content: center;
 }
 .RadioWrapper {
     display: flex;
@@ -90,7 +95,7 @@
     border-radius: 5px;
     background-color: #ffffff;
     font-weight: bold;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -112,8 +117,10 @@
         width: 100%;
         display: flex;
         justify-content: center;
+
         flex-direction: row;
         flex-wrap: wrap;
+
 
     }
  }
