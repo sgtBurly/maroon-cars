@@ -11,9 +11,9 @@
 
 .greeting {
     position: absolute;
-    text-align: center;
-    top: 1rem;
-    left: 5rem;
+    text-align: left;
+    top: 10%;
+    /* left: 10%; */
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 } 
@@ -33,22 +33,24 @@
     .greeting {
         top: 5%;
         left: 40%;
+        text-align: right;
     }
 }
 
 /*media queries for ipad landscape*/
 @media (min-width: 992px) {
     .greeting {
-        top: 60%;
-        left: 5%;
+        top: 70%;
+        left: 2%;
+        text-align: left;
     }
 }
 /*media queries for big screen*/
 @media (min-width: 1200px) { 
 
         .greeting {
-            top: 8rem;
-            left: 1rem;
+            top: 50%;
+            left: 5%;
         }
 
 }
