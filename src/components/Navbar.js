@@ -19,8 +19,15 @@ export default function Navbar() {
                 </div>
                 <ReactBootstrap.Navbar.Collapse  id="responsive-navbar-nav">
                     <ReactBootstrap.Nav className="ml-auto align-items-center" >
-                        <ReactBootstrap.Nav.Link  className={styles.clr} as={Link} to="/">Home</ReactBootstrap.Nav.Link>
-                        <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/about">About</ReactBootstrap.Nav.Link>
+                            
+                        <span className={styles.homeWrapper}>
+                            <ReactBootstrap.Nav.Link  className={styles.clr} as={Link} to="/">Home</ReactBootstrap.Nav.Link>
+                        </span>
+                        
+                        <span className={styles.aboutWrapper}>
+                            <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/about">About</ReactBootstrap.Nav.Link>
+                        </span>
+
                         <ReactBootstrap.Nav.Link className={`${styles.clr} d-none d-sm-inline-block`} as={Link} to="/payment"><i className="fas fa-shopping-cart fa-lg"><BasketValue/></i></ReactBootstrap.Nav.Link>
                     </ReactBootstrap.Nav>
                 </ReactBootstrap.Navbar.Collapse>

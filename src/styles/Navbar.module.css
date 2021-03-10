@@ -1,10 +1,10 @@
 .navbar {
     background-color: #FFBE0B;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+    /* opacity: 0.9; */
+    /* transition: all 0.3s ease-out; */
 }
-.navbar a:hover {
-    font-weight: bold;
-    color: #232b2b;
-}
+
 
 span.font {
     font-family: 'Ultra';
@@ -20,6 +20,7 @@ i.fas.fa-shopping-cart {
 .clr {
     color: #232b2b !important;
 }
+
 
 .border {
     border-color: transparent !important;
@@ -44,4 +45,34 @@ i.fas.fa-shopping-cart {
         font-size: 1.8rem;
     }
 
+}
+
+@media screen and (min-width: 576px) {
+    span.homeWrapper:after,
+    span.aboutWrapper:after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        display: inline-block;
+        height: 1rem;
+        width: 4.5rem;
+        border-bottom: 3px solid;
+        /* margin-top: 10px; */
+        opacity: 0;
+          -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.5s, transform 0.5s;
+          -webkit-transform: scale(0,1);
+          transform: scale(0,1);
+    }
+    
+    
+    span.homeWrapper:hover:after,
+    span.aboutWrapper:hover:after {
+        /* font-weight: bold;
+        color: #232b2b; */
+        /* transition: all 0.3s ease-out; */
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
