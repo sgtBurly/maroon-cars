@@ -68,6 +68,16 @@ h2 {
     display: none;
 }
 
+@media (min-width: 576px) {
+    h2 {
+        display: block;
+    }   
+
+    .float {
+        float: right;
+    }
+}
+
 @media (min-width: 768px) {
     .flex {
         display: flex;
@@ -95,15 +105,12 @@ h2 {
         justify-content: space-around;
         text-align: left;
     }
-
 }
 
-@media (min-width: 576px) {
-    h2 {
+@media (min-width: 992px) {
+    .desc {
         display: block;
-    }   
-
-    .float {
-        float: right;
     }
 }
+
+
