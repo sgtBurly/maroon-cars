@@ -8,9 +8,7 @@ import Card from '../components/Card'
 const PaymentPage = () => {
     const {customerBasket} = useContext(BasketContext);
 
-    useEffect(() => {
-        window.scrollTo(0,0)
-      }, []);
+    useEffect(() => window.scrollTo(0,0), []);
 
     if (customerBasket.length < 1) {
         return <EmptyBasket />

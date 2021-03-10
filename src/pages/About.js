@@ -3,9 +3,7 @@ import AboutStyles from '../styles/AboutStyles.module.css'
 
 const About = () => {
 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  }, []);
+  useEffect(() => window.scrollTo(0,0), []);
 
   return (
     <div className={AboutStyles.main_wrapper}>

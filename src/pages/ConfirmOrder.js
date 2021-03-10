@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import ConfirmOrderStyles from '../styles/ConfirmOrderStyles.module.css'
 import { Link } from 'react-router-dom';
@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const ConfirmOrder = () => {
 
   const { latestPurchase, calcBasket } = useContext(BasketContext);
+
+  useEffect(() => window.scrollTo(0,0), []);
 
   const renderConfirmation = () => {
     return (
