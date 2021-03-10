@@ -71,7 +71,7 @@ const PaymentForm = () => {
 
     return (
         <div className={styles.PaymentForm}>
-            <h2 className={styles.h2}>Please fill the form to complete your purchase</h2>
+            <h2 className={styles.h2}>Please fill out the form to complete your purchase</h2>
             <section className={styles.FormWrapper}>
                 <form className={styles.Form} onSubmit={handleSubmit}>
                     <div className={styles.ContactInfo}>

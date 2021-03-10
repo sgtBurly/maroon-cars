@@ -92,10 +92,11 @@
     outline-style: none;
     box-shadow: none;
     border-color: transparent;
+    border: solid 1px #232b2b;
     border-radius: 5px;
     background-color: #ffffff;
     font-weight: bold;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
 }
 
 /* Medium devices (tablets, 768px and up) */
