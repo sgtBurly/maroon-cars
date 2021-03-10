@@ -1,94 +1,90 @@
 .main_wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
 
 }
-.info_card {
-  height: 600px;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  border-radius: 0.5rem;
-  padding: 1rem;
+.logo {
+  font-family: 'Ultra', serif;
   font-size: 1rem;
-  align-items: center;
-
-}
-.top_row {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.top_row p {
-  font-size: 1rem;
-}
-.bottom_row {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.items_wrapper {
-  width: 100%;
-  height: 50px;
-  background-color: #ffbe0b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.title_wrapper {
-  font-size: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 0;
 }
 .company_info {
   font-size: 0.75rem;
-  padding-top: 1rem;
-
+  text-align: right;
+  margin: 0.5rem 0;
+}
+.company_info p{
+  margin: 0;
+  margin-top: 0.3rem;
+}
+.title_wrapper {
+  margin: 1.5rem 0;
+}
+.title_wrapper h3 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.title_wrapper p {
+  font-size: 0.9rem;
+  text-align: right;
+}
+.info_card {
+  width: 95%;
+  margin: 1rem auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  /* font-size: 1rem; */
+}
+.items_wrapper {
+  padding: 0.5rem;
+  background-color: #ffbe0b;
+  text-align: center;
+}
+.orderItem {
+  margin: 1rem 0
+}
+.orderItem p {
+  margin: 0;
+}
+.orderItem hr {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .orderInfo  {
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
   font-family: 'Cutive Mono', monospace;
 }
 .orderInfo span {
   font-family: 'Cutive Mono', monospace;
+  font-weight: bold;
 }
 .total_wrapper {
-  margin-left: 0.5rem;
+  text-align: right;
 }
-.company_info h5 {
-  font-size: 1.5rem;
+.total_wrapper span {
+  margin-left: 2rem;
+  font-size: 1.3rem;
 }
+
+@media print {
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
-  .info_card {
-    height: 300px;
-    width: 200px;
-    border: solid green 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px)  {
   .info_card {
     width: 500px;
-    font-size: 2rem;
   }
 
 }
@@ -97,7 +93,7 @@
 @media (min-width: 768px)  {
   .info_card {
     width: 600px;
-    height: 750px;
+    margin: 1rem auto;
   }
  }
 
