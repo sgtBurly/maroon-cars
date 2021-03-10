@@ -15,7 +15,7 @@
     border-radius: 5px;
     width: 80%;
     margin-bottom: 5rem;
-    border: 1.5px solid #488b49;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .Form {
