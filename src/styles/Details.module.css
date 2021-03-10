@@ -2,8 +2,9 @@
 .detailsPage {
   height: 100%;
   width: 100%;
-  background-color: #FBFAF5;
-  margin: 0 auto;
+  background-color: #ffffff;
+  margin: 0rem auto;
+  margin-bottom: 2rem;
 }
 
 /* 1st children wrapper */
@@ -11,7 +12,6 @@
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-  /* justify-content: space-between; */
 }
 
 /* image wrapper */
@@ -25,9 +25,9 @@
 /* car image */
 .imgContainer img.car {
   border-radius: 5px;
-  /* position: sticky;
-  top: 7rem; */
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* sale icon-image wrapper */
@@ -47,12 +47,9 @@
 
 /* main info cointainer */
 .infoContainer {
-  /* max-width: 400px; */
   margin: 1rem;
-  background-color: #FBFAF5;
-  /* box-shadow: rgba(35,  43,43, 0.15) 1.95px 1.95px 2.6px; */
-  /* border-radius: 5px; */
-  padding: 0.5rem;
+  background-color: #ffffff;
+  padding: 1rem;
   text-align: start;
 }
 
@@ -62,7 +59,6 @@
   text-shadow: 1px 1px 3px #03030391;
   text-align: start;
 }
-
 
 /* Add to cart button */
 .button {
@@ -78,10 +74,11 @@
   position: relative;
   opacity: 0.9;
   z-index: 10;
+  margin: 1rem 0rem;
+  display: block;
 }
 
 .button:hover {
-  /* transform: translatey(-1px); */
   box-shadow: 0 0px 20px 8px #ffbe0b7e;
   cursor: pointer;
   opacity: 1.0;
@@ -112,8 +109,7 @@
 
 /* Detailed info box */
 ul.detailedInfoWrapper {
-  /* border: 1.5px solid #FFBE0B; */
-  border: 2px solid #FFBE0B;
+  border: 1px solid #FFBE0B;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 1rem;
@@ -121,18 +117,12 @@ ul.detailedInfoWrapper {
   list-style: none;
   text-align: start;
   width: 100%;
-  /* max-width: 500px; */
+  height: 10rem;
 }
 
 /* li-tags */
 .detailedInfoWrapper li {
   padding: 0.15rem;
-  /* margin: 1rem auto; */
-}
-
-.infoContainer p {
-  /* font-size: 1.2rem; */
-  /* margin: 1rem; */
 }
 
 .price span {
@@ -152,9 +142,7 @@ p.price {
   font-size: 1.2rem;
   text-shadow: 1px 1px 3px #03030391;
   text-align: start;
-
   padding: 0;
-  margin-top: 1rem;
 }
 
 /* If car is on sale, this runs: */
@@ -164,14 +152,18 @@ p.salePrice {
   font-size: 1.2rem;
   text-shadow: 1px 1px 3px #03030391;
   text-align: start;
-
   padding: 0rem;
 }
 
+div.detailsAndDescriptionWrapper {
+  max-width: 768px;
+  margin: auto;
+}
 
 /* Description */
 div.descWrapper {
   padding: 1rem;
+  margin: 1rem 0;
   box-shadow: 5px 4px 8px 5px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
@@ -185,13 +177,10 @@ div.descWrapper {
 p.desc {
   margin: 1rem auto;
   font-size: 1rem;
-  /* max-width: 85%; */
   text-align: justify;
 }
 
-
-
-
+/* MEDIA QUERIES */
 @media screen and (min-width: 576px) {
   .infoContainer {
     display: flex;
@@ -200,63 +189,88 @@ p.desc {
   
   div.headerPriceWrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 768px;
   }
-  
-  /* When normal price, this is on: */
-  p.price {
-    color: #488b49;
-    
-  }
-  
-  /* If car is on sale, this runs: */
-  p.salePrice {
-    
-    
+
+  div.buttonWrapper {
+    flex-basis: 100%;
   }
   
 }
 
-
-
-
-
-
-
 @media screen and (min-width: 768px) {
-  .carDetailsWrapper {
-    /* text-align: center; */
-    display: flex;
-    /* flex-flow: column; */
-    /* margin: auto; */
-    /* justify-content: space-between; */
+  .infoContainer {
+    margin: 1rem auto;
   }
-
-
 
   .imgContainer {
-    /* margin: 0 auto;
-    position: relative; */
     width: 768px;
-    border-radius: 5px;
   }
 
-  .imgContainer img.car {
-    /* position: sticky; */
-    /* top: 7rem; */
-    /* width: 100%; */
-    /* max-height: auto; */
-    /* margin: 1rem auto; */
-    /* box-shadow: rgba(38, 43, 35, 0.15) 1.95px 1.95px 2.6px; */
-    object-fit: cover;
+  div.headerPriceWrapper {
+    min-width: 768px;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .button {
+    position: relative;
+  }
+
+
+}
+
+@media (min-width: 992px) {
+  ul.detailedInfoWrapper {
+    padding: 1rem;
+    margin-right: 1rem;
+    width: 50%;
+    height: 10rem;
+  }
+
+  div.descWrapper {
+    padding: 1rem;
+    margin: 1rem 1rem;
+    width: 50%;
   }
 
   .infoContainer {
-    max-width: 400px;
-    margin: 0rem auto;
-    background-color: #FBFAF5;
-    background-color: lightblue;
-    padding: 0.5rem;
-    text-align: start;
+    margin: auto;
+    max-width: 992px;
+  }
+
+  .detailsAndDescriptionWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div.headerPriceWrapper {
+    min-width: 768px;
+    margin: auto;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1200px) { 
+  .carDetailsWrapper {
+    justify-content: space-around;
+    max-width: 1800px;
+    margin: 4rem auto;
+  }
+
+  .infoContainer {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 1616px) {
+  .infoContainer {
+    position: relative;
+    box-shadow: 5px 4px 8px 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 1.5rem;
   }
 }

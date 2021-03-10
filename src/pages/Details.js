@@ -48,19 +48,27 @@ const Details = (props) => {
               {/* Make different style on price depending on discount true or false */}
               { detailCar.discount ?  <p className={styles.salePrice}>$ {detailCar.price}<span> inc. VAT </span></p>
               : <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p> }
+
+
+              <div className={styles.buttonWrapper}>
+                <button className={styles.button} onClick={handleClick} >Add to cart</button>
+              </div>
+
             </div>
+
             
 
-            <button className={styles.button} onClick={handleClick} >Add to cart</button>
-            <ul className={styles.detailedInfoWrapper}>
-              <li><span>Year: </span>{detailCar.year}</li>
-              <li><span>City: </span>{detailCar.city}</li>
-              <li><span>Miles: </span>{detailCar.miles}</li>
-              <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
-            </ul>
-            <div className={styles.descWrapper}>
-              <p className={styles.descHeader}>Description:</p>
-              <p className={styles.desc}>{detailCar.descLong}</p>
+            <div className={styles.detailsAndDescriptionWrapper} >
+              <ul className={styles.detailedInfoWrapper}>
+                <li><span>Year: </span>{detailCar.year}</li>
+                <li><span>City: </span>{detailCar.city}</li>
+                <li><span>Miles: </span>{detailCar.miles}</li>
+                <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
+              </ul>
+              <div className={styles.descWrapper}>
+                <p className={styles.descHeader}>Description:</p>
+                <p className={styles.desc}>{detailCar.descLong}</p>
+              </div>
             </div>
           </div>
         </div>
