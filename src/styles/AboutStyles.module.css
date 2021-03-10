@@ -55,6 +55,9 @@
 .h2 {
   margin: 0.75rem;
 }
+.h1 {
+  margin-top: 3rem;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
   .about_text {
@@ -78,6 +81,9 @@
 
   .right_inner_wrapper {
     margin-left: 0.5rem;
+  }
+  .h1 {
+    margin-top: 0rem;
   }
 }
 

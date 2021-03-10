@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className={AboutStyles.main_wrapper}>
       <div className={AboutStyles.left_inner_wrapper}>
-        <h1>About Maroon Cars</h1>
+        <h1 className={AboutStyles.h1}>About Maroon Cars</h1>
         <p className={AboutStyles.about_text}>
           Among the Helvetii, Orgetorix was by far the most distinguished and
           wealthy. He, when Marcus Messala and Marcus Piso were consuls, incited
