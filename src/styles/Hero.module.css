@@ -1,38 +1,54 @@
 
 .imageContainer {
-    height: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../");
-}
-
-.imageContainer img {
-    height: auto;
+    width: auto;
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("https://images.unsplash.com/photo-1569171206684-dfb2749d96fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
     background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
 }
 
-div .greeting {
+.greeting {
     position: absolute;
-    top: 340px;
+    text-align: center;
+    top: 1rem;
+    left: 5rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.637);
-    border-radius: 5px;
 } 
 
+.greeting h2 {
+    color: #FBFAF5;
+    text-shadow: 0.2px 0.2px 0.4px #232b2b;
+}
+
+.greeting span {
+    font-size: 1.5rem;
+}
+
+
+/*media queries for ipad portray*/
+@media (min-width: 768px) {
+    .greeting {
+        top: 5%;
+        left: 40%;
+    }
+}
+
+/*media queries for ipad landscape*/
+@media (min-width: 992px) {
+    .greeting {
+        top: 60%;
+        left: 5%;
+    }
+}
 /*media queries for big screen*/
 @media (min-width: 1200px) { 
 
-
-div.greeting {
-    padding-left: 3rem;
-}
-
-div.greeting h2 {
-    top: 150px;
-}
-
-div.greeting span {
-    font-size: 1.2rem;
-}
+        .greeting {
+            top: 8rem;
+            left: 1rem;
+        }
 
 }
