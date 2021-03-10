@@ -9,7 +9,7 @@ const Details = (props) => {
 
   const { cars } = useContext(CarContext);
   const [detailCar, setDetailCar] = useState(null);
-  const { history } = useHistory(); 
+  const { history } = useHistory();
 
   const { addToBasket } = useContext(BasketContext);
 
@@ -23,11 +23,6 @@ const Details = (props) => {
 
   const handleClick = () => {
       addToBasket(detailCar);
-  }
-
-  const handleBackButton = () => {
-    console.log("Back button clicked");
-    history.push("/");
   }
 
   const renderDetails = () => {
