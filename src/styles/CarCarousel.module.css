@@ -35,7 +35,7 @@ span.sale {
   right: 25px;
 	display: inline-block;
 	background: #FFBE0B;
-	color: white;
+	color: #FBFAF5;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
   font-size: 1.4rem;
 	height: 4.5rem;
@@ -89,7 +89,7 @@ span.sale::after {
 
 span.sale:hover {
   color: #FFBE0B;
-  background-color: white;
+  background-color: #FBFAF5;
   opacity: 1.0;
 }
 
