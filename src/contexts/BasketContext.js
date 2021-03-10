@@ -34,24 +34,16 @@ export const BasketProvider = (props) => {
             carsPurchased: [...customerBasket],
             timestamp: new Date()
         });
-
         //resets the customerBasket
         setCustomerBasket([]);
     }
-
-    useEffect(()=> console.log(latestPurchase), [latestPurchase])
 
     //Func for calculating price in basket
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
         const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
-
-        console.log('The total price of all cars in your basket rn is:', basketPrice);
         return basketPrice;
     }
-
-    calcBasket(customerBasket);
-
 
     const values = {
         customerBasket,
