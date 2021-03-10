@@ -2,9 +2,11 @@
 .detailsPage {
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
-  margin: 0rem auto;
+  max-width: 1800px;
+  padding: 0rem;
+  margin: 1rem auto;
   margin-bottom: 2rem;
+  justify-content: space-around;
 }
 
 /* 1st children wrapper */
@@ -19,12 +21,13 @@
   margin: 1rem auto;
   position: relative;
   width: 100%;
+  max-width: 576px;
+  max-height: 400px;
   box-shadow: 10px 4px 8px 5px rgba(0,0,0,0.2);
 }
 
 /* car image */
 .imgContainer img.car {
-  border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -38,7 +41,6 @@
   width: 100px;
   height: 100px;
 }
-
 /* sale icon-image */
 .saleIcon img {
   box-shadow: none;
@@ -47,10 +49,11 @@
 
 /* main info cointainer */
 .infoContainer {
-  margin: 1rem;
+  margin: 0rem auto;
   background-color: #ffffff;
-  padding: 1rem;
+  padding: 0rem 1rem;
   text-align: start;
+  max-width: 576px;
 }
 
 /* Make Model */
@@ -60,7 +63,18 @@
   text-align: start;
 }
 
+div.headerPriceWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 576px;
+}
+
 /* Add to cart button */
+div.buttonWrapper {
+  flex-basis: 100%;
+}
+
 .button {
   width: 150px;
   height: 50px;
@@ -140,7 +154,6 @@ p.price {
   color: #488b49;
   font-weight: bold;
   font-size: 1.2rem;
-  text-shadow: 1px 1px 3px #03030391;
   text-align: start;
   padding: 0;
 }
@@ -150,7 +163,6 @@ p.salePrice {
   color: #ff0b0b;
   font-weight: bold;
   font-size: 1.2rem;
-  text-shadow: 1px 1px 3px #03030391;
   text-align: start;
   padding: 0rem;
 }
@@ -180,7 +192,7 @@ p.desc {
   text-align: justify;
 }
 
-/* MEDIA QUERIES */
+/* ------------------------------------ MEDIA QUERIES -------------------------------------------------- */
 @media screen and (min-width: 576px) {
   .infoContainer {
     display: flex;
@@ -191,86 +203,26 @@ p.desc {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 768px;
+    max-width: 576px;
   }
 
   div.buttonWrapper {
     flex-basis: 100%;
   }
-  
 }
 
 @media screen and (min-width: 768px) {
   .infoContainer {
-    margin: 1rem auto;
+    margin: 0rem auto;
   }
 
   .imgContainer {
-    width: 768px;
-  }
-
-  div.headerPriceWrapper {
-    min-width: 768px;
-    margin: auto;
-    justify-content: space-between;
-  }
-
-  .button {
-    position: relative;
-  }
-
-
-}
-
-@media (min-width: 992px) {
-  ul.detailedInfoWrapper {
-    padding: 1rem;
-    margin-right: 1rem;
-    width: 50%;
-    height: 10rem;
-  }
-
-  div.descWrapper {
-    padding: 1rem;
-    margin: 1rem 1rem;
-    width: 50%;
-  }
-
-  .infoContainer {
-    margin: auto;
-    max-width: 992px;
-  }
-
-  .detailsAndDescriptionWrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  div.headerPriceWrapper {
-    min-width: 768px;
-    margin: auto;
-    justify-content: space-between;
+    margin-top: 1rem;
   }
 }
 
 @media (min-width: 1200px) { 
   .carDetailsWrapper {
-    justify-content: space-around;
-    max-width: 1800px;
-    margin: 4rem auto;
-  }
-
-  .infoContainer {
-    margin: 1rem;
-  }
-}
-
-@media (min-width: 1616px) {
-  .infoContainer {
-    position: relative;
-    box-shadow: 5px 4px 8px 5px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    padding: 1.5rem;
+    max-width: 1400px;
   }
 }
