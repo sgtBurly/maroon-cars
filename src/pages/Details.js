@@ -30,25 +30,41 @@ const Details = (props) => {
       <div className={styles.detailsPage}>
         <div className={styles.carDetailsWrapper}>
           <div className={styles.imgContainer}>
-          <img src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
+          <img className={styles.car} src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
           {/* Sale icon shows if car is discounted */}
           {detailCar.discount && <div className={styles.saleIcon}>
             <img src={`/assets/sale-icon.png`} alt="sale icon"/>
           </div>}
         </div>
           <div className={styles.infoContainer}>
-            <h1>{detailCar.make}</h1>
-            <h3>{detailCar.model}</h3>
-            <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p>
-            <button className={styles.button} onClick={handleClick} >Add to cart</button>
-            <ul className={styles.detailedInfoWrapper}>
-              <li><span>Year: </span>{detailCar.year}</li>
-              <li><span>City: </span>{detailCar.city}</li>
-              <li><span>Miles: </span>{detailCar.miles}</li>
-              <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
-            </ul>
-            <p className={styles.descHeader}>Description:</p>
-            <p className={styles.desc}>{detailCar.descLong}</p>
+            <div className={styles.headerPriceWrapper}>
+              <h3>{detailCar.make} {detailCar.model}</h3>
+              
+              {/* Make different style on price depending on discount true or false */}
+              { detailCar.discount ?  <p className={styles.salePrice}>$ {detailCar.price}<span> inc. VAT </span></p>
+              : <p className={styles.price}>$ {detailCar.price}<span> inc. VAT </span></p> }
+
+
+              <div className={styles.buttonWrapper}>
+                <button className={styles.button} onClick={handleClick} >Add to cart</button>
+              </div>
+
+            </div>
+
+            
+
+            <div className={styles.detailsAndDescriptionWrapper} >
+              <ul className={styles.detailedInfoWrapper}>
+                <li><span>Year: </span>{detailCar.year}</li>
+                <li><span>City: </span>{detailCar.city}</li>
+                <li><span>Miles: </span>{detailCar.miles}</li>
+                <li className={styles.vin}><span>VIN: </span>{detailCar.vin}</li>
+              </ul>
+              <div className={styles.descWrapper}>
+                <p className={styles.descHeader}>Description:</p>
+                <p className={styles.desc}>{detailCar.descLong}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
