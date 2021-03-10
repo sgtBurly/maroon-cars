@@ -1,0 +1,54 @@
+.descShort {
+    margin-bottom: 40px;
+}
+
+span {
+    font-weight: 900;
+}
+
+
+.carCard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
+    position: relative;
+    opacity: 0.9;
+}
+
+.carCard:hover {
+    transform: translatey(-5px);
+    box-shadow: 0 0px 20px 8px #ffbe0b7e;
+    cursor: pointer;
+    opacity: 1.0;
+}
+
+.carCard:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    background: #FFBE0B;
+    transition: 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.carCard:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.iconWrapper {
+    font-size: 2rem;
+    color: #488B49;
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+}
+
+.iconWrapper:hover {
+    cursor: pointer;
+    color: #FFBE0B;
+}

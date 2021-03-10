@@ -1,0 +1,111 @@
+.detailsPage {
+  height: 100%;
+  background-color: #FBFAF5;
+  margin: 5rem 2rem 2rem 2rem;
+}
+
+.carDetailsWrapper {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.imgContainer {
+  margin: 0 auto;
+  position: relative;
+}
+
+.imgContainer img {
+  position: sticky;
+  top: 7rem;
+  max-width: 600px;
+  min-width: 600px;
+  max-height: auto;
+  margin: 2rem auto;
+  box-shadow: rgba(35,  43,43, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.saleIcon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+}
+.saleIcon img {
+  box-shadow: none;
+}
+.infoContainer {
+  max-width: 400px;
+  margin: 2rem auto;
+  background-color: #FBFAF5;
+  box-shadow: rgba(35,  43,43, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.detailedInfoWrapper {
+  border: 1.5px solid #232b2b;
+  padding: 1rem;
+  margin: 2rem 3.2rem 2rem auto;
+}
+
+.infoContainer p {
+  /* font-size: 1.2rem; */
+  margin: 1rem;
+}
+
+.detailedInfoWrapper li {
+  margin: auto 1rem;
+}
+
+.price {
+  color: #488b49;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.salePrice {
+  color: #FFBE0B;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.price span {
+  font-size: 0.8rem;
+}
+
+p.desc {
+  margin: 0 auto 2 auto;
+  font-size: 1rem;
+  max-width: 85%;
+  text-align: justify;
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+  border: 1.5px solid #232b2b;
+  border-radius: 5px;
+  background-color: #FFBE0B;
+  font-size: 1.2rem;
+}
+
+.descHeader {
+  font-weight: bold;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+  .saleIcon {
+    top: 50px;
+    left: 50px;
+    width: 130px;
+    height: 130px;
+  }
+}

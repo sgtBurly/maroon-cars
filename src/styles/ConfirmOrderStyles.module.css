@@ -1,0 +1,122 @@
+
+.h2 {
+  margin: 1.5rem;
+  text-align: center;
+}
+.h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+}
+.h4 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+.main_wrapper {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.main_wrapper hr {
+  border-color: #488b4983;
+  margin: 1rem 0;
+
+}
+.main_wrapper p {
+  margin-bottom: 0.2rem;
+}
+.info_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+.info_row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.7rem 0;
+}
+.info_date {
+  text-align: right;
+  font-size: 1rem;
+}
+.info_bold {
+  font-weight: bold;
+}
+.bottom_wrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  height: 65px;
+  width: 120px;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+  border-radius: 0.2rem;
+  border: solid transparent 1px;
+  margin: 0.2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: inline-block;
+  color: #333;
+  line-height: 65px;
+  text-align: center;
+}
+.carInfo {
+  margin-bottom: 1.5rem;
+}
+.totalPrice {
+  font-size: 1.5rem;
+}
+
+.ok {
+  background-color: green;
+}
+.ok:hover {
+  background-color: rgb(6, 83, 6);
+  cursor: pointer;
+}
+.print {
+  background-color: #FFBE0B;
+}
+.print:hover {
+  background-color: #ca9708;
+  cursor: pointer;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 350.98px) {
+  .info_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px)  {
+  .info_card {
+    font-size: 1.2rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+  .info_card {
+    width: 50%;
+  }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

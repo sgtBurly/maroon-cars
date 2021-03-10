@@ -1,6 +1,7 @@
 .main_wrapper {
   width: 100%;
   min-height: 80vh;
+  /* margin-bottom: 60px; */
   display: flex;
   justify-content: center;
   align-items: center;
