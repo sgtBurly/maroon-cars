@@ -7,8 +7,9 @@ const OrderReceipt = () => {
   const { latestPurchase, calcBasket } = useContext(BasketContext);
 
   useEffect(() => {
+    window.scrollTo(0,0);
     window.print();
-  });
+  }, []);
 
   let orderNumber = 0;
   return (

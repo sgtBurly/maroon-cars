@@ -2,7 +2,6 @@ import { useContext, useState, useEffect, } from 'react';
 import { BasketContext } from '../contexts/BasketContext';
 import { CarContext } from '../contexts/CarContext'
 import styles from '../styles/Details.module.css'
-import toast, { Toaster } from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 
 const Details = (props) => {
@@ -12,6 +11,8 @@ const Details = (props) => {
   const { history } = useHistory();
 
   const { addToBasket } = useContext(BasketContext);
+
+  useEffect(() => window.scrollTo(0,0), []);
 
   // Find the car with corresponding vin in the cars-array and setDetailCar to show the right car.
   // Not strict equality because params are always strings.

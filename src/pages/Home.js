@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
 import CarCarousel from '../components/CarCarousel'
-import toast, { Toaster } from 'react-hot-toast';
 
 
 const Home = () => {
+
+  useEffect(() => window.scrollTo(0,0));
+
   return (
     <div>
       <div className={style.imageContainer}>

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutStyles from '../styles/AboutStyles.module.css'
 
 const About = () => {
+
+  useEffect(() => window.scrollTo(0,0), []);
+
   return (
     <div className={AboutStyles.main_wrapper}>
       <div className={AboutStyles.left_inner_wrapper}>
