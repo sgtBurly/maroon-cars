@@ -100,7 +100,7 @@
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 500px) {
+@media (min-width: 690px) {
     .inputWrapper {
         width: 100%;
         display: flex;
