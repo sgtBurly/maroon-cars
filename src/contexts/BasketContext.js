@@ -5,7 +5,7 @@ export const BasketContext = createContext();
 export const BasketProvider = (props) => {
 
     // The cart holding the array with the "saved" cars
-    const [customerBasket, setCustomerBasket] = useState([]);
+    const [customerBasket, setCustomerBasket] = useState([{}]);
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
     const [latestPurchase, setLatestPurchase] = useState({});
 
