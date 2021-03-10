@@ -7,9 +7,9 @@ const OrderReceipt = () => {
   const { latestPurchase, calcBasket } = useContext(BasketContext);
 
   useEffect(() => {
-    console.log(latestPurchase.timestamp)
     window.print();
   });
+
   let orderNumber = 0;
   return (
     <div className={ReceiptStyles.main_wrapper}>
@@ -44,7 +44,6 @@ const OrderReceipt = () => {
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. Make<span>{purchasedCar.make}</span></p>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
                   <p className={ReceiptStyles.orderInfo}>{orderNumber}. VIN<span>{purchasedCar.vin}</span></p>
-                  {/* <p className={ReceiptStyles.orderInfo}>{orderNumber}. Year<span>{purchasedCar.year}</span></p> */}
                   <hr />
                 </div>
               )
