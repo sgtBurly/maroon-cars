@@ -16,7 +16,7 @@
     /* left: 10%; */
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-} 
+}
 
 .greeting h2 {
     color: #FBFAF5;
@@ -27,13 +27,32 @@
     font-size: 1.5rem;
 }
 
+.pColor {
+    color: #FBFAF5;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .greeting {
+        top: 5%;
+        left: auto;
+        text-align: right;
+    }
+
+    .pColor {
+        font-size: 1.7rem;
+    }
+}
 
 /*media queries for ipad portray*/
 @media (min-width: 768px) {
     .greeting {
         top: 5%;
-        left: 40%;
+        left: 30%;
         text-align: right;
+    }
+    .pColor {
+        font-size: 2.5rem;
     }
 }
 
@@ -46,7 +65,7 @@
     }
 }
 /*media queries for big screen*/
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
 
         .greeting {
             top: 50%;

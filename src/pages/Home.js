@@ -10,7 +10,7 @@ const Home = () => {
     <div>
       <div className={style.imageContainer}>
         <div className={style.greeting}>
-          <h2>Welcome to Maroon Cars<br></br><span>Find the perfect car for you!</span></h2>
+          <h2 className={style.pColor}>Welcome to Maroon Cars<br></br><span className={style.pColor}>Find the perfect car for you!</span></h2>
         </div>
       </div>
       <CarCarousel/>
