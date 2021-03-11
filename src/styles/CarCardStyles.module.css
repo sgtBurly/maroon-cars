@@ -51,7 +51,7 @@ span {
     color: #488B49;
 }
 
-.iconWrapper:hover {
+.iconWrapper i:hover {
     cursor: pointer;
     color: #FFBE0B;
 }
