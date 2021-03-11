@@ -5,7 +5,10 @@ import styles from "../styles/BasketCard.module.css";
 
 // looping over car items(got info from BasketContext), map them to be able to render every chosen item including it's details
 const Card = () => {
-    let {customerBasket, removeFromBasket} = useContext(BasketContext);
+    let {customerBasket, removeFromBasket, calcBasket} = useContext(BasketContext);
+
+    //total price for cars
+    let totalPrice = calcBasket(customerBasket);
 
     return (
         <div className={styles.cardWrapperContainer}>
@@ -40,7 +43,7 @@ const Card = () => {
                     </div>
                 ))}
                 <div>
-                    <p className={styles.float}><span className={styles.fat}>Total price: </span>5 Guldkorn$$$$</p>
+                <p className={styles.float}><span className={styles.fat}>Total price: </span>${totalPrice}</p>
                 </div>
             </div>
         </div>

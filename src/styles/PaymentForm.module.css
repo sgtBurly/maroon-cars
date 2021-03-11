@@ -2,54 +2,137 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 3rem;
 }
 
 .PaymentForm h3, h2 {
     padding: 0rem 1rem;
-    color: #353839;
+    color: #232b2b;
+    font-weight: bold;
 }
 
 .FormWrapper {
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     margin-bottom: 5rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color:  #FFBE0B;
 }
-
 .Form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.h2 {
+    margin-bottom: 2rem;
+}
+ .textInput {
+    width: 100%;
+    margin-bottom: 1rem;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 0.2rem;
+    outline: none;
+}
+.payment_option_mainwrapper {
+    min-width:100%;
+    display: flex;
+    justify-content: space-around;
 
-.Form .textInput {
-    padding: 0.5rem;
-    margin: 2rem 1rem 0 1rem;
-    border-radius: 3px;
-    background-color: #fefefe;
-    border: 1.5px solid #353839;
 }
 
 .PaymentOptions, .DeliveryOptions {
-    margin: 3rem auto 0 1rem;
-}
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 
-.PaymentOptions .RadioWrapper, .DeliveryOptions .RadioWrapper {
-    margin: 7px;
-}
+    flex-direction: row;
+    flex-wrap: wrap;
 
+}
+.DeliveryOptions {
+    align-items: center;
+    justify-content: center;
+}
+.RadioWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
 .PaymentOptions i, .DeliveryOptions i {
-    margin-left: 7px;
-    margin-right: 5px;
+    margin: 0.5rem;
 }
 
-
+.ContactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin-top: 1rem;
+}
+.inputWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.inputWrapper input {
+    width: 100%;
+}
+.eMail_input {
+    width: 100% !important;
+}
 .completePurchaseBtn {
     padding: 1rem;
     margin: 1rem auto;
-    border: 2px solid black;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border: solid 1px #232b2b;
     border-radius: 5px;
-    background-color: #FFBE0B;
+    background-color: #ffffff;
     font-weight: bold;
+    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 690px) {
+    .inputWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .inputWrapper input {
+        width: 45%;
+    }
+    .FormWrapper {
+        min-width: 700px;
+        max-width: 700px !important;
+    }
+     .DeliveryOptions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 700px)  {
+    .FormWrapper {
+        min-width: 700px;
+        max-width: 700px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
