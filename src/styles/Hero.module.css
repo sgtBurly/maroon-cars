@@ -35,8 +35,8 @@
 @media (min-width: 576px) {
     .greeting {
         top: 5%;
-        left: auto;
-        text-align: right;
+        /* left: auto; */
+        /* text-align: right; */
     }
 
     .pColor {
