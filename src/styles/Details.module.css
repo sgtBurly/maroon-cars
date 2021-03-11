@@ -7,6 +7,7 @@
   margin: 1rem auto;
   margin-bottom: 2rem;
   justify-content: space-around;
+  display: flex
 }
 
 /* 1st children wrapper */
