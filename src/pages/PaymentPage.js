@@ -15,8 +15,7 @@ const PaymentPage = () => {
     } else {
         return (
             <div className="PaymentPage">
-                <h1>Payment page</h1>
-                < Card />
+                <Card />
                 <PaymentForm />
             </div>
         );

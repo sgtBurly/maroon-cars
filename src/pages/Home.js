@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
+import layout from '../styles/home.module.css'
 import CarCarousel from '../components/CarCarousel'
 
 
@@ -15,8 +16,12 @@ const Home = () => {
           <h2 className={style.pColor}>Welcome to Maroon Cars<br></br><span className={style.pColor}>Find the perfect car for you!</span></h2>
         </div>
       </div>
-      <CarCarousel/>
-      <CardsWrapper />
+      <div className={layout.carouselWrapper}>
+        <CarCarousel/>
+      </div>
+      <div className={layout.carCardsWrapper}>
+        <CardsWrapper />
+      </div>
     </div>
   );
 }
