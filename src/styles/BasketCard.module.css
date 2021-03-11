@@ -30,7 +30,7 @@
     padding: 20px;
 }
 
-h2 {
+h2.cardHeading {
     display: none;
 }
 
