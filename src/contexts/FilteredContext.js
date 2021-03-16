@@ -8,6 +8,7 @@ const FilteredContextProvider = (props) => {
   const { cars } = useContext(CarContext);
   
     //Filter all the cars function that runs on form-submit
+    let filteredCars;
     const filterCars = () => {
     let minPrice = 299379;
     let maxPrice = 300000;
@@ -15,8 +16,8 @@ const FilteredContextProvider = (props) => {
     let maxMiles = 13000;
     let minYear = 2005;
     let maxYear = 2008;
-    let filterModel = "";
-    let filterMake =  ""
+    // let filterModel = "";
+    // let filterMake =  ""
     
     //Add the cars that are pass the filtration process
  
@@ -32,8 +33,8 @@ const FilteredContextProvider = (props) => {
     //filterCars();
 
     useEffect(() => {
-        console.log("This is the filteredCars array:")
-        filterCars();
+      filterCars();
+      console.log("This is the filteredCars array:", filteredCars)
       }, [cars])
       const values = {
         cars
