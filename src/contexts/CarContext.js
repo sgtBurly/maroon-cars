@@ -10,6 +10,10 @@ const CarContextProvider = (props) => {
     setCars(require("../json/cars.json"));
   }, []);
 
+  const makes = new Set();
+  cars.forEach(car => makes.add(car.make));
+  console.log(makes);
+
   const values = {
     cars
   }
