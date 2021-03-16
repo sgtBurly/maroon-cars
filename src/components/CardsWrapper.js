@@ -14,6 +14,7 @@ function CardWrapper() {
             <h2 className={CardsWrapperStyles.cardHeading}>Find your dream car below:</h2>
             <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
+                {/*In future add filteredCars here */}
                 {cars && cars.map((car, i) => (
                     //sending props to CarCard
                     <CarCard key={i} data={car} />
