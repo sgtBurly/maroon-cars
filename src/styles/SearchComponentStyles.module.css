@@ -1,16 +1,44 @@
 .searchComponent {
+    border: 2px solid black;
+}
+
+.searchAndFilterWrapper {
+    width: 100%;
     padding: 2rem;
-    margin: 5rem;
+    border: 2px solid black;
+}
+
+.searchInput {
+    margin: 1rem;
+    border: 2px solid black;
 }
 
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
+    border: 2px solid black;
 }
 
 .filterWrapper {
+    /* display: flex; */
+    /* flex-flow: row wrap; */
+    width: 100%;
+    border: 2px solid black;
+}
+
+/* .sliderWrapper {
     display: flex;
     flex-flow: row wrap;
+    width: 50%;
+    border: 2px solid black;
+} */
+
+.filterSlider {
+    border: 2px solid black;
+    width: 100px;
+}
+
+.labelWrapper {
+    margin: 1rem;
+    border: 2px solid black;
 }

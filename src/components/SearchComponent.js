@@ -39,18 +39,20 @@ const SearchComponent = () => {
             onSubmit={handleSearch}
             className={styles.formContainer}
             >
-                <input 
-                type="text"
-                placeholder='Search...'
-                className={styles.searchInput}
-                 />
-                 <button type="button">Filter</button>
+                <div className={styles.searchAndFilterWrapper}>
+                    <input 
+                    type="text"
+                    placeholder='Search...'
+                    className={styles.searchInput}
+                    />
+                    <button type="button">Filter</button>
+                </div>
                 <div className={styles.filterWrapper}>
                     <div className={styles.sliderWrapper}>
                         <div className={styles.labelWrapper}>
-                            <label for="vol">Price:</label>
+                            <label>Price:</label>
                         </div>
-                        <div className={styles.priceSlider}>
+                        <div className={styles.filterSlider}>
                             <Slider
                                 value={price}
                                 min={0}
@@ -62,16 +64,10 @@ const SearchComponent = () => {
                         </div> 
                     </div>
                     <div className={styles.sliderWrapper}>
-                        <div className={styles.label}>
-                            <label for="vol">Miles:</label>
-                            <div className={styles.valueOutputWrapper}>
-                                <span>Min</span>
-                                <div className={styles.valueOutputBox}></div>
-                                <span>Max</span>
-                                <div className={styles.valueOutputBox}></div>
-                            </div>
+                        <div className={styles.labelWrapper}>
+                            <label >Miles:</label>
                         </div>
-                        <div className={styles.milesSlider}>
+                        <div className={styles.filterSlider}>
                             <Slider
                                 value={miles}
                                 min={0}
@@ -83,16 +79,10 @@ const SearchComponent = () => {
                         </div>
                     </div>
                     <div className={styles.sliderWrapper}>
-                        <div className={styles.label}>
-                            <label>Year:</label>
-                            <div className={styles.valueOutputWrapper}>
-                                <span>Min</span>
-                                <div className={styles.valueOutputBox}></div>
-                                <span>Max</span>
-                                <div className={styles.valueOutputBox}></div>
-                            </div>
+                        <div className={styles.labelWrapper}>
+                            <label >Year:</label>
                         </div>
-                        <div className={styles.sliderWrapper}>
+                        <div className={styles.filterSlider}>
                             <Slider
                                 value={year}
                                 min={1930}
@@ -106,13 +96,13 @@ const SearchComponent = () => {
                     
                     <div>
                         <div>
-                            <label>Make:</label>
+                            <label >Make:</label>
                             <select name="make" id="make">
                                 <option value="volvo">Volvo</option>
                             </select>
                         </div> 
                         <div>
-                            <label>Model:</label>
+                            <label  >Model:</label>
                             <select name="model" id="model">
                                 <option value="V40">V40</option>
                             </select>
