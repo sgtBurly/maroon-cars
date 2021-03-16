@@ -12,12 +12,14 @@ export const BasketProvider = (props) => {
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
-
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
             toast.error('The car is already in your cart!')
-        } else {
+        } 
+        //Here the car is added to the basket
+        else {
             setCustomerBasket(prevState => [car, ...prevState]);
+            localStorage.setItem('basketItems', customerBasket);
             toast.success('Successfully added to your cart!')
         }
     }
@@ -37,14 +39,18 @@ export const BasketProvider = (props) => {
         //resets the customerBasket
         setCustomerBasket([]);
     }
-
+ 
     //Func for calculating price in basket
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
         const basketPrice = customerBasket.reduce((a, {price}) => a + price, 0);
         return basketPrice;
     }
-
+    useEffect(() => {
+        if (localStorage.getItem('basketItems' > 0)) {
+            setCustomerBasket(localStorage.getItem('basketItems'))
+        }
+      });
     const values = {
         customerBasket,
         addToBasket,
