@@ -1,62 +1,99 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Slider } from '@material-ui/core';
+import styles from '../styles/SearchComponentStyles.module.css';
 
 
 const SearchComponent = () => {
-    const handleSearch = ()=>{
+
+    const handleSearch = () => {
         console.log('Search completed')
     }
+
+    const [price, setPrice] = useState([20, 37]);
+    const [miles, setMiles] = useState([1, 100]);
+    const [year, setYear] = useState([1, 100]);
+
+    const handlePriceChange = (event, newValue) => {
+        setPrice(newValue);
+      };
+
+    const handleYearChange = (event, newValue) => {
+        setYear(newValue);
+    }
+
+    const handleMilesChange = (event, newValue) => {
+        setMiles(newValue);
+    }
+
+
+
     return ( 
         <div>
-            <Slider
-                value={5}
-                valueLabelDisplay="auto"
-                aria-labelledby="range-slider"
-            />
             <form onSubmit={handleSearch}>
                 <input type="text"
-                 placeholder='Search.. .'
+                 placeholder='Search...'
                  />
-                <div className={styleMedia.priceSlider}>
-                    <div className={styleMedia.lable}>
+                <div className={styles.sliderWrapper}>
+                    <div className={styles.labelWrapper}>
                         <label for="vol">Price:</label>
                         <div>
                             <span>Min</span>
                             <span>Max</span>
                         </div>
                     </div>
-                    <input type="range" id="price" name="price" min="0" max="50" />
+                    <div className={styles.priceSlider}>
+                        <Slider
+                            value={price}
+                            valueLabelDisplay="auto"
+                            aria-labelledby="range-slider"
+                            onChange={handlePriceChange}
+                        />
+                    </div> 
                 </div>
-                <div className={styleMedia.milesSlider}>
-                    <div className={styleMedia.lable}>
+                <div className={styles.sliderWrapper}>
+                    <div className={styles.label}>
                         <label for="vol">Miles:</label>
                         <div>
                             <span>Min</span>
                             <span>Max</span>
                         </div>
                     </div>
-                    <input type="range" id="miles" name="miles" min="0" max="50" />
+                    <div className={styles.milesSlider}>
+                        <Slider
+                            value={miles}
+                            valueLabelDisplay="auto"
+                            aria-labelledby="range-slider"
+                            onChange={handleMilesChange}
+                        />
+                    </div>
                 </div>
-                <div className={styleMedia.yearSlider}>
-                    <div className={styleMedia.lable}>
-                        <label for="vol">Year:</label>
+                <div className={styles.sliderWrapper}>
+                    <div className={styles.label}>
+                        <label>Year:</label>
                         <div>
                             <span>Min</span>
                             <span>Max</span>
                         </div>
                     </div>
-                    <input type="range" id="year" name="year" min="0" max="50" />
+                    <div className={styles.sliderWrapper}>
+                        <Slider
+                            value={year}
+                            valueLabelDisplay="auto"
+                            aria-labelledby="range-slider"
+                            onChange={handleYearChange}
+                        />
+                    </div>
                 </div> 
                 
                 <div>
                     <div>
-                        <label for="make">Make:</label>
+                        <label>Make:</label>
                         <select name="make" id="make">
                             <option value="volvo">Volvo</option>
                         </select>
                     </div> 
                     <div>
-                        <label for="model">Model:</label>
+                        <label>Model:</label>
                         <select name="model" id="model">
                             <option value="V40">V40</option>
                         </select>
@@ -67,6 +104,6 @@ const SearchComponent = () => {
             </form>
         </div>
      );
-}
- 
+    }
+
 export default SearchComponent;
