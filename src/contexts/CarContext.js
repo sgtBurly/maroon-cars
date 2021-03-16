@@ -25,11 +25,24 @@ const CarContextProvider = (props) => {
     setfilteredCars(cars)
   }, [cars]);
 
-  const searchWord = "volvo";
+  const searchWord = "2006";
 
-  const filterTextInput = searchInput => {
-    //return arr.filter(obj => Object.keys(obj).some(key => obj[key].includes(searchKey)));
+  const filterTextInput = (searchInput) => {
+    console.log('Before filtering', filteredCars)
+
+    const tempArray =  filteredCars.filter(obj => Object.keys(obj).some(key => key === 'year' || key === 'miles' || key === 'price' || key === 'discount' ? obj[key].toString().includes(searchInput) : obj[key].includes(searchInput)));
+    //const tempArray =  filteredCars.filter(obj => obj['miles'].toString().includes(searchInput));
+
+    console.log('In filterTextInput:', tempArray);
+
+    setfilteredCars(tempArray);
   }
+
+  useEffect( () => {
+    if(filteredCars) {
+      filterTextInput(searchWord);
+    }
+  }, [filteredCars] )
 
 
   const values = {
