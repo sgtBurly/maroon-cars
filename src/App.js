@@ -11,7 +11,6 @@ import PaymentPage from "./pages/PaymentPage";
 import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
-import FilteredContextProvider from './contexts/FilteredContext';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
       <BrowserRouter>
         <BasketProvider>
           <CarContextProvider>
-            <FilteredContextProvider>
             <Toaster position="top-center"/>
             <Navbar />
             <Route exact path="/">
@@ -38,10 +36,8 @@ function App() {
             <Route exact path="/checkout">
             <ConfirmOrder />
             </Route>
-            </FilteredContextProvider>
           </CarContextProvider>
         </BasketProvider>
-      
         <Footer />
       </BrowserRouter>
     </div>
