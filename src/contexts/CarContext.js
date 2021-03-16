@@ -9,9 +9,9 @@ const CarContextProvider = (props) => {
     setCars(require("../json/cars.json"));
   }, []);
 
-      //Filter all the cars function that runs on form-submit
-      let filteredCars;
-      const filterCars = () => {
+    //Filter all the cars function that runs on form-submit
+    let filteredCars;
+    const filterCars = () => {
       let minPrice = 299379;
       let maxPrice = 300000;
       let minMiles = 12326;
@@ -20,21 +20,19 @@ const CarContextProvider = (props) => {
       let maxYear = 2008;
       // let filterModel = "";
       // let filterMake =  ""
-      
+
       //Add the cars that are pass the filtration process
-      filteredCars = cars.filter(car => car.price >= minPrice && 
+      filteredCars = cars.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
-      car.miles <= maxMiles && car.year >= minYear && 
+      car.miles <= maxMiles && car.year >= minYear &&
       car.year <= maxYear);
       // car.make === filterMake || car.make === "" &&
       // car.model === filterModel || car.model === "")
-      }
+    }
+
   const searchWord = 'VOLVO';
 
   const filterTextInput = (array, searchInput) => {
-
-
-    console.log('Before filtering', filteredCars)
     // For every object, get all keys for every object and search for the textInput from the user.
     // For values containing numbers/boolean need to be stringified using toString()
     // Comparing everything in lowercase letters with toLowerCase();
@@ -48,22 +46,22 @@ const CarContextProvider = (props) => {
     }
   }
 
-  let filteredCars = [];
+  let filteredCarsSearch;
 
   useEffect( () => {
-      console.log('In useEffect: ', filterTextInput(cars,searchWord));
-      filteredCars = filterTextInput(cars, searchWord)
+    filteredCarsSearch = filterTextInput(cars, searchWord)
+    console.log('In useEffect, filtered from textsearch: ', filteredCarsSearch);
+  }, [cars]);
+
+  useEffect(() => {
+    filterCars();
+    console.log("This is the filteredCars array, from filters:", filteredCars)
   }, [cars])
 
-      useEffect(() => {
-        filterCars();
-        console.log("This is the filteredCars array:", filteredCars)
-      }, [cars])
-      
-      const values = {
-        cars
-      }
-  
+  const values = {
+    cars
+  }
+
   return (
     <CarContext.Provider value={ values }>
       { props.children }
