@@ -12,7 +12,22 @@ const CarContextProvider = (props) => {
 
   const makes = new Set();
   cars.forEach(car => makes.add(car.make));
-  console.log(makes);
+  const makesArray = Array.from(makes);
+  console.log('makesarray: ', makesArray);
+
+  const modelsArray = [];
+  makesArray.forEach( make => {
+   modelsArray.push({make: make, models: []});
+  })
+
+  cars.forEach((car) => {
+    modelsArray.forEach((obj) => {
+      if(car.make === obj.make) {
+        obj.models.push(car.model)
+      }
+    })
+  })
+  console.log('modelsArray', modelsArray)
 
   const values = {
     cars
