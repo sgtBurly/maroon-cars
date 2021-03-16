@@ -5,7 +5,7 @@ import CardsWrapperStyles from '../styles/CardsWrapperStyles.module.css';
 
 function CardWrapper() {
     //cars from carContext
-    const { cars, filteredCars } = useContext(CarContext);
+    const { cars } = useContext(CarContext);
 
     return (
         //looping CarCards
@@ -14,7 +14,8 @@ function CardWrapper() {
             <h2 className={CardsWrapperStyles.cardHeading}>Find your dream car below:</h2>
             <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
-                {filteredCars && filteredCars.map((car, i) => (
+                {/*In future add filteredCars here */}
+                {cars && cars.map((car, i) => (
                     //sending props to CarCard
                     <CarCard key={i} data={car} />
                 ))}

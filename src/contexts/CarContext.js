@@ -19,8 +19,8 @@ const CarContextProvider = (props) => {
     console.log('Before filtering', filteredCars)
     // For every object, get all keys for every object and search for the textInput from the user.
     // For values containing numbers/boolean need to be stringified using toString()
+    // Comparing everything in lowercase letters with toLowerCase();
     const tempArray =  array.filter(obj => Object.keys(obj).some(key => key === 'year' || key === 'miles' || key === 'price' || key === 'discount' ? obj[key].toString().includes(searchInput.toLowerCase()) : obj[key].toLowerCase().includes(searchInput.toLowerCase())));
-    //const tempArray =  filteredCars.filter(obj => obj['miles'].toString().includes(searchInput));
 
     console.log('In filterTextInput:', tempArray);
     if (tempArray.length !== 0) {
@@ -39,7 +39,6 @@ const CarContextProvider = (props) => {
 
   const values = {
     cars,
-    filteredCars
   }
 
   return (
