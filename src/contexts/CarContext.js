@@ -11,25 +11,27 @@ const CarContextProvider = (props) => {
     setCars(require("../json/cars.json"));
   }, []);
 
-  useEffect()
-  const makes = new Set();
-  cars.forEach(car => makes.add(car.make));
-  const makesArray = Array.from(makes);
-  console.log('makesarray: ', makesArray);
+  useEffect(() => {
+    const makes = new Set();
+    cars.forEach(car => makes.add(car.make));
+    const makesArray = Array.from(makes);
+    console.log('makesarray: ', makesArray);
 
-  const modelsArray = [];
-  makesArray.forEach( make => {
-   modelsArray.push({make: make, models: []});
-  })
-
-  cars.forEach((car) => {
-    modelsArray.forEach((obj) => {
-      if(car.make === obj.make) {
-        obj.models.push(car.model)
-      }
+    const modelsArray = [];
+    makesArray.forEach( make => {
+    modelsArray.push({make: make, models: []});
     })
-  })
-  console.log('modelsArray', modelsArray)
+
+    cars.forEach((car) => {
+      modelsArray.forEach((obj) => {
+        if(car.make === obj.make) {
+          obj.models.push(car.model)
+        }
+      })
+    })
+    console.log('modelsArray', modelsArray)
+      setMakesAndModels(modelsArray)
+  },[cars]);
 
   const values = {
     cars
