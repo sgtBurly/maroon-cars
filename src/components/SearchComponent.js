@@ -43,6 +43,9 @@ const SearchComponent = () => {
 
     const handleMakeChange = (e) => {
         setMake(e.target.value);
+        const selectedIndex = e.target.options.selectedIndex;
+        //Saving makes index
+        const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
         console.log("this is make:", make)
     }
 
@@ -113,16 +116,17 @@ const SearchComponent = () => {
                                 <select name="make" id="make" onChange={handleMakeChange}>
                                     <option value="">Choose a Make</option>
                                     {makesAndModels && makesAndModels.map((obj, i) => (
-                                        <option value={obj.make} key={i}>{obj.make}</option>
+                                        <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
                                     ))}
                                 </select>
                             </div>
-                            <div>
-                                <label  >Model:</label>
-                                <select name="model" id="model">
-                                    <option value="V40">V40</option>
-                                </select>
-                            </div>
+                            {make &&
+                                <div>
+                                    <label  >Model:</label>
+                                    <select name="model" id="model">
+                                        <option value="V40">V40</option>
+                                    </select>
+                                </div>}
                             <button type="button" onClick={handleClear}>Clear filter</button>
                             <button type="submit" onClick={handleApply}>Apply filter</button>
                         </div>
