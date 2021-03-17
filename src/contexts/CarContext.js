@@ -15,7 +15,6 @@ const CarContextProvider = (props) => {
     // To find every unique make in cars, uses Set.
     const makes = new Set();
     cars.forEach(car => makes.add(car.make));
-      //console.log('makesarray: ', makesArray);
 
     const modelsArray = [];
     makes.forEach( make => {
@@ -30,12 +29,8 @@ const CarContextProvider = (props) => {
         }
       })
     })
-    console.log('modelsArray', modelsArray)
     setMakesAndModels(modelsArray)
   },[cars]);
-
-  // FOR TESTING! To check the status of modelsAndMakes-array. Delete when testing is done!
-  // useEffect(()=> console.log('In useEffect to check makesAndModels:', makesAndModels), [makesAndModels])
 
   const values = {
     cars,
