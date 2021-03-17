@@ -12,16 +12,17 @@ const CarContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
+    // To find every unique make in cars, uses Set.
     const makes = new Set();
     cars.forEach(car => makes.add(car.make));
-    const makesArray = Array.from(makes);
-    console.log('makesarray: ', makesArray);
+      //console.log('makesarray: ', makesArray);
 
     const modelsArray = [];
-    makesArray.forEach( make => {
-    modelsArray.push({make: make, models: []});
-    })
+    makes.forEach( make => {
+      modelsArray.push({make: make, models: []});
+    });
 
+    // modelsArray now has a list of objects with a make-key/value and empty models-array. Below each model is added to the corresponding make.
     cars.forEach((car) => {
       modelsArray.forEach((obj) => {
         if(car.make === obj.make) {
@@ -30,11 +31,15 @@ const CarContextProvider = (props) => {
       })
     })
     console.log('modelsArray', modelsArray)
-      setMakesAndModels(modelsArray)
+    setMakesAndModels(modelsArray)
   },[cars]);
 
+  // FOR TESTING! To check the status of modelsAndMakes-array. Delete when testing is done!
+  // useEffect(()=> console.log('In useEffect to check makesAndModels:', makesAndModels), [makesAndModels])
+
   const values = {
-    cars
+    cars,
+    makesAndModels,
   }
 
   return (
