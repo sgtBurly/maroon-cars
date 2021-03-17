@@ -5,23 +5,22 @@ import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
 
-    const {sendSearchData} = useContext(CarContext);
-
+    const {sendSearchData, makesAndModels} = useContext(CarContext);
+    
     const minPrice = 10;
     const maxPrice = 200
-
+    
     //declaring vaiables use in search component
+    const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
     const [miles, setMiles] = useState([null, null]);
     const [year, setYear] = useState([null, null]);
     const [textSearch, setTextSearch] = useState("");
+    const [model, setModel] = useState("");
 
 
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
-    const { makesAndModels } = useContext(CarContext);
-    const [make, setMake] = useState("");
-    const [model, setModel] = useState("");
     const handleSearch = (e) => {
 
         e.preventDefault();
