@@ -3,6 +3,7 @@ import CardsWrapper from "../components/CardsWrapper";
 import style from '../styles/Hero.module.css'
 import layout from '../styles/home.module.css'
 import CarCarousel from '../components/CarCarousel'
+import SearchComponent from '../components/SearchComponent'
 
 
 const Home = () => {
@@ -18,6 +19,9 @@ const Home = () => {
       </div>
       <div className={layout.carouselWrapper}>
         <CarCarousel/>
+      </div>
+      <div className={style.SearchComponent}>
+        <SearchComponent />
       </div>
       <div className={layout.carCardsWrapper}>
         <CardsWrapper />
