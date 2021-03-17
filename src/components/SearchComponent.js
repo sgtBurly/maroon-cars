@@ -78,37 +78,38 @@ const SearchComponent = () => {
                             />
                         </div>
                     </div>
-                    <div className={styles.sliderWrapper}>
-                        <div className={styles.labelWrapper}>
-                            <label >Year:</label>
-                        </div>
-                        <div className={styles.filterSlider}>
-                            <Slider
-                                value={year}
-                                min={1930}
-                                max={2020}
-                                valueLabelDisplay="auto"
-                                aria-labelledby="range-slider"
-                                onChange={handleYearChange}
-                            />
-                        </div>
-                    </div> 
-                    
-                    <div>
+                    <div className={styles.filterWrapper}>
+                        <div className={styles.sliderWrapper}>
+                            <div className={styles.labelWrapper}>
+                                <label >Year:</label>
+                            </div>
+                            <div className={styles.filterSlider}>
+                                <Slider
+                                    value={year}
+                                    min={1930}
+                                    max={2020}
+                                    valueLabelDisplay="auto"
+                                    aria-labelledby="range-slider"
+                                    onChange={handleYearChange}
+                                />
+                            </div>
+                        </div>                 
                         <div>
-                            <label >Make:</label>
-                            <select name="make" id="make">
-                                <option value="volvo">Volvo</option>
-                            </select>
-                        </div> 
-                        <div>
-                            <label  >Model:</label>
-                            <select name="model" id="model">
-                                <option value="V40">V40</option>
-                            </select>
-                        </div> 
-                        <button type="button" onClick={handleClear}>Clear filter</button>
-                        <button type="submit" >Apply filter</button>
+                            <div>
+                                <label >Make:</label>
+                                <select name="make" id="make">
+                                    <option value="volvo">Volvo</option>
+                                </select>
+                            </div> 
+                            <div>
+                                <label  >Model:</label>
+                                <select name="model" id="model">
+                                    <option value="V40">V40</option>
+                                </select>
+                            </div> 
+                            <button type="button" onClick={handleClear}>Clear filter</button>
+                            <button type="submit" >Apply filter</button>
+                        </div>
                     </div>
                 </div>    
             </form>
