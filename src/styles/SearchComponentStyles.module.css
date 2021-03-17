@@ -1,3 +1,7 @@
+.searchComponent {
+    margin: 2rem;
+}
+
 .searchAndFilterWrapper {
     width: 100%;
     padding: 2rem;
@@ -6,7 +10,10 @@
 
 .searchInput {
     margin: 1rem;
-    
+}
+
+.sliderWrapper {
+    margin: 2rem;
 }
 
 .formContainer {
@@ -19,11 +26,9 @@
     display: flex; 
     flex-flow: row wrap;
     width: 100%;
-    
 }
 
 .filterSlider {
-    
     width: 100px;
 }
 

@@ -1,14 +1,35 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
 import styles from '../styles/SearchComponentStyles.module.css';
-
+import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
 
+    const {sendSearchData} = useContext(CarContext);
+
+    //declaring vaiables use in search component
+    const [price, setPrice] = useState([null, null]);
+    const [miles, setMiles] = useState([null, null]);
+    const [year, setYear] = useState([null, null]);
+    const [textSearch, setTextSearch] = useState("");
+
+    //function fired on submit, it sends the filter variables 
+    //into an empty array and then sends the array to CarContext.
     const handleSearch = (e) => {
+
         e.preventDefault();
-        console.log('Search completed')
+
+        filterOptions.push(price)
+        filterOptions.push(miles)
+        filterOptions.push(year)
+        // searchedText.push(textSearch)
+
+        console.log('Search completed');
+        sendSearchData(filterOptions);
     }
+
+    const filterOptions = []
+    // const searchedText = []
 
     const handleClear = () => {
         console.log('form has been cleared');
@@ -18,9 +39,10 @@ const SearchComponent = () => {
         console.log("Filters have been applyed");
     }
 
-    const [price, setPrice] = useState([null, null]);
-    const [miles, setMiles] = useState([null, null]);
-    const [year, setYear] = useState([null, null]);
+    const textSearchHandler = (e) => {
+        setTextSearch(e.target.value)
+        console.log("This is text search: ", textSearch)
+    }
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
@@ -48,6 +70,8 @@ const SearchComponent = () => {
                     type="text"
                     placeholder='Search...'
                     className={styles.searchInput}
+                    value={textSearch}
+                    onChange={textSearchHandler}
                     />
                     <button type="button">Filter</button>
                 </div>
@@ -63,7 +87,7 @@ const SearchComponent = () => {
                                 max={1000000}
                                 valueLabelDisplay="auto"
                                 aria-labelledby="range-slider"
-                                onChange={handlePriceChange}
+                                onChange={() => {handlePriceChange()}}
                             />
                         </div> 
                     </div>
@@ -112,7 +136,7 @@ const SearchComponent = () => {
                                 </select>
                             </div> 
                             <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit" onClick={handleApply}>Apply filter</button>
+                            <button type="button" onClick={handleApply}>Apply filter</button>
                         </div>
                     </div>
                 </div>    
@@ -122,44 +146,3 @@ const SearchComponent = () => {
     }
 
 export default SearchComponent;
-
-/*
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
-
-const useStyles = makeStyles({
-  root: {
-    width: 300,
-  },
-});
-
-function valuetext(value) {
-  return `${value}°C`;
-}
-
-export default function RangeSlider() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState([20, 37]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <div className={classes.root}>
-      <Typography id="range-slider" gutterBottom>
-        Temperature range
-      </Typography>
-      <Slider
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        aria-labelledby="range-slider"
-        getAriaValueText={valuetext}
-      />
-    </div>
-  );
-}
-*/
