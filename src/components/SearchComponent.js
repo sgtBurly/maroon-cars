@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
 import styles from '../styles/SearchComponentStyles.module.css';
-
+import { CarContext } from "../contexts/CarContext";
 
 const SearchComponent = () => {
+
+    const { makesAndModels } = useContext(CarContext);
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -102,7 +104,9 @@ const SearchComponent = () => {
                             <div>
                                 <label >Make:</label>
                                 <select name="make" id="make">
-                                    <option value="volvo">Volvo</option>
+                                    {makesAndModels && makesAndModels.map((obj, i) => (
+                                        <option value={obj.make} key={i}>{obj.make}</option>
+                                    ))}
                                 </select>
                             </div>
                             <div>
