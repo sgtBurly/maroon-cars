@@ -59,76 +59,75 @@ const SearchComponent = () => {
                     <button type="button" onClick={toggleFilter}>Filter</button>
                 </div>
 
+                {/* only show this part if formToggler is truthy */}
                 { !isActive ? (
                     <div className={styles.filterWrapper}>
-                    <div className={styles.sliderWrapper}>
-                        <div className={styles.labelWrapper}>
-                            <label>Price:</label>
-                        </div>
-                        <div className={styles.filterSlider}>
-                            <Slider
-                                value={price}
-                                min={50000}
-                                max={800000}
-                                valueLabelDisplay="on"
-                                aria-labelledby="range-slider"
-                                onChange={handlePriceChange}
-                            />
-                        </div>
-                    </div>
-                    <div className={styles.sliderWrapper}>
-                        <div className={styles.labelWrapper}>
-                            <label >Miles:</label>
-                        </div>
-                        <div className={styles.filterSlider}>
-                            <Slider
-                                value={miles}
-                                min={0}
-                                max={100000}
-                                valueLabelDisplay="on"
-                                aria-labelledby="range-slider"
-                                onChange={handleMilesChange}
-                            />
-                        </div>
-                    </div>
-                    <div className={styles.filterWrapperChildren}>
                         <div className={styles.sliderWrapper}>
                             <div className={styles.labelWrapper}>
-                                <label >Year:</label>
+                                <label>Price:</label>
                             </div>
                             <div className={styles.filterSlider}>
                                 <Slider
-                                    value={year}
-                                    min={1970}
-                                    max={2021}
+                                    value={price}
+                                    min={50000}
+                                    max={800000}
                                     valueLabelDisplay="on"
                                     aria-labelledby="range-slider"
-                                    onChange={handleYearChange}
+                                    onChange={handlePriceChange}
                                 />
                             </div>
                         </div>
-                        <div>
-                            <div>
-                                <label >Make:</label>
-                                <select name="make" id="make">
-                                    <option value="volvo">Volvo</option>
-                                </select>
+                        <div className={styles.sliderWrapper}>
+                            <div className={styles.labelWrapper}>
+                                <label >Miles:</label>
                             </div>
-                            <div>
-                                <label  >Model:</label>
-                                <select name="model" id="model">
-                                    <option value="V40">V40</option>
-                                </select>
+                            <div className={styles.filterSlider}>
+                                <Slider
+                                    value={miles}
+                                    min={0}
+                                    max={100000}
+                                    valueLabelDisplay="on"
+                                    aria-labelledby="range-slider"
+                                    onChange={handleMilesChange}
+                                />
                             </div>
-                            <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit" onClick={handleApply}>Apply filter</button>
                         </div>
-                    </div>
-                </div>
+                            <div className={styles.sliderWrapper}>
+                                <div className={styles.labelWrapper}>
+                                    <label >Year:</label>
+                                </div>
+                                <div className={styles.filterSlider}>
+                                    <Slider
+                                        value={year}
+                                        min={1970}
+                                        max={2021}
+                                        valueLabelDisplay="on"
+                                        aria-labelledby="range-slider"
+                                        onChange={handleYearChange}
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label >Make:</label>
+                                    <select name="make" id="make">
+                                        <option value="volvo">Volvo</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label  >Model:</label>
+                                    <select name="model" id="model">
+                                        <option value="V40">V40</option>
+                                    </select>
+                                </div>
+                                <button type="button" onClick={handleClear}>Clear filter</button>
+                                <button type="submit" onClick={handleApply}>Apply filter</button>
+                            </div>
+                        </div>
+                // If not, show an empty div
                 ) : (
                     <div></div>
-                )
-                }
+                )}
             </form>
         </div>
      );
