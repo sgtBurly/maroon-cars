@@ -7,6 +7,12 @@ const SearchComponent = () => {
 
     const { makesAndModels } = useContext(CarContext);
 
+    const [price, setPrice] = useState([50000, 800000]);
+    const [miles, setMiles] = useState([0, 100000]);
+    const [year, setYear] = useState([1970, 2021]);
+    const [make, setMake] = useState("");
+    const [model, setModel] = useState("");
+
     const handleSearch = (e) => {
         e.preventDefault();
         console.log('Search completed')
@@ -19,10 +25,6 @@ const SearchComponent = () => {
     const handleApply = () => {
         console.log("Filters have been applyed");
     }
-
-    const [price, setPrice] = useState([50000, 800000]);
-    const [miles, setMiles] = useState([0, 100000]);
-    const [year, setYear] = useState([1970, 2021]);
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
@@ -37,6 +39,11 @@ const SearchComponent = () => {
     const handleMilesChange = (e, newValue) => {
         setMiles(newValue);
         console.log("this is miles: ", miles);
+    }
+
+    const handleMakeChange = (e) => {
+        setMake(e.target.value);
+        console.log("this is make:", make)
     }
 
     return (
@@ -103,7 +110,8 @@ const SearchComponent = () => {
                         <div>
                             <div>
                                 <label >Make:</label>
-                                <select name="make" id="make">
+                                <select name="make" id="make" onChange={handleMakeChange}>
+                                    <option value="">Choose a Make</option>
                                     {makesAndModels && makesAndModels.map((obj, i) => (
                                         <option value={obj.make} key={i}>{obj.make}</option>
                                     ))}
