@@ -1,11 +1,23 @@
 .searchComponent {
-    margin: 2rem;
+    margin: 2rem auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+.searchBarWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
-.searchAndFilterWrapper {
-    width: 100%;
-    padding: 2rem;
-
+.filterWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    border: 1px solid black;
 }
 
 .searchInput {
@@ -37,10 +49,13 @@
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
-.filterWrapper {
+
+.filterWrapperChildren {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
@@ -51,5 +66,18 @@
 }
 
 .labelWrapper {
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
+.makeModeldropDowns {
+    border: 1px solid black;
+}
+
+.sliderWrapper {
+    border: 1px solid black;    
+}
+
+.dropDown {
     margin: 1rem;
 }
