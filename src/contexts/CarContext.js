@@ -10,6 +10,14 @@ const CarContextProvider = (props) => {
     setCars(require("../json/cars.json"));
   }, []);
 
+
+  //The function used in SearchComponent to send search data to CarContext
+  //Search data is sent as props
+  const sendSearchData = (props) => {
+    console.log("search function in CarContext");
+    console.log("Props in search func :", props);
+  }
+
     //Filter all the cars function that runs on form-submit
     let filteredCars;
     const filterCars = () => {
@@ -83,6 +91,7 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
+    sendSearchData
   }
 
   return (
