@@ -5,11 +5,13 @@ export const CarContext = createContext();
 const CarContextProvider = (props) => {
 
   const [cars, setCars] = useState([]);
+  const [makesAndModels, setMakesAndModels] = useState([]);
 
   useEffect(() => {
     setCars(require("../json/cars.json"));
   }, []);
 
+  useEffect()
   const makes = new Set();
   cars.forEach(car => makes.add(car.make));
   const makesArray = Array.from(makes);
