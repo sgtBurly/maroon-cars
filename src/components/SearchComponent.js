@@ -22,7 +22,7 @@ const SearchComponent = () => {
     const [miles, setMiles] = useState([0, 100000]);
     const [year, setYear] = useState([1970, 2021]);
 
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState(true)
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
@@ -39,9 +39,8 @@ const SearchComponent = () => {
         console.log("this is miles: ", miles);
     }
 
-    const filterOptionHandler = () => {
+    const toggleFilter = () => {
         setIsActive(!isActive)
-
         console.log('is active ',isActive)
     }
 
@@ -57,9 +56,11 @@ const SearchComponent = () => {
                     placeholder='Search...'
                     className={styles.searchInput}
                     />
-                    <button type="button" onClick={filterOptionHandler}>Filter</button>
+                    <button type="button" onClick={toggleFilter}>Filter</button>
                 </div>
-                <div className={styles.filterWrapper}>
+
+                { !isActive ? (
+                    <div className={styles.filterWrapper}>
                     <div className={styles.sliderWrapper}>
                         <div className={styles.labelWrapper}>
                             <label>Price:</label>
@@ -124,6 +125,10 @@ const SearchComponent = () => {
                         </div>
                     </div>
                 </div>
+                ) : (
+                    <div></div>
+                )
+                }
             </form>
         </div>
      );

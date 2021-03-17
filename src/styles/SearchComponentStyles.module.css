@@ -18,9 +18,6 @@
 
 }
 
-.filterWrapper {
-    display: none;
-}
 
 .filterWrapperChildren {
     display: flex;
