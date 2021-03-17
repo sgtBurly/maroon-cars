@@ -47,9 +47,6 @@ const SearchComponent = () => {
         setTextSearch(e.target.value)
         console.log("This is text search: ", textSearch)
     }
-    const [price, setPrice] = useState([50000, 800000]);
-    const [miles, setMiles] = useState([0, 100000]);
-    const [year, setYear] = useState([1970, 2021]);
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
