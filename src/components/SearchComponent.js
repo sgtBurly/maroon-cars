@@ -46,6 +46,7 @@ const SearchComponent = () => {
         const selectedIndex = e.target.options.selectedIndex;
         //Saving makes index
         const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
+        setModel(makesAndModels[makeIndex].models)
         console.log("this is make:", make)
     }
 
@@ -124,7 +125,10 @@ const SearchComponent = () => {
                                 <div>
                                     <label  >Model:</label>
                                     <select name="model" id="model">
-                                        <option value="V40">V40</option>
+                                    <option value="">Choose a Model</option>
+                                        {model.map((model, i) => (
+                                            <option value={model} key={i}>{model}</option>
+                                        ))}
                                     </select>
                                 </div>}
                             <button type="button" onClick={handleClear}>Clear filter</button>
