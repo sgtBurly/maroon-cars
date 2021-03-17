@@ -1,7 +1,7 @@
 .searchComponent {
-    margin: 2rem auto;
-    width: 80%;
+    margin: 2rem;
 }
+
 .searchAndFilterWrapper {
     width: 100%;
     padding: 2rem;
@@ -10,6 +10,28 @@
 
 .searchInput {
     margin: 1rem;
+    border: none;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.inputWrapper {
+    border: 2px solid #488B49;
+    padding: 0.7rem;
+    height: 3rem;
+    width: auto;
+    border-radius: 5px;
+}
+
+.searchButton {
+    background-color: transparent;
+    border: none;
+}
+
+.sliderWrapper {
+    margin: 2rem;
 }
 
 .formContainer {
@@ -22,12 +44,10 @@
     display: flex;
     flex-flow: row wrap;
     width: 100%;
-
 }
 
 .filterSlider {
-    margin: 1rem;
-    width: 200px;
+    width: 100px;
 }
 
 .labelWrapper {

@@ -1,22 +1,42 @@
 import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
 import styles from '../styles/SearchComponentStyles.module.css';
-import { CarContext } from "../contexts/CarContext";
+import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
 
-    const { makesAndModels } = useContext(CarContext);
+    const {sendSearchData} = useContext(CarContext);
 
-    const [price, setPrice] = useState([50000, 800000]);
-    const [miles, setMiles] = useState([0, 100000]);
-    const [year, setYear] = useState([1970, 2021]);
+    const minPrice = 10;
+    const maxPrice = 200
+
+    //declaring vaiables use in search component
+    const [price, setPrice] = useState([minPrice, maxPrice]);
+    const [miles, setMiles] = useState([null, null]);
+    const [year, setYear] = useState([null, null]);
+    const [textSearch, setTextSearch] = useState("");
+
+
+    //function fired on submit, it sends the filter variables
+    //into an empty object and then sends the object to CarContext.
+    const { makesAndModels } = useContext(CarContext);
     const [make, setMake] = useState("");
     const [model, setModel] = useState("");
-
     const handleSearch = (e) => {
+
         e.preventDefault();
-        console.log('Search completed')
+
+        const filterOptions = {
+            price,
+            miles,
+            year,
+            textSearch
+        }
+
+        console.log('Search completed');
+        sendSearchData(filterOptions);
     }
+
 
     const handleClear = () => {
         console.log('form has been cleared');
@@ -24,6 +44,11 @@ const SearchComponent = () => {
 
     const handleApply = () => {
         console.log("Filters have been applyed");
+    }
+
+    const textSearchHandler = (e) => {
+        setTextSearch(e.target.value)
+        console.log("This is text search: ", textSearch)
     }
 
     const handlePriceChange = (e, newValue) => {
@@ -57,11 +82,17 @@ const SearchComponent = () => {
             className={styles.formContainer}
             >
                 <div className={styles.searchAndFilterWrapper}>
-                    <input
-                    type="text"
-                    placeholder='Search...'
-                    className={styles.searchInput}
-                    />
+                    <span className={styles.inputWrapper}>
+                        <input
+                        type="text"
+                        placeholder='Search...'
+                        className={styles.searchInput}
+                        onChange={textSearchHandler}
+                        />
+                        <button className={styles.searchButton}>
+                            <i className={`fas fa-search ${styles.searchIcon}`}></i>
+                        </button>
+                    </span>
                     <button type="button">Filter</button>
                 </div>
                 <div className={styles.filterWrapper}>
@@ -72,9 +103,9 @@ const SearchComponent = () => {
                         <div className={styles.filterSlider}>
                             <Slider
                                 value={price}
-                                min={50000}
-                                max={800000}
-                                valueLabelDisplay="on"
+                                min={0}
+                                max={300}
+                                valueLabelDisplay="auto"
                                 aria-labelledby="range-slider"
                                 onChange={handlePriceChange}
                             />
