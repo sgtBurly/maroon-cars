@@ -6,10 +6,10 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
-    
+
     const minPrice = 10;
     const maxPrice = 200
-    
+
     //declaring vaiables use in search component
     const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
@@ -79,10 +79,7 @@ const SearchComponent = () => {
 
     return (
         <div className={styles.searchComponent}>
-            <form
-            onSubmit={handleSearch}
-            className={styles.formContainer}
-            >
+            <form onSubmit={handleSearch} className={styles.formContainer}>
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
                         <input
@@ -148,7 +145,7 @@ const SearchComponent = () => {
                                         onChange={handleMilesChange}
                                     />
                                 </div>
-                        <div>
+                            </div>
                             <div>
                                 <label >Make:</label>
                                 <select name="make" id="make" onChange={handleMakeChange}>
