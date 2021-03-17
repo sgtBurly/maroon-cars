@@ -3,9 +3,17 @@ import toast, { Toaster } from 'react-hot-toast';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
-
+    const basketStorageFunction = () => {
+        if ("basketItems" in localStorage) {
+            let customerBasket_Parsed = JSON.parse(localStorage.getItem("basketItems"));
+            return customerBasket_Parsed
+        }
+        else {
+            return []
+        }
+    }
     // The cart holding the array with the "saved" cars
-    const [customerBasket, setCustomerBasket] = useState([]);
+    const [customerBasket, setCustomerBasket] = useState(basketStorageFunction());
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
     const [latestPurchase, setLatestPurchase] = useState({});
 
@@ -19,7 +27,6 @@ export const BasketProvider = (props) => {
         //Here the car is added to the basket
         else {
             setCustomerBasket(prevState => [car, ...prevState]);
-          
             toast.success('Successfully added to your cart!')
             console.log('this is customerBasket: ', customerBasket);
         }
@@ -30,7 +37,12 @@ export const BasketProvider = (props) => {
         localStorage.setItem('basketItems', customerBasketString)
       },[customerBasket]);
 
-// created removeFromBasket to remove each clicked item from customerBasket by using filter method.
+    //When app is rendered check if there are any cars in customerBasket    
+    useEffect(() => {
+        
+      }, []);
+
+    // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
     const removeFromBasket = carVin => {
        const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
        setCustomerBasket(newCustomerBasket);
