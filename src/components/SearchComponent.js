@@ -70,13 +70,17 @@ const SearchComponent = () => {
             className={styles.formContainer}
             >
                 <div className={styles.searchAndFilterWrapper}>
-                    <input 
-                    type="text"
-                    placeholder='Search...'
-                    className={styles.searchInput}
-                    onChange={textSearchHandler}
-                    />
-                    <i class={`fas fa-search ${styles.searchIcon}`}></i>
+                    <span className={styles.inputWrapper}>
+                        <input 
+                        type="text"
+                        placeholder='Search...'
+                        className={styles.searchInput}
+                        onChange={textSearchHandler}
+                        />
+                        <button className={styles.searchButton}>
+                            <i class={`fas fa-search ${styles.searchIcon}`}></i>
+                        </button>
+                    </span>
                     <button type="button">Filter</button>
                 </div>
                 <div className={styles.filterWrapper}>
