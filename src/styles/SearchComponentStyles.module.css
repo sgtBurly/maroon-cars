@@ -1,33 +1,35 @@
+.searchComponent {
+    margin: 2rem auto;
+    width: 80%;
+}
 .searchAndFilterWrapper {
     width: 100%;
     padding: 2rem;
-    
+
 }
 
 .searchInput {
     margin: 1rem;
-    
 }
 
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-    
+
 }
 
 .filterWrapper {
-    display: flex; 
+    display: flex;
     flex-flow: row wrap;
     width: 100%;
-    
+
 }
 
 .filterSlider {
-    
-    width: 100px;
+    margin: 1rem;
+    width: 200px;
 }
 
 .labelWrapper {
     margin: 1rem;
-    
 }
