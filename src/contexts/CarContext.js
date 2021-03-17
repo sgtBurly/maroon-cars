@@ -11,7 +11,7 @@ const CarContextProvider = (props) => {
   }, []);
 
     //Filter all the cars function that runs on form-submit
-    let filteredCars;
+    let filteredCars = [];
     const filterCars = (price, miles, year) => {
 
       let minPrice;
@@ -115,7 +115,8 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
-    filterCars
+    filterCars,
+    filteredCars
   }
 
   return (
