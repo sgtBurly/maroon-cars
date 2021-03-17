@@ -17,8 +17,8 @@ const SearchComponent = () => {
     const [textSearch, setTextSearch] = useState("");
 
 
-    //function fired on submit, it sends the filter variables 
-    //into an empty array and then sends the array to CarContext.
+    //function fired on submit, it sends the filter variables
+    //into an empty object and then sends the object to CarContext.
     const handleSearch = (e) => {
 
         e.preventDefault();
@@ -63,22 +63,22 @@ const SearchComponent = () => {
         console.log("this is miles: ", miles);
     }
 
-    return ( 
+    return (
         <div className={styles.searchComponent}>
-            <form 
+            <form
             onSubmit={handleSearch}
             className={styles.formContainer}
             >
                 <div className={styles.searchAndFilterWrapper}>
                     <span className={styles.inputWrapper}>
-                        <input 
+                        <input
                         type="text"
                         placeholder='Search...'
                         className={styles.searchInput}
                         onChange={textSearchHandler}
                         />
                         <button className={styles.searchButton}>
-                            <i class={`fas fa-search ${styles.searchIcon}`}></i>
+                            <i className={`fas fa-search ${styles.searchIcon}`}></i>
                         </button>
                     </span>
                     <button type="button">Filter</button>
@@ -97,7 +97,7 @@ const SearchComponent = () => {
                                 aria-labelledby="range-slider"
                                 onChange={handlePriceChange}
                             />
-                        </div> 
+                        </div>
                     </div>
                     <div className={styles.sliderWrapper}>
                         <div className={styles.labelWrapper}>
@@ -129,25 +129,25 @@ const SearchComponent = () => {
                                     onChange={handleYearChange}
                                 />
                             </div>
-                        </div>                 
+                        </div>
                         <div>
                             <div>
                                 <label >Make:</label>
                                 <select name="make" id="make">
                                     <option value="volvo">Volvo</option>
                                 </select>
-                            </div> 
+                            </div>
                             <div>
                                 <label  >Model:</label>
                                 <select name="model" id="model">
                                     <option value="V40">V40</option>
                                 </select>
-                            </div> 
+                            </div>
                             <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="button" onClick={handleApply}>Apply filter</button>
+                            <button type="submit" onClick={handleApply}>Apply filter</button>
                         </div>
                     </div>
-                </div>    
+                </div>
             </form>
         </div>
      );
