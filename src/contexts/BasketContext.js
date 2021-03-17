@@ -19,8 +19,12 @@ export const BasketProvider = (props) => {
         //Here the car is added to the basket
         else {
             setCustomerBasket(prevState => [car, ...prevState]);
-            localStorage.setItem('basketItems', customerBasket);
+
+            let customerBasketString = JSON.stringify(customerBasket);
+
+            localStorage.setItem('basketItems', customerBasketString)
             toast.success('Successfully added to your cart!')
+            console.log('this is customerBasket: ', customerBasket);
         }
     }
 // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
