@@ -19,14 +19,17 @@ export const BasketProvider = (props) => {
         //Here the car is added to the basket
         else {
             setCustomerBasket(prevState => [car, ...prevState]);
-
-            let customerBasketString = JSON.stringify(customerBasket);
-
-            localStorage.setItem('basketItems', customerBasketString)
+          
             toast.success('Successfully added to your cart!')
             console.log('this is customerBasket: ', customerBasket);
         }
     }
+    //Stringifys customerBasket when ready and adds to localstorage
+    useEffect(() => {
+        let customerBasketString = JSON.stringify(customerBasket);
+        localStorage.setItem('basketItems', customerBasketString)
+      },[customerBasket]);
+
 // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
     const removeFromBasket = carVin => {
        const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
