@@ -5,6 +5,11 @@ import styles from '../styles/SearchComponentStyles.module.css';
 
 const SearchComponent = () => {
 
+    const [price, setPrice] = useState([50000, 800000]);
+    const [miles, setMiles] = useState([0, 100000]);
+    const [year, setYear] = useState([1970, 2021]);
+    const [isActive, setIsActive] = useState(false);
+
     const handleSearch = (e) => {
         e.preventDefault();
         console.log('Search completed')
@@ -17,12 +22,6 @@ const SearchComponent = () => {
     const handleApply = () => {
         console.log("Filters have been applyed");
     }
-
-    const [price, setPrice] = useState([50000, 800000]);
-    const [miles, setMiles] = useState([0, 100000]);
-    const [year, setYear] = useState([1970, 2021]);
-
-    const [isActive, setIsActive] = useState(true)
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
@@ -41,7 +40,6 @@ const SearchComponent = () => {
 
     const toggleFilter = () => {
         setIsActive(!isActive)
-        console.log('is active ',isActive)
     }
 
     return (
@@ -56,11 +54,11 @@ const SearchComponent = () => {
                     placeholder='Search...'
                     className={styles.searchInput}
                     />
-                    <button type="button" onClick={toggleFilter}>Filter</button>
+                    <button type="button" onClick={toggleFilter}>Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
                 </div>
 
                 {/* only show this part if formToggler is truthy */}
-                { !isActive ? (
+                { isActive ? (
                     <div className={styles.filterWrapper}>
                         <div className={styles.filterLeft}>
                             <div className={styles.sliderWrapper}>
