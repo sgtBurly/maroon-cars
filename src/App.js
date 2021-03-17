@@ -12,7 +12,6 @@ import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
 
-
 function App() {
   return (
     <div className="App">
