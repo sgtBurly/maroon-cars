@@ -49,3 +49,15 @@
     margin: 2rem;
     padding: 0.5rem;
 }
+
+.makeModeldropDowns {
+    border: 1px solid black;
+}
+
+.sliderWrapper {
+    border: 1px solid black;    
+}
+
+.dropDown {
+    margin: 1rem;
+}

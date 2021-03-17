@@ -111,17 +111,19 @@ const SearchComponent = () => {
                                 </div>
                             </div>
                             <div>
-                                <div>
-                                    <label>Make:</label>
-                                    <select name="make" id="make">
-                                        <option value="volvo">Volvo</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label  >Model:</label>
-                                    <select name="model" id="model">
-                                        <option value="V40">V40</option>
-                                    </select>
+                                <div className={styles.makeModeldropDowns}>
+                                    <div className={styles.makeWrapper}>
+                                        <label>Make:</label>
+                                        <select className={styles.dropDown} name="make" id="make">
+                                            <option value="volvo">Volvo</option>
+                                        </select>
+                                    </div>
+                                    <div className={styles.modelWrapper}>
+                                        <label>Model:</label>
+                                        <select className={styles.dropDown} name="model" id="model">
+                                            <option value="V40">V40</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <button type="button" onClick={handleClear}>Clear filter</button>
                                 <button type="submit" onClick={handleApply}>Apply filter</button>
