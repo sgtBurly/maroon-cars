@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
 import styles from '../styles/SearchComponentStyles.module.css';
-
+import { CarContext } from '../contexts/CarContext';
 
 const SearchComponent = () => {
-
+    const { filterCars } = useContext(CarContext);
     const handleSearch = (e) => {
         e.preventDefault();
         console.log('Search completed')
@@ -15,7 +15,7 @@ const SearchComponent = () => {
     }
 
     const handleApply = () => {
-        console.log("Filters have been applyed");
+       filterCars(price, miles, year )
     }
 
     const [price, setPrice] = useState([50000, 800000]);
@@ -24,17 +24,16 @@ const SearchComponent = () => {
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
-        console.log("this is price ", price);
-      };
+    }
 
     const handleYearChange = (e, newValue) => {
         setYear(newValue);
-        console.log("this is year: ", year );
+        
     }
 
     const handleMilesChange = (e, newValue) => {
         setMiles(newValue);
-        console.log("this is miles: ", miles);
+      
     }
 
     return (

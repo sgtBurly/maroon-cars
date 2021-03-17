@@ -12,16 +12,46 @@ const CarContextProvider = (props) => {
 
     //Filter all the cars function that runs on form-submit
     let filteredCars;
-    const filterCars = () => {
-      let minPrice = 299379;
-      let maxPrice = 300000;
-      let minMiles = 12326;
-      let maxMiles = 13000;
-      let minYear = 2005;
-      let maxYear = 2008;
-      // let filterModel = "";
-      // let filterMake =  ""
+    const filterCars = (price, miles, year) => {
 
+      let minPrice;
+      let maxPrice; 
+      let minMiles;
+      let maxMiles; 
+      let minYear; 
+      let maxYear; 
+
+
+      price.forEach(i => {
+        switch(i) {
+          case i = price[0]: 
+          minPrice = i
+          case i = price[1]: 
+          maxPrice = i
+          break;
+        }
+      })
+      miles.forEach(i => {
+        switch(i) {
+          case i = miles[0]: 
+          minMiles = i
+          case i = miles[1]: 
+          maxMiles = i
+          break;
+        }
+      })
+      year.forEach(i => {
+        switch(i) {
+          case i = year[0]: 
+          minYear = i
+          case i = year[1]: 
+          maxYear = i
+          break;
+        }
+      })
+      
+      // // let filterModel = "";
+      // let filterMake =  ""
       //Add the cars that are pass the filtration process
       filteredCars = cars.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
@@ -29,6 +59,8 @@ const CarContextProvider = (props) => {
       car.year <= maxYear);
       // car.make === filterMake || car.make === "" &&
       // car.model === filterModel || car.model === "")
+      console.log("This is NEW filteredCars: ")
+      console.log(filteredCars)
     }
 
   const searchWord = 'VOLVO';
@@ -54,10 +86,10 @@ const CarContextProvider = (props) => {
     console.log('In useEffect, filtered from textsearch: ', filteredCarsSearch);
   }, [cars]);
 
-  useEffect(() => {
-    filterCars();
-    console.log("This is the filteredCars array, from filters:", filteredCars)
-  }, [cars])
+  // useEffect(() => {
+  //   console.log("This is the filteredCars array, from filters:", filteredCars)
+  //   console.log(filteredCars)
+  // }, [filterCars])
 
   useEffect(() => {
     // To find every unique make in cars, uses Set.
@@ -83,6 +115,7 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
+    filterCars
   }
 
   return (
