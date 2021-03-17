@@ -5,9 +5,7 @@ import { useHistory } from "react-router-dom";
 
 //receiving props from parent CardsWrapper
 function CarCard(props) {
-
     const { addToBasket } = useContext(BasketContext);
-
 //Saving the history hook in a variable
 const historyHook = useHistory();
 
@@ -20,7 +18,6 @@ const handleClick = (e) => {
     e.stopPropagation();
     addToBasket(props.data);
 }
-
     return (
         <div className="col-lg-4 col-sm-6 mb-3">
             <div className={`${CarCardStyles.carCard} h-100`} onClick={clickToRender}>
