@@ -50,7 +50,7 @@ const SearchComponent = () => {
             onSubmit={handleSearch}
             className={styles.formContainer}
             >
-                <div className={styles.searchAndFilterWrapper}>
+                <div className={styles.searchBarWrapper}>
                     <input
                     type="text"
                     placeholder='Search...'
@@ -62,36 +62,22 @@ const SearchComponent = () => {
                 {/* only show this part if formToggler is truthy */}
                 { !isActive ? (
                     <div className={styles.filterWrapper}>
-                        <div className={styles.sliderWrapper}>
-                            <div className={styles.labelWrapper}>
-                                <label>Price:</label>
+                        <div className={styles.filterLeft}>
+                            <div className={styles.sliderWrapper}>
+                                <div className={styles.labelWrapper}>
+                                    <label>Price:</label>
+                                </div>
+                                <div className={styles.filterSlider}>
+                                    <Slider
+                                        value={price}
+                                        min={50000}
+                                        max={800000}
+                                        valueLabelDisplay="on"
+                                        aria-labelledby="range-slider"
+                                        onChange={handlePriceChange}
+                                    />
+                                </div>
                             </div>
-                            <div className={styles.filterSlider}>
-                                <Slider
-                                    value={price}
-                                    min={50000}
-                                    max={800000}
-                                    valueLabelDisplay="on"
-                                    aria-labelledby="range-slider"
-                                    onChange={handlePriceChange}
-                                />
-                            </div>
-                        </div>
-                        <div className={styles.sliderWrapper}>
-                            <div className={styles.labelWrapper}>
-                                <label >Miles:</label>
-                            </div>
-                            <div className={styles.filterSlider}>
-                                <Slider
-                                    value={miles}
-                                    min={0}
-                                    max={100000}
-                                    valueLabelDisplay="on"
-                                    aria-labelledby="range-slider"
-                                    onChange={handleMilesChange}
-                                />
-                            </div>
-                        </div>
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label >Year:</label>
@@ -107,9 +93,26 @@ const SearchComponent = () => {
                                     />
                                 </div>
                             </div>
+                        </div>
+                        <div className={styles.filterRight}>
+                            <div className={styles.sliderWrapper}>
+                                <div className={styles.labelWrapper}>
+                                    <label >Miles:</label>
+                                </div>
+                                <div className={styles.filterSlider}>
+                                    <Slider
+                                        value={miles}
+                                        min={0}
+                                        max={100000}
+                                        valueLabelDisplay="on"
+                                        aria-labelledby="range-slider"
+                                        onChange={handleMilesChange}
+                                    />
+                                </div>
+                            </div>
                             <div>
                                 <div>
-                                    <label >Make:</label>
+                                    <label>Make:</label>
                                     <select name="make" id="make">
                                         <option value="volvo">Volvo</option>
                                     </select>
@@ -124,6 +127,7 @@ const SearchComponent = () => {
                                 <button type="submit" onClick={handleApply}>Apply filter</button>
                             </div>
                         </div>
+                    </div>
                 // If not, show an empty div
                 ) : (
                     <div></div>
