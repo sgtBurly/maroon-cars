@@ -1,7 +1,3 @@
-.searchComponent {
-    
-}
-
 .searchAndFilterWrapper {
     width: 100%;
     padding: 2rem;
@@ -25,13 +21,6 @@
     width: 100%;
     
 }
-
-/* .sliderWrapper {
-    display: flex;
-    flex-flow: row wrap;
-    width: 50%;
-    
-} */
 
 .filterSlider {
     

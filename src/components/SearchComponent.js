@@ -14,6 +14,10 @@ const SearchComponent = () => {
         console.log('form has been cleared');
     }
 
+    const handleApply = () => {
+        console.log("Filters have been applyed");
+    }
+
     const [price, setPrice] = useState([null, null]);
     const [miles, setMiles] = useState([null, null]);
     const [year, setYear] = useState([null, null]);
@@ -108,7 +112,7 @@ const SearchComponent = () => {
                                 </select>
                             </div> 
                             <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit" >Apply filter</button>
+                            <button type="submit" onClick={handleApply}>Apply filter</button>
                         </div>
                     </div>
                 </div>    
