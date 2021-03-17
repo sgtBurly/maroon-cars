@@ -5,15 +5,19 @@ import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
 
-    const {sendSearchData} = useContext(CarContext);
+    const {sendSearchData, makesAndModels} = useContext(CarContext);
+    
     const minPrice = 10;
     const maxPrice = 200
+    
     //declaring vaiables use in search component
+    const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
     const [miles, setMiles] = useState([null, null]);
     const [year, setYear] = useState([null, null]);
     const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
+    const [model, setModel] = useState("");
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
     const handleSearch = (e) => {
@@ -58,6 +62,15 @@ const SearchComponent = () => {
     const handleMilesChange = (e, newValue) => {
         setMiles(newValue);
         console.log("this is miles: ", miles);
+    }
+
+    const handleMakeChange = (e) => {
+        setMake(e.target.value);
+        const selectedIndex = e.target.options.selectedIndex;
+        //Saving makes index
+        const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
+        setModel(makesAndModels[makeIndex].models)
+        console.log("this is make:", make)
     }
 
     const toggleFilter = () => {
@@ -135,25 +148,29 @@ const SearchComponent = () => {
                                         onChange={handleMilesChange}
                                     />
                                 </div>
-                            </div>
+                        <div>
                             <div>
-                                <div className={styles.makeModeldropDowns}>
-                                    <div className={styles.makeWrapper}>
-                                        <label>Make:</label>
-                                        <select className={styles.dropDown} name="make" id="make">
-                                            <option value="volvo">Volvo</option>
-                                        </select>
-                                    </div>
-                                    <div className={styles.modelWrapper}>
-                                        <label>Model:</label>
-                                        <select className={styles.dropDown} name="model" id="model">
-                                            <option value="V40">V40</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <button type="button" onClick={handleClear}>Clear filter</button>
-                                <button type="submit" onClick={handleApply}>Apply filter</button>
+                                <label >Make:</label>
+                                <select name="make" id="make" onChange={handleMakeChange}>
+                                    <option value="">Choose a Make</option>
+                                    {makesAndModels && makesAndModels.map((obj, i) => (
+                                        <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
+                                    ))}
+                                </select>
                             </div>
+                            {/*Model shows only when make is picked */}
+                            {make &&
+                                <div>
+                                    <label  >Model:</label>
+                                    <select name="model" id="model">
+                                    <option value="">Choose a Model</option>
+                                        {model.map((model, i) => (
+                                            <option value={model} key={i}>{model}</option>
+                                        ))}
+                                    </select>
+                                </div>}
+                            <button type="button" onClick={handleClear}>Clear filter</button>
+                            <button type="submit" onClick={handleApply}>Apply filter</button>
                         </div>
                     </div>
                 // If not, show an empty div

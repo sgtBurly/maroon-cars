@@ -71,9 +71,10 @@ const CarContextProvider = (props) => {
     // To find every unique make in cars, uses Set.
     const makes = new Set();
     cars.forEach(car => makes.add(car.make));
+    const makesArray = Array.from(makes).sort()
 
     const modelsArray = [];
-    makes.forEach( make => {
+    makesArray.forEach( make => {
       modelsArray.push({make: make, models: []});
     });
 
