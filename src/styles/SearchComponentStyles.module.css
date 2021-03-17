@@ -5,7 +5,7 @@
 .searchAndFilterWrapper {
     width: 100%;
     padding: 2rem;
-    
+
 }
 
 .searchInput {
@@ -37,11 +37,11 @@
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-    
+
 }
 
 .filterWrapper {
-    display: flex; 
+    display: flex;
     flex-flow: row wrap;
     width: 100%;
 }
@@ -52,5 +52,4 @@
 
 .labelWrapper {
     margin: 1rem;
-    
 }

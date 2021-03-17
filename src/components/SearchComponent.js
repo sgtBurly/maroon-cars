@@ -47,6 +47,9 @@ const SearchComponent = () => {
         setTextSearch(e.target.value)
         console.log("This is text search: ", textSearch)
     }
+    const [price, setPrice] = useState([50000, 800000]);
+    const [miles, setMiles] = useState([0, 100000]);
+    const [year, setYear] = useState([1970, 2021]);
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
@@ -108,7 +111,7 @@ const SearchComponent = () => {
                                 value={miles}
                                 min={0}
                                 max={100000}
-                                valueLabelDisplay="auto"
+                                valueLabelDisplay="on"
                                 aria-labelledby="range-slider"
                                 onChange={handleMilesChange}
                             />
@@ -122,9 +125,9 @@ const SearchComponent = () => {
                             <div className={styles.filterSlider}>
                                 <Slider
                                     value={year}
-                                    min={1930}
-                                    max={2020}
-                                    valueLabelDisplay="auto"
+                                    min={1970}
+                                    max={2021}
+                                    valueLabelDisplay="on"
                                     aria-labelledby="range-slider"
                                     onChange={handleYearChange}
                                 />
