@@ -7,11 +7,15 @@ const SearchComponent = () => {
 
     const {sendSearchData} = useContext(CarContext);
 
+    const minPrice = 10;
+    const maxPrice = 200
+
     //declaring vaiables use in search component
-    const [price, setPrice] = useState([null, null]);
+    const [price, setPrice] = useState([minPrice, maxPrice]);
     const [miles, setMiles] = useState([null, null]);
     const [year, setYear] = useState([null, null]);
     const [textSearch, setTextSearch] = useState("");
+
 
     //function fired on submit, it sends the filter variables 
     //into an empty array and then sends the array to CarContext.
@@ -19,17 +23,17 @@ const SearchComponent = () => {
 
         e.preventDefault();
 
-        filterOptions.push(price)
-        filterOptions.push(miles)
-        filterOptions.push(year)
-        // searchedText.push(textSearch)
+        const filterOptions = {
+            price,
+            miles,
+            year,
+            textSearch
+        }
 
         console.log('Search completed');
         sendSearchData(filterOptions);
     }
 
-    const filterOptions = []
-    // const searchedText = []
 
     const handleClear = () => {
         console.log('form has been cleared');
@@ -70,9 +74,9 @@ const SearchComponent = () => {
                     type="text"
                     placeholder='Search...'
                     className={styles.searchInput}
-                    value={textSearch}
                     onChange={textSearchHandler}
                     />
+                    <i class={`fas fa-search ${styles.searchIcon}`}></i>
                     <button type="button">Filter</button>
                 </div>
                 <div className={styles.filterWrapper}>
@@ -84,10 +88,10 @@ const SearchComponent = () => {
                             <Slider
                                 value={price}
                                 min={0}
-                                max={1000000}
+                                max={300}
                                 valueLabelDisplay="auto"
                                 aria-labelledby="range-slider"
-                                onChange={() => {handlePriceChange()}}
+                                onChange={handlePriceChange}
                             />
                         </div> 
                     </div>
