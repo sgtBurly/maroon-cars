@@ -121,6 +121,7 @@ const SearchComponent = () => {
                                     ))}
                                 </select>
                             </div>
+                            {/*Model shows only when make is picked */}
                             {make &&
                                 <div>
                                     <label  >Model:</label>
