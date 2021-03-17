@@ -3,11 +3,20 @@ export const CarContext = createContext();
 
 const CarContextProvider = (props) => {
   const [cars, setCars] = useState([]);
+  const [makesAndModels, setMakesAndModels] = useState([]);
   //const [filteredCars, setfilteredCars] = useState([]);
 
   useEffect(() => {
     setCars(require("../json/cars.json"));
   }, []);
+
+
+  //The function used in SearchComponent to send search data to CarContext
+  //Search data is sent as props
+  const sendSearchData = (props) => {
+    console.log("search function in CarContext");
+    console.log("Props in search func :", props);
+  }
 
     //Filter all the cars function that runs on form-submit
     let filteredCars;
@@ -58,8 +67,32 @@ const CarContextProvider = (props) => {
     console.log("This is the filteredCars array, from filters:", filteredCars)
   }, [cars])
 
+  useEffect(() => {
+    // To find every unique make in cars, uses Set.
+    const makes = new Set();
+    cars.forEach(car => makes.add(car.make));
+    const makesArray = Array.from(makes).sort()
+
+    const modelsArray = [];
+    makesArray.forEach( make => {
+      modelsArray.push({make: make, models: []});
+    });
+
+    // modelsArray now has a list of objects with a make-key/value and empty models-array. Below each model is added to the corresponding make.
+    cars.forEach((car) => {
+      modelsArray.forEach((obj) => {
+        if(car.make === obj.make) {
+          obj.models.push(car.model)
+        }
+      })
+    })
+    setMakesAndModels(modelsArray)
+  },[cars]);
+
   const values = {
-    cars
+    cars,
+    makesAndModels,
+    sendSearchData
   }
 
   return (
