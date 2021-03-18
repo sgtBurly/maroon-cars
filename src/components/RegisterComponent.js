@@ -1,9 +1,16 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
 
-
 const RegisterComponent = () => {
+
+    const [password, setPassword] = useState("")
+
+    const handleUserPassword = (e) => {
+        setPassword(e.target.value);
+        console.log("THis is user password: ", password)
+    }
+
     return ( 
         <div>
             <form className={styles.Form} onSubmit={handleSubmit}>
@@ -25,7 +32,7 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={handleUserPassword} placeholder="Password..." required/>
-                        <input className={styles.textInput} type="password" onChange={handleUserComfirmPassword} placeholder="confirm password..." required/>
+                        <input className={styles.textInput} type="password" onChange={handleUserComfirmPassword} placeholder="Confirm password..." required/>
                         </div>
                     </div>
                     <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
