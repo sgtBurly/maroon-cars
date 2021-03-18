@@ -28,7 +28,9 @@ const SearchComponent = () => {
             price,
             miles,
             year,
-            textSearch
+            textSearch,
+            make,
+            model
         }
         console.log('Search completed');
         sendSearchData(filterOptions);
