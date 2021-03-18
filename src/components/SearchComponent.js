@@ -15,7 +15,7 @@ const SearchComponent = () => {
     }
 
     const handleApply = () => {
-       filterCars(price, miles, year )
+       filterCars(price, miles, year)
     }
 
     const [price, setPrice] = useState([50000, 800000]);
