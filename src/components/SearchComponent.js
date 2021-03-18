@@ -91,7 +91,7 @@ const SearchComponent = () => {
                             <i className={`fas fa-search ${styles.searchIcon}`}></i>
                         </button>
                     </span>
-                    <button type="button" onClick={toggleFilter}>Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
+                    <button type="button" onClick={toggleFilter} className={styles.toggleFilterBtn} >Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
                 </div>
 
                 {/* only show this part if formToggler is truthy */}
@@ -146,7 +146,7 @@ const SearchComponent = () => {
                                 </div>
                             </div>
                             <div>
-                                <label >Make:</label>
+                                <label>Make:</label>
                                 <select name="make" id="make" onChange={handleMakeChange}>
                                     <option value="">Choose a Make</option>
                                     {makesAndModels && makesAndModels.map((obj, i) => (
@@ -165,8 +165,8 @@ const SearchComponent = () => {
                                         ))}
                                     </select>
                                 </div>}
-                            <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit">Apply filter</button>
+                            <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
+                            <button type="submit" className={styles.applyFilterBtn}>Apply filter</button>
                         </div>
                     </div>
                 // If not, show an empty div

@@ -3,53 +3,84 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .searchBarWrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .filterWrapper {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .searchInput {
-    margin: 1rem;
+    /* margin: 1rem; */
     border: none;
+    padding: 0.5rem;
+    /* border: 2px solid #488B49; */
+    border-radius: 5px;
+    position: relative;
+    top: -10px;
+
+}
+
+.inputWrapper {
+    padding: 0.7rem;
+    height: 3rem;
+    width: auto;
+    border-radius: 5px;
+    border: 2px solid #488B49;
+}
+
+/* Förstoringsglaset */
+.searchButton {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    top: -10px;
+}
+.searchButton i:hover {
+    color: #488B49;
 }
 
 .searchInput:focus {
     outline: none;
 }
 
-.inputWrapper {
+
+.toggleFilterBtn {
     border: 2px solid #488B49;
-    padding: 0.7rem;
-    height: 3rem;
-    width: auto;
     border-radius: 5px;
+    background-color: white;
+    padding: 0.3rem;
 }
 
-.searchButton {
-    background-color: transparent;
-    border: none;
+.toggleFilterBtn:hover {
+    color: #488B49;
+}
+
+.toggleFilterBtn span {
+    color: inherit;
 }
 
 .sliderWrapper {
-    margin: 2rem;
+    padding: 0rem 2rem;
+    margin: 0.5rem;
+    border: 2px solid #488B49;
+    border-radius: 5px;
 }
 
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
 }
@@ -66,7 +97,7 @@
 }
 
 .labelWrapper {
-    margin: 2rem;
+    margin: 0.5rem;
     padding: 0.5rem;
 }
 
@@ -74,10 +105,36 @@
     border: 1px solid black;
 }
 
-.sliderWrapper {
-    border: 1px solid black;    
-}
-
 .dropDown {
     margin: 1rem;
 }
+
+
+/* Clear filter + Apply filter buttons */
+.clearFilterBtn {
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: white;
+    padding: 0.3rem;
+    margin: 0.5rem;
+}
+
+.clearFilterBtn:hover {
+    color: #488B49;
+    border: 2px solid #488B49;
+}
+
+.applyFilterBtn {
+    border: 2px solid;
+    border-radius: 5px;
+    background-color: white;
+    padding: 0.3rem;
+    margin: 0.5rem;
+}
+
+.applyFilterBtn:hover {
+    color: #488B49;
+    border: 2px solid #488B49;
+
+}
+
