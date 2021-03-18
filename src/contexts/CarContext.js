@@ -35,9 +35,7 @@ const CarContextProvider = (props) => {
       let maxMiles = filterOptions.miles[1];
       let minYear = filterOptions.year[0];
       let maxYear = filterOptions.year[1];
-
       //Add the cars that are pass the filtration process
-
       const filterResult = cars.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
       car.miles <= maxMiles && car.year >= minYear &&
@@ -46,7 +44,6 @@ const CarContextProvider = (props) => {
       // car.model === filterModel || car.model === "")
       console.log("This is NEW filteredCars: ")
       console.log(filterResult)
-
       const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
       setfilteredCars(searchResult);
     }
@@ -69,17 +66,8 @@ const CarContextProvider = (props) => {
     }
   }
 
-  //let filteredCarsSearch;
-
-  /* useEffect( () => {
-    filteredCarsSearch = filterTextInput(cars, searchWord)
-    console.log('In useEffect, filtered from textsearch: ', filteredCarsSearch);
-  }, [cars]); */
-
-  // useEffect(() => {
-  //   console.log("This is the filteredCars array, from filters:", filteredCars)
-  //   console.log(filteredCars)
-  // }, [filterCars])
+  
+  //DOES IT WORK???????????????????????????????
 
   useEffect(() => {
     // To find every unique make in cars, uses Set.
