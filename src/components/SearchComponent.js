@@ -18,23 +18,23 @@ const SearchComponent = () => {
     const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [model, setModel] = useState("");
+    const [modelOptions, setModelOptions] = useState(null);
+
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
-    const handleSearch = (e) => {
-
+    const handleSearch = e => {
         e.preventDefault();
-
         const filterOptions = {
             price,
             miles,
             year,
-            textSearch
+            textSearch,
+            make,
+            model
         }
-
         console.log('Search completed');
         sendSearchData(filterOptions);
     }
-
 
     const handleClear = () => {
         console.log('form has been cleared');
@@ -43,38 +43,22 @@ const SearchComponent = () => {
     const handleApply = () => {
         console.log("Filters have been applyed");
     }
-
-    const textSearchHandler = (e) => {
-        setTextSearch(e.target.value)
-        console.log("This is text search: ", textSearch)
-    }
-
-    const handlePriceChange = (e, newValue) => {
-        setPrice(newValue);
-        console.log("this is price ", price);
-    };
-
-    const handleYearChange = (e, newValue) => {
-        setYear(newValue);
-        console.log("this is year: ", year );
-    }
-
-    const handleMilesChange = (e, newValue) => {
-        setMiles(newValue);
-        console.log("this is miles: ", miles);
-    }
-
+    const toggleFilter = () =>  setIsActive(!isActive);
+    const textSearchHandler = e => setTextSearch(e.target.value);
+    const handlePriceChange = (e, newValue) => setPrice(newValue);
+    const handleYearChange = (e, newValue) => setYear(newValue);
+    const handleMilesChange = (e, newValue) => setMiles(newValue);
+    const handleModelChange = e => setModel(e.target.value);
     const handleMakeChange = (e) => {
         setMake(e.target.value);
-        const selectedIndex = e.target.options.selectedIndex;
-        //Saving makes index
-        const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
-        setModel(makesAndModels[makeIndex].models)
-        console.log("this is make:", make)
-    }
-
-    const toggleFilter = () => {
-        setIsActive(!isActive)
+        if(e.target.value !== "") {
+            const selectedIndex = e.target.options.selectedIndex;
+            //Saving makes index
+            const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
+            setModelOptions(Array.from(makesAndModels[makeIndex].models))
+        } else {
+            setModelOptions(null);
+        }
     }
 
     return (
@@ -156,12 +140,12 @@ const SearchComponent = () => {
                                 </select>
                             </div>
                             {/*Model shows only when make is picked */}
-                            {make &&
+                            {modelOptions &&
                                 <div>
-                                    <label  >Model:</label>
-                                    <select name="model" id="model">
+                                    <label>Model:</label>
+                                    <select name="model" id="model" onChange={handleModelChange}>
                                     <option value="">Choose a Model</option>
-                                        {model.map((model, i) => (
+                                        {modelOptions.map((model, i) => (
                                             <option value={model} key={i}>{model}</option>
                                         ))}
                                     </select>
@@ -177,6 +161,6 @@ const SearchComponent = () => {
             </form>
         </div>
      );
-    }
+}
 
 export default SearchComponent;
