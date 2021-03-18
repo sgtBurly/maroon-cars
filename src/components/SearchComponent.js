@@ -6,15 +6,16 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
+    
 
-    const minPrice = 10;
-    const maxPrice = 200
+    const minPrice = 0;
+    const maxPrice = 1000000
 
     //declaring vaiables use in search component
     const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
-    const [miles, setMiles] = useState([null, null]);
-    const [year, setYear] = useState([null, null]);
+    const [miles, setMiles] = useState([0, 100000]);
+    const [year, setYear] = useState([1960, 2021]);
     const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [model, setModel] = useState("");
@@ -40,9 +41,9 @@ const SearchComponent = () => {
         console.log('form has been cleared');
     }
 
-    const handleApply = () => {
-       filterCars(price, miles, year)
-    }
+    // const handleApply = () => {
+    //    filterCars(price, miles, year)
+    // }
 
     const textSearchHandler = (e) => {
         setTextSearch(e.target.value)
@@ -51,7 +52,7 @@ const SearchComponent = () => {
 
     const handlePriceChange = (e, newValue) => {
         setPrice(newValue);
-        console.log("this is price ", price);
+        // console.log("this is price ", price);
     };
 
     const handleYearChange = (e, newValue) => {
@@ -106,8 +107,8 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={price}
-                                        min={50000}
-                                        max={800000}
+                                        min={0}
+                                        max={1000000}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handlePriceChange}
@@ -121,7 +122,7 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={year}
-                                        min={1970}
+                                        min={1960}
                                         max={2021}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
@@ -167,7 +168,7 @@ const SearchComponent = () => {
                                     </select>
                                 </div>}
                             <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit" onClick={handleApply}>Apply filter</button>
+                            <button type="submit">Apply filter</button>
                         </div>
                     </div>
                 // If not, show an empty div

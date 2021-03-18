@@ -17,13 +17,15 @@ const CarContextProvider = (props) => {
 
   //The function used in SearchComponent to send search data to CarContext
   //Search data is sent as props
-  const sendSearchData = (props) => {
+  const sendSearchData = (filterOptions) => {
+    filterCars(filterOptions.price, filterOptions.miles, filterOptions.year);
     console.log("search function in CarContext");
-    console.log("Props in search func :", props);
+    console.log("Props in search func :", filterOptions);
   }
 
     //Filter all the cars function that runs on form-submit
     // let filteredCars = [];
+
     const filterCars = (price, miles, year) => {
 
       let minPrice = price[0];
@@ -36,14 +38,16 @@ const CarContextProvider = (props) => {
       // // let filterModel = "";
       // let filterMake =  ""
       //Add the cars that are pass the filtration process
-      filteredCars = cars.filter(car => car.price >= minPrice &&
+      
+      const searchResult = cars.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
       car.miles <= maxMiles && car.year >= minYear &&
       car.year <= maxYear);
       // car.make === filterMake || car.make === "" &&
       // car.model === filterModel || car.model === "")
       console.log("This is NEW filteredCars: ")
-      console.log(filteredCars)
+      console.log(searchResult)
+      setfilteredCars(searchResult);
     }
 
   const searchWord = 'VOLVO';
@@ -98,7 +102,7 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
-    sendSearchData
+    sendSearchData,
     filterCars,
     filteredCars
   }
