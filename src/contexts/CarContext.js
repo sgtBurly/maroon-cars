@@ -5,11 +5,15 @@ const CarContextProvider = (props) => {
   const [cars, setCars] = useState([]);
   const [makesAndModels, setMakesAndModels] = useState([]);
   //const [filteredCars, setfilteredCars] = useState([]);
+  const [recommendedCars, setRecommendedCars] = useState([]);
+
+  useEffect(() => setCars(require("../json/cars.json")), []);
 
   useEffect(() => {
-    setCars(require("../json/cars.json"));
-  }, []);
-
+    const randomNumber = Math.floor(Math.random() * 48);
+    console.log('randomnumber:', randomNumber)
+    if(cars.length > 0) setRecommendedCars([cars[randomNumber-2], cars[randomNumber], cars[randomNumber+2]])
+  }, [cars])
 
   //The function used in SearchComponent to send search data to CarContext
   //Search data is sent as props
@@ -90,7 +94,8 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
-    sendSearchData
+    sendSearchData,
+    recommendedCars
   }
 
   return (
