@@ -1,35 +1,83 @@
 .searchComponent {
     margin: 2rem auto;
-    width: 80%;
-}
-.searchAndFilterWrapper {
-    width: 100%;
-    padding: 2rem;
-
-}
-
-.searchInput {
-    margin: 1rem;
-}
-
-.formContainer {
+    width: 100vw;
     display: flex;
-    flex-flow: row wrap;
-
+    justify-content: center;
+    border: 1px solid black;
+}
+.searchBarWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
 }
 
 .filterWrapper {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
+    justify-content: space-around;
+    border: 1px solid black;
+}
 
+.searchInput {
+    margin: 1rem;
+    border: none;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.inputWrapper {
+    border: 2px solid #488B49;
+    padding: 0.7rem;
+    height: 3rem;
+    width: auto;
+    border-radius: 5px;
+}
+
+.searchButton {
+    background-color: transparent;
+    border: none;
+}
+
+.sliderWrapper {
+    margin: 2rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+
+.filterWrapperChildren {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
 }
 
 .filterSlider {
-    margin: 1rem;
-    width: 200px;
+    width: 100px;
 }
 
 .labelWrapper {
+    margin: 2rem;
+    padding: 0.5rem;
+}
+
+.makeModeldropDowns {
+    border: 1px solid black;
+}
+
+.sliderWrapper {
+    border: 1px solid black;    
+}
+
+.dropDown {
     margin: 1rem;
 }

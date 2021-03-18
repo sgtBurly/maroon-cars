@@ -14,6 +14,14 @@ const CarContextProvider = (props) => {
     setCars(require("../json/cars.json"));
   }, []);
 
+
+  //The function used in SearchComponent to send search data to CarContext
+  //Search data is sent as props
+  const sendSearchData = (props) => {
+    console.log("search function in CarContext");
+    console.log("Props in search func :", props);
+  }
+
     //Filter all the cars function that runs on form-submit
     // let filteredCars = [];
     const filterCars = (price, miles, year) => {
@@ -69,9 +77,10 @@ const CarContextProvider = (props) => {
     // To find every unique make in cars, uses Set.
     const makes = new Set();
     cars.forEach(car => makes.add(car.make));
+    const makesArray = Array.from(makes).sort()
 
     const modelsArray = [];
-    makes.forEach( make => {
+    makesArray.forEach( make => {
       modelsArray.push({make: make, models: []});
     });
 
@@ -89,6 +98,7 @@ const CarContextProvider = (props) => {
   const values = {
     cars,
     makesAndModels,
+    sendSearchData
     filterCars,
     filteredCars
   }
