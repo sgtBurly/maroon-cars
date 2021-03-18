@@ -74,17 +74,15 @@ const CarContextProvider = (props) => {
     const makes = new Set();
     cars.forEach(car => makes.add(car.make));
     const makesArray = Array.from(makes).sort()
-
     const modelsArray = [];
     makesArray.forEach( make => {
-      modelsArray.push({make: make, models: []});
+      modelsArray.push({make: make, models: new Set()});
     });
-
-    // modelsArray now has a list of objects with a make-key/value and empty models-array. Below each model is added to the corresponding make.
+    // modelsArray now has a list of objects with a make-key/value and empty models-Set (Set is used to avoid model duplicates). Below each model is added to the corresponding make.
     cars.forEach((car) => {
       modelsArray.forEach((obj) => {
         if(car.make === obj.make) {
-          obj.models.push(car.model)
+          obj.models.add(car.model)
         }
       })
     })
