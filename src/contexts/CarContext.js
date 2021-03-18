@@ -4,14 +4,18 @@ export const CarContext = createContext();
 const CarContextProvider = (props) => {
   const [cars, setCars] = useState([]);
   const [makesAndModels, setMakesAndModels] = useState([]);
-  //const [filteredCars, setfilteredCars] = useState([]);
+  const [filteredCars, setfilteredCars] = useState([]);
+
+  useEffect(() => {
+    if (cars) setfilteredCars(cars); 
+  }, [cars])
 
   useEffect(() => {
     setCars(require("../json/cars.json"));
   }, []);
 
     //Filter all the cars function that runs on form-submit
-    let filteredCars = [];
+    // let filteredCars = [];
     const filterCars = (price, miles, year) => {
 
       let minPrice = price[0];
