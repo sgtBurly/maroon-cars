@@ -7,7 +7,7 @@ const CarContextProvider = (props) => {
   const [filteredCars, setfilteredCars] = useState([]);
 
   useEffect(() => {
-    if (cars) setfilteredCars(cars); 
+    if (cars) setfilteredCars(cars);
   }, [cars])
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const CarContextProvider = (props) => {
   //The function used in SearchComponent to send search data to CarContext
   //Search data is sent as props
   const sendSearchData = (filterOptions) => {
-    filterCars(filterOptions.price, filterOptions.miles, filterOptions.year);
+    filterCars(filterOptions);
     console.log("search function in CarContext");
     console.log("Props in search func :", filterOptions);
   }
@@ -26,31 +26,35 @@ const CarContextProvider = (props) => {
     //Filter all the cars function that runs on form-submit
     // let filteredCars = [];
 
-    const filterCars = (price, miles, year) => {
+    const filterCars = (filterOptions) => {
+      //const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
+      //const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
 
-      let minPrice = price[0];
-      let maxPrice = price[1]; 
-      let minMiles = miles[0];
-      let maxMiles = miles[1];
-      let minYear = year[0];
-      let maxYear = year[1];
-           
+      let minPrice = filterOptions.price[0];
+      let maxPrice = filterOptions.price[1];
+      let minMiles = filterOptions.miles[0];
+      let maxMiles = filterOptions.miles[1];
+      let minYear = filterOptions.year[0];
+      let maxYear = filterOptions.year[1];
+
       // // let filterModel = "";
       // let filterMake =  ""
       //Add the cars that are pass the filtration process
-      
-      const searchResult = cars.filter(car => car.price >= minPrice &&
+
+      const filterResult = cars.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
       car.miles <= maxMiles && car.year >= minYear &&
       car.year <= maxYear);
       // car.make === filterMake || car.make === "" &&
       // car.model === filterModel || car.model === "")
       console.log("This is NEW filteredCars: ")
-      console.log(searchResult)
+      console.log(filterResult)
+
+      const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
       setfilteredCars(searchResult);
     }
 
-  const searchWord = 'VOLVO';
+  //const searchWord = 'VOLVO';
   const filterTextInput = (array, searchInput) => {
     // For every object, get all keys for every object and search for the textInput from the user.
     // For values containing numbers/boolean need to be stringified using toString()
@@ -65,12 +69,12 @@ const CarContextProvider = (props) => {
     }
   }
 
-  let filteredCarsSearch;
+  //let filteredCarsSearch;
 
-  useEffect( () => {
+  /* useEffect( () => {
     filteredCarsSearch = filterTextInput(cars, searchWord)
     console.log('In useEffect, filtered from textsearch: ', filteredCarsSearch);
-  }, [cars]);
+  }, [cars]); */
 
   // useEffect(() => {
   //   console.log("This is the filteredCars array, from filters:", filteredCars)
