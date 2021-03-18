@@ -1,8 +1,12 @@
 
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
+import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
+
+    const {transferUserData} = useContext(MemberContext);
+
 
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
@@ -13,6 +17,8 @@ const RegisterComponent = () => {
     const [ ZipCode, setZipCode ] = useState("");
     const [ Country, setCountry ] = useState("");
     const [ Email, setEmail] = useState("");
+    const [Purchases, setPurchases] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const updateUserFName = e => {
         setFirstName(e.target.value);
@@ -38,19 +44,19 @@ const RegisterComponent = () => {
 
     const handleUserPassword = (e) => {
         setPassword(e.target.value);
-        console.log("This is user password: ", Password)
     }
-
 
     const HandleUserComfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
-        console.log("user confirmed password: ", ConfirmPassword);
     }
 
     const handleAccountSubmit = (e) => {
 
-        e.preventDeafault();
-        const userCredentials = {
+        e.preventDefault();
+
+        // Password === ConfirmPassword ? setIsLoggedIn(true) : Password !== ConfirmPassword ? setIsLoggedIn(false)
+
+        const newUser = {
             Password,
             FirstName,
             LastName,
@@ -58,31 +64,21 @@ const RegisterComponent = () => {
             City,
             ZipCode,
             Country,
-            Email
+            Email,
+            Purchases,
+            isLoggedIn
         }
-        console.log("Form submitted");
 
-        //send data to membershipContext, function not created yet.
-        console.log(userCredentials);
+        isLoggedIn ? transferUserData(newUser) : alert("doh!");
+
     }
-
-
-    useEffect( () => {
-
-        if (Password === ConfirmPassword){
-            console.log("success");
-        }else {
-            console.log("denied");
-        }
-
-    }, [handleAccountSubmit]);
 
     return ( 
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
                         <div className={styles.inputWrapper}>
-                            <input className={`${styles.textInput} ${styles.eMail_input}`} type="text" onChange={updateUserEmail} placeholder="Email..." required />
+                            <input className={`${styles.textInput} ${styles.eMail_input}`} type="text" onChange={updateUserEmail} placeholder="Email..." required/>
                         </div>
                         <div className={styles.inputWrapper}>
                             <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name..." required/>
@@ -101,7 +97,7 @@ const RegisterComponent = () => {
                         <input className={styles.textInput} type="password" onChange={HandleUserComfirmPassword} placeholder="Confirm password..." required/>
                         </div>
                     </div>
-                    <button className={styles.completeContactFormBtn}>Create account</button>
+                    <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
                 </form>
         </div>
      );

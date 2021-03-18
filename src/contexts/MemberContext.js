@@ -1,9 +1,28 @@
-import React from 'React'
+import React, {useState, createContext, useEffect} from 'react';
+export const MemberContext = createContext();
 
-const MemberContext = React.createContext({
-    
-})
+export function MemberProvider(props){
 
-export const MemberProvider = React.Provider
+    const [Members, setMembers] = useState([]);
 
-export default MemberContext
+    const transferUserData = (newUser) => {
+        setMembers([...Members, {newUser}]);
+    };
+
+    useEffect(() => {
+        console.log("this is Members: ", Members);
+
+    }, [Members]);
+
+    const values = {
+        transferUserData
+    }
+
+    return (
+        <MemberContext.Provider value={values}>
+            {props.children}
+        </MemberContext.Provider>
+    )    
+}
+
+export default MemberProvider;
