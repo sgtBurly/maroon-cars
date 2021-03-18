@@ -26,8 +26,8 @@ const CarContextProvider = (props) => {
     //Filter all the cars function that runs on form-submit
 
     const filterCars = (filterOptions) => {
-      //const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
-      //const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
+      const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
+      const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
 
       let minPrice = filterOptions.price[0];
       let maxPrice = filterOptions.price[1];
@@ -36,7 +36,7 @@ const CarContextProvider = (props) => {
       let minYear = filterOptions.year[0];
       let maxYear = filterOptions.year[1];
       //Add the cars that are pass the filtration process
-      const filterResult = cars.filter(car => car.price >= minPrice &&
+      const filterResult = filterModel.filter(car => car.price >= minPrice &&
       car.price <= maxPrice && car.miles >= minMiles &&
       car.miles <= maxMiles && car.year >= minYear &&
       car.year <= maxYear);
