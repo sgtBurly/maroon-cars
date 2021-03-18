@@ -14,42 +14,13 @@ const CarContextProvider = (props) => {
     let filteredCars = [];
     const filterCars = (price, miles, year) => {
 
-      let minPrice;
-      let maxPrice; 
-      let minMiles;
-      let maxMiles; 
-      let minYear; 
-      let maxYear; 
-
-
-      price.forEach(i => {
-        switch(i) {
-          case i = price[0]: 
-          minPrice = i
-          case i = price[1]: 
-          maxPrice = i
-          break;
-        }
-      })
-      miles.forEach(i => {
-        switch(i) {
-          case i = miles[0]: 
-          minMiles = i
-          case i = miles[1]: 
-          maxMiles = i
-          break;
-        }
-      })
-      year.forEach(i => {
-        switch(i) {
-          case i = year[0]: 
-          minYear = i
-          case i = year[1]: 
-          maxYear = i
-          break;
-        }
-      })
-      
+      let minPrice = price[0];
+      let maxPrice = price[1]; 
+      let minMiles = miles[0];
+      let maxMiles = miles[1];
+      let minYear = year[0];
+      let maxYear = year[1];
+           
       // // let filterModel = "";
       // let filterMake =  ""
       //Add the cars that are pass the filtration process
@@ -64,7 +35,6 @@ const CarContextProvider = (props) => {
     }
 
   const searchWord = 'VOLVO';
-
   const filterTextInput = (array, searchInput) => {
     // For every object, get all keys for every object and search for the textInput from the user.
     // For values containing numbers/boolean need to be stringified using toString()
