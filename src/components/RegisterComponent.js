@@ -1,9 +1,11 @@
 
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
+import MemberContext from'../contexts/MemberContext'
 
 const RegisterComponent = () => {
 
+    const {MemberContext} = useContext(MemberContext)
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
     const [ FirstName, setFirstName ] = useState("");
@@ -49,7 +51,7 @@ const RegisterComponent = () => {
 
     const handleAccountSubmit = (e) => {
 
-        e.preventDeafault();
+        e.preventDefault();
         const userCredentials = {
             Password,
             FirstName,
@@ -60,9 +62,12 @@ const RegisterComponent = () => {
             Country,
             Email
         }
-        console.log("Form submitted");
 
+        
+        console.log("Form submitted");
+        
         //send data to membershipContext, function not created yet.
+        // transferUserData(userCredentials);
         console.log(userCredentials);
     }
 
@@ -76,7 +81,7 @@ const RegisterComponent = () => {
         }
 
     }, [handleAccountSubmit]);
-
+    console.log(Password)
     return ( 
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
