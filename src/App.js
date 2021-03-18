@@ -11,6 +11,8 @@ import PaymentPage from "./pages/PaymentPage";
 import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
+import Membership from "./pages/Membership";
+
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
             </Route>
             <Route exact path="/checkout">
             <ConfirmOrder />
+            </Route>
+            <Route exact path="/membership">
+              <Membership />
             </Route>
           </CarContextProvider>
         </BasketProvider>
