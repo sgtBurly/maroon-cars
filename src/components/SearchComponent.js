@@ -46,10 +46,7 @@ const SearchComponent = () => {
     const handlePriceChange = (e, newValue) => setPrice(newValue);
     const handleYearChange = (e, newValue) => setYear(newValue);
     const handleMilesChange = (e, newValue) => setMiles(newValue);
-    const handleModelChange = e => {
-        setModel(e.target.value);
-        console.log(e.target.value)
-    }
+    const handleModelChange = e => setModel(e.target.value);
     const handleMakeChange = (e) => {
         setMake(e.target.value);
         if(e.target.value !== "") {
