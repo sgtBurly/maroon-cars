@@ -5,6 +5,15 @@
     justify-content: center;
     /* border: 1px solid black; */
 }
+
+.formContainer {
+    display: flex;
+    flex-flow: row wrap;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
 .searchBarWrapper {
     width: 100%;
     display: flex;
@@ -14,10 +23,9 @@
 }
 
 .filterWrapper {
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex;
+    flex-flow: row wrap; */
     justify-content: space-around;
-    /* border: 1px solid black; */
 }
 
 .searchInput {
@@ -73,27 +81,13 @@
 .sliderWrapper {
     padding: 0rem 2rem;
     margin: 0.5rem;
-    border: 2px solid #488B49;
+    /* border: 2px solid #488B49; */
     border-radius: 5px;
 }
 
-.formContainer {
-    display: flex;
-    flex-flow: row wrap;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-}
-
-
-.filterWrapperChildren {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-}
 
 .filterSlider {
-    width: 100px;
+    width: 250px;
 }
 
 .labelWrapper {
@@ -109,8 +103,20 @@
     margin: 1rem;
 }
 
+/* Make + Model */
+.makeModelWrapper {
+    display: flex;
+    justify-content: center;
+    /* margin: 1rem; */
+}
+
 
 /* Clear filter + Apply filter buttons */
+.buttonsWrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .clearFilterBtn {
     border: 2px solid;
     border-radius: 5px;
@@ -135,6 +141,5 @@
 .applyFilterBtn:hover {
     color: #488B49;
     border: 2px solid #488B49;
-
 }
 
