@@ -46,14 +46,17 @@ const SearchComponent = () => {
     const handlePriceChange = (e, newValue) => setPrice(newValue);
     const handleYearChange = (e, newValue) => setYear(newValue);
     const handleMilesChange = (e, newValue) => setMiles(newValue);
-    const handleModelChange = e => setModel(e.target.value);
+    const handleModelChange = e => {
+        setModel(e.target.value);
+        console.log(e.target.value)
+    }
     const handleMakeChange = (e) => {
         setMake(e.target.value);
         if(e.target.value !== "") {
             const selectedIndex = e.target.options.selectedIndex;
             //Saving makes index
             const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
-            setModelOptions(makesAndModels[makeIndex].models)
+            setModelOptions(Array.from(makesAndModels[makeIndex].models))
         } else {
             setModelOptions(null);
         }
