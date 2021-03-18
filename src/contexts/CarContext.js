@@ -24,7 +24,6 @@ const CarContextProvider = (props) => {
   }
 
     //Filter all the cars function that runs on form-submit
-    // let filteredCars = [];
 
     const filterCars = (filterOptions) => {
       //const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
@@ -37,8 +36,6 @@ const CarContextProvider = (props) => {
       let minYear = filterOptions.year[0];
       let maxYear = filterOptions.year[1];
 
-      // // let filterModel = "";
-      // let filterMake =  ""
       //Add the cars that are pass the filtration process
 
       const filterResult = cars.filter(car => car.price >= minPrice &&
@@ -54,18 +51,21 @@ const CarContextProvider = (props) => {
       setfilteredCars(searchResult);
     }
 
-  //const searchWord = 'VOLVO';
   const filterTextInput = (array, searchInput) => {
     // For every object, get all keys for every object and search for the textInput from the user.
     // For values containing numbers/boolean need to be stringified using toString()
     // Comparing everything in lowercase letters with toLowerCase();
+    // If no searchInput return original array
+    if (searchInput === "") {
+      return array
+    }
     const tempArray =  array.filter(obj => Object.keys(obj).some(key => key === 'year' || key === 'miles' || key === 'price' || key === 'discount' ? obj[key].toString().includes(searchInput.toLowerCase()) : obj[key].toLowerCase().includes(searchInput.toLowerCase())));
-
-    console.log('In filterTextInput:', tempArray);
     if (tempArray.length !== 0) {
       return tempArray;
     } else {
+      // No search results. Maybe use variable to show different component in that case?
       console.log('No search results...')
+      return []
     }
   }
 
