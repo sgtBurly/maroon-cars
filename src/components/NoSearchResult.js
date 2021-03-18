@@ -9,13 +9,12 @@ const NoSearchResult = () => {
 
   return (
     <div className={styles.nosearchContainer}>
-      <p>No results... Try again!</p>
-      <div>
-        <h2>But here are some other cars we think you'll like:</h2>
+      <h3>Sorry, no match found..</h3>
+      <div className={styles.recommendedContainer}>
+        <p className={styles.lead}>Recommended cars for you:</p>
         <div className="row">
           {recommendedCars && recommendedCars.map((car,i) => <CarCard key={i} data={car}/>)}
         </div>
-
       </div>
     </div>
   );
