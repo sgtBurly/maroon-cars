@@ -18,17 +18,20 @@ const CarContextProvider = (props) => {
   //The function used in SearchComponent to send search data to CarContext
   //Search data is sent as props
   const sendSearchData = (filterOptions) => {
-    filterCars(filterOptions);
-    console.log("search function in CarContext");
-    console.log("Props in search func :", filterOptions);
+    if (filterOptions.reset === true) {
+      setfilteredCars(cars)
+      
+    }
+    else {
+      filterCars(filterOptions);
+      console.log("search function in CarContext");
+      console.log("Props in search func :", filterOptions);
+    }
   }
-
     //Filter all the cars function that runs on form-submit
-
     const filterCars = (filterOptions) => {
       const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
       const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
-
       let minPrice = filterOptions.price[0];
       let maxPrice = filterOptions.price[1];
       let minMiles = filterOptions.miles[0];
@@ -42,7 +45,6 @@ const CarContextProvider = (props) => {
       car.year <= maxYear);
       // car.make === filterMake || car.make === "" &&
       // car.model === filterModel || car.model === "")
-      console.log("This is NEW filteredCars: ")
       console.log(filterResult)
       const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
       setfilteredCars(searchResult);
@@ -65,9 +67,6 @@ const CarContextProvider = (props) => {
       return []
     }
   }
-
-  
-  //DOES IT WORK???????????????????????????????
 
   useEffect(() => {
     // To find every unique make in cars, uses Set.

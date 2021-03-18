@@ -9,7 +9,11 @@ const SearchComponent = () => {
     
 
     const minPrice = 0;
-    const maxPrice = 1000000
+    const maxPrice = 1000000;
+    const minMiles = 0;
+    const maxMiles = 100000;
+    const minYear = 1960;
+    const maxYear = 2021;
 
     //declaring vaiables use in search component
     const [make, setMake] = useState("");
@@ -38,12 +42,19 @@ const SearchComponent = () => {
     }
 
     const handleClear = () => {
+        setTextSearch("");
+        setMake("");
+        setModel("");
+        setPrice([minPrice, maxPrice])
+        setMiles([minMiles, maxMiles]);
+        setYear([minYear, maxYear])
+
+        sendSearchData({
+            reset: true,
+        })
         console.log('form has been cleared');
     }
 
-    const handleApply = () => {
-        console.log("Filters have been applyed");
-    }
     const toggleFilter = () =>  setIsActive(!isActive);
     const textSearchHandler = e => setTextSearch(e.target.value);
     const handlePriceChange = (e, newValue) => setPrice(newValue);
@@ -51,6 +62,7 @@ const SearchComponent = () => {
     const handleMilesChange = (e, newValue) => setMiles(newValue);
     const handleModelChange = e => setModel(e.target.value);
     const handleMakeChange = (e) => {
+        //Resets model after new make filter-option
         setModel("");
         setMake(e.target.value);
         if(e.target.value !== "") {
