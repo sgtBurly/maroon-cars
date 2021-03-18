@@ -48,7 +48,8 @@ const SearchComponent = () => {
         setPrice([minPrice, maxPrice])
         setMiles([minMiles, maxMiles]);
         setYear([minYear, maxYear])
-
+        //Resets form
+        document.querySelector("#filterForm").reset()
         sendSearchData({
             reset: true,
         })
@@ -77,7 +78,7 @@ const SearchComponent = () => {
 
     return (
         <div className={styles.searchComponent}>
-            <form onSubmit={handleSearch} className={styles.formContainer}>
+            <form onSubmit={handleSearch} className={styles.formContainer} id="filterForm">
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
                         <input
