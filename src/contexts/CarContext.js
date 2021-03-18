@@ -6,12 +6,12 @@ const CarContextProvider = (props) => {
   const [makesAndModels, setMakesAndModels] = useState([]);
   //const [filteredCars, setfilteredCars] = useState([]);
   const [recommendedCars, setRecommendedCars] = useState([]);
+  const [noResults, setNoResults] = useState(true);
 
   useEffect(() => setCars(require("../json/cars.json")), []);
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 48);
-    console.log('randomnumber:', randomNumber)
     if(cars.length > 0) setRecommendedCars([cars[randomNumber-2], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
@@ -95,7 +95,8 @@ const CarContextProvider = (props) => {
     cars,
     makesAndModels,
     sendSearchData,
-    recommendedCars
+    recommendedCars,
+    noResults,
   }
 
   return (

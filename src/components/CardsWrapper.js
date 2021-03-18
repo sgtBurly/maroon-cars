@@ -6,8 +6,7 @@ import NoSearchResult from "./NoSearchResult";
 
 function CardWrapper() {
     //cars from carContext
-    const { cars } = useContext(CarContext);
-    const noResults = true;
+    const { cars, noResults } = useContext(CarContext);
 
     return (
         //looping CarCards

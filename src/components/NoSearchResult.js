@@ -9,7 +9,7 @@ const NoSearchResult = () => {
 
   return (
     <div className={styles.nosearchContainer}>
-      <h3>Sorry, no match found..</h3>
+      <h3>Sorry, found no matching cars...</h3>
       <div className={styles.recommendedContainer}>
         <p className={styles.lead}>Recommended cars for you:</p>
         <div className="row">
