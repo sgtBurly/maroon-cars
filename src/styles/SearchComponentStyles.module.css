@@ -99,6 +99,7 @@
     text-align: center;
 }
 
+
 /* Make + Model wrapper */
 .makeModelWrapper {
     display: flex;
@@ -122,6 +123,22 @@
     width: 250px;
     margin: 0rem 1rem 1rem 0rem;
 }
+
+
+.slider span span span {
+    /* width: 32px;
+    height: 32px; */
+    /* padding: 1rem; */
+    color: transparent;
+}
+
+.slider span span span span {
+    color: black;
+    position: relative;
+    top: 37px;
+    right: 34px;
+}
+
 
 /* .modelWrapper {
     text-align: center;

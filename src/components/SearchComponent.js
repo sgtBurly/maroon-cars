@@ -1,9 +1,13 @@
 import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/SearchComponentStyles.module.css';
 import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
+
+    
+
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
     
@@ -109,6 +113,7 @@ const SearchComponent = () => {
                                     valueLabelDisplay="on"
                                     aria-labelledby="range-slider"
                                     onChange={handlePriceChange}
+                                    className={styles.slider}
                                 />
                             </div>
                         </div>
@@ -125,7 +130,8 @@ const SearchComponent = () => {
                                     valueLabelDisplay="on"
                                     aria-labelledby="range-slider"
                                     onChange={handleYearChange}
-                                    />
+                                    className={styles.slider}
+                                />
                             </div>
                         </div>
                         
@@ -142,7 +148,8 @@ const SearchComponent = () => {
                                     valueLabelDisplay="on"
                                     aria-labelledby="range-slider"
                                     onChange={handleMilesChange}
-                                    />
+                                    className={styles.slider}
+                                />
                             </div>
                         </div>
             
