@@ -6,8 +6,12 @@ export function MemberProvider(props){
     const [Members, setMembers] = useState([]);
 
     const transferUserData = (newUser) => {
-        setMembers([...Members, {newUser}]);
+        setMembers({ ...Members, newUser }, () => {console.log(Members)});
     };
+//     setState({ key: value }, () => {
+//         console.log('updated state value', this.state.key)
+//    })
+
 
     useEffect(() => {
         console.log("this is Members: ", Members);
