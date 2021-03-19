@@ -96,12 +96,26 @@ h4.searchHeader {
 .filterSlider {
     width: 250px;
 }
-
+.slider span {
+    color: #488B49;
+}
+/* the slider-value bubble */
+.slider span span span {
+    color: transparent;
+}
+/* the values */
+.slider span span span span {
+    color: black;
+    position: relative;
+    top: 37px;
+    right: 34px;
+}
 /* The slider labels */
 .labelWrapper {
     margin: 0rem;
     padding: 0rem;
     text-align: center;
+    font-weight: bold;
 }
 
 
@@ -110,7 +124,8 @@ h4.searchHeader {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 2rem 2rem;
+    margin: 2rem auto;
+    width: 300px;
 }
 
 .makeWrapper,
@@ -129,23 +144,6 @@ h4.searchHeader {
     margin: 0rem 1rem 1rem 0rem;
 }
 
-.slider span {
-    color: #488B49;
-}
-
-.slider span span span {
-    /* width: 32px;
-    height: 32px; */
-    /* padding: 1rem; */
-    color: transparent;
-}
-
-.slider span span span span {
-    color: black;
-    position: relative;
-    top: 37px;
-    right: 34px;
-}
 
 /* Clear filter + Apply filter buttons */
 .buttonsWrapper {
@@ -175,5 +173,16 @@ h4.searchHeader {
 .applyFilterBtn:hover {
     color: #488B49;
     border: 2px solid #488B49;
+}
+
+/* --------------- MEDIA QUERIES --------------- */
+@media screen and (min-width: 576px){
+    .searchBarWrapper {
+        flex-direction: row;
+    }
+
+    .filterSlider {
+        width: 400px;
+    }
 }
 
