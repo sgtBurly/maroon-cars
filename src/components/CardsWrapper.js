@@ -8,6 +8,7 @@ function CardWrapper() {
     //cars from carContext
     const { cars, noResults } = useContext(CarContext);
 
+    const { filteredCars, cars } = useContext(CarContext);
     return (
         //looping CarCards
         <div className="container mt-4">
@@ -24,9 +25,8 @@ function CardWrapper() {
 
 
         </div>
-
-
-    )
-}
+    </div>
+    
+)}
 
 export default CardWrapper;
