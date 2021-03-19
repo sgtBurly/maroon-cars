@@ -1,14 +1,16 @@
 
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
-import { MemberContext } from '../contexts/MemberContext';
+import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const { transferUserData } = useContext(MemberContext);
+    const {transferUserData} = useContext(MemberContext);
+
 
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
+    const [PasswordMatch, setPasswordMatch] = useState(false)
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
     const [ Address, setAddress ] = useState("");
@@ -16,42 +18,82 @@ const RegisterComponent = () => {
     const [ ZipCode, setZipCode ] = useState("");
     const [ Country, setCountry ] = useState("");
     const [ Email, setEmail] = useState("");
-    const [Purchases, setPurchases] = useState([]);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const updateUserFName = e => setFirstName(e.target.value);
+    const updateUserFName = e => {
+        setFirstName(e.target.value);
+    }
     const updateUserLName = e => setLastName(e.target.value);
-    const updateUserEmail = e => setEmail(e.target.value);
-    const updateUserAddress = e => setAddress(e.target.value);
-    const updateUserCity = e => setCity(e.target.value);
-    const updateUserZipCode = e => setZipCode(e.target.value);
-    const updateUserCountry = e => setCountry(e.target.value);
-    const handleUserPassword = e => setPassword(e.target.value);
-    const HandleUserComfirmPassword = e => setConfirmPassword(e.target.value);
 
-    const handleAccountSubmit = (e) => {
-        e.preventDefault();
+    const updateUserEmail = e => {
+        setEmail(e.target.value);
+    }
+    const updateUserAddress = e => {
+    setAddress(e.target.value);
+    }
+    const updateUserCity = e => {
+        setCity(e.target.value);
+    }
+    const updateUserZipCode = e => {
+        setZipCode(e.target.value);
+    }
+    const updateUserCountry = e => {
+        setCountry(e.target.value);
+    }
 
-        // Password === ConfirmPassword ? setIsLoggedIn(true) : Password !== ConfirmPassword ? setIsLoggedIn(false)
+    const handleUserPassword = (e) => {
 
-        const newUser = {
-            Password,
-            FirstName,
-            LastName,
-            Address,
-            City,
-            ZipCode,
-            Country,
-            Email,
-            Purchases,
-            isLoggedIn
+        setPassword(e.target.value);
+
+        if (ConfirmPassword === e.target.value){
+            setPasswordMatch(true)
+            console.log("password is correct! ", ConfirmPassword)
+            }else {
+                setPasswordMatch(false)
+                console.log("passwords dont match bro", ConfirmPassword)
+            }
+    }
+
+    const HandleUserComfirmPassword = (e) => {
+
+        setConfirmPassword(e.target.value);
+
+        if (Password === e.target.value){
+            setPasswordMatch(true)
+        console.log("password is correct! ", ConfirmPassword)
+        }else {
+            setPasswordMatch(false)
+            console.log("passwords dont match bro", ConfirmPassword)
         }
-
-        isLoggedIn ? transferUserData(newUser) : alert("doh!");
 
     }
 
-    return (
+    const handleAccountSubmit = (e) => {
+
+        e.preventDefault();
+        
+        if(PasswordMatch){
+
+            const newUser = {
+                Password,
+                FirstName,
+                LastName,
+                Address,
+                City,
+                ZipCode,
+                Country,
+                Email,
+                Purchases: [],
+                isLoggedIn: true
+            }
+
+            transferUserData(newUser)
+
+        }else {
+            alert("wrong password: ", ConfirmPassword);
+        }
+    }
+
+    return ( 
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
@@ -71,8 +113,8 @@ const RegisterComponent = () => {
                             <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
                         </div>
                         <div>
-                        <input className={styles.textInput} type="password" onChange={handleUserPassword} placeholder="Password..." required/>
-                        <input className={styles.textInput} type="password" onChange={HandleUserComfirmPassword} placeholder="Confirm password..." required/>
+                        <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
+                        <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
                         </div>
                     </div>
                     <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
@@ -80,6 +122,6 @@ const RegisterComponent = () => {
         </div>
      );
 }
-
+ 
 export default RegisterComponent;
 

@@ -6,15 +6,12 @@ export function MemberProvider(props){
     const [Members, setMembers] = useState([]);
 
     const transferUserData = (newUser) => {
-        setMembers({ ...Members, newUser }, () => {console.log(Members)});
+        setMembers([...Members, {...newUser}]);
     };
-//     setState({ key: value }, () => {
-//         console.log('updated state value', this.state.key)
-//    })
-
 
     useEffect(() => {
         console.log("this is Members: ", Members);
+
     }, [Members]);
 
     const values = {
@@ -25,7 +22,7 @@ export function MemberProvider(props){
         <MemberContext.Provider value={values}>
             {props.children}
         </MemberContext.Provider>
-    )
+    )    
 }
 
 export default MemberProvider;
