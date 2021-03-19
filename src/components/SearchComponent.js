@@ -146,33 +146,39 @@ const SearchComponent = () => {
                             </div>
                         </div>
             
+
+
                         <div className={styles.makeModelWrapper}>
-                            <label>Make:</label>
-                            <select name="make" id="make" onChange={handleMakeChange}>
-                                <option value="">Choose a Make</option>
-                                {makesAndModels && makesAndModels.map((obj, i) => (
-                                    <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
-                                ))}
+                            <div className={styles.makeWrapper} >
+                                <label className={styles.labelMake}>Make:</label>
+                                <select name="make" id="make" onChange={handleMakeChange} className={styles.select} >
+                                    <option value="">Choose a Make</option>
+                                    {makesAndModels && makesAndModels.map((obj, i) => (
+                                        <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
+                                    ))}
                                 </select>
+                            </div>
 
                           {/*Model shows only when make is picked */}
                          {modelOptions &&
-                            <div>
-                            <label>Model:</label>
-                            <select name="model" id="model" onChange={handleModelChange}>
-                                <option value="">Choose a Model</option>
-                                    {modelOptions.map((model, i) => (
-                                        <option value={model} key={i}>{model}</option>
-                                        ))}
-                            </select>
+                            <div className={styles.modelWrapper}>
+                                <label className={styles.labelModel}>Model:</label>
+                                <select name="model" id="model" onChange={handleModelChange} className={styles.select}>
+                                    <option value="">Choose a Model</option>
+                                        {modelOptions.map((model, i) => (
+                                            <option value={model} key={i}>{model}</option>
+                                            ))}
+                                </select>
                             </div>
                           }
                         </div>
 
-                            <div className={styles.buttonsWrapper}>
-                                <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
-                                <button type="submit" className={styles.applyFilterBtn}>Apply filter</button> 
-                            </div>
+
+
+                        <div className={styles.buttonsWrapper}>
+                            <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
+                            <button type="submit" className={styles.applyFilterBtn}>Apply filter</button> 
+                        </div>
 
                     </div>
                 // If not, show an empty div

@@ -1,33 +1,36 @@
+/* Main wrapper */
 .searchComponent {
     margin: 2rem auto;
-    width: 100vw;
+    max-width: 100vw;
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
+/* The whole form wrapper */
 .formContainer {
     display: flex;
     flex-flow: row wrap;
-    /* border: 1px solid black; */
-    display: flex;
     justify-content: center;
 }
 
+/* Search bar and filter toggle-btn */
 .searchBarWrapper {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
-.filterWrapper {
-    /* display: flex;
-    flex-flow: row wrap; */
-    justify-content: space-around;
+/* Text input */
+.inputWrapper {
+    display: block;
+    padding: 0.7rem;
+    height: 3rem;
+    /* width: 100%; */
+    border-radius: 5px;
+    border: 2px solid #488B49;
 }
-
 .searchInput {
     /* margin: 1rem; */
     border: none;
@@ -36,15 +39,6 @@
     border-radius: 5px;
     position: relative;
     top: -10px;
-
-}
-
-.inputWrapper {
-    padding: 0.7rem;
-    height: 3rem;
-    width: auto;
-    border-radius: 5px;
-    border: 2px solid #488B49;
 }
 
 /* Förstoringsglaset */
@@ -57,58 +51,91 @@
 .searchButton i:hover {
     color: #488B49;
 }
-
 .searchInput:focus {
     outline: none;
 }
 
-
+/* Toggle filter button */
 .toggleFilterBtn {
     border: 2px solid #488B49;
     border-radius: 5px;
     background-color: white;
     padding: 0.3rem;
+    margin: 1rem;
 }
-
 .toggleFilterBtn:hover {
     color: #488B49;
 }
-
 .toggleFilterBtn span {
     color: inherit;
 }
 
+
+
+/* Wraps everything that shows when formToggler is truthy */
+.filterWrapper {
+    /* display: flex;
+    flex-flow: row wrap; */
+    justify-content: space-around;
+}
+
+/* Wraps each one of the sliders */
 .sliderWrapper {
     padding: 0rem 2rem;
-    margin: 0.5rem;
+    margin: 2.5rem;
     /* border: 2px solid #488B49; */
     border-radius: 5px;
 }
 
-
+/* The slider */
 .filterSlider {
     width: 250px;
 }
 
+/* The slider labels */
 .labelWrapper {
-    margin: 0.5rem;
-    padding: 0.5rem;
+    margin: 0rem;
+    padding: 0rem;
+    text-align: center;
 }
 
-.makeModeldropDowns {
-    border: 1px solid black;
-}
-
-.dropDown {
-    margin: 1rem;
-}
-
-/* Make + Model */
+/* Make + Model wrapper */
 .makeModelWrapper {
     display: flex;
-    justify-content: center;
-    /* margin: 1rem; */
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem 2rem;
 }
+
+.makeWrapper,
+.modelWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.labelMake,
+.labelModel {
+    padding: 0rem 0.75rem;
+}
+
+.select {
+    width: 250px;
+    margin: 0rem 1rem 1rem 0rem;
+}
+
+/* .modelWrapper {
+    text-align: center;
+} */
+
+
+
+/* .makeModeldropDowns {
+    border: 5px solid black;
+} */
+
+/* .dropDown {
+    margin: 5rem;
+} */
 
 
 /* Clear filter + Apply filter buttons */
@@ -124,7 +151,6 @@
     padding: 0.3rem;
     margin: 0.5rem;
 }
-
 .clearFilterBtn:hover {
     color: #488B49;
     border: 2px solid #488B49;
@@ -137,7 +163,6 @@
     padding: 0.3rem;
     margin: 0.5rem;
 }
-
 .applyFilterBtn:hover {
     color: #488B49;
     border: 2px solid #488B49;
