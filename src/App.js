@@ -12,6 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
 import Membership from "./pages/Membership";
+import MemberProvider from './contexts/MemberContext';
 
 
 function App() {
@@ -20,27 +21,29 @@ function App() {
       <BrowserRouter>
         <BasketProvider>
           <CarContextProvider>
-            <Toaster position="top-center"/>
-            <Navbar />
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/orderReceipt">
-              <OrderReceipt />
-            </Route>
-            <Route exact path="/details/:vin" component={Details} />
-            <Route exact path="/payment">
-              <PaymentPage />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/checkout">
-            <ConfirmOrder />
-            </Route>
-            <Route exact path="/membership">
-              <Membership />
-            </Route>
+            <MemberProvider>
+              <Toaster position="top-center"/>
+              <Navbar />
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/orderReceipt">
+                <OrderReceipt />
+              </Route>
+              <Route exact path="/details/:vin" component={Details} />
+              <Route exact path="/payment">
+                <PaymentPage />
+              </Route>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/checkout">
+              <ConfirmOrder />
+              </Route>
+              <Route exact path="/membership">
+                <Membership />
+              </Route>
+            </MemberProvider>
           </CarContextProvider>
         </BasketProvider>
         <Footer />
