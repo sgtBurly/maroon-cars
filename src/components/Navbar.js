@@ -2,8 +2,8 @@ import React from 'react'
 import styles from '../styles/Navbar.module.css'
 import { Link } from 'react-router-dom';
 import BasketValue from "../components/BasketValue";
-
 import * as ReactBootstrap from "react-bootstrap"
+import LoginBtn from './LoginBtn';
 
 export default function Navbar() {
 
@@ -27,6 +27,7 @@ export default function Navbar() {
                         <span className={styles.aboutWrapper}>
                             <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/about">About</ReactBootstrap.Nav.Link>
                         </span>
+                        <LoginBtn />
 
                         <ReactBootstrap.Nav.Link className={`${styles.clr} d-none d-sm-inline-block`} as={Link} to="/payment"><i className="fas fa-shopping-cart fa-lg"><BasketValue/></i></ReactBootstrap.Nav.Link>
                     </ReactBootstrap.Nav>
