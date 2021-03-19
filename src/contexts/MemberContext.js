@@ -3,7 +3,7 @@ export const MemberContext = createContext();
 
 export function MemberProvider(props){
 
-    const [Members, setMembers] = useState([]);
+    const [Members, setMembers] = useState([{test: "test"}]);
 
     const transferUserData = (newUser) => {
         setMembers([...Members, {...newUser}]);
@@ -15,14 +15,15 @@ export function MemberProvider(props){
     }, [Members]);
 
     const values = {
-        transferUserData
+        transferUserData,
+        Members
     }
 
     return (
         <MemberContext.Provider value={values}>
             {props.children}
         </MemberContext.Provider>
-    )    
+    )
 }
 
 export default MemberProvider;

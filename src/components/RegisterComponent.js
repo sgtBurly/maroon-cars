@@ -5,7 +5,7 @@ import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData} = useContext(MemberContext);
+    const {transferUserData, Members} = useContext(MemberContext);
 
 
     const [Password, setPassword] = useState("")
@@ -67,11 +67,22 @@ const RegisterComponent = () => {
 
     }
 
+    const handleUserEmail = (Members) => {
+       Members && Members.map( member => {
+            if(member.Email !== Email) {
+                console.log("this is inside handleUserEmail");
+                return true;
+            } else {
+                return false;
+            }
+        })
+    }
+
     const handleAccountSubmit = (e) => {
 
         e.preventDefault();
-        
-        if(PasswordMatch){
+
+        if(PasswordMatch, handleUserEmail(Members)) {
 
             const newUser = {
                 Password,
@@ -93,7 +104,7 @@ const RegisterComponent = () => {
         }
     }
 
-    return ( 
+    return (
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
@@ -122,6 +133,6 @@ const RegisterComponent = () => {
         </div>
      );
 }
- 
+
 export default RegisterComponent;
 
