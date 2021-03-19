@@ -13,7 +13,15 @@ export function MemberProvider(props){
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
         const successfulLogin = Members.filter(member => member.username === memberInput.username && member.password === memberInput.password);
-        setLoggedInMember(successfulLogin[0]);
+        if (successfulLogin) {
+              //Sets the logged in member
+              setLoggedInMember(successfulLogin[0]);
+        }
+        else {
+            alert("INVALID USERNAME OR PASSWORD");
+        }
+
+      
     }
 
     useEffect(() => {
