@@ -72,39 +72,24 @@ const RegisterComponent = () => {
 
         e.preventDefault();
 
-        if (Members.lenght > 0 ){
-
-            Members.map( member => {
-           
-                if(member.Email === Email) {
-
-
-                        const newUser = {
-                            Password,
-                            FirstName,
-                            LastName,
-                            Address,
-                            City,
-                            ZipCode,
-                            Country,
-                            Email,
-                            Purchases: [],
-                            isLoggedIn: true
-                        }
-            
-                        transferUserData(newUser)
-            
-                    
-                } else {
-                    console.log("account created");
-                    setEmailState(true)
-                }
-    
+        if (PasswordMatch){
+        const newUser = {
+            Password,
+            FirstName,
+            LastName,
+            Address,
+            City,
+            ZipCode,
+            Country,
+            Email,
+            Purchases: [],
+            isLoggedIn: true
         }
-
-        {
-            console.log("close, but no cigar");
-        }
+            
+        transferUserData(newUser)
+        }else {
+            console.log("Passwords dont match bro");
+        }    
     }
 
     return (
