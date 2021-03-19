@@ -6,50 +6,48 @@ const CarContextProvider = (props) => {
   const [makesAndModels, setMakesAndModels] = useState([]);
   const [filteredCars, setfilteredCars] = useState([]);
   const [recommendedCars, setRecommendedCars] = useState([]);
-  const [noResults, setNoResults] = useState(true);
+  const [noResults, setNoResults] = useState(false);
 
   useEffect(() => setCars(require("../json/cars.json")), []);
 
   useEffect(() => {
     if (cars) setfilteredCars(cars);
+
     const randomNumber = Math.floor(Math.random() * 48);
     if(cars.length > 0) setRecommendedCars([cars[(randomNumber-2 < 0 ? 1 : randomNumber-2)], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
-  //The function used in SearchComponent to send search data to CarContext
-  //Search data is sent as props
+  //The function used in SearchComponent to send search data/filter options to CarContext
   const sendSearchData = (filterOptions) => {
     if (filterOptions.reset === true) {
+      setNoResults(false)
       setfilteredCars(cars)
-
     }
     else {
       filterCars(filterOptions);
-      console.log("search function in CarContext");
-      console.log("Props in search func :", filterOptions);
     }
   }
-    //Filter all the cars function that runs on form-submit
-    const filterCars = (filterOptions) => {
-      const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
-      const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
-      let minPrice = filterOptions.price[0];
-      let maxPrice = filterOptions.price[1];
-      let minMiles = filterOptions.miles[0];
-      let maxMiles = filterOptions.miles[1];
-      let minYear = filterOptions.year[0];
-      let maxYear = filterOptions.year[1];
-      //Add the cars that are pass the filtration process
-      const filterResult = filterModel.filter(car => car.price >= minPrice &&
-      car.price <= maxPrice && car.miles >= minMiles &&
-      car.miles <= maxMiles && car.year >= minYear &&
-      car.year <= maxYear);
-      // car.make === filterMake || car.make === "" &&
-      // car.model === filterModel || car.model === "")
-      console.log(filterResult)
-      const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
-      setfilteredCars(searchResult);
-    }
+  //Filter all the cars function that runs on form-submit
+  const filterCars = (filterOptions) => {
+    const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
+    const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
+
+    let minPrice = filterOptions.price[0];
+    let maxPrice = filterOptions.price[1];
+    let minMiles = filterOptions.miles[0];
+    let maxMiles = filterOptions.miles[1];
+    let minYear = filterOptions.year[0];
+    let maxYear = filterOptions.year[1];
+
+    const filterResult = filterModel.filter(car => car.price >= minPrice && car.price <= maxPrice &&
+      car.miles >= minMiles && car.miles <= maxMiles &&
+      car.year >= minYear && car.year <= maxYear
+    );
+    console.log(filterResult)
+    const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
+    searchResult.length === 0 ? setNoResults(true) : setNoResults(false);
+    setfilteredCars(searchResult);
+  }
 
   const filterTextInput = (array, searchInput) => {
     // For every object, get all keys for every object and search for the textInput from the user.
