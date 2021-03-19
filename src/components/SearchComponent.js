@@ -6,15 +6,20 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
+    
 
-    const minPrice = 10;
-    const maxPrice = 200
+    const minPrice = 0;
+    const maxPrice = 1000000;
+    const minMiles = 0;
+    const maxMiles = 100000;
+    const minYear = 1960;
+    const maxYear = 2021;
 
     //declaring vaiables use in search component
     const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
-    const [miles, setMiles] = useState([null, null]);
-    const [year, setYear] = useState([null, null]);
+    const [miles, setMiles] = useState([0, 1000000]);
+    const [year, setYear] = useState([1960, 2021]);
     const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [model, setModel] = useState("");
@@ -32,17 +37,23 @@ const SearchComponent = () => {
             make,
             model
         }
-        console.log('Search completed');
         sendSearchData(filterOptions);
     }
 
     const handleClear = () => {
-        console.log('form has been cleared');
+        setTextSearch("");
+        setMake("");
+        setModel("");
+        setPrice([minPrice, maxPrice])
+        setMiles([minMiles, maxMiles]);
+        setYear([minYear, maxYear])
+        //Resets form
+        document.querySelector("#filterForm").reset()
+        sendSearchData({
+            reset: true,
+        })
     }
 
-    const handleApply = () => {
-        console.log("Filters have been applyed");
-    }
     const toggleFilter = () =>  setIsActive(!isActive);
     const textSearchHandler = e => setTextSearch(e.target.value);
     const handlePriceChange = (e, newValue) => setPrice(newValue);
@@ -50,6 +61,8 @@ const SearchComponent = () => {
     const handleMilesChange = (e, newValue) => setMiles(newValue);
     const handleModelChange = e => setModel(e.target.value);
     const handleMakeChange = (e) => {
+        //Resets model after new make filter-option
+        setModel("");
         setMake(e.target.value);
         if(e.target.value !== "") {
             const selectedIndex = e.target.options.selectedIndex;
@@ -63,7 +76,7 @@ const SearchComponent = () => {
 
     return (
         <div className={styles.searchComponent}>
-            <form onSubmit={handleSearch} className={styles.formContainer}>
+            <form onSubmit={handleSearch} className={styles.formContainer} id="filterForm">
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
                         <input
@@ -90,8 +103,8 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={price}
-                                        min={50000}
-                                        max={800000}
+                                        min={0}
+                                        max={1000000}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handlePriceChange}
@@ -105,7 +118,7 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={year}
-                                        min={1970}
+                                        min={1960}
                                         max={2021}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
@@ -151,7 +164,7 @@ const SearchComponent = () => {
                                     </select>
                                 </div>}
                             <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit" onClick={handleApply}>Apply filter</button>
+                            <button type="submit">Apply filter</button>
                         </div>
                     </div>
                 // If not, show an empty div
