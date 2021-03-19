@@ -1,3 +1,4 @@
+import { getDefaultNormalizer } from '@testing-library/dom';
 import React, {useState, createContext, useEffect} from 'react';
 export const MemberContext = createContext();
 
@@ -8,11 +9,6 @@ export function MemberProvider(props){
     const transferUserData = (newUser) => {
         setMembers([...Members, {...newUser}]);
     };
-
-    useEffect(() => {
-        console.log("this is Members: ", Members);
-
-    }, [Members]);
 
     const values = {
         transferUserData,

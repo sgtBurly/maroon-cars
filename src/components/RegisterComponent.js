@@ -11,6 +11,7 @@ const RegisterComponent = () => {
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
     const [PasswordMatch, setPasswordMatch] = useState(false)
+    const [EmailState, setEmailState] = useState()
     const [ FirstName, setFirstName ] = useState("");
     const [ LastName, setLastName ] = useState("");
     const [ Address, setAddress ] = useState("");
@@ -46,10 +47,10 @@ const RegisterComponent = () => {
 
         if (ConfirmPassword === e.target.value){
             setPasswordMatch(true)
-            console.log("password is correct! ", ConfirmPassword)
+            
             }else {
                 setPasswordMatch(false)
-                console.log("passwords dont match bro", ConfirmPassword)
+                
             }
     }
 
@@ -59,48 +60,50 @@ const RegisterComponent = () => {
 
         if (Password === e.target.value){
             setPasswordMatch(true)
-        console.log("password is correct! ", ConfirmPassword)
+        
         }else {
             setPasswordMatch(false)
-            console.log("passwords dont match bro", ConfirmPassword)
+            
         }
 
-    }
-
-    const handleUserEmail = (Members) => {
-       Members && Members.map( member => {
-            if(member.Email !== Email) {
-                console.log("this is inside handleUserEmail");
-                return true;
-            } else {
-                return false;
-            }
-        })
     }
 
     const handleAccountSubmit = (e) => {
 
         e.preventDefault();
 
-        if(PasswordMatch, handleUserEmail(Members)) {
+        if (Members.lenght > 0 ){
 
-            const newUser = {
-                Password,
-                FirstName,
-                LastName,
-                Address,
-                City,
-                ZipCode,
-                Country,
-                Email,
-                Purchases: [],
-                isLoggedIn: true
-            }
+            Members.map( member => {
+           
+                if(member.Email === Email) {
 
-            transferUserData(newUser)
 
-        }else {
-            alert("wrong password: ", ConfirmPassword);
+                        const newUser = {
+                            Password,
+                            FirstName,
+                            LastName,
+                            Address,
+                            City,
+                            ZipCode,
+                            Country,
+                            Email,
+                            Purchases: [],
+                            isLoggedIn: true
+                        }
+            
+                        transferUserData(newUser)
+            
+                    
+                } else {
+                    console.log("account created");
+                    setEmailState(true)
+                }
+    
+        }
+
+        {
+            console.log("close, but no cigar");
         }
     }
 
