@@ -1,6 +1,9 @@
 .main_wrapper {
     min-height: 100vh;
 }
+.main_wrapper h3 {
+    font-weight: bold;
+}
 .colored_wrapper {
     min-height: 200px;
     width: 100%;
@@ -58,7 +61,23 @@
     display: flex;
     justify-content: center;
 }
-
+.logout_wrapper {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logout_wrapper button {
+  
+        width: 150px;
+        height: 50px;
+        margin: 1rem auto;
+        border: 1.5px solid #232b2b;
+        border-radius: 5px;
+        background-color: #FFBE0B;
+        font-size: 1.2rem;
+      
+}
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 700px)  {
    .colored_wrapper {

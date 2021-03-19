@@ -24,6 +24,9 @@ const ProfilePage = () => {
             <div className={Styles.latest_order_wrapper}>
                 <h3>Latest orders</h3>
             </div>
+            <div className={Styles.logout_wrapper}>
+                <button>Logout</button>
+            </div>
         </div>
     );
 }
