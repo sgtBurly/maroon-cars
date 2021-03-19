@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '../styles/Navbar.module.css'
 import { Link } from 'react-router-dom';
 import BasketValue from "../components/BasketValue";
-import * as ReactBootstrap from "react-bootstrap"
-import LoginBtn from './LoginBtn';
+import * as ReactBootstrap from "react-bootstrap";
+import {MemberContext} from '../contexts/MemberContext'
 
 export default function Navbar() {
 
     // Get variable from MemberContext later
     const loggedInMember = false;
+     // const { loggedInMember } = useContext(MemberContext);
 
     return (
         <ReactBootstrap.Navbar collapseOnSelect sticky="top" className={`navbar ${styles.navbar}`} expand="md" variant="light">

@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Styles from '../styles/ProfileStyles.module.css'
+//import { MemberContext } from '../contexts/MemberContext'
 
 const Profile = () => {
 
     // Get loggedInMember from MemberContext later to make info dynamic
+    // const { loggedInMember } = useContext(MemberContext);
 
     return (
         <div className={Styles.main_wrapper}>
