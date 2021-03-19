@@ -18,13 +18,13 @@ export function MemberProvider(props){
 
     useEffect(() => {
         console.log("this is Members: ", Members);
-
     }, [Members]);
 
     const values = {
         transferUserData,
         Members, 
-        loginFunc
+        loginFunc,
+        loggedInMember
     }
 
     return (
