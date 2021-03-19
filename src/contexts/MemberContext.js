@@ -11,7 +11,6 @@ export function MemberProvider(props){
 
     useEffect(() => {
         console.log("this is Members: ", Members);
-
     }, [Members]);
 
     const values = {
@@ -22,7 +21,7 @@ export function MemberProvider(props){
         <MemberContext.Provider value={values}>
             {props.children}
         </MemberContext.Provider>
-    )    
+    )
 }
 
 export default MemberProvider;

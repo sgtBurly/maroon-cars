@@ -1,12 +1,11 @@
 
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
-import {MemberContext} from '../contexts/MemberContext';
+import { MemberContext } from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData} = useContext(MemberContext);
-
+    const { transferUserData } = useContext(MemberContext);
 
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
@@ -20,38 +19,17 @@ const RegisterComponent = () => {
     const [Purchases, setPurchases] = useState([]);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const updateUserFName = e => {
-        setFirstName(e.target.value);
-    }
-    const updateUserLName = e => {
-        setLastName(e.target.value);
-    }
-    const updateUserEmail = e => {
-        setEmail(e.target.value);
-    }
-    const updateUserAddress = e => {
-    setAddress(e.target.value);
-    }
-    const updateUserCity = e => {
-        setCity(e.target.value);
-    }
-    const updateUserZipCode = e => {
-        setZipCode(e.target.value);
-    }
-    const updateUserCountry = e => {
-        setCountry(e.target.value);
-    }
-
-    const handleUserPassword = (e) => {
-        setPassword(e.target.value);
-    }
-
-    const HandleUserComfirmPassword = (e) => {
-        setConfirmPassword(e.target.value);
-    }
+    const updateUserFName = e => setFirstName(e.target.value);
+    const updateUserLName = e => setLastName(e.target.value);
+    const updateUserEmail = e => setEmail(e.target.value);
+    const updateUserAddress = e => setAddress(e.target.value);
+    const updateUserCity = e => setCity(e.target.value);
+    const updateUserZipCode = e => setZipCode(e.target.value);
+    const updateUserCountry = e => setCountry(e.target.value);
+    const handleUserPassword = e => setPassword(e.target.value);
+    const HandleUserComfirmPassword = e => setConfirmPassword(e.target.value);
 
     const handleAccountSubmit = (e) => {
-
         e.preventDefault();
 
         // Password === ConfirmPassword ? setIsLoggedIn(true) : Password !== ConfirmPassword ? setIsLoggedIn(false)
@@ -73,7 +51,7 @@ const RegisterComponent = () => {
 
     }
 
-    return ( 
+    return (
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
@@ -102,6 +80,6 @@ const RegisterComponent = () => {
         </div>
      );
 }
- 
+
 export default RegisterComponent;
 
