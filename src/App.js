@@ -12,7 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
 import Membership from "./pages/Membership";
-import ProfilePage from "./pages/ProfilePage";
+import ProfilePage from "./components/ProfilePage";
 
 
 function App() {
