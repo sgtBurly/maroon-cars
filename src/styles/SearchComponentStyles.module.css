@@ -9,6 +9,7 @@
 h4.searchHeader {
     text-shadow: 1px 1px 3px #03030391;
     padding: 1rem;
+    font-size: 1.6rem;
 }
 
 /* The whole form wrapper */
@@ -81,13 +82,24 @@ h4.searchHeader {
 .filterWrapper {
     /* display: flex;
     flex-flow: row wrap; */
+    width: 350px;
+    justify-content: space-around;
+    background-color: #488b491e;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.slidersFlexWrapper {
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
 /* Wraps each one of the sliders */
 .sliderWrapper {
     padding: 0rem 2rem;
-    margin: 2.5rem;
+    /* margin: 2.5rem; */
     /* border: 2px solid #488B49; */
     border-radius: 5px;
 }
@@ -95,6 +107,7 @@ h4.searchHeader {
 /* The slider */
 .filterSlider {
     width: 250px;
+    margin: auto;
 }
 .slider span {
     color: #488B49;
@@ -133,12 +146,11 @@ h4.searchHeader {
     display: flex;
     justify-content: space-between;
 }
-
 .labelMake,
 .labelModel {
     padding: 0rem 0.75rem;
+    font-weight: bold;
 }
-
 .select {
     width: 250px;
     margin: 0rem 1rem 1rem 0rem;
@@ -177,12 +189,55 @@ h4.searchHeader {
 
 /* --------------- MEDIA QUERIES --------------- */
 @media screen and (min-width: 576px){
+    h4.searchHeader {
+        font-size: 2rem;
+    }
+
     .searchBarWrapper {
         flex-direction: row;
+    }
+
+    .filterWrapper {
+        width: 500px;
     }
 
     .filterSlider {
         width: 400px;
     }
 }
+
+@media screen and (min-width: 768px){
+    .filterWrapper {
+        width: 650px;
+    }
+
+}
+
+@media screen and (min-width: 992px){
+    .filterWrapper {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        background-color: #488b491e;
+        width: 900px;
+        padding: 2rem;
+    }
+
+    .makeModelButtonsFlexWrapper{
+        display: flex;
+        flex-flow: column;
+        /* background-color: bisque; */
+        justify-content: flex-end;
+        position: relative;
+        top: 0rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1200px){
+
+}
+
+
 
