@@ -82,7 +82,9 @@ const SearchComponent = () => {
 
     return (
         <div className={styles.searchComponent}>
+
             <form onSubmit={handleSearch} className={styles.formContainer} id="filterForm">
+            <h4 className={styles.searchHeader}>Find your dream car</h4>
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
                         <input

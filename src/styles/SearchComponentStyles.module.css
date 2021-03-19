@@ -6,6 +6,11 @@
     justify-content: center;
 }
 
+h4.searchHeader {
+    text-shadow: 1px 1px 3px #03030391;
+    padding: 1rem;
+}
+
 /* The whole form wrapper */
 .formContainer {
     display: flex;
@@ -124,6 +129,9 @@
     margin: 0rem 1rem 1rem 0rem;
 }
 
+.slider span {
+    color: #488B49;
+}
 
 .slider span span span {
     /* width: 32px;
@@ -138,22 +146,6 @@
     top: 37px;
     right: 34px;
 }
-
-
-/* .modelWrapper {
-    text-align: center;
-} */
-
-
-
-/* .makeModeldropDowns {
-    border: 5px solid black;
-} */
-
-/* .dropDown {
-    margin: 5rem;
-} */
-
 
 /* Clear filter + Apply filter buttons */
 .buttonsWrapper {
