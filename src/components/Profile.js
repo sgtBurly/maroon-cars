@@ -1,11 +1,14 @@
 import React from 'react'
 import Styles from '../styles/ProfileStyles.module.css'
 
-const ProfilePage = () => {
+const Profile = () => {
+
+    // Get loggedInMember from MemberContext later to make info dynamic
+
     return (
         <div className={Styles.main_wrapper}>
             <div className={Styles.colored_wrapper}></div>
-            
+
             <div className={Styles.user_image_text_wrapper}>
                 <div className={Styles.user_image_wrapper}>
                     <img src="https://thispersondoesnotexist.com/image" alt="user" />
@@ -30,5 +33,5 @@ const ProfilePage = () => {
         </div>
     );
 }
- 
-export default ProfilePage;
+
+export default Profile;

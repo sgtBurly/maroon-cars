@@ -12,7 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import ConfirmOrder from "./pages/ConfirmOrder";
 import OrderReceipt from "./pages/OrderReceipt";
 import Membership from "./pages/Membership";
-import ProfilePage from "./components/ProfilePage";
+
 
 
 function App() {
@@ -41,9 +41,6 @@ function App() {
             </Route>
             <Route exact path="/membership">
               <Membership />
-            </Route>
-            <Route exact path="/profile">
-              <ProfilePage />
             </Route>
           </CarContextProvider>
         </BasketProvider>
