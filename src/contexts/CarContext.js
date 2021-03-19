@@ -13,7 +13,7 @@ const CarContextProvider = (props) => {
   useEffect(() => {
     if (cars) setfilteredCars(cars);
     const randomNumber = Math.floor(Math.random() * 48);
-    if(cars.length > 0) setRecommendedCars([cars[randomNumber-2], cars[randomNumber], cars[randomNumber+2]])
+    if(cars.length > 0) setRecommendedCars([cars[(randomNumber-2 < 0 ? 1 : randomNumber-2)], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
   //The function used in SearchComponent to send search data to CarContext
@@ -21,7 +21,7 @@ const CarContextProvider = (props) => {
   const sendSearchData = (filterOptions) => {
     if (filterOptions.reset === true) {
       setfilteredCars(cars)
-      
+
     }
     else {
       filterCars(filterOptions);
