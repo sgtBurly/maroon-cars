@@ -6,9 +6,8 @@ import NoSearchResult from "./NoSearchResult";
 
 function CardWrapper() {
     //cars from carContext
-    const { cars, noResults } = useContext(CarContext);
+    const { filteredCars, noResults } = useContext(CarContext);
 
-    const { filteredCars, cars } = useContext(CarContext);
     return (
         //looping CarCards
         <div className="container mt-4">
@@ -16,17 +15,13 @@ function CardWrapper() {
             {noResults ? <NoSearchResult /> : <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
                 {/*In future add filteredCars here */}
-                {cars && cars.map((car, i) => (
+                {filteredCars && filteredCars.map((car, i) => (
                     //sending props to CarCard
                     <CarCard key={i} data={car} />
                 ))}
                 </div>
             </div>}
-
-
         </div>
-    </div>
-    
 )}
 
 export default CardWrapper;
