@@ -1,5 +1,5 @@
 .main_wrapper {
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 .main_wrapper h3 {
     font-weight: bold;
@@ -10,7 +10,7 @@
     background-color: #FFBE0B;
     background-image: url("https://images.unsplash.com/photo-1569171206684-dfb2749d96fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
     background-position: center;
-    background-size: cover;    
+    background-size: cover;
 }
 .user_image_text_wrapper {
     display: flex;
@@ -25,7 +25,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
 }
 .user_image_wrapper img {
     max-width: 200px;
@@ -35,7 +35,7 @@
 .profile_info {
     margin-top: 4rem;
     width: 100%;
-   
+
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -43,7 +43,6 @@
 }
 
 .profile_info_innerwrapper {
-    max-width: 800px;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -68,7 +67,7 @@
     justify-content: center;
 }
 .logout_wrapper button {
-  
+
         width: 150px;
         height: 50px;
         margin: 1rem auto;
@@ -76,7 +75,7 @@
         border-radius: 5px;
         background-color: #FFBE0B;
         font-size: 1.2rem;
-      
+
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 700px)  {
@@ -86,11 +85,12 @@
    .profile_info_innerwrapper {
     padding: 2rem;
     flex-direction: row;
-}
+    max-width: 90%;
+    }
 
-.profile_info_innerwrapper p {
-    margin: 2rem;
-}
+    .profile_info_innerwrapper p {
+        margin: 2rem;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
