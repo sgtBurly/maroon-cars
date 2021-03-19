@@ -37,7 +37,6 @@ const SearchComponent = () => {
             make,
             model
         }
-        console.log('Search completed');
         sendSearchData(filterOptions);
     }
 
@@ -53,7 +52,6 @@ const SearchComponent = () => {
         sendSearchData({
             reset: true,
         })
-        console.log('form has been cleared');
     }
 
     const toggleFilter = () =>  setIsActive(!isActive);
