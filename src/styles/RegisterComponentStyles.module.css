@@ -1,0 +1,93 @@
+.FormWrapper {
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color:  #FFBE0B;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2 {
+    margin-bottom: 2rem;
+}
+
+.textInput {
+    width: 100%;
+    margin-bottom: 1rem;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+.ContactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin-top: 1rem;
+}
+
+.inputWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.inputWrapper input {
+    width: 100%;
+}
+
+.eMail_input {
+    width: 100% !important;
+}
+
+.completeContactFormBtn {
+    padding: 1rem;
+    margin: 1rem auto;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border: solid 1px #232b2b;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-weight: bold;
+    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 690px) {
+    .inputWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .inputWrapper input {
+        width: 45%;
+    }
+    .FormWrapper {
+        min-width: 700px;
+        max-width: 700px !important;
+    }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 700px)  {
+    .FormWrapper {
+        min-width: 700px;
+        max-width: 700px !important;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
