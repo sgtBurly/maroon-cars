@@ -33,15 +33,12 @@ h4.searchHeader {
     display: block;
     padding: 0.7rem;
     height: 3rem;
-    /* width: 100%; */
     border-radius: 5px;
     border: 2px solid #488B49;
 }
 .searchInput {
-    /* margin: 1rem; */
     border: none;
     padding: 0.5rem;
-    /* border: 2px solid #488B49; */
     border-radius: 5px;
     position: relative;
     top: -10px;
@@ -76,12 +73,8 @@ h4.searchHeader {
     color: inherit;
 }
 
-
-
 /* Wraps everything that shows when formToggler is truthy */
 .filterWrapper {
-    /* display: flex;
-    flex-flow: row wrap; */
     width: 350px;
     justify-content: space-around;
     background-color: #488b491e;
@@ -90,7 +83,6 @@ h4.searchHeader {
 }
 
 .slidersFlexWrapper {
-    /* background-color: bisque; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -99,11 +91,8 @@ h4.searchHeader {
 /* Wraps each one of the sliders */
 .sliderWrapper {
     padding: 0rem 2rem;
-    /* margin: 2.5rem; */
-    /* border: 2px solid #488B49; */
     border-radius: 5px;
 }
-
 /* The slider */
 .filterSlider {
     width: 250px;
@@ -131,7 +120,6 @@ h4.searchHeader {
     font-weight: bold;
 }
 
-
 /* Make + Model wrapper */
 .makeModelWrapper {
     display: flex;
@@ -155,7 +143,6 @@ h4.searchHeader {
     width: 250px;
     margin: 0rem 1rem 1rem 0rem;
 }
-
 
 /* Clear filter + Apply filter buttons */
 .buttonsWrapper {
@@ -192,15 +179,12 @@ h4.searchHeader {
     h4.searchHeader {
         font-size: 2rem;
     }
-
     .searchBarWrapper {
         flex-direction: row;
     }
-
     .filterWrapper {
         width: 500px;
     }
-
     .filterSlider {
         width: 400px;
     }
@@ -210,7 +194,6 @@ h4.searchHeader {
     .filterWrapper {
         width: 650px;
     }
-
 }
 
 @media screen and (min-width: 992px){
@@ -222,17 +205,12 @@ h4.searchHeader {
         width: 900px;
         padding: 2rem;
     }
-
     .makeModelButtonsFlexWrapper{
         display: flex;
         flex-flow: column;
-        /* background-color: bisque; */
         justify-content: flex-end;
         position: relative;
-        top: 0rem;
     }
-
-
 }
 
 @media screen and (min-width: 1200px){
