@@ -11,12 +11,10 @@ function CardWrapper() {
     return (
         //looping CarCards
         <div className="container mt-4">
-            <h2 className={CardsWrapperStyles.cardHeading}>Find your dream car below:</h2>
             {noResults ? <NoSearchResult /> : <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
-                {/*In future add filteredCars here */}
-                {filteredCars && filteredCars.map((car, i) => (
-                    //sending props to CarCard
+                 {filteredCars && filteredCars.map((car, i) => (
+                     //sending props to CarCard
                     <CarCard key={i} data={car} />
                 ))}
                 </div>
