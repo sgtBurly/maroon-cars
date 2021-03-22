@@ -3,7 +3,7 @@ export const MemberContext = createContext();
 
 export function MemberProvider(props){
 
-    const [Members, setMembers] = useState([{test: "test"}]);
+    const [members, setMembers] = useState([{test: "test"}]);
     const [loggedInMember, setLoggedInMember] = useState({purchases: [
         {
         "make": "Pontiac",
@@ -31,11 +31,11 @@ export function MemberProvider(props){
       }
     ]})
     const transferUserData = (newUser) => {
-        setMembers([...Members, {...newUser}]);
+        setMembers([...members, {...newUser}]);
     };
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
-        const successfulLogin = Members.filter(member => member.username === memberInput.username && member.password === memberInput.password);
+        const successfulLogin = members.filter(member => member.username === memberInput.username && member.password === memberInput.password);
         if (successfulLogin) {
               //Sets the logged in member
               setLoggedInMember(successfulLogin[0]);
@@ -46,13 +46,15 @@ export function MemberProvider(props){
         }
     }
     console.log("This is loggedInMember", loggedInMember)
+
     useEffect(() => {
-        console.log("this is Members: ", Members);
-    }, [Members]);
+        
+        localStorage.setItem('members', members);
+    }, [members])
 
     const values = {
         transferUserData,
-        Members, 
+        members, 
         loginFunc,
         loggedInMember
     }
