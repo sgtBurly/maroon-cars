@@ -24,7 +24,9 @@ const SearchComponent = () => {
                 price: [minPrice, maxPrice],
                 miles: [minMiles, maxMiles],
                 year: [minYear, maxYear],
-                textSearch: ""
+                textSearch: "",
+                isActive: false,
+                modelOptions: null
             }
         }
     }
@@ -32,40 +34,17 @@ const SearchComponent = () => {
 
     useEffect(() => {
         localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
-    },[filterOptions])
-
-    //declaring vaiables use in search component
-    //const [make, setMake] = useState("");
-    //const [price, setPrice] = useState([minPrice, maxPrice]);
-    //const [miles, setMiles] = useState([minMiles, maxMiles]);
-    //const [year, setYear] = useState([minYear, maxYear]);
-    //const [textSearch, setTextSearch] = useState("");
-    const [isActive, setIsActive] = useState(false);
-    //const [model, setModel] = useState("");
-    const [modelOptions, setModelOptions] = useState(null);
+        sendSearchData(filterOptions);
+    },[filterOptions]);
 
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
     const handleSearch = e => {
         e.preventDefault();
-        /* const filterOptions = {
-            price,
-            miles,
-            year,
-            textSearch,
-            make,
-            model
-        } */
         sendSearchData(filterOptions);
     }
 
     const handleClear = () => {
-        /* setTextSearch("");
-        setMake("");
-        setModel("");
-        setPrice([minPrice, maxPrice])
-        setMiles([minMiles, maxMiles]);
-        setYear([minYear, maxYear]) */
         setFilterOptions({
             make: "",
             model: "",
@@ -73,6 +52,8 @@ const SearchComponent = () => {
             miles: [minMiles, maxMiles],
             year: [minYear, maxYear],
             textSearch: "",
+            isActive: false,
+            modelOptions: null
         })
         //Resets form
         document.querySelector("#filterForm").reset()
@@ -81,7 +62,7 @@ const SearchComponent = () => {
         })
     }
 
-    const toggleFilter = () =>  setIsActive(!isActive);
+    const toggleFilter = () =>  setFilterOptions(prevState => ({...prevState, isActive: !prevState.isActive}));
     const textSearchHandler = e => setFilterOptions(prevState => ({...prevState, textSearch: e.target.value}));
     const handlePriceChange = (e, newValue) => setFilterOptions(prevState => ({...prevState, price: newValue}));
     const handleYearChange = (e, newValue) => setFilterOptions(prevState => ({...prevState, year: newValue}));
@@ -89,41 +70,19 @@ const SearchComponent = () => {
     const handleModelChange = e => setFilterOptions(prevState => ({...prevState, model: e.target.value}));
     const handleMakeChange = e => {
         setFilterOptions(prevState => ({...prevState, model: "", make: e.target.value}));
-        if(modelOptions) document.querySelector('#model').value = "";
+        if(filterOptions.modelOptions) document.querySelector('#model').value = "";
         if(e.target.value !== "") {
             const selectedIndex = e.target.options.selectedIndex;
             //Saving makes index
             const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
-            setModelOptions(Array.from(makesAndModels[makeIndex].models))
+            setFilterOptions(prevState => ({...prevState, modelOptions: Array.from(makesAndModels[makeIndex].models)}))
         } else {
-            setModelOptions(null);
+            setFilterOptions(prevState => ({...prevState, modelOptions: null}));
         }
     }
 
-    //const textSearchHandler = e => setTextSearch(e.target.value);
-    //const handlePriceChange = (e, newValue) => setPrice(newValue);
-    //const handleYearChange = (e, newValue) => setYear(newValue);
-    //const handleMilesChange = (e, newValue) => setMiles(newValue);
-    //const handleModelChange = e => setModel(e.target.value);
-
-    /* const handleMakeChange = (e) => {
-        //Resets model after new make filter-option
-        setModel("");
-        if(modelOptions) document.querySelector('#model').value = "";
-        setMake(e.target.value);
-        if(e.target.value !== "") {
-            const selectedIndex = e.target.options.selectedIndex;
-            //Saving makes index
-            const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
-            setModelOptions(Array.from(makesAndModels[makeIndex].models))
-        } else {
-            setModelOptions(null);
-        }
-    } */
-
     return (
         <div className={styles.searchComponent}>
-
             <form onSubmit={handleSearch} className={styles.formContainer} id="filterForm">
             <h4 className={styles.searchHeader}>Find your dream car</h4>
                 <div className={styles.searchBarWrapper}>
@@ -131,6 +90,7 @@ const SearchComponent = () => {
                         <input
                         type="text"
                         placeholder='Search...'
+                        value={filterOptions.textSearch}
                         className={styles.searchInput}
                         onChange={textSearchHandler}
                         />
@@ -138,11 +98,11 @@ const SearchComponent = () => {
                             <i className={`fas fa-search ${styles.searchIcon}`}></i>
                         </button>
                     </span>
-                    <button type="button" onClick={toggleFilter} className={styles.toggleFilterBtn} >Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
+                    <button type="button" onClick={toggleFilter} className={styles.toggleFilterBtn} >Filter {filterOptions.isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
                 </div>
 
-                {/* only show this part if formToggler is truthy */}
-                { isActive ? (
+                {/* only show this part if formToggler is true */}
+                { filterOptions.isActive ? (
                     <div className={styles.filterWrapper}>
                         <div className={styles.slidersFlexWrapper}>
                             <div className={styles.sliderWrapper}>
@@ -203,7 +163,7 @@ const SearchComponent = () => {
                             <div className={styles.makeModelWrapper}>
                                 <div className={styles.makeWrapper} >
                                     <label className={styles.labelMake}>Make:</label>
-                                    <select name="make" id="make" onChange={handleMakeChange} className={styles.select} >
+                                    <select name="make" id="make" onChange={handleMakeChange} className={styles.select} value={filterOptions.make}>
                                         <option value="">Choose a make</option>
                                         {makesAndModels && makesAndModels.map((obj, i) => (
                                             <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
@@ -212,20 +172,18 @@ const SearchComponent = () => {
                                 </div>
 
                             {/*Model shows only when make is picked */}
-                            {modelOptions &&
+                            {filterOptions.make &&
                                 <div className={styles.modelWrapper}>
                                     <label className={styles.labelModel}>Model:</label>
-                                    <select name="model" id="model" onChange={handleModelChange} className={styles.select}>
+                                    <select name="model" id="model" onChange={handleModelChange} className={styles.select} value={filterOptions.model}>
                                         <option value="">Choose a model</option>
-                                            {modelOptions.map((model, i) => (
+                                            {filterOptions.modelOptions && filterOptions.modelOptions.map((model, i) => (
                                                 <option value={model} key={i}>{model}</option>
                                                 ))}
                                     </select>
                                 </div>
                             }
                             </div>
-
-
 
                             <div className={styles.buttonsWrapper}>
                                 <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
