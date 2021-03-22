@@ -1,9 +1,13 @@
 import React, {useState, useContext} from 'react'
 import { Slider } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/SearchComponentStyles.module.css';
 import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
+
+    
+
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
 
@@ -76,7 +80,9 @@ const SearchComponent = () => {
 
     return (
         <div className={styles.searchComponent}>
+
             <form onSubmit={handleSearch} className={styles.formContainer} id="filterForm">
+            <h4 className={styles.searchHeader}>Find your dream car</h4>
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
                         <input
@@ -89,13 +95,13 @@ const SearchComponent = () => {
                             <i className={`fas fa-search ${styles.searchIcon}`}></i>
                         </button>
                     </span>
-                    <button type="button" onClick={toggleFilter}>Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
+                    <button type="button" onClick={toggleFilter} className={styles.toggleFilterBtn} >Filter {isActive ? <span>&uarr;</span> : <span>&darr;</span>}</button>
                 </div>
 
                 {/* only show this part if formToggler is truthy */}
                 { isActive ? (
                     <div className={styles.filterWrapper}>
-                        <div className={styles.filterLeft}>
+                        <div className={styles.slidersFlexWrapper}>
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label>Price:</label>
@@ -108,9 +114,11 @@ const SearchComponent = () => {
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handlePriceChange}
+                                        className={styles.slider}
                                     />
                                 </div>
                             </div>
+
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label >Year:</label>
@@ -123,11 +131,12 @@ const SearchComponent = () => {
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handleYearChange}
+                                        className={styles.slider}
                                     />
                                 </div>
                             </div>
-                        </div>
-                        <div className={styles.filterRight}>
+                            
+                            
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label >Miles:</label>
@@ -140,32 +149,47 @@ const SearchComponent = () => {
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handleMilesChange}
+                                        className={styles.slider}
                                     />
                                 </div>
                             </div>
-                            <div>
-                                <label >Make:</label>
-                                <select name="make" id="make" onChange={handleMakeChange}>
-                                    <option value="">Choose a Make</option>
-                                    {makesAndModels && makesAndModels.map((obj, i) => (
-                                        <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
-                                    ))}
-                                </select>
-                            </div>
-                            {/*Model shows only when make is picked */}
-                            {modelOptions &&
-                                <div>
-                                    <label>Model:</label>
-                                    <select name="model" id="model" onChange={handleModelChange}>
-                                    <option value="">Choose a Model</option>
-                                        {modelOptions.map((model, i) => (
-                                            <option value={model} key={i}>{model}</option>
+                        </div>
+            
+
+                        <div className={styles.makeModelButtonsFlexWrapper}>
+                            <div className={styles.makeModelWrapper}>
+                                <div className={styles.makeWrapper} >
+                                    <label className={styles.labelMake}>Make:</label>
+                                    <select name="make" id="make" onChange={handleMakeChange} className={styles.select} >
+                                        <option value="">Choose a make</option>
+                                        {makesAndModels && makesAndModels.map((obj, i) => (
+                                            <option value={obj.make} key={i} data-key={i}>{obj.make}</option>
                                         ))}
                                     </select>
-                                </div>}
-                            <button type="button" onClick={handleClear}>Clear filter</button>
-                            <button type="submit">Apply filter</button>
+                                </div>
+
+                            {/*Model shows only when make is picked */}
+                            {modelOptions &&
+                                <div className={styles.modelWrapper}>
+                                    <label className={styles.labelModel}>Model:</label>
+                                    <select name="model" id="model" onChange={handleModelChange} className={styles.select}>
+                                        <option value="">Choose a model</option>
+                                            {modelOptions.map((model, i) => (
+                                                <option value={model} key={i}>{model}</option>
+                                                ))}
+                                    </select>
+                                </div>
+                            }
+                            </div>
+
+
+
+                            <div className={styles.buttonsWrapper}>
+                                <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
+                                <button type="submit" className={styles.applyFilterBtn}>Apply filter</button> 
+                            </div>
                         </div>
+
                     </div>
                 // If not, show an empty div
                 ) : (
