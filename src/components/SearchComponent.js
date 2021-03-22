@@ -62,7 +62,7 @@ const SearchComponent = () => {
     const handleMakeChange = (e) => {
         //Resets model after new make filter-option
         setModel("");
-        document.querySelector('#model').value = "";
+        if(modelOptions) document.querySelector('#model').value = "";
         setMake(e.target.value);
         if(e.target.value !== "") {
             const selectedIndex = e.target.options.selectedIndex;
