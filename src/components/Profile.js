@@ -1,9 +1,11 @@
-import React, { useContext } from 'react'
-import Styles from '../styles/ProfileStyles.module.css'
+import React, { useContext } from 'react';
+import Styles from '../styles/ProfileStyles.module.css';
+import PreviousOrder from '../components/PreviousOrder';
+import { MemberContext } from '../contexts/MemberContext';
 //import { MemberContext } from '../contexts/MemberContext'
 
 const Profile = () => {
-
+    let { loggedInMember } = useContext(MemberContext)
     // Get loggedInMember from MemberContext later to make info dynamic
     // const { loggedInMember } = useContext(MemberContext);
 
@@ -26,8 +28,13 @@ const Profile = () => {
                     <p>Member Since: <span>dsjakdaskd</span></p>
                 </div>
             </div>
-            <div className={Styles.latest_order_wrapper}>
-                <h3>Latest orders</h3>
+            <div className={Styles.previous_order_wrapper}>
+                <h3>These are you previous ordered cars</h3>
+                
+                {
+                //Checks if loggedInMember has any former purchases, is so render those purchases
+                loggedInMember.purchases.length > 0 ? <PreviousOrder /> : null
+                }
             </div>
             <div className={Styles.logout_wrapper}>
                 <button>Logout</button>
