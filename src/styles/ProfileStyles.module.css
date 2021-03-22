@@ -1,0 +1,97 @@
+.main_wrapper {
+    /* min-height: 100vh; */
+}
+.main_wrapper h3 {
+    font-weight: bold;
+}
+.colored_wrapper {
+    min-height: 200px;
+    width: 100%;
+    background-color: #FFBE0B;
+    background-image: url("https://images.unsplash.com/photo-1569171206684-dfb2749d96fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-position: center;
+    background-size: cover;
+}
+.user_image_text_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user_image_wrapper {
+    max-height: 230px;
+    margin-top: -115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.user_image_wrapper img {
+    max-width: 200px;
+    border-radius: 200%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.profile_info {
+    margin-top: 4rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_info_innerwrapper {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: solid black 2px;
+}
+
+.profile_info_innerwrapper p {
+    margin: 1rem;
+}
+
+.latest_order_wrapper {
+    width: 100%;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.logout_wrapper {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logout_wrapper button {
+
+        width: 150px;
+        height: 50px;
+        margin: 1rem auto;
+        border: 1.5px solid #232b2b;
+        border-radius: 5px;
+        background-color: #FFBE0B;
+        font-size: 1.2rem;
+
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 700px)  {
+   .colored_wrapper {
+       height: 300px;
+   }
+   .profile_info_innerwrapper {
+    padding: 2rem;
+    flex-direction: row;
+    max-width: 90%;
+    }
+
+    .profile_info_innerwrapper p {
+        margin: 2rem;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

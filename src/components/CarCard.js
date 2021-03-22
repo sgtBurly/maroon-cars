@@ -24,7 +24,7 @@ const handleClick = (e) => {
                 <img className={`${CarCardStyles.img} card-img-top`} src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
                 <div className="card-body">
                     <h5 className="card-title"><span>{props.data.make}  {props.data.model}</span></h5>
-                    <p className={CarCardStyles.price}><span>Price: </span>{props.data.price}</p>
+                    <p className={CarCardStyles.price}><span>Price: </span>${props.data.price}</p>
                     <p className={`${CarCardStyles.descShort} card-text`}>{props.data.descShort}</p>
                     <span className={CarCardStyles.iconWrapper}>
                         <i className="fas fa-cart-plus" onClick={handleClick}></i>
