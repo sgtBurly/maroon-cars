@@ -17,13 +17,12 @@ function LogIn() {
     const handleLogIn = (e) => {
         e.preventDefault();
 
-        const user = {
+        const memberInput = {
             userPassword,
             userEmail
         }
 
-        //hittepå func för att skicka datan till context
-        //transferLogInData(user);
+        // loginFunc(memberInput);
     }
 
 
