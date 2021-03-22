@@ -20,24 +20,24 @@ const Profile = () => {
                 <h2>Jessie Adams</h2>
             </div>
             <div className={Styles.profile_info}>
-                <h3>Profile Info</h3>
+                <h3>Profile info</h3>
                 <div className={Styles.profile_info_innerwrapper}>
-                    <p>Firstname: <span>Jessie</span></p>
-                    <p>Lastname: <span>Adamns</span></p>
-                    <p>E-mail: <span>fhasjjdasda</span></p>
-                    <p>Member Since: <span>dsjakdaskd</span></p>
+                    <p>First name: <span>Jessie</span></p>
+                    <p>Last name: <span>Adams</span></p>
+                    <p>E-mail: <span>jessieadams@loremipsum.com</span></p>
+                    <p>Member since: <span>2021-03-15</span></p>
                 </div>
             </div>
             <div className={Styles.previous_order_wrapper}>
-                <h3>These are you previous ordered cars</h3>
+                <h3>Your previous orders</h3>
                 
                 {
-                //Checks if loggedInMember has any former purchases, is so render those purchases
+                //Checks if loggedInMember has any former purchases, if so render those purchases
                 loggedInMember.purchases.length > 0 ? <PreviousOrder /> : null
                 }
             </div>
             <div className={Styles.logout_wrapper}>
-                <button>Logout</button>
+                <button>Log out</button>
             </div>
         </div>
     );
