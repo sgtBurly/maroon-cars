@@ -7,9 +7,8 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
     const { sendSearchData, makesAndModels } = useContext(CarContext);
 
-    const initialRender = useRef(true);
+    //const initialRender = useRef(true);
     // const intialRenderFilter = useRef(true);
-
     const minPrice = 100000;
     const maxPrice = 800000;
     const minMiles = 2000;
@@ -29,9 +28,10 @@ const SearchComponent = () => {
     }
 
     const initFilterOpts = () => {
-        console.log('In initFilterOpts, initialRender: ', initialRender);
+        //console.log('In initFilterOpts, initialRender: ', initialRender);
+        console.log('In initFilterOptions')
         /* if(initialRender.current) {
-            //localStorage.removeItem('filterOptions');
+            localStorage.removeItem('filterOptions');
             //sendSearchData({ reset: true });
             initialRender.current = false;
             return emptyFilterOptions;
@@ -55,7 +55,7 @@ const SearchComponent = () => {
             localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
             // When change in filterOptions, it is sent to CarContext.
             sendSearchData(filterOptions);
-            console.log('In useEffect, [filterOptions]', filterOptions)
+            console.log('In useEffect, setting filterOpts', filterOptions)
         //}
     }, [filterOptions]);
 
@@ -67,16 +67,7 @@ const SearchComponent = () => {
     }
 
     const handleClear = () => {
-        setFilterOptions({
-            make: "",
-            model: "",
-            price: [minPrice, maxPrice],
-            miles: [minMiles, maxMiles],
-            year: [minYear, maxYear],
-            textSearch: "",
-            isActive: false,
-            modelOptions: null
-        })
+        setFilterOptions(prevState => ({...emptyFilterOptions, isActive: prevState.isActive}))
         //Resets form
         document.querySelector("#filterForm").reset()
         sendSearchData({
