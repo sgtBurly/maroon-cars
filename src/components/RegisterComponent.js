@@ -5,19 +5,20 @@ import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData, Members} = useContext(MemberContext);
+    const {transferUserData, members} = useContext(MemberContext);
 
 
-    const [Password, setPassword] = useState("")
-    const [ConfirmPassword, setConfirmPassword] = useState("")
-    const [PasswordMatch, setPasswordMatch] = useState(false)
-    const [ FirstName, setFirstName ] = useState("");
-    const [ LastName, setLastName ] = useState("");
-    const [ Address, setAddress ] = useState("");
-    const [ City, setCity ] = useState("");
-    const [ ZipCode, setZipCode ] = useState("");
-    const [ Country, setCountry ] = useState("");
-    const [ Email, setEmail] = useState("");
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [passwordMatch, setPasswordMatch] = useState(false)
+    const [emailState, setEmailState] = useState()
+    const [ firstName, setFirstName ] = useState("");
+    const [ lastName, setLastName ] = useState("");
+    const [ address, setAddress ] = useState("");
+    const [ city, setCity ] = useState("");
+    const [ zipCode, setZipCode ] = useState("");
+    const [ country, setCountry ] = useState("");
+    const [ email, setEmail] = useState("");
 
     const updateUserFName = e => {
         setFirstName(e.target.value);
@@ -44,12 +45,12 @@ const RegisterComponent = () => {
 
         setPassword(e.target.value);
 
-        if (ConfirmPassword === e.target.value){
+        if (confirmPassword === e.target.value){
             setPasswordMatch(true)
-            console.log("password is correct! ", ConfirmPassword)
+            
             }else {
                 setPasswordMatch(false)
-                console.log("passwords dont match bro", ConfirmPassword)
+                
             }
     }
 
@@ -57,51 +58,37 @@ const RegisterComponent = () => {
 
         setConfirmPassword(e.target.value);
 
-        if (Password === e.target.value){
+        if (password === e.target.value){
             setPasswordMatch(true)
-        console.log("password is correct! ", ConfirmPassword)
+        
         }else {
             setPasswordMatch(false)
-            console.log("passwords dont match bro", ConfirmPassword)
+            
         }
 
-    }
-
-    const handleUserEmail = (Members) => {
-       Members && Members.map( member => {
-            if(member.Email !== Email) {
-                console.log("this is inside handleUserEmail");
-                return true;
-            } else {
-                return false;
-            }
-        })
     }
 
     const handleAccountSubmit = (e) => {
 
         e.preventDefault();
 
-        if(PasswordMatch, handleUserEmail(Members)) {
-
-            const newUser = {
-                Password,
-                FirstName,
-                LastName,
-                Address,
-                City,
-                ZipCode,
-                Country,
-                Email,
-                Purchases: [],
-                isLoggedIn: true
-            }
-
-            transferUserData(newUser)
-
-        }else {
-            alert("wrong password: ", ConfirmPassword);
+        if (passwordMatch){
+        const newUser = {
+            password,
+            firstName,
+            lastName,
+            address,
+            city,
+            zipCode,
+            country,
+            email,
+            purchases: [],
         }
+            
+        transferUserData(newUser)
+        }else {
+            console.log("Passwords dont match bro");
+        }    
     }
 
     return (
