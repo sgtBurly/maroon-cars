@@ -6,7 +6,6 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
 
     const {sendSearchData, makesAndModels} = useContext(CarContext);
-    
 
     const minPrice = 0;
     const maxPrice = 1000000;
@@ -18,8 +17,8 @@ const SearchComponent = () => {
     //declaring vaiables use in search component
     const [make, setMake] = useState("");
     const [price, setPrice] = useState([minPrice, maxPrice]);
-    const [miles, setMiles] = useState([0, 1000000]);
-    const [year, setYear] = useState([1960, 2021]);
+    const [miles, setMiles] = useState([minMiles, maxMiles]);
+    const [year, setYear] = useState([minYear, maxYear]);
     const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [model, setModel] = useState("");
@@ -103,8 +102,8 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={price}
-                                        min={0}
-                                        max={1000000}
+                                        min={minPrice}
+                                        max={maxPrice}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handlePriceChange}
@@ -118,8 +117,8 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={year}
-                                        min={1960}
-                                        max={2021}
+                                        min={minYear}
+                                        max={maxYear}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handleYearChange}
@@ -135,8 +134,8 @@ const SearchComponent = () => {
                                 <div className={styles.filterSlider}>
                                     <Slider
                                         value={miles}
-                                        min={0}
-                                        max={100000}
+                                        min={minMiles}
+                                        max={maxMiles}
                                         valueLabelDisplay="on"
                                         aria-labelledby="range-slider"
                                         onChange={handleMilesChange}
