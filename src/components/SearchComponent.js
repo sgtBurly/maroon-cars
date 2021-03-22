@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState, useContext, useEffect, useRef} from 'react'
 import { Slider } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/SearchComponentStyles.module.css';
@@ -7,11 +7,13 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
     const { sendSearchData, makesAndModels } = useContext(CarContext);
 
-    const minPrice = 0;
-    const maxPrice = 1000000;
-    const minMiles = 0;
-    const maxMiles = 100000;
-    const minYear = 1960;
+    const initialRender = useRef(true);
+
+    const minPrice = 100000;
+    const maxPrice = 800000;
+    const minMiles = 2000;
+    const maxMiles = 70000;
+    const minYear = 1965;
     const maxYear = 2021;
 
     const initFilterOpts = () => {
@@ -33,9 +35,14 @@ const SearchComponent = () => {
     const [filterOptions, setFilterOptions] = useState(initFilterOpts());
 
     useEffect(() => {
-        localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
-        // When change in filterOptions, it is sent to CarContext.
-        sendSearchData(filterOptions);
+        if(initialRender.current) {
+            initialRender.current = false;
+        } else {
+            localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
+            // When change in filterOptions, it is sent to CarContext.
+            sendSearchData(filterOptions);
+            console.log('In useEffect, [filterOptions]', filterOptions)
+        }
     },[filterOptions]);
 
     //function fired on submit, it sends the filter variables
