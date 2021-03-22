@@ -5,20 +5,20 @@ import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData, Members} = useContext(MemberContext);
+    const {transferUserData, members} = useContext(MemberContext);
 
 
-    const [Password, setPassword] = useState("")
-    const [ConfirmPassword, setConfirmPassword] = useState("")
-    const [PasswordMatch, setPasswordMatch] = useState(false)
-    const [EmailState, setEmailState] = useState()
-    const [ FirstName, setFirstName ] = useState("");
-    const [ LastName, setLastName ] = useState("");
-    const [ Address, setAddress ] = useState("");
-    const [ City, setCity ] = useState("");
-    const [ ZipCode, setZipCode ] = useState("");
-    const [ Country, setCountry ] = useState("");
-    const [ Email, setEmail] = useState("");
+    const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
+    const [passwordMatch, setPasswordMatch] = useState(false)
+    const [emailState, setEmailState] = useState()
+    const [ firstName, setFirstName ] = useState("");
+    const [ lastName, setLastName ] = useState("");
+    const [ address, setAddress ] = useState("");
+    const [ city, setCity ] = useState("");
+    const [ zipCode, setZipCode ] = useState("");
+    const [ country, setCountry ] = useState("");
+    const [ email, setEmail] = useState("");
 
     const updateUserFName = e => {
         setFirstName(e.target.value);
@@ -45,7 +45,7 @@ const RegisterComponent = () => {
 
         setPassword(e.target.value);
 
-        if (ConfirmPassword === e.target.value){
+        if (confirmPassword === e.target.value){
             setPasswordMatch(true)
             
             }else {
@@ -58,7 +58,7 @@ const RegisterComponent = () => {
 
         setConfirmPassword(e.target.value);
 
-        if (Password === e.target.value){
+        if (password === e.target.value){
             setPasswordMatch(true)
         
         }else {
@@ -72,18 +72,17 @@ const RegisterComponent = () => {
 
         e.preventDefault();
 
-        if (PasswordMatch){
+        if (passwordMatch){
         const newUser = {
-            Password,
-            FirstName,
-            LastName,
-            Address,
-            City,
-            ZipCode,
-            Country,
-            Email,
-            Purchases: [],
-            isLoggedIn: true
+            password,
+            firstName,
+            lastName,
+            address,
+            city,
+            zipCode,
+            country,
+            email,
+            purchases: [],
         }
             
         transferUserData(newUser)

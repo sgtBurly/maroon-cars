@@ -4,44 +4,34 @@ export const MemberContext = createContext();
 
 export function MemberProvider(props){
 
-    const [Members, setMembers] = useState([{test: "test", Email: "johan.markstrom@gmail.com"}]);
+    const [members, setMembers] = useState([
+        {test: "test", email: "test"},
+    ]);
 
 
-    const [ValidateUser, setValidateUser] = useState([])
 
     const transferUserData = (newUser) => {
 
-        setValidateUser(newUser);
+        let userExist = null
 
-        let Valid = Members.map(member => member.Email.includes(newUser.Email))            
-        console.log("This is value of valid: ", Valid);
+        userExist = members.find(member => member.email === newUser.email);
 
-        validateUserCredentials(Valid);
-    };
-
-    const validateUserCredentials = (Valid) => {
-        
-        if(Valid){
-            console.log("Already a member!");
-
-        }else {
-            console.log("This is inside if loop");
-            setMembers([...Members, {...ValidateUser}]);
-    
-    }
-
-
+        if (userExist) {
+            console.log("Already a member!")
+        } else {
+            setMembers([...members, {...newUser}]);
+        }
     };
 
     useEffect(() => {
 
-        console.log("This is Members: ", Members)
+        console.log("This is Members: ", members)
 
-    }, [Members])
+    }, [members])
 
     const values = {
         transferUserData,
-        Members
+        members
     }
 
     return (
