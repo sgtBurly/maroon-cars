@@ -14,6 +14,16 @@ export function MemberProvider(props){
         console.log('this is logged in member', loggedInMember)
     }, [members, loggedInMember])
 
+    useEffect(() => {
+        if (loggedInMember.email){
+            console.log(loggedInMember, "is Logged In")
+        } else {
+            console.log(loggedInMember, "is not logged in")
+        }
+    }, [loggedInMember])
+
+
+
     const transferUserData = (newUser) => {
 
         let userExist = null
@@ -42,7 +52,8 @@ export function MemberProvider(props){
         transferUserData,
         members, 
         loginFunc,
-        loggedInMember
+        loggedInMember,
+        setLoggedInMember
     };
 
     return (
