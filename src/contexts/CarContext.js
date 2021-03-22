@@ -43,7 +43,7 @@ const CarContextProvider = (props) => {
       car.miles >= minMiles && car.miles <= maxMiles &&
       car.year >= minYear && car.year <= maxYear
     );
-    console.log(filterResult)
+    //console.log(filterResult)
     const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
     searchResult.length === 0 ? setNoResults(true) : setNoResults(false);
     setfilteredCars(searchResult);

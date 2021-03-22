@@ -8,6 +8,7 @@ const SearchComponent = () => {
     const { sendSearchData, makesAndModels } = useContext(CarContext);
 
     const initialRender = useRef(true);
+    // const intialRenderFilter = useRef(true);
 
     const minPrice = 100000;
     const maxPrice = 800000;
@@ -16,34 +17,47 @@ const SearchComponent = () => {
     const minYear = 1965;
     const maxYear = 2021;
 
+    const emptyFilterOptions = {
+        make: "",
+        model: "",
+        price: [minPrice, maxPrice],
+        miles: [minMiles, maxMiles],
+        year: [minYear, maxYear],
+        textSearch: "",
+        isActive: false,
+        modelOptions: null
+    }
+
     const initFilterOpts = () => {
+        console.log('In initFilterOpts, initialRender: ', initialRender);
+        /* if(initialRender.current) {
+            //localStorage.removeItem('filterOptions');
+            //sendSearchData({ reset: true });
+            initialRender.current = false;
+            return emptyFilterOptions;
+        } */
         if ('filterOptions' in localStorage) {
-            return JSON.parse(localStorage.getItem('filterOptions'));
+            const filterOpInLocS = JSON.parse(localStorage.getItem('filterOptions'))
+            //sendSearchData(filterOpInLocS);
+            return filterOpInLocS;
         } else {
-            return {
-                make: "",
-                model: "",
-                price: [minPrice, maxPrice],
-                miles: [minMiles, maxMiles],
-                year: [minYear, maxYear],
-                textSearch: "",
-                isActive: false,
-                modelOptions: null
-            }
+            return emptyFilterOptions
         }
     }
+
     const [filterOptions, setFilterOptions] = useState(initFilterOpts());
 
     useEffect(() => {
-        if(initialRender.current) {
+        /* if(initialRender.current) {
+            //sendSearchData({reset: true});
             initialRender.current = false;
-        } else {
+        } else { */
             localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
             // When change in filterOptions, it is sent to CarContext.
             sendSearchData(filterOptions);
             console.log('In useEffect, [filterOptions]', filterOptions)
-        }
-    },[filterOptions]);
+        //}
+    }, [filterOptions]);
 
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
