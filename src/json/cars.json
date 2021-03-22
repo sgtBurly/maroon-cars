@@ -67,7 +67,8 @@
     "city": "Tournavista",
     "descShort": "platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum",
     "descLong": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
-    "price": 491093
+    "price": 491093,
+    "miles": 30001
   },
   {
     "make": "Oldsmobile",
