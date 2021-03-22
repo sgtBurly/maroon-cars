@@ -14,6 +14,23 @@ export function MemberProvider(props){
         console.log('this is logged in member', loggedInMember)
     }, [members, loggedInMember])
 
+    //Using the hook to update local storage with members array and logged in member
+    useEffect(() => {
+        localStorage.setItem('membersInStorage', JSON.stringify(members));
+        localStorage.setItem('loggedInMember', JSON.stringify(loggedInMember));
+    }, [members, loggedInMember])
+
+
+    // Function for retrieving custom information from local storage
+    const getFromLocalStorage = argument => {
+        if(argument in localStorage){
+            let parsedLocalContent = JSON.parse(localStorage.getItem(argument))
+            return parsedLocalContent
+        } else {
+            return []
+        }
+    }
+
     const transferUserData = (newUser) => {
 
         let userExist = null
