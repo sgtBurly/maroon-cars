@@ -4,7 +4,7 @@ export const MemberContext = createContext();
 export function MemberProvider(props){
 
     const [members, setMembers] = useState([{test: "test"}]);
-    const [loggedInMember, setLoggedInMember] = useState({});
+    const [loggedInMember, setLoggedInMember] = useState({purchases: []});
 
     const transferUserData = (newUser) => {
         setMembers([...members, {...newUser}]);
