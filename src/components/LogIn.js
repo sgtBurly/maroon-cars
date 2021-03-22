@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "../styles/LogInStyles.module.css";
+import {MemberContext} from "../contexts/MemberContext";
 
 function LogIn() {
 
+    const {loginFunc} = useContext(MemberContext);
     const [userPassword, setUserPassword] = useState("");
     const [userEmail, setUserEmail] = useState("");
 
@@ -22,7 +24,7 @@ function LogIn() {
             userEmail
         }
 
-        // loginFunc(memberInput);
+        loginFunc(memberInput);
     }
 
 
