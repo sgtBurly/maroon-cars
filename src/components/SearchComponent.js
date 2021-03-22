@@ -34,6 +34,7 @@ const SearchComponent = () => {
 
     useEffect(() => {
         localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
+        // When change in filterOptions, it is sent to CarContext.
         sendSearchData(filterOptions);
     },[filterOptions]);
 
