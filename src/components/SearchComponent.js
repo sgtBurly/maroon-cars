@@ -1,15 +1,11 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { Slider } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/SearchComponentStyles.module.css';
 import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
-
-    
-
-
-    const {sendSearchData, makesAndModels} = useContext(CarContext);
+    const { sendSearchData, makesAndModels } = useContext(CarContext);
 
     const minPrice = 0;
     const maxPrice = 1000000;
@@ -18,38 +14,66 @@ const SearchComponent = () => {
     const minYear = 1960;
     const maxYear = 2021;
 
+    const initFilterOpts = () => {
+        if ('filterOptions' in localStorage) {
+            return JSON.parse(localStorage.getItem('filterOptions'));
+        } else {
+            return {
+                make: "",
+                model: "",
+                price: [minPrice, maxPrice],
+                miles: [minMiles, maxMiles],
+                year: [minYear, maxYear],
+                textSearch: ""
+            }
+        }
+    }
+    const [filterOptions, setFilterOptions] = useState(initFilterOpts());
+
+    useEffect(() => {
+        localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
+    },[filterOptions])
+
     //declaring vaiables use in search component
-    const [make, setMake] = useState("");
-    const [price, setPrice] = useState([minPrice, maxPrice]);
-    const [miles, setMiles] = useState([minMiles, maxMiles]);
-    const [year, setYear] = useState([minYear, maxYear]);
-    const [textSearch, setTextSearch] = useState("");
+    //const [make, setMake] = useState("");
+    //const [price, setPrice] = useState([minPrice, maxPrice]);
+    //const [miles, setMiles] = useState([minMiles, maxMiles]);
+    //const [year, setYear] = useState([minYear, maxYear]);
+    //const [textSearch, setTextSearch] = useState("");
     const [isActive, setIsActive] = useState(false);
-    const [model, setModel] = useState("");
+    //const [model, setModel] = useState("");
     const [modelOptions, setModelOptions] = useState(null);
 
     //function fired on submit, it sends the filter variables
     //into an empty object and then sends the object to CarContext.
     const handleSearch = e => {
         e.preventDefault();
-        const filterOptions = {
+        /* const filterOptions = {
             price,
             miles,
             year,
             textSearch,
             make,
             model
-        }
+        } */
         sendSearchData(filterOptions);
     }
 
     const handleClear = () => {
-        setTextSearch("");
+        /* setTextSearch("");
         setMake("");
         setModel("");
         setPrice([minPrice, maxPrice])
         setMiles([minMiles, maxMiles]);
-        setYear([minYear, maxYear])
+        setYear([minYear, maxYear]) */
+        setFilterOptions({
+            make: "",
+            model: "",
+            price: [minPrice, maxPrice],
+            miles: [minMiles, maxMiles],
+            year: [minYear, maxYear],
+            textSearch: "",
+        })
         //Resets form
         document.querySelector("#filterForm").reset()
         sendSearchData({
@@ -58,12 +82,31 @@ const SearchComponent = () => {
     }
 
     const toggleFilter = () =>  setIsActive(!isActive);
-    const textSearchHandler = e => setTextSearch(e.target.value);
-    const handlePriceChange = (e, newValue) => setPrice(newValue);
-    const handleYearChange = (e, newValue) => setYear(newValue);
-    const handleMilesChange = (e, newValue) => setMiles(newValue);
-    const handleModelChange = e => setModel(e.target.value);
-    const handleMakeChange = (e) => {
+    const textSearchHandler = e => setFilterOptions(prevState => ({...prevState, textSearch: e.target.value}));
+    const handlePriceChange = (e, newValue) => setFilterOptions(prevState => ({...prevState, price: newValue}));
+    const handleYearChange = (e, newValue) => setFilterOptions(prevState => ({...prevState, year: newValue}));
+    const handleMilesChange = (e, newValue) => setFilterOptions(prevState => ({...prevState, miles: newValue}));
+    const handleModelChange = e => setFilterOptions(prevState => ({...prevState, model: e.target.value}));
+    const handleMakeChange = e => {
+        setFilterOptions(prevState => ({...prevState, model: "", make: e.target.value}));
+        if(modelOptions) document.querySelector('#model').value = "";
+        if(e.target.value !== "") {
+            const selectedIndex = e.target.options.selectedIndex;
+            //Saving makes index
+            const makeIndex = e.target.options[selectedIndex].getAttribute("data-key");
+            setModelOptions(Array.from(makesAndModels[makeIndex].models))
+        } else {
+            setModelOptions(null);
+        }
+    }
+
+    //const textSearchHandler = e => setTextSearch(e.target.value);
+    //const handlePriceChange = (e, newValue) => setPrice(newValue);
+    //const handleYearChange = (e, newValue) => setYear(newValue);
+    //const handleMilesChange = (e, newValue) => setMiles(newValue);
+    //const handleModelChange = e => setModel(e.target.value);
+
+    /* const handleMakeChange = (e) => {
         //Resets model after new make filter-option
         setModel("");
         if(modelOptions) document.querySelector('#model').value = "";
@@ -76,7 +119,7 @@ const SearchComponent = () => {
         } else {
             setModelOptions(null);
         }
-    }
+    } */
 
     return (
         <div className={styles.searchComponent}>
@@ -108,7 +151,7 @@ const SearchComponent = () => {
                                 </div>
                                 <div className={styles.filterSlider}>
                                     <Slider
-                                        value={price}
+                                        value={filterOptions.price}
                                         min={minPrice}
                                         max={maxPrice}
                                         valueLabelDisplay="on"
@@ -125,7 +168,7 @@ const SearchComponent = () => {
                                 </div>
                                 <div className={styles.filterSlider}>
                                     <Slider
-                                        value={year}
+                                        value={filterOptions.year}
                                         min={minYear}
                                         max={maxYear}
                                         valueLabelDisplay="on"
@@ -135,15 +178,15 @@ const SearchComponent = () => {
                                     />
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label >Miles:</label>
                                 </div>
                                 <div className={styles.filterSlider}>
                                     <Slider
-                                        value={miles}
+                                        value={filterOptions.miles}
                                         min={minMiles}
                                         max={maxMiles}
                                         valueLabelDisplay="on"
@@ -154,7 +197,7 @@ const SearchComponent = () => {
                                 </div>
                             </div>
                         </div>
-            
+
 
                         <div className={styles.makeModelButtonsFlexWrapper}>
                             <div className={styles.makeModelWrapper}>
@@ -186,7 +229,7 @@ const SearchComponent = () => {
 
                             <div className={styles.buttonsWrapper}>
                                 <button type="button" onClick={handleClear} className={styles.clearFilterBtn} >Clear filter</button>
-                                <button type="submit" className={styles.applyFilterBtn}>Apply filter</button> 
+                                <button type="submit" className={styles.applyFilterBtn}>Apply filter</button>
                             </div>
                         </div>
 
