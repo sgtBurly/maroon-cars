@@ -3,14 +3,15 @@ export const MemberContext = createContext();
 
 export function MemberProvider(props){
 
-    const [Members, setMembers] = useState([{test: "test"}]);
-    const [loggedInMember, setLoggedInMember] = useState({})
+    const [members, setMembers] = useState([{test: "test"}]);
+    const [loggedInMember, setLoggedInMember] = useState({});
+
     const transferUserData = (newUser) => {
-        setMembers([...Members, {...newUser}]);
+        setMembers([...members, {...newUser}]);
     };
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
-        const successfulLogin = Members.filter(member => member.username === memberInput.username && member.password === memberInput.password);
+        const successfulLogin = members.filter(member => member.userEmail === memberInput.userEmail && member.userPassword === memberInput.userPassword);
         if (successfulLogin) {
               //Sets the logged in member
               setLoggedInMember(successfulLogin[0]);
@@ -18,25 +19,21 @@ export function MemberProvider(props){
         }
         else {
             alert("INVALID USERNAME OR PASSWORD");
-        }
-    }
+        };
+    };
     
-    useEffect(() => {
-        console.log("this is Members: ", Members);
-    }, [Members]);
-
     const values = {
         transferUserData,
-        Members, 
+        members, 
         loginFunc,
         loggedInMember
-    }
+    };
 
     return (
         <MemberContext.Provider value={values}>
             {props.children}
         </MemberContext.Provider>
     )
-}
+};
 
 export default MemberProvider;
