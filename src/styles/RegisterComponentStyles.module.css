@@ -1,10 +1,13 @@
+/* main component wrapper */
 .Form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
+/* wraps everything except button */
 .ContactInfo {
     display: flex;
     flex-direction: column;
@@ -14,7 +17,6 @@
 }
 
 h3.header {
-    /* text-align: center; */
     padding: 1.5rem 0rem;
     text-shadow: 1px 1px 1px #03030349;
     font-size: 1.5rem;
@@ -30,7 +32,7 @@ h3.header {
 }
 
 .textInput {
-    /* width: 100%; */
+    width: 100%;
     padding: 0.7rem;
     margin-bottom: 1rem;
     outline-style: none;
@@ -39,8 +41,12 @@ h3.header {
     border-radius: 0.2rem;
 }
 
+.textInput:focus {
+    border: 2px solid #FFBE0B;
+}
+
 .passwordWrapper {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .createAccountBtn {
@@ -59,20 +65,39 @@ h3.header {
     background-color: #FFBE0B;
 }
 
-
 @media screen and (min-width: 576px){
-    
 }
-
-
 @media screen and (min-width: 768px){
-
 }
 
 @media screen and (min-width: 992px){
+    .textInput {
+        width: 400px;
+    }
 
+    .inputWrapper {
+        display: flex;
+        flex-direction: row;
+        width: 900px;
+        margin: 0rem;
+        padding: 0rem;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+
+    .flexWrapperPersonal {
+        padding: 1rem;
+    }
+
+    .flexWrapperAddress {
+        padding: 1rem;
+    }
+
+    .passwordWrapper {
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 1200px){
-
 }
