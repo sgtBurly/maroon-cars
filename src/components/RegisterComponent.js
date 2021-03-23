@@ -20,6 +20,20 @@ const RegisterComponent = () => {
     const [ country, setCountry ] = useState("");
     const [ email, setEmail] = useState("");
 
+    //For password checking
+
+        const [toggleAlert, setToggleAlert] = useState(false);
+
+        const [validLength, setValidLength] = useState(false);
+        const [upperCase, setUpperCase] = useState(false);
+        const [lowerCase, setLowerCase] = useState(false);
+
+    useEffect(() => {
+        setValidLength(password.length >= 6 ? true : false);
+        setUpperCase(password.toLowerCase() !== password);
+        setLowerCase(password.toUpperCase() !== password);
+    }, [password, confirmPassword]);
+
     const updateUserFName = e => {
         setFirstName(e.target.value);
     }
@@ -47,23 +61,24 @@ const RegisterComponent = () => {
 
         if (confirmPassword === e.target.value){
             setPasswordMatch(true)
-            
+
             }else {
                 setPasswordMatch(false)
-                
+
             }
     }
 
     const HandleUserComfirmPassword = (e) => {
+        setToggleAlert(false);
 
         setConfirmPassword(e.target.value);
 
-        if (password === e.target.value){
+        if (password === e.target.value && validLength && upperCase && lowerCase){
             setPasswordMatch(true)
-        
+
         }else {
             setPasswordMatch(false)
-            
+
         }
 
     }
@@ -84,11 +99,12 @@ const RegisterComponent = () => {
             email,
             purchases: [],
         }
-            
+
         transferUserData(newUser)
         }else {
             console.log("Passwords dont match bro");
-        }    
+            setToggleAlert(true);
+        }
     }
 
     return (
@@ -112,6 +128,9 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
+                        
+                        {toggleAlert
+                        && <div className={styles.alertMsg}>Password must contain 6 charchaters, including one capital letter!</div>}
                         <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
                         </div>
                     </div>

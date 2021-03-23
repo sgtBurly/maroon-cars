@@ -28,6 +28,11 @@
     outline: none;
 }
 
+.alertMsg {
+    color: red;
+    font-size: 0.9rem;
+}
+
 .ContactInfo {
     display: flex;
     flex-direction: column;
