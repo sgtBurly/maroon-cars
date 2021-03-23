@@ -1,10 +1,10 @@
 import React, { useState, createContext, useEffect, useContext} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import  { MemberContext } from '../contexts/MemberContext';
+import { MemberContext } from '../contexts/MemberContext';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
-    const { setLoggedInMember } = useContext(MemberContext);
+    const { loggedInMember, setLoggedInMember, } = useContext(MemberContext);
     const basketStorageFunction = () => {
         if ("basketItems" in localStorage) {
             let customerBasket_Parsed = JSON.parse(localStorage.getItem("basketItems"));
@@ -17,7 +17,7 @@ export const BasketProvider = (props) => {
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState(basketStorageFunction());
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
-    const [latestPurchase, setLatestPurchase] = useState({});
+  
 
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
@@ -50,14 +50,13 @@ export const BasketProvider = (props) => {
        setCustomerBasket(newCustomerBasket);
     }
 
-    const handlePurchase = (userData) => {
-        // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
-        setLatestPurchase({
-            userData,
-            carsPurchased: [...customerBasket],
-            timestamp: new Date()
-        });
-        setLoggedInMember(prevState => [customerBasket, ...prevState]);
+    const handlePurchase = (userData) => {  
+        
+        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.delivery, paymentMethod: userData.payment};
+        setLoggedInMember(prevState => ({...prevState, purchases: [latestPurchase, ...prevState.purchases]}));
+        
+        
+
         //resets the customerBasket
         setCustomerBasket([]);
     }
@@ -79,7 +78,7 @@ export const BasketProvider = (props) => {
         removeFromBasket,
         handlePurchase,
         calcBasket,
-        latestPurchase
+     
     }
 
     return (

@@ -20,9 +20,8 @@ export function MemberProvider(props){
         } else {
             console.log(loggedInMember, "is not logged in")
         }
+       
     }, [loggedInMember])
-
-
 
     const transferUserData = (newUser) => {
 
@@ -36,6 +35,10 @@ export function MemberProvider(props){
             setMembers([...members, {...newUser}]);
         }
     };
+
+    const addPurchase = (latestPurchase) => {
+        let memberToAddTo = members.findIndex(member => member.email === loggedInMember.email)
+    }
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
         const successfulLogin = members.filter(member => member.email === memberInput.userEmail && member.password === memberInput.userPassword);
