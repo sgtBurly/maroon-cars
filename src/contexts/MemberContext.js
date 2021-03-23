@@ -1,8 +1,6 @@
 import { getDefaultNormalizer } from '@testing-library/dom';
 import React, {useState, createContext, useEffect} from 'react';
-
 export const MemberContext = createContext();
-
 
 export function MemberProvider(props){
 
@@ -20,7 +18,6 @@ export function MemberProvider(props){
         localStorage.setItem('loggedInMember', JSON.stringify(loggedInMember));
     }, [members, loggedInMember])
 
-
     // Function for retrieving custom information from local storage
     const getFromLocalStorage = argument => {
         if(argument in localStorage){
@@ -30,7 +27,6 @@ export function MemberProvider(props){
             return []
         }
     }
-
     const transferUserData = (newUser) => {
         let userExist = null
 
