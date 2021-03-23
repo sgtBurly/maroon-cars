@@ -1,16 +1,17 @@
-import react from 'react';
+import react, { useContext } from 'react';
 import Profile from '../components/Profile';
 import RegisterComponent from '../components/RegisterComponent';
 import LogIn from '../components/LogIn';
+import { MemberContext } from '../contexts/MemberContext';
 
 const Membership = () => {
     // Get this varable from MemberContext later
-    const loggedInMember = true;
+    const {loggedInMember} = useContext(MemberContext);
 
     return (
         <div className="membership">
-            {loggedInMember ? <Profile /> : <div>Register and login component goes here!</div>}
-            <LogIn /> 
+            {loggedInMember.email ? <Profile /> : <div>Register and login component goes here!</div>}
+            <LogIn />
             <RegisterComponent />
         </div>
      );

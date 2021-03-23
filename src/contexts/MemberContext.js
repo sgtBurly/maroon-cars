@@ -1,13 +1,21 @@
-import { getDefaultNormalizer } from '@testing-library/dom';
 import React, {useState, createContext, useEffect} from 'react';
 
 export const MemberContext = createContext();
 
-
 export function MemberProvider(props){
 
-    const [members, setMembers] = useState([{test: "test"}]);
-    const [loggedInMember, setLoggedInMember] = useState({purchases: []});
+    // Function for retrieving custom information from local storage
+    const getFromLocalStorage = argument => {
+        if(argument in localStorage){
+            let parsedLocalContent = JSON.parse(localStorage.getItem(argument))
+            return parsedLocalContent
+        } else {
+            return []
+        }
+    }
+
+    const [members, setMembers] = useState(getFromLocalStorage('membersInStorage'));
+    const [loggedInMember, setLoggedInMember] = useState(getFromLocalStorage('loggedInMember'));
 
     useEffect(() => {
         console.log('this is members', members)
@@ -20,20 +28,8 @@ export function MemberProvider(props){
         localStorage.setItem('loggedInMember', JSON.stringify(loggedInMember));
     }, [members, loggedInMember])
 
-
-    // Function for retrieving custom information from local storage
-    const getFromLocalStorage = argument => {
-        if(argument in localStorage){
-            let parsedLocalContent = JSON.parse(localStorage.getItem(argument))
-            return parsedLocalContent
-        } else {
-            return []
-        }
-    }
-
     const transferUserData = (newUser) => {
-        let userExist = null
-
+        let userExist = null;
         userExist = members.find(member => member.email === newUser.email);
 
         if (userExist) {
