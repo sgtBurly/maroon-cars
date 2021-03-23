@@ -1,8 +1,10 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext, useEffect, useContext} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import  { MemberContext } from '../contexts/MemberContext';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
+    const { setLoggedInMember } = useContext(MemberContext);
     const basketStorageFunction = () => {
         if ("basketItems" in localStorage) {
             let customerBasket_Parsed = JSON.parse(localStorage.getItem("basketItems"));
@@ -22,7 +24,7 @@ export const BasketProvider = (props) => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
-            toast.error('The car is already in your cart!')
+            toast.error('This car is already in your cart!')
         } 
         //Here the car is added to the basket
         else {
@@ -55,6 +57,7 @@ export const BasketProvider = (props) => {
             carsPurchased: [...customerBasket],
             timestamp: new Date()
         });
+        setLoggedInMember(prevState => [customerBasket, ...prevState]);
         //resets the customerBasket
         setCustomerBasket([]);
     }
