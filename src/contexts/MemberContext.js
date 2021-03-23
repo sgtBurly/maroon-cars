@@ -9,21 +9,6 @@ export function MemberProvider(props){
     const [members, setMembers] = useState([{test: "test"}]);
     const [loggedInMember, setLoggedInMember] = useState({purchases: []});
 
-    useEffect(() => {
-        console.log('this is members', members)
-        console.log('this is logged in member', loggedInMember)
-    }, [members, loggedInMember])
-
-    useEffect(() => {
-        if (loggedInMember.email){
-            console.log(loggedInMember, "is Logged In")
-        } else {
-            console.log(loggedInMember, "is not logged in")
-        }
-    }, [loggedInMember])
-
-
-
     const transferUserData = (newUser) => {
 
         let userExist = null
