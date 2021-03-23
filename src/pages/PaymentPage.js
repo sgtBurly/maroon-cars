@@ -9,27 +9,43 @@ import RegisterComponent from '../components/RegisterComponent';
 
 const PaymentPage = () => {
 
-    // localStorage.clear();
     const {customerBasket} = useContext(BasketContext);
     const {loggedInMember} = useContext(MemberContext);
 
     useEffect(() => window.scrollTo(0,0), []);
+    //Have to have localStorage.clear to log in /log out
 
-    if (loggedInMember.email){
+    // If not loged in and emtyBasket
+    if (loggedInMember.email === '' && customerBasket.length < 1){
         return (
-        <div>
-            <RegisterComponent /> 
-            <LogIn />
-        </div>
+            <div>
+                <EmptyBasket />
+            </div>
         )
-    } else if(customerBasket.length < 1) {
+        //If not loged in and Basket
+    } else if(loggedInMember.email === '' && customerBasket.length > 0) {
         return (
-            <EmptyBasket />
+            <div>
+                <RegisterComponent />
+                <LogIn />
+            </div>
         );
+        //If loged in but emptyBasket
+    } else if (customerBasket < 1){
+        return (
+            <div>
+                <EmptyBasket />
+            </div>
+        )
+        //If loged in and Basket
     } else {
-        return <Card />
+        return (
+            <div>
+                <Card />
+                <PaymentForm />
+            </div>
+        )
     }
-
 }
 
 export default PaymentPage;

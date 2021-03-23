@@ -7,7 +7,7 @@ export const MemberContext = createContext();
 export function MemberProvider(props){
 
     const [members, setMembers] = useState([{test: "test"}]);
-    const [loggedInMember, setLoggedInMember] = useState({purchases: []});
+    const [loggedInMember, setLoggedInMember] = useState({purchases: [], email: ''});
 
     useEffect(() => {
         console.log('this is members', members)
