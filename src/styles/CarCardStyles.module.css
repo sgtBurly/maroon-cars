@@ -6,7 +6,6 @@ span {
     font-weight: 900;
 }
 
-
 .carCard {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: all 0.3s ease-out;
@@ -59,4 +58,16 @@ p.price {
 .iconWrapper i:hover {
     cursor: pointer;
     color: #FFBE0B;
+}
+
+.saleIcon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+.saleIcon img {
+    width: 100%;
 }
