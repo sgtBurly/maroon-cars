@@ -28,14 +28,7 @@ export function MemberProvider(props){
     }, [members, loggedInMember])
 
     // Function for retrieving custom information from local storage
-    const getFromLocalStorage = argument => {
-        if(argument in localStorage){
-            let parsedLocalContent = JSON.parse(localStorage.getItem(argument))
-            return parsedLocalContent
-        } else {
-            return []
-        }
-    }
+
     const transferUserData = (newUser) => {
         let userExist = null;
         userExist = members.find(member => member.email === newUser.email);
