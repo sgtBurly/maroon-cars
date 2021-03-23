@@ -39,6 +39,11 @@ span {
     left: 0;
 }
 
+p.year,
+p.price {
+    margin-bottom: 5px;
+}
+
 .iconWrapper {
     font-size: 2rem;
     position: absolute;
