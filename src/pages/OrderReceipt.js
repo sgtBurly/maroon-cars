@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import ReceiptStyles from '../styles/ReceiptStyles.module.css';
 import { BasketContext } from '../contexts/BasketContext';
+import { MemberContext } from '../contexts/MemberContext';
 
 const OrderReceipt = () => {
 
-  const { latestPurchase, calcBasket } = useContext(BasketContext);
+  const { calcBasket } = useContext(BasketContext);
+  const { loggedInMember } = useContext(MemberContext);
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -23,14 +25,14 @@ const OrderReceipt = () => {
             <p>Twitter: @MaroonCars</p>
           </div>
           <div className={ReceiptStyles.title_wrapper}>
-            <p>{`${latestPurchase.timestamp.toDateString()} ${latestPurchase.timestamp.getHours()}:${latestPurchase.timestamp.getMinutes()}`}</p>
+            <p>{`${loggedInMember.purchases[0].timestamp.toDateString()} ${loggedInMember.purchases[0].timestamp.getHours()}:${loggedInMember.purchases[0].timestamp.getMinutes()}`}</p>
             <h3>Receipt of Purchase</h3>
           </div>
         </div>
         <div className={ReceiptStyles.orderItem}>
-            <p className={ReceiptStyles.orderInfo}>Customer: <span>{`${latestPurchase.userData.FirstName} ${latestPurchase.userData.LastName}`}</span></p>
-            <p className={ReceiptStyles.orderInfo}>Payment method: <span>{latestPurchase.userData.PaymentMethod}</span></p>
-            <p className={ReceiptStyles.orderInfo}>Delivery method: {latestPurchase.userData.DeliveryMethod === 'home' ? <span>Home delivery</span> : <span>Pick up at store</span>}</p>
+            <p className={ReceiptStyles.orderInfo}>Customer: <span>{`${loggedInMember.firstName} ${loggedInMember.lastName}`}</span></p>
+            <p className={ReceiptStyles.orderInfo}>Payment method: <span>{loggedInMember.purchases[0].paymentMethod}</span></p>
+            <p className={ReceiptStyles.orderInfo}>Delivery method: {loggedInMember.purchases[0].deliveryMethod === 'home' ? <span>Home delivery</span> : <span>Pick up at store</span>}</p>
             <hr />
           </div>
         <div className={ReceiptStyles.bottom_row}>
@@ -38,7 +40,7 @@ const OrderReceipt = () => {
             <h6>Purchase info</h6>
           </div>
           {
-            latestPurchase.carsPurchased.map(purchasedCar => {
+            loggedInMember.purchases[0].carsPurchased.map(purchasedCar => {
               orderNumber++;
               return (
                 <div className={ReceiptStyles.orderItem} key={purchasedCar.vin}>
@@ -51,7 +53,7 @@ const OrderReceipt = () => {
             })
           }
           <div className={ReceiptStyles.total_wrapper}>
-            <p>Total: <span>$ {calcBasket(latestPurchase.carsPurchased)}</span></p>
+            <p>Total: <span>$ {calcBasket(loggedInMember.purchases[0].carsPurchased)}</span></p>
           </div>
         </div>
       </div>
