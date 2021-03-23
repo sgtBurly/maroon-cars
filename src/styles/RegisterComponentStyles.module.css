@@ -1,11 +1,3 @@
-.FormWrapper {
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color:  #FFBE0B;
-}
-
 .Form {
     display: flex;
     flex-direction: column;
@@ -13,60 +5,69 @@
     align-items: center;
 }
 
-.h2 {
-    margin-bottom: 2rem;
-}
-
-.textInput {
-    width: 100%;
-    margin-bottom: 1rem;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 0.2rem;
-    outline: none;
-}
-
 .ContactInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
-    margin-top: 1rem;
+    width: 90%;
+    margin-top: 3rem;
 }
 
-.inputWrapper {
+h3.header {
+    /* text-align: center; */
+    padding: 1.5rem 0rem;
+    text-shadow: 1px 1px 1px #03030349;
+    font-size: 1.5rem;
+}
+
+.inputWrapper,
+.passwordWrapper {
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.inputWrapper input {
-    width: 100%;
-}
-
-.eMail_input {
-    width: 100% !important;
-}
-
-.completeContactFormBtn {
-    padding: 1rem;
-    margin: 1rem auto;
+.textInput {
+    /* width: 100%; */
+    padding: 0.7rem;
+    margin-bottom: 1rem;
     outline-style: none;
-    box-shadow: none;
     border-color: transparent;
-    border: solid 1px #232b2b;
-    border-radius: 5px;
-    background-color: #ffffff;
-    font-weight: bold;
-    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 0.2rem;
+}
+
+.passwordWrapper {
+    margin-top: 3rem;
+}
+
+.createAccountBtn {
+    margin: 2rem auto;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius:  0.2rem;
+    background-color: #fcfcfb;
+    transition: background-color 0.7s ease;
+}
+
+.createAccountBtn:hover {
+    cursor: pointer;
+    background-color: #FFBE0B;
+}
+
+
+@media screen and (min-width: 576px){
+    
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 690px) {
-    .inputWrapper {
+@media screen and (min-width: 768px){
+    /* .inputWrapper {
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -78,16 +79,20 @@
     .FormWrapper {
         min-width: 700px;
         max-width: 700px !important;
-    }
- }
+    } */
+}
+
+@media screen and (min-width: 992px){
+
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 700px)  {
+/* @media (min-width: 700px)  {
     .FormWrapper {
         min-width: 700px;
         max-width: 700px !important;
     }
-}
+} */
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+/* @media (min-width: 1200px) {  } */ 

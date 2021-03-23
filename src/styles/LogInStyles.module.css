@@ -17,8 +17,6 @@
     align-items: center;
 }
 
-.form_title{}
-
 .input {
 	background-color: #fcfcfb;
     border: none;
@@ -35,7 +33,7 @@
     transition: box-shadow 0.7s ease;
 }
 
-.btn{
+.btn{ 
     border: none;
     width: 150px;
     height: 50px;
@@ -49,7 +47,7 @@
 
 .btn:hover {
     cursor: pointer;
-    background-color: #FFBE0B
+    background-color: #FFBE0B;
 }
 
 @media (min-width: 576px) {
