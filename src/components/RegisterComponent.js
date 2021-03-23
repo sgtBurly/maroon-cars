@@ -5,7 +5,7 @@ import {MemberContext} from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData, members} = useContext(MemberContext);
+    const {transferUserData} = useContext(MemberContext);
 
 
     const [password, setPassword] = useState("")
@@ -22,8 +22,8 @@ const RegisterComponent = () => {
 
     //For password checking
 
+        const [confirmNoMatch, setConfirmNoMatch] = useState(false);
         const [toggleAlert, setToggleAlert] = useState(false);
-
         const [validLength, setValidLength] = useState(false);
         const [upperCase, setUpperCase] = useState(false);
         const [lowerCase, setLowerCase] = useState(false);
@@ -34,26 +34,19 @@ const RegisterComponent = () => {
         setLowerCase(password.toUpperCase() !== password);
     }, [password, confirmPassword]);
 
-    const updateUserFName = e => {
-        setFirstName(e.target.value);
-    }
+    const updateUserFName = e => setFirstName(e.target.value);
+
     const updateUserLName = e => setLastName(e.target.value);
 
-    const updateUserEmail = e => {
-        setEmail(e.target.value);
-    }
-    const updateUserAddress = e => {
-    setAddress(e.target.value);
-    }
-    const updateUserCity = e => {
-        setCity(e.target.value);
-    }
-    const updateUserZipCode = e => {
-        setZipCode(e.target.value);
-    }
-    const updateUserCountry = e => {
-        setCountry(e.target.value);
-    }
+    const updateUserEmail = e => setEmail(e.target.value);
+
+    const updateUserAddress = e => setAddress(e.target.value);
+
+    const updateUserCity = e => setCity(e.target.value);
+
+    const updateUserZipCode = e => setZipCode(e.target.value);
+    
+    const updateUserCountry = e => setCountry(e.target.value);
 
     const handleUserPassword = (e) => {
 
@@ -69,18 +62,20 @@ const RegisterComponent = () => {
     }
 
     const HandleUserComfirmPassword = (e) => {
-        setToggleAlert(false);
 
+        setToggleAlert(false);
+        setConfirmNoMatch(false);
         setConfirmPassword(e.target.value);
 
         if (password === e.target.value && validLength && upperCase && lowerCase){
             setPasswordMatch(true)
 
-        }else {
+        }else if (password !== e.target.value) {
             setPasswordMatch(false)
-
+        } else {
+            console.log("At the end of password loop");
+            setPasswordMatch(false)
         }
-
     }
 
     const handleAccountSubmit = (e) => {
@@ -104,8 +99,11 @@ const RegisterComponent = () => {
         }else {
             console.log("Passwords dont match bro");
             setToggleAlert(true);
+            setConfirmNoMatch(true);
+
         }
     }
+
 
     return (
         <div>
@@ -128,10 +126,18 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
-                        
-                        {toggleAlert
-                        && <div className={styles.alertMsg}>Password must contain 6 charchaters, including one capital letter!</div>}
+                            <div className={styles.alertMsg}>
+                                
+                                {toggleAlert &&
+                                    <p>Password must contain 6 charchaters, including one capital letter!</p>
+                                }
+                            </div>
                         <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
+                        <div className={styles.alertMsg}>
+                            {confirmNoMatch &&
+                                        <p>Passwords doesn't match!</p>
+                                    }
+                            </div>
                         </div>
                     </div>
                     <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
