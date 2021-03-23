@@ -55,3 +55,15 @@ span {
     cursor: pointer;
     color: #FFBE0B;
 }
+
+.saleIcon {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+.saleIcon img {
+    width: 100%;
+}
