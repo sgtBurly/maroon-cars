@@ -18,20 +18,13 @@ const CarContextProvider = (props) => {
     if (cars.length > 0 && initialRender.current) {
       setfilteredCars(cars);
       initialRender.current = false;
-      /* 'filterOptions' in localStorage ? sendSearchData(JSON.parse(localStorage.getItem('filterOptions'))) : setfilteredCars(cars); */
     }
-
+    
     const randomNumber = Math.floor(Math.random() * 48);
     if(cars.length > 0) setRecommendedCars([cars[(randomNumber-2 < 0 ? 1 : randomNumber-2)], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
-  /* useEffect(() => {
-    if (filteredCars.length > 0 && 'filterOptions' in localStorage) {
-      localStorage.setItem('filteredCars', JSON.stringify(filteredCars))
-    }
-  }, [filteredCars]) */
-
-  //The function used in SearchComponent to send search data/filter options to CarContext
+  //The function used in SearchComponent to send search/filter options to CarContext
   const sendSearchData = (filterOptions) => {
     if (filterOptions.reset === true) {
       setNoResults(false)

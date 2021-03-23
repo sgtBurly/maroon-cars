@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect, useRef} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { Slider } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import styles from '../styles/SearchComponentStyles.module.css';
@@ -7,8 +7,6 @@ import {CarContext} from "../contexts/CarContext";
 const SearchComponent = () => {
     const { sendSearchData, makesAndModels, initialRender } = useContext(CarContext);
 
-    //const initialRender = useRef(true);
-    // const intialRenderFilter = useRef(true);
     const minPrice = 100000;
     const maxPrice = 800000;
     const minMiles = 2000;
@@ -28,20 +26,16 @@ const SearchComponent = () => {
     }
 
     const initFilterOpts = () => {
-        //console.log('In initFilterOpts, initialRender: ', initialRender);
         console.log('In initFilterOptions')
         if(initialRender.current) {
+            // If it is initial render for App, saved filterOptions is removed.
             localStorage.removeItem('filterOptions');
-            //sendSearchData({ reset: true });
-            // initialRender.current = false;
             return emptyFilterOptions;
         }
         if ('filterOptions' in localStorage) {
-            const filterOpInLocS = JSON.parse(localStorage.getItem('filterOptions'))
-            //sendSearchData(filterOpInLocS);
-            return filterOpInLocS;
+            return JSON.parse(localStorage.getItem('filterOptions'));
         } else {
-            return emptyFilterOptions
+            return emptyFilterOptions;
         }
     }
 
@@ -58,8 +52,7 @@ const SearchComponent = () => {
         }
     }, [filterOptions]);
 
-    //function fired on submit, it sends the filter variables
-    //into an empty object and then sends the object to CarContext.
+    //function fired on submit, sends the filter variables to filter array in CarContext.
     const handleSearch = e => {
         e.preventDefault();
         sendSearchData(filterOptions);
@@ -99,13 +92,7 @@ const SearchComponent = () => {
             <h4 className={styles.searchHeader}>Find your dream car</h4>
                 <div className={styles.searchBarWrapper}>
                     <span className={styles.inputWrapper}>
-                        <input
-                        type="text"
-                        placeholder='Search...'
-                        value={filterOptions.textSearch}
-                        className={styles.searchInput}
-                        onChange={textSearchHandler}
-                        />
+                        <input type="text" placeholder='Search...' value={filterOptions.textSearch} className={styles.searchInput} onChange={textSearchHandler}/>
                         <button className={styles.searchButton}>
                             <i className={`fas fa-search ${styles.searchIcon}`}></i>
                         </button>
@@ -117,20 +104,13 @@ const SearchComponent = () => {
                 { filterOptions.isActive ? (
                     <div className={styles.filterWrapper}>
                         <div className={styles.slidersFlexWrapper}>
+
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label>Price:</label>
                                 </div>
                                 <div className={styles.filterSlider}>
-                                    <Slider
-                                        value={filterOptions.price}
-                                        min={minPrice}
-                                        max={maxPrice}
-                                        valueLabelDisplay="on"
-                                        aria-labelledby="range-slider"
-                                        onChange={handlePriceChange}
-                                        className={styles.slider}
-                                    />
+                                    <Slider value={filterOptions.price} min={minPrice} max={maxPrice} valueLabelDisplay="on" aria-labelledby="range-slider" onChange={handlePriceChange} className={styles.slider} />
                                 </div>
                             </div>
 
@@ -139,37 +119,19 @@ const SearchComponent = () => {
                                     <label >Year:</label>
                                 </div>
                                 <div className={styles.filterSlider}>
-                                    <Slider
-                                        value={filterOptions.year}
-                                        min={minYear}
-                                        max={maxYear}
-                                        valueLabelDisplay="on"
-                                        aria-labelledby="range-slider"
-                                        onChange={handleYearChange}
-                                        className={styles.slider}
-                                    />
+                                    <Slider value={filterOptions.year} min={minYear} max={maxYear} valueLabelDisplay="on" aria-labelledby="range-slider" onChange={handleYearChange} className={styles.slider} />
                                 </div>
                             </div>
-
 
                             <div className={styles.sliderWrapper}>
                                 <div className={styles.labelWrapper}>
                                     <label >Miles:</label>
                                 </div>
                                 <div className={styles.filterSlider}>
-                                    <Slider
-                                        value={filterOptions.miles}
-                                        min={minMiles}
-                                        max={maxMiles}
-                                        valueLabelDisplay="on"
-                                        aria-labelledby="range-slider"
-                                        onChange={handleMilesChange}
-                                        className={styles.slider}
-                                    />
+                                    <Slider value={filterOptions.miles} min={minMiles} max={maxMiles} valueLabelDisplay="on" aria-labelledby="range-slider" onChange={handleMilesChange} className={styles.slider} />
                                 </div>
                             </div>
                         </div>
-
 
                         <div className={styles.makeModelButtonsFlexWrapper}>
                             <div className={styles.makeModelWrapper}>
