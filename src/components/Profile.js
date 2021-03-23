@@ -26,14 +26,14 @@ const Profile = () => {
                 <div className={Styles.user_image_wrapper}>
                     <img src="https://thispersondoesnotexist.com/image" alt="user" />
                 </div>
-                <h2>Jessie Adams</h2>
+                <h2>{loggedInMember.firstName} {loggedInMember.lastName}</h2>
             </div>
             <div className={Styles.profile_info}>
                 <h3>Profile info</h3>
                 <div className={Styles.profile_info_innerwrapper}>
-                    <p>First name: <span>Jessie</span></p>
-                    <p>Last name: <span>Adams</span></p>
-                    <p>E-mail: <span>jessieadams@loremipsum.com</span></p>
+                    <p>First name: <span>{loggedInMember.firstName}</span></p>
+                    <p>Last name: <span>{loggedInMember.lastName}</span></p>
+                    <p>E-mail: <span>{loggedInMember.email}</span></p>
                     <p>Member since: <span>2021-03-15</span></p>
                 </div>
             </div>
