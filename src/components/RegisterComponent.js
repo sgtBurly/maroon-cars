@@ -90,21 +90,22 @@ const RegisterComponent = () => {
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
                         <h3 className={styles.header} >Please fill in your contact information to register</h3>
+
                         <div className={styles.inputWrapper}>
-                            <input className={`${styles.textInput} ${styles.eMail_input}`} type="text" onChange={updateUserEmail} placeholder="E-mail" required/>
+                            <div className={styles.flexWrapperPersonal}>
+                                <input className={styles.textInput} type="text" onChange={updateUserEmail} placeholder="E-mail" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name" required/>
+                            </div>
+
+                            <div className={styles.flexWrapperAddress}>
+                                <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country" required/>
+                            </div>
                         </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name" required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name" required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address" required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City" required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code" required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country" required/>
-                        </div>
+
                         <div className={styles.passwordWrapper}>
                             <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password" required/>
                             <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password" required/>

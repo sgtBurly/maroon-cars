@@ -54,7 +54,6 @@ h3.header {
     background-color: #fcfcfb;
     transition: background-color 0.7s ease;
 }
-
 .createAccountBtn:hover {
     cursor: pointer;
     background-color: #FFBE0B;
@@ -65,34 +64,15 @@ h3.header {
     
 }
 
-/* Medium devices (tablets, 768px and up) */
+
 @media screen and (min-width: 768px){
-    /* .inputWrapper {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-    .inputWrapper input {
-        width: 45%;
-    }
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
-    } */
+
 }
 
 @media screen and (min-width: 992px){
 
 }
 
-/* Large devices (desktops, 992px and up) */
-/* @media (min-width: 700px)  {
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
-    }
-} */
+@media screen and (min-width: 1200px){
 
-/* Extra large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) {  } */ 
+}
