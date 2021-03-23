@@ -32,7 +32,6 @@ export function MemberProvider(props){
     }
 
     const transferUserData = (newUser) => {
-
         let userExist = null
 
         userExist = members.find(member => member.email === newUser.email);
@@ -54,10 +53,10 @@ export function MemberProvider(props){
             alert("INVALID USERNAME OR PASSWORD");
         };
     };
-    
+
     const values = {
         transferUserData,
-        members, 
+        members,
         loginFunc,
         loggedInMember
     };
