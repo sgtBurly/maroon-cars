@@ -1,7 +1,10 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, useRef } from 'react'
 export const CarContext = createContext();
 
 const CarContextProvider = (props) => {
+
+  const initialRender = useRef(true);
+
   const [cars, setCars] = useState([]);
   const [makesAndModels, setMakesAndModels] = useState([]);
   const [filteredCars, setfilteredCars] = useState([]);
@@ -12,19 +15,21 @@ const CarContextProvider = (props) => {
   useEffect(() => console.log('FilteredCars and noResults', filteredCars, noResults), [filteredCars]);
 
   useEffect(() => {
-    if (cars.length > 0) {
-      'filteredCars' in localStorage ? setfilteredCars(JSON.parse(localStorage.getItem('filteredCars'))) : setfilteredCars(cars);
+    if (cars.length > 0 && initialRender.current) {
+      setfilteredCars(cars);
+      initialRender.current = false;
+      /* 'filterOptions' in localStorage ? sendSearchData(JSON.parse(localStorage.getItem('filterOptions'))) : setfilteredCars(cars); */
     }
 
     const randomNumber = Math.floor(Math.random() * 48);
     if(cars.length > 0) setRecommendedCars([cars[(randomNumber-2 < 0 ? 1 : randomNumber-2)], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (filteredCars.length > 0 && 'filterOptions' in localStorage) {
       localStorage.setItem('filteredCars', JSON.stringify(filteredCars))
     }
-  }, [filteredCars])
+  }, [filteredCars]) */
 
   //The function used in SearchComponent to send search data/filter options to CarContext
   const sendSearchData = (filterOptions) => {
@@ -103,7 +108,8 @@ const CarContextProvider = (props) => {
     sendSearchData,
     recommendedCars,
     noResults,
-    filteredCars
+    filteredCars,
+    initialRender
   }
 
   return (

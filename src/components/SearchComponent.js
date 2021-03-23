@@ -5,7 +5,7 @@ import styles from '../styles/SearchComponentStyles.module.css';
 import {CarContext} from "../contexts/CarContext";
 
 const SearchComponent = () => {
-    const { sendSearchData, makesAndModels } = useContext(CarContext);
+    const { sendSearchData, makesAndModels, initialRender } = useContext(CarContext);
 
     //const initialRender = useRef(true);
     // const intialRenderFilter = useRef(true);
@@ -30,12 +30,12 @@ const SearchComponent = () => {
     const initFilterOpts = () => {
         //console.log('In initFilterOpts, initialRender: ', initialRender);
         console.log('In initFilterOptions')
-        /* if(initialRender.current) {
+        if(initialRender.current) {
             localStorage.removeItem('filterOptions');
             //sendSearchData({ reset: true });
-            initialRender.current = false;
+            // initialRender.current = false;
             return emptyFilterOptions;
-        } */
+        }
         if ('filterOptions' in localStorage) {
             const filterOpInLocS = JSON.parse(localStorage.getItem('filterOptions'))
             //sendSearchData(filterOpInLocS);
@@ -48,15 +48,14 @@ const SearchComponent = () => {
     const [filterOptions, setFilterOptions] = useState(initFilterOpts());
 
     useEffect(() => {
-        /* if(initialRender.current) {
-            //sendSearchData({reset: true});
-            initialRender.current = false;
-        } else { */
+        if(initialRender.current) {
+            return
+        } else {
             localStorage.setItem('filterOptions', JSON.stringify(filterOptions));
             // When change in filterOptions, it is sent to CarContext.
             sendSearchData(filterOptions);
             console.log('In useEffect, setting filterOpts', filterOptions)
-        //}
+        }
     }, [filterOptions]);
 
     //function fired on submit, it sends the filter variables
