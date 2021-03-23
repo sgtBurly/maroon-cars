@@ -57,7 +57,7 @@ const PaymentForm = () => {
                             American Express
                         </label>
                     </div>
-                    <h3>Delivery method</h3>
+                    <hr />
                     <div className={styles.DeliveryOptions}>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />
