@@ -1,8 +1,6 @@
-import { getDefaultNormalizer } from '@testing-library/dom';
 import React, {useState, createContext, useEffect} from 'react';
 
 export const MemberContext = createContext();
-
 
 export function MemberProvider(props){
 
@@ -20,7 +18,7 @@ export function MemberProvider(props){
         } else {
             console.log(loggedInMember, "is not logged in")
         }
-       
+
     }, [loggedInMember])
 
     const transferUserData = (newUser) => {
@@ -37,7 +35,10 @@ export function MemberProvider(props){
     };
 
     const addPurchase = (latestPurchase) => {
-        let memberToAddTo = members.findIndex(member => member.email === loggedInMember.email)
+        let memberToAddTo = members.findIndex(member => member.email === loggedInMember.email);
+        console.log(memberToAddTo)
+        setLoggedInMember(prevState => ({...prevState, purchases: [latestPurchase, ...prevState.purchases]}));
+        setMembers(prevState => ([...prevState.slice(0, memberToAddTo), {...prevState[memberToAddTo], purchases: [latestPurchase, ...prevState[memberToAddTo].purchases]},...prevState.slice(memberToAddTo+1, members.length)]));
     }
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
@@ -50,13 +51,14 @@ export function MemberProvider(props){
             alert("INVALID USERNAME OR PASSWORD");
         };
     };
-    
+
     const values = {
         transferUserData,
-        members, 
+        members,
         loginFunc,
         loggedInMember,
-        setLoggedInMember
+        setLoggedInMember,
+        addPurchase
     };
 
     return (

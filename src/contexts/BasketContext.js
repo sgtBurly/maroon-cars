@@ -4,7 +4,7 @@ import { MemberContext } from '../contexts/MemberContext';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
-    const { loggedInMember, setLoggedInMember, } = useContext(MemberContext);
+    const { loggedInMember, addPurchase } = useContext(MemberContext);
     const basketStorageFunction = () => {
         if ("basketItems" in localStorage) {
             let customerBasket_Parsed = JSON.parse(localStorage.getItem("basketItems"));
@@ -17,7 +17,7 @@ export const BasketProvider = (props) => {
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState(basketStorageFunction());
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
-  
+
 
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
@@ -25,7 +25,7 @@ export const BasketProvider = (props) => {
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
             toast.error('This car is already in your cart!')
-        } 
+        }
         //Here the car is added to the basket
         else {
             setCustomerBasket(prevState => [car, ...prevState]);
@@ -39,9 +39,9 @@ export const BasketProvider = (props) => {
         localStorage.setItem('basketItems', customerBasketString)
       },[customerBasket]);
 
-    //When app is rendered check if there are any cars in customerBasket    
+    //When app is rendered check if there are any cars in customerBasket
     useEffect(() => {
-        
+
       }, []);
 
     // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
@@ -50,17 +50,15 @@ export const BasketProvider = (props) => {
        setCustomerBasket(newCustomerBasket);
     }
 
-    const handlePurchase = (userData) => {  
-        
-        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.delivery, paymentMethod: userData.payment};
-        setLoggedInMember(prevState => ({...prevState, purchases: [latestPurchase, ...prevState.purchases]}));
-        
-        
+    const handlePurchase = (userData) => {
 
+        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.delivery, paymentMethod: userData.payment};
+        ;
+        addPurchase(latestPurchase);
         //resets the customerBasket
         setCustomerBasket([]);
     }
- 
+
     //Func for calculating price in basket
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
@@ -78,7 +76,7 @@ export const BasketProvider = (props) => {
         removeFromBasket,
         handlePurchase,
         calcBasket,
-     
+
     }
 
     return (
