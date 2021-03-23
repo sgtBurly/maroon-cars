@@ -28,7 +28,7 @@
     outline: none;
 }
 
-.alertMsg {
+.alertMsg p{
     color: red;
     font-size: 0.9rem;
 }

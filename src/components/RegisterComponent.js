@@ -126,18 +126,17 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
-                            <div className={styles.alertMsg}>
-                                
-                                {toggleAlert &&
-                                    <p>Password must contain 6 charchaters, including one capital letter!</p>
-                                }
-                            </div>
+                            {toggleAlert &&
+                                <div className={styles.alertMsg}>
+                                    <p>Password must contain 6 characters, including one capital letter!</p>
+                                </div>
+                            }
                         <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
-                        <div className={styles.alertMsg}>
                             {confirmNoMatch &&
-                                        <p>Passwords doesn't match!</p>
-                                    }
-                            </div>
+                                <div className={styles.alertMsg}>
+                                    <p>Passwords doesn't match!</p>
+                                </div>
+                            }
                         </div>
                     </div>
                     <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
