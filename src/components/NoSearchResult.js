@@ -13,7 +13,7 @@ const NoSearchResult = () => {
       <div className={styles.recommendedContainer}>
         <p className={styles.lead}>Recommended cars:</p>
         <div className="row">
-          {recommendedCars && recommendedCars.map((car,i) => <CarCard key={i} data={car}/>)}
+          {recommendedCars.length > 0 && recommendedCars.map((car,i) => <CarCard key={i} data={car}/>)}
         </div>
       </div>
     </div>

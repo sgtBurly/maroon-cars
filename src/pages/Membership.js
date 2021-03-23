@@ -5,14 +5,14 @@ import LogIn from '../components/LogIn';
 import { MemberContext } from '../contexts/MemberContext';
 
 const Membership = () => {
-    // Get this varable from MemberContext later
     const {loggedInMember} = useContext(MemberContext);
-
     return (
         <div className="membership">
-            {loggedInMember.email ? <Profile /> : <div>Register and login component goes here!</div>}
-            <LogIn />
+            {loggedInMember.email ? <Profile /> : <div>            
+            <LogIn /> 
             <RegisterComponent />
+            </div>
+            }
         </div>
      );
 }
