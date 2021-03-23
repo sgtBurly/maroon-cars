@@ -24,7 +24,7 @@ export function MemberProvider(props){
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
         const successfulLogin = members.filter(member => member.email === memberInput.userEmail && member.password === memberInput.userPassword);
-        if (successfulLogin > 0) {
+        if (successfulLogin.length > 0) {
               //Sets the logged in member
               setLoggedInMember(successfulLogin[0]);
         }
@@ -32,10 +32,10 @@ export function MemberProvider(props){
             alert("INVALID USERNAME OR PASSWORD");
         };
     };
-    
+
     const values = {
         transferUserData,
-        members, 
+        members,
         loginFunc,
         loggedInMember,
         setLoggedInMember
