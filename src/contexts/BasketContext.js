@@ -52,8 +52,7 @@ export const BasketProvider = (props) => {
 
     const handlePurchase = (userData) => {
 
-        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.delivery, paymentMethod: userData.payment};
-        ;
+        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.DeliveryMethod, paymentMethod: userData.PaymentMethod};
         addPurchase(latestPurchase);
         //resets the customerBasket
         setCustomerBasket([]);
