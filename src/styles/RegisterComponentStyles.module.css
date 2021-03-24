@@ -1,93 +1,103 @@
-.FormWrapper {
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color:  #FFBE0B;
-}
-
+/* main component wrapper */
 .Form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
-.h2 {
-    margin-bottom: 2rem;
-}
-
-.textInput {
-    width: 100%;
-    margin-bottom: 1rem;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 0.2rem;
-    outline: none;
-}
-
+/* wraps everything except button */
 .ContactInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
-    margin-top: 1rem;
+    width: 90%;
+    margin-top: 3rem;
 }
 
-.inputWrapper {
+h3.header {
+    padding: 1.5rem 0rem;
+    text-shadow: 1px 1px 1px #03030349;
+    font-size: 1.5rem;
+}
+
+.inputWrapper,
+.passwordWrapper {
     width: 100%;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.inputWrapper input {
+.textInput {
     width: 100%;
-}
-
-.eMail_input {
-    width: 100% !important;
-}
-
-.completeContactFormBtn {
-    padding: 1rem;
-    margin: 1rem auto;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
     outline-style: none;
-    box-shadow: none;
     border-color: transparent;
-    border: solid 1px #232b2b;
-    border-radius: 5px;
-    background-color: #ffffff;
-    font-weight: bold;
-    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 0.2rem;
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 690px) {
+.textInput:focus {
+    border: 2px solid #FFBE0B;
+}
+
+.passwordWrapper {
+    margin-top: 2rem;
+}
+
+.createAccountBtn {
+    margin: 2rem auto;
+    border: none;
+    width: 150px;
+    height: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius:  0.2rem;
+    background-color: #fcfcfb;
+    transition: background-color 0.7s ease;
+}
+.createAccountBtn:hover {
+    cursor: pointer;
+    background-color: #FFBE0B;
+}
+
+@media screen and (min-width: 576px){
+}
+@media screen and (min-width: 768px){
+}
+
+@media screen and (min-width: 992px){
+    .textInput {
+        width: 400px;
+    }
+
     .inputWrapper {
-        width: 100%;
         display: flex;
-        justify-content: space-between;
         flex-direction: row;
+        width: 900px;
+        margin: 0rem;
+        padding: 0rem;
+        justify-content: space-around;
+        align-items: stretch;
     }
-    .inputWrapper input {
-        width: 45%;
-    }
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
-    }
- }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 700px)  {
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
+    .flexWrapperPersonal {
+        padding: 1rem;
+    }
+
+    .flexWrapperAddress {
+        padding: 1rem;
+    }
+
+    .passwordWrapper {
+        display: flex;
+        align-items: center;
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media screen and (min-width: 1200px){
+}

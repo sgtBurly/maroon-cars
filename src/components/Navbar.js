@@ -7,9 +7,7 @@ import {MemberContext} from '../contexts/MemberContext'
 
 export default function Navbar() {
 
-    // Get variable from MemberContext later
-    const loggedInMember = false;
-     // const { loggedInMember } = useContext(MemberContext);
+    const { loggedInMember } = useContext(MemberContext);
 
     return (
         <ReactBootstrap.Navbar collapseOnSelect sticky="top" className={`navbar ${styles.navbar}`} expand="md" variant="light">
@@ -32,18 +30,16 @@ export default function Navbar() {
                     <span className={styles.aboutWrapper}>
                         <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/about">About</ReactBootstrap.Nav.Link>
                     </span>
-                    {loggedInMember ? <span className={styles.aboutWrapper}>
+                    {loggedInMember.email ? <span className={styles.aboutWrapper}>
                         <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/membership">Profile</ReactBootstrap.Nav.Link>
                     </span> : <span className={styles.registerWrapper}>
                         <ReactBootstrap.Nav.Link className={styles.clr} as={Link} to="/membership">Log in/Register</ReactBootstrap.Nav.Link>
                     </span>}
-                    {/* <LoginBtn /> */}
-
+                    
                     <ReactBootstrap.Nav.Link className={`${styles.clr} d-none d-md-inline-block`} as={Link} to="/payment"><i className="fas fa-shopping-cart fa-lg"><BasketValue/></i></ReactBootstrap.Nav.Link>
                 </ReactBootstrap.Nav>
             </ReactBootstrap.Navbar.Collapse>
         </ReactBootstrap.Navbar>
-
     )
 }
 
