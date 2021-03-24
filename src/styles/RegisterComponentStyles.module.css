@@ -4,7 +4,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    margin: 2rem auto;
+
+    padding-bottom: 2rem;
+    padding-top: 0rem;
+    background-color: #FBFAF5;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius:  0.2rem;
+    /* max-width: 350px; */
+    width: 90%;
+    max-width: 576px;
 }
 
 /* wraps everything except button */
@@ -65,7 +74,16 @@ h3.header {
     background-color: #FFBE0B;
 }
 
+@media screen and (min-width: 576px){
+
+}
+
 @media screen and (min-width: 992px){
+    .Form {
+        /* max-width: 576px; */
+        /* background-color: lightpink; */
+        max-width: 1000px;
+    }
     .textInput {
         width: 400px;
     }

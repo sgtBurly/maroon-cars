@@ -1,14 +1,9 @@
 .registerComponentWrapper {
-    visibility: hidden;
+    /* visibility: hidden; */
     /* opacity: 0; */
-    transform: translateY(-200%);
-    transition: all 0.75s ease-in;
-}
-
-.labelFlex {
-    display: flex;
-    /* flex-direction: row; */
-    background-color: lightpink;
+    /* transform: translateY(-200%); */
+    /* transition: all 0.75s ease-in; */
+    display: none;
 }
 
 h3.not_a_member_yet {
@@ -42,10 +37,11 @@ h3.not_a_member_yet {
     background-color: #FFBE0B;
 }
 
+
 /* displays registerform when user clicks on "register now" */
 .registerFormToggle:checked ~ .registerComponentWrapper {
     display: block;
-    transform: translateY(-0%);
+    /* transform: translateY(-0%); */
     /* transition-delay: opacity 5s; */
     /* opacity: 1; */
 }
