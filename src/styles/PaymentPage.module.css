@@ -1,0 +1,19 @@
+.paymentpage .toggleButtonWrapper button {
+  border: none;
+  height: 50px;
+  font-size: 1.1rem;
+  padding: 0rem 0.5rem;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border-radius: 0.2rem;
+  background-color: #ffbe0bd7;
+  transition: background-color 0.7s ease;
+  margin-top: 1rem;
+}
+.paymentpage .toggleButtonWrapper button:hover {
+  background-color: #fcfcfb;
+}
+
+.paymentpage .toggleButtonWrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
