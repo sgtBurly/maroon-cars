@@ -53,8 +53,6 @@ const Details = (props) => {
               </div>
             </div>
 
-            
-
             <div className={styles.detailsAndDescriptionWrapper} >
               <ul className={styles.detailedInfoWrapper}>
                 <li><span>Year: </span>{detailCar.year}</li>
