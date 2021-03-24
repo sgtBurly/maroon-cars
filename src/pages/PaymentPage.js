@@ -4,8 +4,10 @@ import EmptyBasket from "../components/EmptyBasket";
 import { BasketContext } from '../contexts/BasketContext';
 import { MemberContext } from '../contexts/MemberContext';
 import Card from '../components/Card'
-import LogIn from '../components/LogIn';
-import RegisterComponent from '../components/RegisterComponent';
+import styles from '../styles/PaymentPage.module.css'
+import MemberInfo from "../components/MemberInfo";
+import Membership from '../pages/Membership'
+
 
 const PaymentPage = () => {
 
@@ -14,30 +16,42 @@ const PaymentPage = () => {
 
     useEffect(() => window.scrollTo(0,0), []);
 
-    // If emptyBasket
-    if (customerBasket.length < 1){
-        return (
-            <div>
-                <EmptyBasket />
-            </div>
-        )
-        //If not logged in and Basket
-    } else if(!loggedInMember.email && customerBasket.length > 0) {
-        return (
-            <div>
-                <RegisterComponent />
-                <LogIn />
-            </div>
-        );
-        //If logged in and Basket
-    } else {
-        return (
-            <div>
-                <Card />
-                <PaymentForm />
-            </div>
-        )
-    }
+   const compToShow = () => {
+        // If emptyBasket
+        if (customerBasket.length < 1){
+            return (
+                <div>
+                    <EmptyBasket />
+                </div>
+            )
+            //If not logged in and Basket
+        } else if(!loggedInMember.email && customerBasket.length > 0) {
+            return (
+                <div>
+                    <Card />
+                    <h2 className={styles.needLogIn}>Please log in to complete your purchase!</h2>
+                    <Membership />
+                </div>
+            );
+            //If logged in and Basket
+        } else {
+            return (
+                <div>
+                    <Card />
+                    <div className={styles.infoAndFormWrapper}>
+                        <MemberInfo />
+                        <PaymentForm />
+                    </div>
+                </div>
+            )
+        }
+   }
+
+   return(
+       <div className={styles.paymentpage}>
+           {compToShow()}
+       </div>
+   )
 }
 
 export default PaymentPage;
