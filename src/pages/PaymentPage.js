@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import PaymentForm from "../components/PaymentForm";
 import EmptyBasket from "../components/EmptyBasket";
 import { BasketContext } from '../contexts/BasketContext';
@@ -13,10 +13,8 @@ const PaymentPage = () => {
 
     const { customerBasket } = useContext(BasketContext);
     const { loggedInMember } = useContext(MemberContext);
-    //const [toggleRegForm, setToggleRegForm] = useState(false);
 
     useEffect(() => window.scrollTo(0,0), []);
-
 
    const compToShow = () => {
         // If emptyBasket
@@ -31,7 +29,7 @@ const PaymentPage = () => {
             return (
                 <div>
                     <Card />
-                    <h2>You need to log in to buy the {customerBasket.length === 1 ? 'car' : 'cars'}</h2>
+                    <h2 className={styles.needLogIn}>Please log in to complete your purchase!</h2>
                     <Membership />
                 </div>
             );
@@ -49,7 +47,6 @@ const PaymentPage = () => {
 
    return(
        <div className={styles.paymentpage}>
-           <h1></h1>
            {compToShow()}
        </div>
    )
