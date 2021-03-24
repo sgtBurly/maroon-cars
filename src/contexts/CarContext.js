@@ -1,7 +1,10 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, useRef } from 'react'
 export const CarContext = createContext();
 
 const CarContextProvider = (props) => {
+
+  const initialRender = useRef(true);
+
   const [cars, setCars] = useState([]);
   const [makesAndModels, setMakesAndModels] = useState([]);
   const [filteredCars, setfilteredCars] = useState([]);
@@ -9,19 +12,23 @@ const CarContextProvider = (props) => {
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => setCars(require("../json/cars.json")), []);
+  useEffect(() => console.log('FilteredCars and noResults', filteredCars, noResults), [filteredCars]);
 
   useEffect(() => {
-    if (cars) setfilteredCars(cars);
-
+    if (cars.length > 0 && initialRender.current) {
+      setfilteredCars(cars);
+      initialRender.current = false;
+    }
+    
     const randomNumber = Math.floor(Math.random() * 48);
     if(cars.length > 0) setRecommendedCars([cars[(randomNumber-2 < 0 ? 1 : randomNumber-2)], cars[randomNumber], cars[randomNumber+2]])
   }, [cars])
 
-  //The function used in SearchComponent to send search data/filter options to CarContext
+  //The function used in SearchComponent to send search/filter options to CarContext
   const sendSearchData = (filterOptions) => {
     if (filterOptions.reset === true) {
       setNoResults(false)
-      setfilteredCars(cars)
+      if(cars.length > 0) setfilteredCars(cars)
     }
     else {
       filterCars(filterOptions);
@@ -29,6 +36,7 @@ const CarContextProvider = (props) => {
   }
   //Filter all the cars function that runs on form-submit
   const filterCars = (filterOptions) => {
+    if(cars.length === 0) return
     const filterMake = cars.filter(car => filterOptions.make !== "" ? car.make === filterOptions.make : true);
     const filterModel = filterMake.filter(car => filterOptions.model !== "" ? car.model === filterOptions.model : true);
 
@@ -43,7 +51,7 @@ const CarContextProvider = (props) => {
       car.miles >= minMiles && car.miles <= maxMiles &&
       car.year >= minYear && car.year <= maxYear
     );
-    console.log(filterResult)
+    //console.log(filterResult)
     const searchResult = filterTextInput(filterResult, filterOptions.textSearch)
     searchResult.length === 0 ? setNoResults(true) : setNoResults(false);
     setfilteredCars(searchResult);
@@ -93,7 +101,8 @@ const CarContextProvider = (props) => {
     sendSearchData,
     recommendedCars,
     noResults,
-    filteredCars
+    filteredCars,
+    initialRender
   }
 
   return (
