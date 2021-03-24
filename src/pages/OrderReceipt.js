@@ -34,7 +34,7 @@ const OrderReceipt = () => {
             <p className={ReceiptStyles.orderInfo}>Payment method: <span>{loggedInMember.purchases[0].paymentMethod}</span></p>
             <p className={ReceiptStyles.orderInfo}>Delivery method: {loggedInMember.purchases[0].deliveryMethod === 'home' ? <span>Home delivery</span> : <span>Pick up at store</span>}</p>
             <hr />
-          </div>
+        </div>
         <div className={ReceiptStyles.bottom_row}>
           <div className={ReceiptStyles.items_wrapper}>
             <h6>Purchase info</h6>
@@ -59,7 +59,6 @@ const OrderReceipt = () => {
       </div>
   </div>
   );
-
 }
 
 export default OrderReceipt;
