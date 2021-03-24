@@ -38,22 +38,22 @@ const PaymentForm = () => {
                     <div className={styles.PaymentOptions}>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-visa fa-3x"></i>
+                            <i className="fab fa-cc-visa fa-2x"></i>
                             Visa
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="Bitcoin" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-bitcoin fa-3x"></i>
+                            <i className="fab fa-bitcoin fa-2x"></i>
                             Bitcoin
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="PayPal" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-paypal fa-3x"></i>
+                            <i className="fab fa-cc-paypal fa-2x"></i>
                             PayPal
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="AmEx" onChange={updatePaymentMethod} name="paymentmethod" required />
-                            <i className="fab fa-cc-amex fa-3x"></i>
+                            <i className="fab fa-cc-amex fa-2x"></i>
                             American Express
                         </label>
                     </div>
@@ -61,12 +61,12 @@ const PaymentForm = () => {
                     <div className={styles.DeliveryOptions}>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />
-                            <i className="fas fa-truck fa-3x"></i>
+                            <i className="fas fa-truck fa-2x"></i>
                             Home delivery
                         </label>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="store" onChange={updateDeliveryMethod} name="deliverymethod" required />
-                            <i className="fas fa-warehouse fa-3x"></i>
+                            <i className="fas fa-warehouse fa-2x"></i>
                             Pick up at store
                         </label>
                     </div>

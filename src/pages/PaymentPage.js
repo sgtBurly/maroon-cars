@@ -38,8 +38,10 @@ const PaymentPage = () => {
             return (
                 <div>
                     <Card />
-                    <MemberInfo />
-                    <PaymentForm />
+                    <div className={styles.infoAndFormWrapper}>
+                        <MemberInfo />
+                        <PaymentForm />
+                    </div>
                 </div>
             )
         }

@@ -1,9 +1,10 @@
 .memberInfo {
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  /* background-color: #FBFAF5; */
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   padding: 0.5rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 .memberInfo h3 {
   font-weight: bold;
@@ -51,6 +52,6 @@
 
 @media screen and (min-width: 996px) {
   .memberInfo {
-    max-width: 800px;
+    max-width: 700px;
   }
 }

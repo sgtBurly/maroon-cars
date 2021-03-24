@@ -1,3 +1,16 @@
 .paymentpage h2.needLogIn {
   font-size: 1.5rem;
 }
+.infoAndFormWrapper {
+  padding: 1rem 0.5rem;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border-radius:  0.2rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+@media screen and (min-width: 996px) {
+  .infoAndFormWrapper {
+    max-width: 700px;
+  }
+}

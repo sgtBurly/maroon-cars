@@ -1,17 +1,12 @@
 .PaymentForm {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 2rem;
+    margin: 1rem 0;
 }
 
-.PaymentForm h3, h2 {
-    padding: 0rem 1rem;
-    color: #232b2b;
-    font-weight: bold;
+.PaymentForm h2 {
+    font-size: 1.1rem;
     text-align: center;
 }
+
 .PaymentForm hr {
     width: 75%;
     margin: 1rem auto;
@@ -20,12 +15,11 @@
 }
 
 .FormWrapper {
-    border-radius: 5px;
     padding: 1rem 0.5rem;
-    width: 100%;
-    margin-bottom: 5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color:  #FFBE0B;
+    /* box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%); */
+    border-radius:  0.2rem;
+    max-width: 576px;
+    margin: auto;
 }
 .Form {
     display: flex;
