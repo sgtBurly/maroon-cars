@@ -7,6 +7,7 @@ import Card from '../components/Card'
 import LogIn from '../components/LogIn';
 import RegisterComponent from '../components/RegisterComponent';
 import styles from '../styles/PaymentPage.module.css'
+import MemberInfo from "../components/MemberInfo";
 
 
 const PaymentPage = () => {
@@ -47,6 +48,7 @@ const PaymentPage = () => {
             return (
                 <div>
                     <Card />
+                    <MemberInfo />
                     <PaymentForm />
                 </div>
             )
