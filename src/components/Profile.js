@@ -5,15 +5,13 @@ import { MemberContext } from '../contexts/MemberContext';
 //import { MemberContext } from '../contexts/MemberContext'
 
 const Profile = () => {
-    let { loggedInMember, setLoggedInMember } = useContext(MemberContext)
+    const { loggedInMember, setLoggedInMember } = useContext(MemberContext)
     // Get loggedInMember from MemberContext later to make info dynamic
-    // const { loggedInMember } = useContext(MemberContext);
 
     const handleLogOut = (e) => {
         e.preventDefault();
         setLoggedInMember({purchases: []});
         console.log(loggedInMember);
-
     }
 
     return (
@@ -43,7 +41,7 @@ const Profile = () => {
             </div>
             <div className={Styles.logout_wrapper}>
                 <form onSubmit={handleLogOut}>
-                  <button type="submit">Log out</button>
+                    <button type="submit">Log out</button>
                 </form>
             </div>
         </div>

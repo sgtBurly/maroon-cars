@@ -9,21 +9,25 @@
   padding: 0.5rem;
   text-align: center;
 }
+
 .order {
   margin: 2rem;
   padding: 1rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 0.2rem;
 }
+
 .desc,
 .carInfo,
 .carPrice,
 .removeBtn {
   padding: 5px;
 }
+
 .timestamp {
   font-size: 1.2rem;
 }
+
 .cardWrapperContainer {
   display: flex;
   align-items: center;
@@ -39,9 +43,11 @@
 
   padding: 20px;
 }
+
 .cardWrapper img {
   max-width: 100%;
 }
+
 h2.cardHeading {
   display: none;
 }
@@ -57,6 +63,7 @@ h2.cardHeading {
 .desc {
   display: none;
 }
+
 .cardWrapperContainer {
   margin-bottom: 5px;
 }

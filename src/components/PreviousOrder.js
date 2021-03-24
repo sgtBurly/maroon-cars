@@ -18,7 +18,7 @@ const Card = () => {
         {/*Render out each order and its respective cars*/}
         {loggedInMember.purchases.map((order) => (
           <div className={styles.order}>
-            <h3 className={styles.timestamp}>{order.timestamp}</h3>
+            <h3 className={styles.timestamp}>{`${order.timestamp.toDateString()} ${order.timestamp.getHours()}:${order.timestamp.getMinutes()}`}</h3>
             {order.carsPurchased.map((car, i) => (
               <div className={styles.flex} key={i}>
                 <div className={styles.carImageContainer}>
