@@ -100,33 +100,21 @@ const RegisterComponent = () => {
                         </div>
 
                         <div className={styles.passwordWrapper}>
-                            <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password" required/>
-                            <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password" required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address..." required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City..." required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
-                        </div>
-                        <div>
-                        <input className={styles.textInput} type="password" onChange={handleUserPassword} placeholder="Password..." required/>
-                            {toggleContainAlert &&
-                                <div className={styles.alertMsg}>
-                                    <p>Must contain a lower case, a capital letter, and at least 6 characters!</p>
-                                </div>
-                            }
-                        <input className={styles.textInput} type="password" onChange={HandleUserComfirmPassword} placeholder="Confirm password..." required/>
-                            {toggleMatchAlert &&
-                                <div className={styles.alertMsg}>
-                                    <p>Passwords don't match!</p>
-                                </div>
-                            }
+                            <input className={styles.textInput} type="password" onChange={handleUserPassword} placeholder="Password..." required/>
+                                {toggleContainAlert &&
+                                    <div className={styles.alertMsg}>
+                                        <p>Must contain a lower case, a capital letter, and at least 6 characters!</p>
+                                    </div>
+                                }
+                                <input className={styles.textInput} type="password" onChange={HandleUserComfirmPassword} placeholder="Confirm password..." required/>
+                                {toggleMatchAlert &&
+                                    <div className={styles.alertMsg}>
+                                        <p>Passwords don't match!</p>
+                                    </div>
+                                }
                         </div>
                     </div>
-                    <button type="submit" className={styles.createAccountBtn}>Create account</button>
+                <button type="submit" className={styles.createAccountBtn}>Create account</button>
             </form>
         </div>
     );

@@ -50,7 +50,7 @@ h3.header {
 
 .textInput:focus {
     border: 2px solid #FFBE0B;
-
+}
 
 .alertMsg p {
     color: red;
