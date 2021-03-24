@@ -4,17 +4,16 @@ import EmptyBasket from "../components/EmptyBasket";
 import { BasketContext } from '../contexts/BasketContext';
 import { MemberContext } from '../contexts/MemberContext';
 import Card from '../components/Card'
-import LogIn from '../components/LogIn';
-import RegisterComponent from '../components/RegisterComponent';
 import styles from '../styles/PaymentPage.module.css'
 import MemberInfo from "../components/MemberInfo";
+import Membership from '../pages/Membership'
 
 
 const PaymentPage = () => {
 
     const { customerBasket } = useContext(BasketContext);
     const { loggedInMember } = useContext(MemberContext);
-    const [toggleRegForm, setToggleRegForm] = useState(false);
+    //const [toggleRegForm, setToggleRegForm] = useState(false);
 
     useEffect(() => window.scrollTo(0,0), []);
 
@@ -33,14 +32,7 @@ const PaymentPage = () => {
                 <div>
                     <Card />
                     <h2>You need to log in to buy the {customerBasket.length === 1 ? 'car' : 'cars'}</h2>
-                    <LogIn />
-                    <div className={styles.toggleButtonWrapper}>
-                        <button id='toggleRegForm' onClick={() => setToggleRegForm(!toggleRegForm)}>
-                            Not a member yet? Register here
-                            {toggleRegForm ? <span> &uarr;</span> : <span> &darr;</span>}
-                        </button>
-                    </div>
-                    { toggleRegForm ? <RegisterComponent /> : <div></div>}
+                    <Membership />
                 </div>
             );
             //If logged in and Basket

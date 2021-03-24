@@ -19,12 +19,18 @@
   flex-flow: nowrap column;
 }
 
-
 @media screen and (min-width: 576px) {
+
   .memberInfoWrapper {
     flex-flow: wrap row;
   }
   .memberInfoPart1 {
     margin-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .memberInfo {
+    max-width: 800px;
   }
 }
