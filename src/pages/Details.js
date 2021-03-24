@@ -31,12 +31,14 @@ const Details = (props) => {
       <div className={styles.detailsPage}>
         <div className={styles.carDetailsWrapper}>
           <div className={styles.imgContainer}>
-          <img className={styles.car} src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
-          {/* Sale icon shows if car is discounted */}
-          {detailCar.discount && <div className={styles.saleIcon}>
+            <img className={styles.car} src={`/assets/car-pictures/${detailCar.make}-${detailCar.model}-${detailCar.year}.jpg`} alt={`picture of ${detailCar.make} ${detailCar.model}`} />
+
+            {/* Sale icon shows if car is discounted */}
+              {detailCar.discount && <div className={styles.saleIcon}>
             <img src={`/assets/sale-icon.png`} alt="sale icon"/>
-          </div>}
-        </div>
+            </div>}
+          </div>
+
           <div className={styles.infoContainer}>
             <div className={styles.headerPriceWrapper}>
               <h3>{detailCar.make} {detailCar.model}</h3>
@@ -49,7 +51,6 @@ const Details = (props) => {
               <div className={styles.buttonWrapper}>
                 <button className={styles.button} onClick={handleClick} >Add to cart</button>
               </div>
-
             </div>
 
             

@@ -4,10 +4,11 @@
   width: 100%;
   max-width: 1800px;
   padding: 0rem;
-  margin: 1rem auto;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  /* margin-bottom: 2rem; */
   justify-content: space-around;
-  display: flex
+  /* display: flex; */
+  /* border: 1px solid yellow; */
 }
 
 /* 1st children wrapper */
