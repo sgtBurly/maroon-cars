@@ -1,14 +1,13 @@
-
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import styles from '../styles/RegisterComponentStyles.module.css'
-import {MemberContext} from '../contexts/MemberContext';
+import { MemberContext } from '../contexts/MemberContext';
 
 const RegisterComponent = () => {
 
-    const {transferUserData} = useContext(MemberContext);
+    const { transferUserData } = useContext(MemberContext);
 
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ confirmPassword, setConfirmPassword ] = useState("");
     const [ firstName, setFirstName ] = useState("");
     const [ lastName, setLastName ] = useState("");
     const [ address, setAddress ] = useState("");
@@ -21,13 +20,8 @@ const RegisterComponent = () => {
     const [passwordMatch, setPasswordMatch] = useState(false);
     const [passwordCheck, setPasswordCheck] = useState(false);
 
-    // const [confirmNoMatch, setConfirmNoMatch] = useState(false);
     const [toggleContainAlert, setToggleContainAlert] = useState(false);
     const [toggleMatchAlert, setToggleMatchAlert] = useState(false);
-    const [validLength, setValidLength] = useState(false);
-    const [upperCase, setUpperCase] = useState(false);
-    const [lowerCase, setLowerCase] = useState(false);
-        // Test-variabel
 
     const updateUserFName = e => setFirstName(e.target.value);
     const updateUserLName = e => setLastName(e.target.value);
@@ -38,18 +32,10 @@ const RegisterComponent = () => {
     const updateUserCountry = e => setCountry(e.target.value);
 
     const HandleUserComfirmPassword = (e) =>{
-
          setConfirmPassword(e.target.value);
-
          //Remove the alert banner when user changes confirm password
          setToggleMatchAlert(false);
     }
-
-    useEffect(() => {
-        setValidLength(password.length >= 6 ? true : false);
-        setUpperCase(password.toLowerCase() !== password);
-        setLowerCase(password.toUpperCase() !== password);
-    }, [password]);
 
     const handleUserPassword = (e) => {
 
@@ -57,10 +43,9 @@ const RegisterComponent = () => {
 
         setPassword(e.target.value);
 
-        if (validLength && upperCase && lowerCase){
+       if ((e.target.value).length >= 6 && (e.target.value).toLowerCase() !== e.target.value && (e.target.value).toUpperCase() !== e.target.value){
             setPasswordCheck(true)
-
-        }else {
+        } else {
             setPasswordCheck(false);
             setToggleContainAlert(true);
         }
@@ -84,10 +69,8 @@ const RegisterComponent = () => {
             email,
             purchases: [],
         }
-
         transferUserData(newUser)
         } else {
-            console.log("Passwords dont match bro");
             //Show the alert message if conditions don't apply
             setToggleMatchAlert(true);
             //Change state variable for matching passwords to false
@@ -115,13 +98,13 @@ const RegisterComponent = () => {
                             <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
                         </div>
                         <div>
-                        <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
+                        <input className={styles.textInput} type="password" onChange={handleUserPassword} placeholder="Password..." required/>
                             {toggleContainAlert &&
                                 <div className={styles.alertMsg}>
                                     <p>Must contain a lower case, a capital letter, and at least 6 characters!</p>
                                 </div>
                             }
-                        <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
+                        <input className={styles.textInput} type="password" onChange={HandleUserComfirmPassword} placeholder="Confirm password..." required/>
                             {toggleMatchAlert &&
                                 <div className={styles.alertMsg}>
                                     <p>Passwords don't match!</p>
