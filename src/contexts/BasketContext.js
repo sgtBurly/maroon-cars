@@ -33,13 +33,8 @@ export const BasketProvider = (props) => {
             console.log('this is customerBasket: ', customerBasket);
         }
     }
-    //Here the car is added to the basket
-    else {
-      setCustomerBasket((prevState) => [car, ...prevState]);
-      toast.success("Successfully added to your cart!");
-      console.log("this is customerBasket: ", customerBasket);
-    }
-  };
+
+  
   //Stringifys customerBasket when ready and adds to localstorage
   useEffect(() => {
     let customerBasketString = JSON.stringify(customerBasket);
@@ -80,7 +75,6 @@ export const BasketProvider = (props) => {
         removeFromBasket,
         handlePurchase,
         calcBasket,
-
     }
 
   return (
