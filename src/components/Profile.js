@@ -11,17 +11,14 @@ const Profile = () => {
 
     const handleLogOut = (e) => {
         e.preventDefault();
-        
         setLoggedInMember({purchases: []});
-
         console.log(loggedInMember);
-        
+
     }
 
     return (
         <div className={Styles.main_wrapper}>
             <div className={Styles.colored_wrapper}></div>
-
             <div className={Styles.user_image_text_wrapper}>
                 <div className={Styles.user_image_wrapper}>
                     <img src="https://thispersondoesnotexist.com/image" alt="user" />
@@ -39,7 +36,6 @@ const Profile = () => {
             </div>
             <div className={Styles.previous_order_wrapper}>
                 <h3>Your previous orders</h3>
-                
                 {
                 //Checks if loggedInMember has any former purchases, if so render those purchases
                 loggedInMember.purchases.length > 0 ? <PreviousOrder /> : null

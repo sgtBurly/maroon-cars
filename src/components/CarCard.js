@@ -13,7 +13,6 @@ function CarCard(props) {
         //Using the cars unique vin-number to push to new route with the historyHook variable
         historyHook.push(`/details/${props.data.vin}`)
     }
-
     const handleClick = (e) => {
         e.stopPropagation();
         addToBasket(props.data);
@@ -27,9 +26,7 @@ function CarCard(props) {
             {props.data.discount && <div className={CarCardStyles.saleIcon} >
             <img src={`/assets/sale-icon.png`} alt="sale icon"/>
             </div>}
-
                 <img className={`${CarCardStyles.img} card-img-top`} src={`../assets/car-pictures/${props.data.make}-${props.data.model}-${props.data.year}.jpg`} alt={props.data.model}/>
-
                 <div className="card-body">
                     <h5 className="card-title"><span>{props.data.make}  {props.data.model}</span></h5>
                     <p className={CarCardStyles.price}><span>Price: </span>${props.data.price}</p>
