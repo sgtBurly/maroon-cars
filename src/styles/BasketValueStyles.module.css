@@ -4,7 +4,6 @@
 
 .count {
     background-image: linear-gradient(to bottom right, rgb(247, 126, 126), rgb(194, 1, 1));
-    /* background-color: #488B49; */
     color: white;
     text-align: center;
     height: 1.4rem;
@@ -14,7 +13,7 @@
     font-size: 0.8rem;
     font-weight: bolder;
     position: absolute;
-    bottom: 80%;
+    bottom: 18px;
     left: 17px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -24,15 +23,3 @@
     margin-top: 0.6rem;
     font-size: 0.7rem;
 }
-
-/* @media screen and (min-width: 450px) {
-    .count {
-        width: 1.4rem;
-        padding-top: 1px;
-        padding-bottom: 1px;
-        font-size: 0.8rem;
-    }
-    .price {
-        font-size: 0.9rem;
-    }
-} */
