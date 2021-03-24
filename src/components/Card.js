@@ -13,7 +13,7 @@ const Card = () => {
     return (
         <div className={styles.cardWrapperContainer}>
             <div className={styles.cardWrapper}>
-                <h2 className={styles.cardHeading}>Current item/s in your basket</h2>
+                <h2 className={styles.cardHeading}>Current {customerBasket.length === 1 ? 'item' : 'items'} in your basket</h2>
                 {customerBasket.map((car, i) => (
                     <div className={styles.flex} key={i}>
                         <div className={styles.carImageContainer}>

@@ -50,7 +50,7 @@ i.fas.fa-shopping-cart {
     }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
     span.font {
         font-size: 1.7rem;
     }
@@ -64,7 +64,7 @@ i.fas.fa-shopping-cart {
         display: inline-block;
         height: 1rem;
         width: 4.5rem;
-        border-bottom: 3px solid;
+        border-bottom: 2px solid;
         /* margin-top: 10px; */
         opacity: 0;
           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -73,7 +73,7 @@ i.fas.fa-shopping-cart {
           transform: scale(0,1);
     }
     span.registerWrapper:after {
-        width: 9.2rem;
+        width: 9.7rem;
     }
 
     span.homeWrapper:hover:after,
