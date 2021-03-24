@@ -7,7 +7,7 @@ export const MemberContext = createContext();
 export function MemberProvider(props){
 
     const [members, setMembers] = useState([{test: "test"}]);
-    const [loggedInMember, setLoggedInMember] = useState({purchases: [], email: ''});
+    const [loggedInMember, setLoggedInMember] = useState({purchases: []});
 
     useEffect(() => {
         console.log('this is members', members)
@@ -37,10 +37,10 @@ export function MemberProvider(props){
             alert("INVALID USERNAME OR PASSWORD");
         };
     };
-    
+
     const values = {
         transferUserData,
-        members, 
+        members,
         loginFunc,
         loggedInMember,
     };
