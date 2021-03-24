@@ -37,6 +37,8 @@ export function MemberProvider(props){
             console.log("Already a member!")
         } else {
             setMembers([...members, {...newUser}]);
+            //seting setLoggedInMember variable to newUser (user is logged in when register)
+            setLoggedInMember(newUser);
         }
     };
     //Function that checks if the member has correct user-input to be logged in
@@ -45,6 +47,7 @@ export function MemberProvider(props){
         if (successfulLogin.length > 0) {
               //Sets the logged in member
               setLoggedInMember(successfulLogin[0]);
+              console.log("in login func ", loggedInMember);
         }
         else {
             alert("INVALID USERNAME OR PASSWORD");
