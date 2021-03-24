@@ -3,18 +3,19 @@
 }
 
 .count {
-    background-color: #ff1407;
-    color: #232b2b;
+    background-image: linear-gradient(to bottom right, rgb(247, 126, 126), rgb(194, 1, 1));
+    color: white;
     text-align: center;
-    width: 1.2rem;
+    height: 1.4rem;
+    width: 1.4rem;
     border-radius: 50%;
-    padding-top: 0.95px;
-    padding-bottom: 0.9px;
-    font-size: 0.7rem;
-    border: solid 1px #232b2b;
+    padding-top: 2px;
+    font-size: 0.8rem;
+    font-weight: bolder;
     position: absolute;
-    bottom: 95%;
-    left: 20px;
+    bottom: 80%;
+    left: 17px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .price {
@@ -23,14 +24,8 @@
     font-size: 0.7rem;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (max-width: 449px){
     .count {
-        width: 1.4rem;
-        padding-top: 1px;
-        padding-bottom: 1px;
-        font-size: 0.8rem;
-    }
-    .price {
-        font-size: 0.9rem;
+        padding-top: 4px;
     }
 }
