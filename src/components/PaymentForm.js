@@ -32,9 +32,11 @@ const PaymentForm = () => {
 
     return (
         <div className={styles.PaymentForm}>
-            <h2 className={styles.h2}>Please enter your preferred payment and delivery options</h2>
+            {/* <h2 className={styles.h2}>Please enter your preferred payment and delivery options</h2> */}
+            <hr />
             <section className={styles.FormWrapper}>
                 <form className={styles.Form} onSubmit={handleSubmit}>
+                    <h2 className={styles.h2}>Payment options</h2>
                     <div className={styles.PaymentOptions}>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="Visa" onChange={updatePaymentMethod} name="paymentmethod" required />
@@ -57,7 +59,8 @@ const PaymentForm = () => {
                             American Express
                         </label>
                     </div>
-                    <hr />
+                    {/* <hr /> */}
+                    <h2 className={styles.h2}>Delivery options</h2>
                     <div className={styles.DeliveryOptions}>
                         <label className={styles.RadioWrapper}>
                             <input type="radio" value="home" onChange={updateDeliveryMethod} name="deliverymethod" required />

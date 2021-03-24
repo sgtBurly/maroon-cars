@@ -9,7 +9,7 @@ const MemberAddress = () => {
   return (
     <div className={styles.memberInfo}>
       <h3>Personal info:</h3>
-      <hr />
+      {/* <hr /> */}
       <div className={styles.memberInfoWrapper}>
         <div className={styles.memberInfoPart1}>
           <p className={styles.secret}>To get alignment</p>
