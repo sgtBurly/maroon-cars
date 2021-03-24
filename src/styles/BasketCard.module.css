@@ -31,8 +31,9 @@
 }
 
 h2.cardHeading {
-    /* display: none; */
     text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
 .carImage {
