@@ -1,8 +1,10 @@
-import React, { useState, createContext, useEffect } from 'react';
+import React, { useState, createContext, useEffect, useContext} from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { MemberContext } from '../contexts/MemberContext';
 export const BasketContext = createContext();
 
 export const BasketProvider = (props) => {
+    const { loggedInMember, addPurchase } = useContext(MemberContext);
     const basketStorageFunction = () => {
         if ("basketItems" in localStorage) {
             let customerBasket_Parsed = JSON.parse(localStorage.getItem("basketItems"));
@@ -15,15 +17,15 @@ export const BasketProvider = (props) => {
     // The cart holding the array with the "saved" cars
     const [customerBasket, setCustomerBasket] = useState(basketStorageFunction());
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
-    const [latestPurchase, setLatestPurchase] = useState({});
+
 
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
         const alreadyAdded = customerBasket ? customerBasket.find(item => item.vin === car.vin) : false;
         if (alreadyAdded) {
-            toast.error('The car is already in your cart!')
-        } 
+            toast.error('This car is already in your cart!')
+        }
         //Here the car is added to the basket
         else {
             setCustomerBasket(prevState => [car, ...prevState]);
@@ -37,9 +39,9 @@ export const BasketProvider = (props) => {
         localStorage.setItem('basketItems', customerBasketString)
       },[customerBasket]);
 
-    //When app is rendered check if there are any cars in customerBasket    
+    //When app is rendered check if there are any cars in customerBasket
     useEffect(() => {
-        
+
       }, []);
 
     // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
@@ -49,16 +51,13 @@ export const BasketProvider = (props) => {
     }
 
     const handlePurchase = (userData) => {
-        // Save the userdata from PaymentForm and the cars in the customerBasket in latestPurchase variable.
-        setLatestPurchase({
-            userData,
-            carsPurchased: [...customerBasket],
-            timestamp: new Date()
-        });
+
+        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.DeliveryMethod, paymentMethod: userData.PaymentMethod};
+        addPurchase(latestPurchase);
         //resets the customerBasket
         setCustomerBasket([]);
     }
- 
+
     //Func for calculating price in basket
     const calcBasket = (customerBasket) => {
         // reduce method looping over every price in cusomerbasket and adding it
@@ -76,7 +75,7 @@ export const BasketProvider = (props) => {
         removeFromBasket,
         handlePurchase,
         calcBasket,
-        latestPurchase
+
     }
 
     return (
