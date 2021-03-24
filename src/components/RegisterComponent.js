@@ -16,7 +16,7 @@ const RegisterComponent = () => {
     const [ zipCode, setZipCode ] = useState("");
     const [ country, setCountry ] = useState("");
     const [ email, setEmail] = useState("");
-    
+
     //For password checking
     const [passwordMatch, setPasswordMatch] = useState(false);
     const [passwordCheck, setPasswordCheck] = useState(false);
@@ -116,11 +116,11 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
-                        {toggleContainAlert &&
+                            {toggleContainAlert &&
                                 <div className={styles.alertMsg}>
                                     <p>Must contain a lower case, a capital letter, and at least 6 characters!</p>
                                 </div>
-                        }
+                            }
                         <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
                             {toggleMatchAlert &&
                                 <div className={styles.alertMsg}>

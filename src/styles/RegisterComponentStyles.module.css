@@ -28,10 +28,11 @@
     outline: none;
 }
 
-.alertMsg{
-    background-color: red;
-    font-size: 0.9rem;
-    position: absolute;
+
+
+.alertMsg p {
+    color: red;
+    font-size: 0.8rem;
 }
 
 .ContactInfo {
