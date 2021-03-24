@@ -1,4 +1,5 @@
 import React, {useState, createContext, useEffect} from 'react';
+import toast, { Toaster } from "react-hot-toast";
 export const MemberContext = createContext();
 
 export function MemberProvider(props){
@@ -32,11 +33,10 @@ export function MemberProvider(props){
         userExist = members.find(member => member.email === newUser.email);
 
         if (userExist) {
-            console.log("Already a member!")
+            toast.error("Already a member!")
         } else {
             setMembers([...members, {...newUser}]);
-            //seting setLoggedInMember variable to newUser (user is logged in when register)
-            setLoggedInMember(newUser);
+            toast.success(`Welcome to Maroon Cars, ${newUser.firstName}!`);
         }
     };
 
@@ -50,9 +50,8 @@ export function MemberProvider(props){
     const loginFunc = (memberInput) => {
         const successfulLogin = members.filter(member => member.email === memberInput.userEmail && member.password === memberInput.userPassword);
         if (successfulLogin.length > 0) {
-              //Sets the logged in member
-              setLoggedInMember(successfulLogin[0]);
-              console.log("in login func ", loggedInMember);
+            //Sets the logged in member
+            setLoggedInMember(successfulLogin[0]);
         }
         else {
             alert("INVALID USERNAME OR PASSWORD");

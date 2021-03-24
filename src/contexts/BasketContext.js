@@ -33,22 +33,22 @@ export const BasketProvider = (props) => {
             console.log('this is customerBasket: ', customerBasket);
         }
     }
-    //Stringifys customerBasket when ready and adds to localstorage
-    useEffect(() => {
-        let customerBasketString = JSON.stringify(customerBasket);
-        localStorage.setItem('basketItems', customerBasketString)
-      },[customerBasket]);
 
-    //When app is rendered check if there are any cars in customerBasket
-    useEffect(() => {
+  
+  //Stringifys customerBasket when ready and adds to localstorage
+  useEffect(() => {
+    let customerBasketString = JSON.stringify(customerBasket);
+    localStorage.setItem("basketItems", customerBasketString);
+  }, [customerBasket]);
 
-      }, []);
+  //When app is rendered check if there are any cars in customerBasket
+  useEffect(() => {}, []);
 
-    // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
-    const removeFromBasket = carVin => {
-       const newCustomerBasket = customerBasket.filter(c => c.vin !== carVin);
-       setCustomerBasket(newCustomerBasket);
-    }
+  // created removeFromBasket to remove each clicked item from customerBasket by using filter method.
+  const removeFromBasket = (carVin) => {
+    const newCustomerBasket = customerBasket.filter((c) => c.vin !== carVin);
+    setCustomerBasket(newCustomerBasket);
+  };
 
     const handlePurchase = (userData) => {
 
@@ -75,14 +75,13 @@ export const BasketProvider = (props) => {
         removeFromBasket,
         handlePurchase,
         calcBasket,
-
     }
 
-    return (
-        <BasketContext.Provider value = {values}>
-            {props.children}
-        </BasketContext.Provider>
-    )
-}
+  return (
+    <BasketContext.Provider value={values}>
+      {props.children}
+    </BasketContext.Provider>
+  );
+};
 
 export default BasketProvider;
