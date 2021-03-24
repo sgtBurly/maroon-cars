@@ -28,8 +28,6 @@ export function MemberProvider(props){
         localStorage.setItem('loggedInMember', JSON.stringify(loggedInMember));
     }, [members, loggedInMember])
 
-    // Function for retrieving custom information from local storage
-
     const transferUserData = (newUser) => {
         let userExist = null;
         userExist = members.find(member => member.email === newUser.email);
