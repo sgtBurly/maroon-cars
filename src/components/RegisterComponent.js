@@ -56,10 +56,10 @@ const RegisterComponent = () => {
 
         if (password === e.target.value){
             setPasswordMatch(true)
-        
+
         }else {
             setPasswordMatch(false)
-            
+
         }
     }
 
@@ -78,11 +78,11 @@ const RegisterComponent = () => {
             email,
             purchases: [],
         }
-            
+
         transferUserData(newUser)
         } else {
             console.log("Passwords dont match bro");
-        }    
+        }
     }
 
     return (

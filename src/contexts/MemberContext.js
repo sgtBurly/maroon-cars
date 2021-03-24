@@ -1,4 +1,5 @@
 import React, {useState, createContext, useEffect} from 'react';
+import toast, { Toaster } from "react-hot-toast";
 export const MemberContext = createContext();
 
 export function MemberProvider(props){
@@ -34,9 +35,10 @@ export function MemberProvider(props){
         userExist = members.find(member => member.email === newUser.email);
 
         if (userExist) {
-            console.log("Already a member!")
+            toast.error("Already a member!")
         } else {
             setMembers([...members, {...newUser}]);
+            toast.success(`Welcome to Maroon Cars, ${newUser.firstName}!`);
         }
     };
     //Function that checks if the member has correct user-input to be logged in
