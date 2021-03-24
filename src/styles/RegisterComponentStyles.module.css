@@ -28,9 +28,10 @@
     outline: none;
 }
 
-.alertMsg p{
-    color: red;
+.alertMsg{
+    background-color: red;
     font-size: 0.9rem;
+    position: absolute;
 }
 
 .ContactInfo {

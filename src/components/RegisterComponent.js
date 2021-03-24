@@ -7,11 +7,8 @@ const RegisterComponent = () => {
 
     const {transferUserData} = useContext(MemberContext);
 
-
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
-    const [passwordMatch, setPasswordMatch] = useState(false)
-    const [emailState, setEmailState] = useState()
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [ firstName, setFirstName ] = useState("");
     const [ lastName, setLastName ] = useState("");
     const [ address, setAddress ] = useState("");
@@ -19,70 +16,63 @@ const RegisterComponent = () => {
     const [ zipCode, setZipCode ] = useState("");
     const [ country, setCountry ] = useState("");
     const [ email, setEmail] = useState("");
-
+    
     //For password checking
+    const [passwordMatch, setPasswordMatch] = useState(false);
+    const [passwordCheck, setPasswordCheck] = useState(false);
 
-        const [confirmNoMatch, setConfirmNoMatch] = useState(false);
-        const [toggleAlert, setToggleAlert] = useState(false);
-        const [validLength, setValidLength] = useState(false);
-        const [upperCase, setUpperCase] = useState(false);
-        const [lowerCase, setLowerCase] = useState(false);
+    // const [confirmNoMatch, setConfirmNoMatch] = useState(false);
+    const [toggleContainAlert, setToggleContainAlert] = useState(false);
+    const [toggleMatchAlert, setToggleMatchAlert] = useState(false);
+    const [validLength, setValidLength] = useState(false);
+    const [upperCase, setUpperCase] = useState(false);
+    const [lowerCase, setLowerCase] = useState(false);
+        // Test-variabel
+
+    const updateUserFName = e => setFirstName(e.target.value);
+    const updateUserLName = e => setLastName(e.target.value);
+    const updateUserEmail = e => setEmail(e.target.value);
+    const updateUserAddress = e => setAddress(e.target.value);
+    const updateUserCity = e => setCity(e.target.value);
+    const updateUserZipCode = e => setZipCode(e.target.value);
+    const updateUserCountry = e => setCountry(e.target.value);
+
+    const HandleUserComfirmPassword = (e) =>{
+
+         setConfirmPassword(e.target.value);
+
+         //Remove the alert banner when user changes confirm password
+         setToggleMatchAlert(false);
+    }
 
     useEffect(() => {
         setValidLength(password.length >= 6 ? true : false);
         setUpperCase(password.toLowerCase() !== password);
         setLowerCase(password.toUpperCase() !== password);
-    }, [password, confirmPassword]);
-
-    const updateUserFName = e => setFirstName(e.target.value);
-
-    const updateUserLName = e => setLastName(e.target.value);
-
-    const updateUserEmail = e => setEmail(e.target.value);
-
-    const updateUserAddress = e => setAddress(e.target.value);
-
-    const updateUserCity = e => setCity(e.target.value);
-
-    const updateUserZipCode = e => setZipCode(e.target.value);
-    
-    const updateUserCountry = e => setCountry(e.target.value);
+    }, [password]);
 
     const handleUserPassword = (e) => {
 
+        setToggleContainAlert(false);
+
         setPassword(e.target.value);
 
-        if (confirmPassword === e.target.value){
-            setPasswordMatch(true)
+        if (validLength && upperCase && lowerCase){
+            setPasswordCheck(true)
 
-            }else {
-                setPasswordMatch(false)
-
-            }
-    }
-
-    const HandleUserComfirmPassword = (e) => {
-
-        setToggleAlert(false);
-        setConfirmNoMatch(false);
-        setConfirmPassword(e.target.value);
-
-        if (password === e.target.value && validLength && upperCase && lowerCase){
-            setPasswordMatch(true)
-
-        }else if (password !== e.target.value) {
-            setPasswordMatch(false)
-        } else {
-            console.log("At the end of password loop");
-            setPasswordMatch(false)
+        }else {
+            setPasswordCheck(false);
+            setToggleContainAlert(true);
         }
     }
 
     const handleAccountSubmit = (e) => {
 
+        setToggleMatchAlert(false);
+
         e.preventDefault();
 
-        if (passwordMatch){
+        if (password === confirmPassword && passwordCheck){
         const newUser = {
             password,
             firstName,
@@ -96,14 +86,14 @@ const RegisterComponent = () => {
         }
 
         transferUserData(newUser)
-        }else {
+        } else {
             console.log("Passwords dont match bro");
-            setToggleAlert(true);
-            setConfirmNoMatch(true);
-
+            //Show the alert message if conditions don't apply
+            setToggleMatchAlert(true);
+            //Change state variable for matching passwords to false
+            setPasswordMatch(false);
         }
     }
-
 
     return (
         <div>
@@ -126,15 +116,15 @@ const RegisterComponent = () => {
                         </div>
                         <div>
                         <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
-                            {toggleAlert &&
+                        {toggleContainAlert &&
                                 <div className={styles.alertMsg}>
-                                    <p>Password must contain 6 characters, including one capital letter!</p>
+                                    <p>Must contain a lower case, a capital letter, and at least 6 characters!</p>
                                 </div>
-                            }
+                        }
                         <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
-                            {confirmNoMatch &&
+                            {toggleMatchAlert &&
                                 <div className={styles.alertMsg}>
-                                    <p>Passwords doesn't match!</p>
+                                    <p>Passwords don't match!</p>
                                 </div>
                             }
                         </div>
