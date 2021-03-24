@@ -13,7 +13,7 @@ function CardWrapper() {
         <div className="container mt-4">
             {noResults ? <NoSearchResult /> : <div className={CardsWrapperStyles.greenBorder}>
                 <div className="row">
-                 {filteredCars && filteredCars.map((car, i) => (
+                 {filteredCars.length > 0 && filteredCars.map((car, i) => (
                      //sending props to CarCard
                     <CarCard key={i} data={car} />
                 ))}

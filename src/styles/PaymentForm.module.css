@@ -3,17 +3,25 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .PaymentForm h3, h2 {
     padding: 0rem 1rem;
     color: #232b2b;
     font-weight: bold;
+    text-align: center;
+}
+.PaymentForm hr {
+    width: 75%;
+    margin: 1rem auto;
+    border: none;
+    border-top: 1px solid black;
 }
 
 .FormWrapper {
     border-radius: 5px;
+    padding: 1rem 0.5rem;
     width: 100%;
     margin-bottom: 5rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
