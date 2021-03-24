@@ -20,9 +20,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <BasketProvider>
-          <CarContextProvider>
-            <MemberProvider>
+      <CarContextProvider>
+        <MemberProvider>
+          <BasketProvider>
               <Toaster position="top-center"/>
               <Navbar />
               <Route exact path="/">
@@ -44,9 +44,9 @@ function App() {
               <Route exact path="/membership">
                 <Membership />
               </Route>
-            </MemberProvider>
-          </CarContextProvider>
-        </BasketProvider>
+            </BasketProvider>
+          </MemberProvider>
+        </CarContextProvider>
         <Footer />
       </BrowserRouter>
     </div>

@@ -27,8 +27,6 @@ export function MemberProvider(props){
         localStorage.setItem('loggedInMember', JSON.stringify(loggedInMember));
     }, [members, loggedInMember])
 
-    // Function for retrieving custom information from local storage
-
     const transferUserData = (newUser) => {
         let userExist = null;
         userExist = members.find(member => member.email === newUser.email);
@@ -39,6 +37,13 @@ export function MemberProvider(props){
             setMembers([...members, {...newUser}]);
         }
     };
+
+    const addPurchase = (latestPurchase) => {
+        let memberToAddTo = members.findIndex(member => member.email === loggedInMember.email);
+        console.log(memberToAddTo)
+        setLoggedInMember(prevState => ({...prevState, purchases: [latestPurchase, ...prevState.purchases]}));
+        setMembers(prevState => ([...prevState.slice(0, memberToAddTo), {...prevState[memberToAddTo], purchases: [latestPurchase, ...prevState[memberToAddTo].purchases]},...prevState.slice(memberToAddTo+1, members.length)]));
+    }
     //Function that checks if the member has correct user-input to be logged in
     const loginFunc = (memberInput) => {
         const successfulLogin = members.filter(member => member.email === memberInput.userEmail && member.password === memberInput.userPassword);
@@ -56,7 +61,8 @@ export function MemberProvider(props){
         members,
         loginFunc,
         loggedInMember,
-        setLoggedInMember
+        setLoggedInMember,
+        addPurchase
     };
 
     return (
