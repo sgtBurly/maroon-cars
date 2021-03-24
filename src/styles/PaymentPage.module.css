@@ -1,5 +1,6 @@
 .paymentpage h2.needLogIn {
   font-size: 1.5rem;
+  text-align: center;
 }
 .infoAndFormWrapper {
   padding: 1rem 0.5rem;
