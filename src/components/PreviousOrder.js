@@ -16,25 +16,25 @@ const Card = () => {
         <div className={styles.cardWrapperContainer}>
             <div className={styles.cardWrapper}>
                 <h2 className={styles.cardHeading}>Current item/s in your basket</h2>
-                {loggedInMember.purchases.map((car, i) => (
+                {loggedInMember.purchases.map((order, i) => (
                     <div className={styles.flex} key={i}>
                         <div className={styles.carImageContainer}>
                             <img className={styles.carImage}
-                                src={`/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
-                                alt={`picture of ${car.make} ${car.model}`}
+                                src={`/assets/car-pictures/${order.make}-${order.model}-${order.year}.jpg`}
+                                alt={`picture of ${order.make} ${order.model}`}
                                 width="200"
                             />
                         </div>
                         <div className={styles.carInfo}>
-                            <p><span className={styles.fat}>Make: </span>{car.make}</p>
-                            <p><span className={styles.fat}>Model: </span>{car.model}</p>
-                            <p><span className={styles.fat}>Year: </span>{car.year}</p>
+                            <p><span className={styles.fat}>Make: </span>{order.make}</p>
+                            <p><span className={styles.fat}>Model: </span>{order.model}</p>
+                            <p><span className={styles.fat}>Year: </span>{order.year}</p>
                         </div>
                         <div className={styles.desc}>
-                            <p>{car.descShort}</p>
+                            <p>{order.descShort}</p>
                         </div>
                         <div className={styles.carPrice}>
-                            <p><span className={styles.fat}>Price: </span>${car.price}</p>
+                            <p><span className={styles.fat}>Price: </span>${order.price}</p>
                         </div>
                     </div>
                 ))}
