@@ -7,7 +7,6 @@ const RegisterComponent = () => {
 
     const {transferUserData, members} = useContext(MemberContext);
 
-
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [passwordMatch, setPasswordMatch] = useState(false)
@@ -42,16 +41,13 @@ const RegisterComponent = () => {
     }
 
     const handleUserPassword = (e) => {
-
         setPassword(e.target.value);
 
         if (confirmPassword === e.target.value){
             setPasswordMatch(true)
-            
-            }else {
+        } else {
                 setPasswordMatch(false)
-                
-            }
+        }
     }
 
     const HandleUserComfirmPassword = (e) => {
@@ -65,11 +61,9 @@ const RegisterComponent = () => {
             setPasswordMatch(false)
             
         }
-
     }
 
     const handleAccountSubmit = (e) => {
-
         e.preventDefault();
 
         if (passwordMatch){
@@ -86,7 +80,7 @@ const RegisterComponent = () => {
         }
             
         transferUserData(newUser)
-        }else {
+        } else {
             console.log("Passwords dont match bro");
         }    
     }
@@ -95,30 +89,32 @@ const RegisterComponent = () => {
         <div>
             <form className={styles.Form} onSubmit={handleAccountSubmit}>
                     <div className={styles.ContactInfo}>
+                        <h3 className={styles.header} >Please fill in your contact information to register</h3>
+
                         <div className={styles.inputWrapper}>
-                            <input className={`${styles.textInput} ${styles.eMail_input}`} type="text" onChange={updateUserEmail} placeholder="Email..." required/>
+                            <div className={styles.flexWrapperPersonal}>
+                                <input className={styles.textInput} type="text" onChange={updateUserEmail} placeholder="E-mail" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name" required/>
+                            </div>
+
+                            <div className={styles.flexWrapperAddress}>
+                                <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code" required/>
+                                <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country" required/>
+                            </div>
                         </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserFName} placeholder="First name..." required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserLName} placeholder="Last name..." required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserAddress} placeholder="Address..." required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCity} placeholder="City..." required/>
-                        </div>
-                        <div className={styles.inputWrapper}>
-                            <input className={styles.textInput} type="text" onChange={updateUserZipCode} placeholder="Zip code..." required/>
-                            <input className={styles.textInput} type="text" onChange={updateUserCountry} placeholder="Country..." required/>
-                        </div>
-                        <div>
-                        <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password..." required/>
-                        <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password..." required/>
+
+                        <div className={styles.passwordWrapper}>
+                            <input className={styles.textInput} type="password" onChange={(e) => handleUserPassword(e)} placeholder="Password" required/>
+                            <input className={styles.textInput} type="password" onChange={(e) => HandleUserComfirmPassword(e)} placeholder="Confirm password" required/>
                         </div>
                     </div>
-                    <button type="submit" className={styles.completeContactFormBtn}>Create account</button>
-                </form>
+                    <button type="submit" className={styles.createAccountBtn}>Create account</button>
+            </form>
         </div>
-     );
+    );
 }
 
 export default RegisterComponent;
