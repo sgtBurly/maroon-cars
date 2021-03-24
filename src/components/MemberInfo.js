@@ -12,13 +12,14 @@ const MemberAddress = () => {
       <hr />
       <div className={styles.memberInfoWrapper}>
         <div className={styles.memberInfoPart1}>
+          <p className={styles.secret}>To get alignment</p>
           <p>Name:  <span>{`${loggedInMember.firstName} ${loggedInMember.lastName}`}</span></p>
           <p>E-mail:  <span>{loggedInMember.email}</span></p>
         </div>
         <div className={styles.memberInfoPart2}>
-          <p>Address:  <span>{loggedInMember.address}</span></p>
-          <p>Zipcode:  <span>{loggedInMember.zipCode}</span></p>
-          <p>City:  <span>{loggedInMember.city}</span></p>
+          <p className={styles.billing}>Billing address: </p>
+          <p><span>{loggedInMember.address}</span></p>
+          <p><span>{loggedInMember.zipCode} </span><span>{loggedInMember.city}</span></p>
         </div>
       </div>
     </div>
