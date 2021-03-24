@@ -1,8 +1,4 @@
 .registerComponentWrapper {
-    /* visibility: hidden; */
-    /* opacity: 0; */
-    /* transform: translateY(-200%); */
-    /* transition: all 0.75s ease-in; */
     display: none;
 }
 
@@ -18,18 +14,6 @@ h3.not_a_member_yet {
 
 /* the label which works as a checkbox */
 .registerFormLabel {
-    /* text-align: center;
-    display: block;
-    margin: 1rem auto;
-    padding-top: 0.7rem;
-    border: none;
-    width: 150px;
-    height: 50px;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    border-radius:  0.2rem;
-    background-color: #fcfcfb;
-    transition: background-color 0.7s ease; */
     background-color: #FBFAF5;
     width: 150px;
     height: 50px;
@@ -74,15 +58,12 @@ h3.not_a_member_yet {
     left: 0;
 }
 
-
 /* displays registerform when user clicks on "register now" */
 .registerFormToggle:checked ~ .registerComponentWrapper {
     display: block;
-    /* transform: translateY(-0%); */
-    /* transition-delay: opacity 5s; */
-    /* opacity: 1; */
 }
 
-.registerFormToggle:checked {
-    
+/* Makes the register now-btn stay orange if checked */
+.registerFormToggle:checked ~ .registerFormLabel {
+    background-color: #FFBE0B;
 }

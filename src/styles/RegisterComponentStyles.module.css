@@ -5,13 +5,11 @@
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
-
     padding-bottom: 2rem;
     padding-top: 0rem;
     background-color: #FBFAF5;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     border-radius:  0.2rem;
-    /* max-width: 350px; */
     width: 90%;
     max-width: 576px;
 }
@@ -98,10 +96,6 @@ h3.header {
 .createAccountBtn:hover:after {
     width: 100%;
     left: 0;
-}
-
-@media screen and (min-width: 576px){
-
 }
 
 @media screen and (min-width: 992px){
