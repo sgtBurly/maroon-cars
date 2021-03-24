@@ -4,7 +4,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    padding-top: 0rem;
+    background-color: #FBFAF5;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius:  0.2rem;
+    width: 90%;
+    max-width: 576px;
 }
 
 /* wraps everything except button */
@@ -50,22 +57,51 @@ h3.header {
 }
 
 .createAccountBtn {
-    margin: 2rem auto;
-    border: none;
+    background-color: #FBFAF5;
     width: 150px;
     height: 50px;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    border-radius:  0.2rem;
-    background-color: #fcfcfb;
-    transition: background-color 0.7s ease;
+    border: 2px solid #FFBE0B;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all 0.2s ease-out;
+    border-radius: 5px;
+    position: relative;
+    opacity: 0.9;
+    z-index: 10;
+    margin: 1rem 0rem;
+    display: block;
 }
 .createAccountBtn:hover {
+    box-shadow: 0 0px 20px 8px #ffbe0b7e;
     cursor: pointer;
-    background-color: #FFBE0B;
+    opacity: 1.0;
+}
+
+.createAccountBtn:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0%;
+    position: absolute;
+    background: #FFBE0B;
+    transition: 0.3s ease 0s, left 0.2s ease 0s;
+    width: 0;
+    z-index: -1;
+}
+
+.createAccountBtn:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 @media screen and (min-width: 992px){
+    .Form {
+        max-width: 1000px;
+    }
     .textInput {
         width: 400px;
     }
