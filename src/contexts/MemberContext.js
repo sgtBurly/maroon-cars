@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 export const MemberContext = createContext();
 
 export function MemberProvider(props){
@@ -78,7 +78,7 @@ export function MemberProvider(props){
       //Sets the logged in member
       setLoggedInMember(successfulLogin[0]);
     } else {
-      alert("INVALID USERNAME OR PASSWORD");
+      toast.error("Invalid username or password");
     }
   };
 
