@@ -5,8 +5,6 @@
   max-width: 1800px;
   padding: 0rem;
   margin: 2rem auto;
-  justify-content: space-around;
-  /* display: flex; */
 }
 
 /* 1st children wrapper */
@@ -198,7 +196,7 @@ p.desc {
     display: flex;
     flex-direction: column;
   }
-  
+
   div.headerPriceWrapper {
     display: flex;
     flex-wrap: wrap;
@@ -221,7 +219,7 @@ p.desc {
   }
 }
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
   .carDetailsWrapper {
     max-width: 1400px;
   }
