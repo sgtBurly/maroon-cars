@@ -1,20 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Styles from "../styles/ProfileStyles.module.css";
 import PreviousOrder from "../components/PreviousOrder";
 import { MemberContext } from "../contexts/MemberContext";
-//import { MemberContext } from '../contexts/MemberContext'
 
 const Profile = () => {
-  let { loggedInMember, setLoggedInMember } = useContext(MemberContext);
-  // Get loggedInMember from MemberContext later to make info dynamic
-  // const { loggedInMember } = useContext(MemberContext);
+  const { loggedInMember, setLoggedInMember } = useContext(MemberContext);
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const handleLogOut = (e) => {
     e.preventDefault();
-
-    setLoggedInMember({ purchases: [] });
-
-    console.log(loggedInMember);
+    setLoggedInMember([]);
   };
 
   return (

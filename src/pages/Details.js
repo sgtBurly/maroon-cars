@@ -2,12 +2,10 @@ import { useContext, useState, useEffect } from "react";
 import { BasketContext } from "../contexts/BasketContext";
 import { CarContext } from "../contexts/CarContext";
 import styles from "../styles/Details.module.css";
-import { useHistory } from "react-router-dom";
 
 const Details = (props) => {
   const { cars } = useContext(CarContext);
   const [detailCar, setDetailCar] = useState(null);
-  const { history } = useHistory();
 
   const { addToBasket } = useContext(BasketContext);
 
