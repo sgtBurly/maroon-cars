@@ -61,14 +61,17 @@ h4.searchHeader {
 /* Toggle filter button */
 .toggleFilterBtn {
   border: 2px solid #488b49;
+  box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.5);
+  color: black;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   padding: 0.3rem;
   margin: 1rem;
 }
+
 .toggleFilterBtn:hover {
+  color: white;
   background-color: #488b49;
-  border: 2px solid black;
   transition: all 0.3s ease-in-out;
 }
 .toggleFilterBtn span {
@@ -153,29 +156,18 @@ h4.searchHeader {
 }
 
 .clearFilterBtn {
-  border: 2px solid;
+  border: 2px solid #488b49;
+  box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.5);
+  color: black;
   border-radius: 5px;
-  background-color: white;
+  background-color: transparent;
   padding: 0.3rem;
   margin: 0.5rem;
 }
 .clearFilterBtn:hover {
-  background-color: #ffbe0b;
-  border: 2px solid black;
-  transition: all 0.2s ease-in-out;
-}
-.applyFilterBtn {
-  border: 2px solid;
-  border-radius: 5px;
-  background-color: white;
-  padding: 0.3rem;
-  margin: 0.5rem;
-}
-.applyFilterBtn:hover {
-  border: 2px solid black;
-  /* color: white; */
+  color: white;
   background-color: #488b49;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* --------------- MEDIA QUERIES --------------- */
