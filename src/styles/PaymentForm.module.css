@@ -1,146 +1,130 @@
 .PaymentForm {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 2rem;
+  margin: 1rem 0;
 }
 
-.PaymentForm h3, h2 {
-    padding: 0rem 1rem;
-    color: #232b2b;
-    font-weight: bold;
-    text-align: center;
+.PaymentForm h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-weight: bold;
 }
+
 .PaymentForm hr {
-    width: 75%;
-    margin: 1rem auto;
-    border: none;
-    border-top: 1px solid black;
+  width: 75%;
+  margin: 1rem auto;
+  border: none;
+  border-top: 1px solid #232b2b;
 }
 
 .FormWrapper {
-    border-radius: 5px;
-    padding: 1rem 0.5rem;
-    width: 100%;
-    margin-bottom: 5rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    background-color:  #FFBE0B;
+  padding: 1rem 0.5rem;
+  border-radius: 0.2rem;
+  max-width: 576px;
+  margin: auto;
 }
 .Form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.h2 {
-    margin-bottom: 2rem;
-}
- .textInput {
-    width: 100%;
-    margin-bottom: 1rem;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 0.2rem;
-    outline: none;
-}
-.payment_option_mainwrapper {
-    min-width:100%;
-    display: flex;
-    justify-content: space-around;
-
-}
-
-.PaymentOptions, .DeliveryOptions {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-
+.PaymentOptions,
+.DeliveryOptions {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .DeliveryOptions {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .RadioWrapper {
-    display: flex;
-    align-items: center;
-    margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
 }
-.PaymentOptions i, .DeliveryOptions i {
-    margin: 0.5rem;
+.PaymentOptions i,
+.DeliveryOptions i {
+  margin: 0.5rem;
 }
 
-.ContactInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 95%;
-    margin-top: 1rem;
-}
-.inputWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.inputWrapper input {
-    width: 100%;
-}
-.eMail_input {
-    width: 100% !important;
-}
 .completePurchaseBtn {
-    padding: 1rem;
-    margin: 1rem auto;
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    border: solid 1px #232b2b;
-    border-radius: 5px;
-    background-color: #ffffff;
-    font-weight: bold;
-    box-shadow: rgba(105, 120, 110, 0.2) 0px 8px 24px;
+  background-color: #fbfaf5;
+  padding: 0 0.5rem;
+  height: 50px;
+  border: 2px solid #ffbe0b;
+  border-radius: 5px;
+  color: #232b2b;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-out;
+  border-radius: 5px;
+  position: relative;
+  opacity: 0.9;
+  z-index: 10;
+  margin: 1.5rem 0 1rem 0;
+  display: block;
+}
+
+.completePurchaseBtn:hover {
+  box-shadow: 0 0px 20px 8px #ffbe0b7e;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.completePurchaseBtn:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  background: #ffbe0b;
+  transition: 0.3s ease 0s, left 0.2s ease 0s;
+  width: 0;
+  z-index: -1;
+}
+
+.completePurchaseBtn:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 690px) {
-    .inputWrapper {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-    }
-    .inputWrapper input {
-        width: 45%;
-    }
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
-    }
-     .DeliveryOptions {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+  .inputWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .inputWrapper input {
+    width: 45%;
+  }
+  .FormWrapper {
+    min-width: 700px;
+    max-width: 700px !important;
+  }
+  .DeliveryOptions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
-        flex-direction: row;
-        flex-wrap: wrap;
-
-
-    }
- }
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 700px)  {
-    .FormWrapper {
-        min-width: 700px;
-        max-width: 700px !important;
-    }
+@media (min-width: 700px) {
+  .FormWrapper {
+    min-width: 700px;
+    max-width: 700px !important;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+}

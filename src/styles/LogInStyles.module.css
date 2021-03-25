@@ -1,82 +1,83 @@
-.logIn{
-    margin: 3rem auto;
-    width: 90%;
+.logIn {
+  margin: 3rem auto;
+  width: 90%;
 }
 
-.logInWrapper{
-    padding-bottom: 2rem;
-    padding-top: 2rem;
-    background-color: #FBFAF5;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    border-radius:  0.2rem;
-    max-width: 576px;
-    margin: auto;
+.logInWrapper {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  background-color: #fbfaf5;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  border-radius: 0.2rem;
+  max-width: 576px;
+  margin: auto;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h2.form_title {
-    padding-bottom: 2rem;
-    text-shadow: 1px 1px 1px #03030349;
+  padding-bottom: 2rem;
+  text-shadow: 1px 1px 1px #232b2b;
 }
 
 .input {
-    width: 90%;
-    padding: 0.7rem;
-    margin-bottom: 1rem;
-    outline-style: none;
-    border-color: transparent;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 0.2rem;
+  width: 90%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  outline-style: none;
+  border-color: transparent;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 0.2rem;
 }
 
 .input:focus {
-    border: 2px solid #FFBE0B;
+  border: 2px solid #ffbe0b;
 }
 
-.btn { 
-    background-color: #FBFAF5;
-    width: 150px;
-    height: 50px;
-    border: 2px solid #FFBE0B;
-    border-radius: 5px;
-    color: black;
-    font-size: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: all 0.2s ease-out;
-    border-radius: 5px;
-    position: relative;
-    opacity: 0.9;
-    z-index: 10;
-    margin: 1rem 0rem;
-    display: block;
+.btn {
+  background-color: #fbfaf5;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffbe0b;
+  border-radius: 5px;
+  color: #232b2b;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-out;
+  border-radius: 5px;
+  position: relative;
+  opacity: 0.9;
+  z-index: 10;
+  margin: 1rem 0rem;
+  display: block;
 }
 
 .btn:hover {
-    box-shadow: 0 0px 20px 8px #ffbe0b7e;
-    cursor: pointer;
-    opacity: 1.0;
+  box-shadow: 0 0px 20px 8px #ffbe0b7e;
+  cursor: pointer;
+  opacity: 1;
 }
 
 .btn:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0%;
-    position: absolute;
-    background: #FFBE0B;
-    transition: 0.3s ease 0s, left 0.2s ease 0s;
-    width: 0;
-    z-index: -1;
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0%;
+  position: absolute;
+  background: #ffbe0b;
+  transition: 0.3s ease 0s, left 0.2s ease 0s;
+  width: 0;
+  z-index: -1;
 }
 
 .btn:hover:after {
-    width: 100%;
-    left: 0;
+  width: 100%;
+  left: 0;
 }

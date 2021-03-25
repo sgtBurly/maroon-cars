@@ -1,31 +1,35 @@
 .valueWrapper {
-    position: relative;
+  position: relative;
 }
 
 .count {
-    background-image: linear-gradient(to bottom right, rgb(247, 126, 126), rgb(194, 1, 1));
-    color: white;
-    text-align: center;
-    height: 1.4rem;
-    width: 1.4rem;
-    border-radius: 50%;
-    padding-top: 2px;
-    font-size: 0.8rem;
-    font-weight: bolder;
-    position: absolute;
-    bottom: 80%;
-    left: 17px;
-    font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(247, 126, 126),
+    rgb(194, 1, 1)
+  );
+  color: white;
+  text-align: center;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50%;
+  padding-top: 2px;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 80%;
+  left: 17px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .price {
-    margin-bottom: 0;
-    margin-top: 0.6rem;
-    font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0.6rem;
+  font-size: 0.7rem;
 }
 
-@media screen and (max-width: 449px){
-    .count {
-        padding-top: 4px;
-    }
+@media screen and (max-width: 449px) {
+  .count {
+    padding-top: 4px;
+  }
 }

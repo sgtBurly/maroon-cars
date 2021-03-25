@@ -1,15 +1,14 @@
-import React, { useEffect, useContext } from 'react';
-import ReceiptStyles from '../styles/ReceiptStyles.module.css';
-import { BasketContext } from '../contexts/BasketContext';
-import { MemberContext } from '../contexts/MemberContext';
+import React, { useEffect, useContext } from "react";
+import ReceiptStyles from "../styles/ReceiptStyles.module.css";
+import { BasketContext } from "../contexts/BasketContext";
+import { MemberContext } from "../contexts/MemberContext";
 
 const OrderReceipt = () => {
-
   const { calcBasket } = useContext(BasketContext);
   const { loggedInMember } = useContext(MemberContext);
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     window.print();
   }, []);
 
@@ -30,35 +29,57 @@ const OrderReceipt = () => {
           </div>
         </div>
         <div className={ReceiptStyles.orderItem}>
-            <p className={ReceiptStyles.orderInfo}>Customer: <span>{`${loggedInMember.firstName} ${loggedInMember.lastName}`}</span></p>
-            <p className={ReceiptStyles.orderInfo}>Payment method: <span>{loggedInMember.purchases[0].paymentMethod}</span></p>
-            <p className={ReceiptStyles.orderInfo}>Delivery method: {loggedInMember.purchases[0].deliveryMethod === 'home' ? <span>Home delivery</span> : <span>Pick up at store</span>}</p>
-            <hr />
+          <p className={ReceiptStyles.orderInfo}>
+            Customer:{" "}
+            <span>{`${loggedInMember.firstName} ${loggedInMember.lastName}`}</span>
+          </p>
+          <p className={ReceiptStyles.orderInfo}>
+            Payment method:{" "}
+            <span>{loggedInMember.purchases[0].paymentMethod}</span>
+          </p>
+          <p className={ReceiptStyles.orderInfo}>
+            Delivery method:{" "}
+            {loggedInMember.purchases[0].deliveryMethod === "home" ? (
+              <span>Home delivery</span>
+            ) : (
+              <span>Pick up at store</span>
+            )}
+          </p>
+          <hr />
         </div>
         <div className={ReceiptStyles.bottom_row}>
           <div className={ReceiptStyles.items_wrapper}>
             <h6>Purchase info</h6>
           </div>
-          {
-            loggedInMember.purchases[0].carsPurchased.map(purchasedCar => {
-              orderNumber++;
-              return (
-                <div className={ReceiptStyles.orderItem} key={purchasedCar.vin}>
-                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Make<span>{purchasedCar.make}</span></p>
-                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. Model<span>{purchasedCar.model}</span></p>
-                  <p className={ReceiptStyles.orderInfo}>{orderNumber}. VIN<span>{purchasedCar.vin}</span></p>
-                  <hr />
-                </div>
-              )
-            })
-          }
+          {loggedInMember.purchases[0].carsPurchased.map((purchasedCar) => {
+            orderNumber++;
+            return (
+              <div className={ReceiptStyles.orderItem} key={purchasedCar.vin}>
+                <p className={ReceiptStyles.orderInfo}>
+                  {orderNumber}. Make<span>{purchasedCar.make}</span>
+                </p>
+                <p className={ReceiptStyles.orderInfo}>
+                  {orderNumber}. Model<span>{purchasedCar.model}</span>
+                </p>
+                <p className={ReceiptStyles.orderInfo}>
+                  {orderNumber}. VIN<span>{purchasedCar.vin}</span>
+                </p>
+                <hr />
+              </div>
+            );
+          })}
           <div className={ReceiptStyles.total_wrapper}>
-            <p>Total: <span>$ {calcBasket(loggedInMember.purchases[0].carsPurchased)}</span></p>
+            <p>
+              Total:{" "}
+              <span>
+                $ {calcBasket(loggedInMember.purchases[0].carsPurchased)}
+              </span>
+            </p>
           </div>
         </div>
       </div>
-  </div>
+    </div>
   );
-}
+};
 
 export default OrderReceipt;
