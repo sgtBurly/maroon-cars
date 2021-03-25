@@ -19,8 +19,8 @@ export function MemberProvider(props){
         } else {
             return []
         }
-    }
-  };
+    };
+
 
   const [members, setMembers] = useState(
     getFromLocalStorage("membersInStorage")

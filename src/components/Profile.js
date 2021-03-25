@@ -49,40 +49,7 @@ const Profile = () => {
                 }
             </div>
         </div>
-        <h2>Jessie Adams</h2>
-      </div>
-      <div className={Styles.profile_info}>
-        <h3>Profile info</h3>
-        <div className={Styles.profile_info_innerwrapper}>
-          <p>
-            First name: <span>Jessie</span>
-          </p>
-          <p>
-            Last name: <span>Adams</span>
-          </p>
-          <p>
-            E-mail: <span>jessieadams@loremipsum.com</span>
-          </p>
-          <p>
-            Member since: <span>2021-03-15</span>
-          </p>
-        </div>
-      </div>
-      <div className={Styles.previous_order_wrapper}>
-        <h3>Your previous orders</h3>
-
-        {
-          //Checks if loggedInMember has any former purchases, if so render those purchases
-          loggedInMember.purchases.length > 0 ? <PreviousOrder /> : null
-        }
-      </div>
-      <div className={Styles.logout_wrapper}>
-        <form onSubmit={handleLogOut}>
-          <button type="submit">Log out</button>
-        </form>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Profile;
