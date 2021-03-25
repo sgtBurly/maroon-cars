@@ -13,8 +13,6 @@ const Profile = () => {
     e.preventDefault();
 
     setLoggedInMember({ purchases: [] });
-
-    console.log(loggedInMember);
   };
 
   return (

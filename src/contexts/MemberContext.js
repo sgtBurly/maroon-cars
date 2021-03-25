@@ -20,11 +20,6 @@ export function MemberProvider(props) {
     getFromLocalStorage("loggedInMember")
   );
 
-  useEffect(() => {
-    console.log("this is members", members);
-    console.log("this is logged in member", loggedInMember);
-  }, [members, loggedInMember]);
-
   //Using the hook to update local storage with members array and logged in member
   useEffect(() => {
     localStorage.setItem("membersInStorage", JSON.stringify(members));
@@ -49,7 +44,7 @@ export function MemberProvider(props) {
     let memberToAddTo = members.findIndex(
       (member) => member.email === loggedInMember.email
     );
-    console.log(memberToAddTo);
+
     setLoggedInMember((prevState) => ({
       ...prevState,
       purchases: [latestPurchase, ...prevState.purchases],

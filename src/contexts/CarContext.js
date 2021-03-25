@@ -11,10 +11,6 @@ const CarContextProvider = (props) => {
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => setCars(require("../json/cars.json")), []);
-  useEffect(
-    () => console.log("FilteredCars and noResults", filteredCars, noResults),
-    [filteredCars]
-  );
 
   useEffect(() => {
     if (cars.length > 0 && initialRender.current) {
@@ -66,7 +62,7 @@ const CarContextProvider = (props) => {
         car.year >= minYear &&
         car.year <= maxYear
     );
-    //console.log(filterResult)
+
     const searchResult = filterTextInput(
       filterResult,
       filterOptions.textSearch
@@ -97,7 +93,6 @@ const CarContextProvider = (props) => {
       return tempArray;
     } else {
       // No search results. Maybe use variable to show different component in that case?
-      console.log("No search results...");
       return [];
     }
   };

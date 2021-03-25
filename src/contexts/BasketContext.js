@@ -32,7 +32,6 @@ export const BasketProvider = (props) => {
     else {
       setCustomerBasket((prevState) => [car, ...prevState]);
       toast.success("Successfully added to your cart!");
-      console.log("this is customerBasket: ", customerBasket);
     }
   };
 
