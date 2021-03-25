@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Slider } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import styles from "../styles/SearchComponentStyles.module.css";
 import { CarContext } from "../contexts/CarContext";
 
