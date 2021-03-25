@@ -2,6 +2,10 @@ import { createContext, useState, useEffect, useRef } from "react";
 export const CarContext = createContext();
 
 const CarContextProvider = (props) => {
+  // Initial render används för att kontrollera om det är 
+  // första gången sidan renderas. Ska egentligen berätta 
+  // om det är originalarrayen om visas. 
+  // När denna är true ska "original-arrayen" från car context renderas.
   const initialRender = useRef(true);
 
   const [cars, setCars] = useState([]);
@@ -18,6 +22,7 @@ const CarContextProvider = (props) => {
       initialRender.current = false;
     }
 
+    // Verkar för att rendera ut "recommended cars" 
     const randomNumber = Math.floor(Math.random() * 48);
     if (cars.length > 0)
       setRecommendedCars([
