@@ -1,0 +1,52 @@
+.memberInfo {
+  margin: 0 auto;
+  padding: 0.5rem;
+ 
+}
+.memberInfo h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.memberInfo hr {
+  border: none;
+  border-top: 1px solid;
+  width: 80%;
+}
+.memberInfoWrapper {
+  display: flex;
+  flex-flow: nowrap column;
+}
+.memberInfoWrapper p {
+  margin-bottom: 0.5rem;
+}
+.memberInfoPart1 {
+  margin-bottom: 0.7rem;
+}
+.memberInfoPart1 p.secret {
+  display: none;
+}
+.memberInfoPart2 p.billing,
+.memberInfoPart1 p.secret {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media screen and (min-width: 576px) {
+  .memberInfoWrapper {
+    flex-flow: wrap row;
+  }
+  .memberInfoPart1 {
+    margin-right: 5rem;
+  }
+  .memberInfoPart1 p.secret {
+    display: block;
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .memberInfo {
+    max-width: 700px;
+  }
+}
