@@ -5,7 +5,6 @@
   align-items: center;
   flex-direction: column;
   margin-top: 1rem;
-  /* border: 1px solid red; */
 }
 
 .caro_wrapper {
@@ -46,7 +45,6 @@ span.sale {
   opacity: 0.85;
   transform: rotate(-20deg);
   animation: beat 1.25s ease infinite alternate;
-
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;

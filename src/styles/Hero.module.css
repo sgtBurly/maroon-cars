@@ -13,7 +13,6 @@
   position: absolute;
   text-align: left;
   top: 10%;
-  /* left: 10%; */
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
@@ -35,8 +34,6 @@
 @media (min-width: 576px) {
   .greeting {
     top: 5%;
-    /* left: auto; */
-    /* text-align: right; */
   }
 
   .pColor {

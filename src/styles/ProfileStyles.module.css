@@ -42,7 +42,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-bottom: solid black 2px;
+  border-bottom: solid #232b2b 2px;
 }
 
 .profile_info_innerwrapper p {

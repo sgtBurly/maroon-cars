@@ -13,7 +13,7 @@
   width: 75%;
   margin: 1rem auto;
   border: none;
-  border-top: 1px solid black;
+  border-top: 1px solid #232b2b;
 }
 
 .FormWrapper {
@@ -51,12 +51,11 @@
 
 .completePurchaseBtn {
   background-color: #fbfaf5;
-  /* width: 150px; */
   padding: 0 0.5rem;
   height: 50px;
   border: 2px solid #ffbe0b;
   border-radius: 5px;
-  color: black;
+  color: #232b2b;
   font-size: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-out;
