@@ -7,7 +7,7 @@
 }
 
 h4.searchHeader {
-  text-shadow: 1px 1px 3px #03030391;
+  text-shadow: 1px 1px 3px #232b2b;
   padding: 1rem;
   font-size: 1.6rem;
 }
@@ -83,7 +83,7 @@ h4.searchHeader {
 .filterWrapper {
   width: 350px;
   justify-content: space-around;
-  background-color: #488b491e;
+  background-color: #232b2b;
   border-radius: 15px;
   padding: 1rem;
 }
@@ -113,7 +113,7 @@ h4.searchHeader {
 }
 /* the values */
 .slider span span span span {
-  color: black;
+  color: #232b2b;
   position: relative;
   top: 37px;
   right: 34px;

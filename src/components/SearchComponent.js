@@ -28,7 +28,6 @@ const SearchComponent = () => {
   };
 
   const initFilterOpts = () => {
-    console.log("In initFilterOptions");
     if (initialRender.current) {
       // If it is initial render for App, saved filterOptions is removed.
       localStorage.removeItem("filterOptions");
@@ -50,7 +49,6 @@ const SearchComponent = () => {
       localStorage.setItem("filterOptions", JSON.stringify(filterOptions));
       // When change in filterOptions, it is sent to CarContext.
       sendSearchData(filterOptions);
-      console.log("In useEffect, setting filterOpts", filterOptions);
     }
   }, [filterOptions]);
 

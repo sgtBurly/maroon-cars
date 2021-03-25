@@ -6,7 +6,7 @@ import CarCarousel from "../components/CarCarousel";
 import SearchComponent from "../components/SearchComponent";
 
 const Home = () => {
-  useEffect(() => window.scrollTo(0, 0));
+  useEffect(() => window.scrollTo(0, 0), []);
 
   return (
     <div>
