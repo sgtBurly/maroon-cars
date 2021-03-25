@@ -1,5 +1,5 @@
-import React from 'react';
-import FooterStyles from "../styles/FooterStyles.module.css"
+import React from "react";
+import FooterStyles from "../styles/FooterStyles.module.css";
 
 const Footer = () => {
   return (
@@ -7,6 +7,6 @@ const Footer = () => {
       <h3 className={FooterStyles.h3}>Maroon Cars©️</h3>
     </footer>
   );
-}
+};
 
 export default Footer;

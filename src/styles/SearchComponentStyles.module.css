@@ -1,222 +1,219 @@
 /* Main wrapper */
 .searchComponent {
-    margin: 2rem auto;
-    max-width: 100vw;
-    display: flex;
-    justify-content: center;
+  margin: 2rem auto;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 
 h4.searchHeader {
-    text-shadow: 1px 1px 3px #03030391;
-    padding: 1rem;
-    font-size: 1.6rem;
+  text-shadow: 1px 1px 3px #03030391;
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 
 /* The whole form wrapper */
 .formContainer {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 /* Search bar and filter toggle-btn */
 .searchBarWrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Text input */
 .inputWrapper {
-    display: block;
-    padding: 0.7rem;
-    height: 3rem;
-    border-radius: 5px;
-    border: 2px solid #488B49;
+  display: block;
+  padding: 0.7rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: 2px solid #488b49;
 }
 .searchInput {
-    border: none;
-    padding: 0.5rem;
-    border-radius: 5px;
-    position: relative;
-    top: -10px;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: relative;
+  top: -10px;
 }
 
 /* Förstoringsglaset */
 .searchButton {
-    background-color: transparent;
-    border: none;
-    position: relative;
-    top: -10px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: -10px;
 }
 .searchButton i:hover {
-    color: #488B49;
+  color: #488b49;
 }
 .searchInput:focus {
-    outline: none;
+  outline: none;
 }
 
 /* Toggle filter button */
 .toggleFilterBtn {
-    border: 2px solid #488B49;
-    border-radius: 5px;
-    background-color: white;
-    padding: 0.3rem;
-    margin: 1rem;
+  border: 2px solid #488b49;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.3rem;
+  margin: 1rem;
 }
 .toggleFilterBtn:hover {
-    background-color: #488B49;
-    border: 2px solid black;
-    transition: all 0.3s ease-in-out;
+  background-color: #488b49;
+  border: 2px solid black;
+  transition: all 0.3s ease-in-out;
 }
 .toggleFilterBtn span {
-    color: inherit;
+  color: inherit;
 }
 
 /* Wraps everything that shows when formToggler is truthy */
 .filterWrapper {
-    width: 350px;
-    justify-content: space-around;
-    background-color: #488b491e;
-    border-radius: 15px;
-    padding: 1rem;
+  width: 350px;
+  justify-content: space-around;
+  background-color: #488b491e;
+  border-radius: 15px;
+  padding: 1rem;
 }
 
 .slidersFlexWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 /* Wraps each one of the sliders */
 .sliderWrapper {
-    padding: 0rem 2rem;
-    border-radius: 5px;
+  padding: 0rem 2rem;
+  border-radius: 5px;
 }
 /* The slider */
 .filterSlider {
-    width: 250px;
-    margin: auto;
+  width: 250px;
+  margin: auto;
 }
 .slider span {
-    color: #488B49;
+  color: #488b49;
 }
 /* the slider-value bubble */
 .slider span span span {
-    color: transparent;
+  color: transparent;
 }
 /* the values */
 .slider span span span span {
-    color: black;
-    position: relative;
-    top: 37px;
-    right: 34px;
+  color: black;
+  position: relative;
+  top: 37px;
+  right: 34px;
 }
 /* The slider labels */
 .labelWrapper {
-    margin: 0rem;
-    padding: 0rem;
-    text-align: center;
-    font-weight: bold;
+  margin: 0rem;
+  padding: 0rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Make + Model wrapper */
 .makeModelWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 2rem auto;
-    width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 2rem auto;
+  width: 300px;
 }
 
 .makeWrapper,
 .modelWrapper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .labelMake,
 .labelModel {
-    padding: 0rem 0.75rem;
-    font-weight: bold;
+  padding: 0rem 0.75rem;
+  font-weight: bold;
 }
 .select {
-    width: 250px;
-    margin: 0rem 1rem 1rem 0rem;
+  width: 250px;
+  margin: 0rem 1rem 1rem 0rem;
 }
 
 /* Clear filter + Apply filter buttons */
 .buttonsWrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .clearFilterBtn {
-    border: 2px solid;
-    border-radius: 5px;
-    background-color: white;
-    padding: 0.3rem;
-    margin: 0.5rem;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.3rem;
+  margin: 0.5rem;
 }
 .clearFilterBtn:hover {
-    background-color: #FFBE0B;
-    border: 2px solid black;
-    transition: all 0.2s ease-in-out;
+  background-color: #ffbe0b;
+  border: 2px solid black;
+  transition: all 0.2s ease-in-out;
 }
 .applyFilterBtn {
-    border: 2px solid;
-    border-radius: 5px;
-    background-color: white;
-    padding: 0.3rem;
-    margin: 0.5rem;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0.3rem;
+  margin: 0.5rem;
 }
 .applyFilterBtn:hover {
-    border: 2px solid black;
-    /* color: white; */
-    background-color: #488B49;
-    transition: all 0.2s ease-in-out;
+  border: 2px solid black;
+  /* color: white; */
+  background-color: #488b49;
+  transition: all 0.2s ease-in-out;
 }
 
 /* --------------- MEDIA QUERIES --------------- */
-@media screen and (min-width: 576px){
-    h4.searchHeader {
-        font-size: 2rem;
-    }
-    .searchBarWrapper {
-        flex-direction: row;
-    }
-    .filterWrapper {
-        width: 500px;
-    }
-    .filterSlider {
-        width: 400px;
-    }
+@media screen and (min-width: 576px) {
+  h4.searchHeader {
+    font-size: 2rem;
+  }
+  .searchBarWrapper {
+    flex-direction: row;
+  }
+  .filterWrapper {
+    width: 500px;
+  }
+  .filterSlider {
+    width: 400px;
+  }
 }
 
-@media screen and (min-width: 768px){
-    .filterWrapper {
-        width: 650px;
-    }
+@media screen and (min-width: 768px) {
+  .filterWrapper {
+    width: 650px;
+  }
 }
 
-@media screen and (min-width: 992px){
-    .filterWrapper {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-around;
-        background-color: #488b491e;
-        width: 900px;
-        padding: 2rem;
-    }
-    .makeModelButtonsFlexWrapper{
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-        align-items: stretch;
-        position: relative;
-    }
+@media screen and (min-width: 992px) {
+  .filterWrapper {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    background-color: #488b491e;
+    width: 900px;
+    padding: 2rem;
+  }
+  .makeModelButtonsFlexWrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+  }
 }
-
-
-

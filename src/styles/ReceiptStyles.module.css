@@ -1,8 +1,7 @@
 .main_wrapper {
-
 }
 .logo {
-  font-family: 'Ultra', serif;
+  font-family: "Ultra", serif;
   font-size: 1rem;
   margin: 0;
 }
@@ -11,7 +10,7 @@
   text-align: right;
   margin: 0.5rem 0;
 }
-.company_info p{
+.company_info p {
   margin: 0;
   margin-top: 0.3rem;
 }
@@ -29,7 +28,8 @@
 .info_card {
   width: 95%;
   margin: 1rem auto;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   border-radius: 0.5rem;
   padding: 1rem;
   /* font-size: 1rem; */
@@ -40,7 +40,7 @@
   text-align: center;
 }
 .orderItem {
-  margin: 1rem 0
+  margin: 1rem 0;
 }
 .orderItem p {
   margin: 0;
@@ -50,14 +50,14 @@
   margin-right: auto;
   margin-left: auto;
 }
-.orderInfo  {
+.orderInfo {
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
 }
 .orderInfo span {
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   font-weight: bold;
 }
 .total_wrapper {
@@ -69,36 +69,36 @@
 }
 
 @media print {
-  html, body {
+  html,
+  body {
     height: 100vh;
     overflow: hidden;
   }
 }
 
-
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 350.98px) {
-
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px)  {
+@media (min-width: 576px) {
   .info_card {
     width: 500px;
   }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px)  {
+@media (min-width: 768px) {
   .info_card {
     width: 600px;
     margin: 1rem auto;
   }
- }
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {  }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+}

@@ -6,7 +6,7 @@
   align-items: center;
   flex-wrap: wrap;
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 20px;
 }
 
@@ -22,7 +22,7 @@
   border-radius: 0.2rem;
 }
 .icon_span {
-  color: #FFBE0B;
+  color: #ffbe0b;
   font-weight: bold;
 }
 .info_text_span {
@@ -41,7 +41,6 @@
   flex-direction: column;
   margin: 0px;
   padding: 0px;
-
 }
 .li {
   display: flex;
@@ -49,7 +48,8 @@
 }
 
 .image {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   max-width: 300px;
   margin-bottom: 2rem;
   border-radius: 3px;
@@ -66,9 +66,8 @@
   text-shadow: 1px 1px 3px #03030391;
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px)  {
+@media (min-width: 576px) {
   .ul {
     flex-direction: row;
     justify-content: space-between;
@@ -89,7 +88,6 @@
   }
 }
 
-
 @media (min-width: 576px) {
   .image {
     max-width: 400px;
@@ -98,14 +96,14 @@
   .li {
     padding: 5px;
   }
- }
-
+}
 
 @media (min-width: 768px) {
-    .image {
-      max-width: 450px;
-    }
+  .image {
+    max-width: 450px;
   }
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+}

@@ -30,27 +30,27 @@
 }
 
 span.sale {
-	position: relative;
+  position: relative;
   top: -25px;
   right: 25px;
-	display: inline-block;
-	background: #FFBE0B;
-	color: #FBFAF5;
+  display: inline-block;
+  background: #ffbe0b;
+  color: #fbfaf5;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.342);
   font-size: 1.4rem;
-	height: 4.5rem;
-	width: 4.5rem;
-	text-align: center;
-	line-height: 4.5rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  line-height: 4.5rem;
   text-transform: uppercase;
   opacity: 0.85;
-	transform: rotate(-20deg);
-	animation: beat 1.25s ease infinite alternate;
+  transform: rotate(-20deg);
+  animation: beat 1.25s ease infinite alternate;
 
   -webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
-	transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 p.see_more {
@@ -63,7 +63,7 @@ p.see_more {
 
 span.sale:before,
 span.sale:after {
-  content:"";
+  content: "";
   position: absolute;
   background: inherit;
   height: 100%;
@@ -81,35 +81,37 @@ span.sale::after {
   top: 0;
 }
 
-
 @keyframes beat {
-  from {	transform: rotate(-15deg) scale(1); }
-  to {	transform: rotate(10deg) scale(1.3); }
+  from {
+    transform: rotate(-15deg) scale(1);
+  }
+  to {
+    transform: rotate(10deg) scale(1.3);
+  }
 }
 
 span.sale:hover {
-  color: #FFBE0B;
-  background-color: #FBFAF5;
-  opacity: 1.0;
+  color: #ffbe0b;
+  background-color: #fbfaf5;
+  opacity: 1;
 }
-
 
 span.sale:hover:after {
   width: 100%;
 }
 
-@media (min-width: 500px)  {
+@media (min-width: 500px) {
   .carouselImg {
     height: 300px;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px)  {
+@media (min-width: 768px) {
   .main_wrapper {
     max-width: 768px;
     margin: 2rem auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
 
@@ -131,7 +133,6 @@ span.sale:hover:after {
     height: 400px;
     object-fit: cover;
   }
-
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -143,7 +144,6 @@ span.sale:hover:after {
   .carouselImg {
     height: 470px;
   }
-
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -151,5 +151,4 @@ span.sale:hover:after {
   .main_wrapper {
     max-width: 850px;
   }
-
 }

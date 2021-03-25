@@ -29,13 +29,13 @@
 .memberInfoPart1 p.secret {
   display: none;
 }
-.memberInfoPart2 p.billing, .memberInfoPart1 p.secret {
+.memberInfoPart2 p.billing,
+.memberInfoPart1 p.secret {
   font-size: 0.9rem;
   font-style: italic;
 }
 
 @media screen and (min-width: 576px) {
-
   .memberInfoWrapper {
     flex-flow: wrap row;
   }
