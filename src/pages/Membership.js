@@ -23,7 +23,7 @@ const Membership = () => {
             id="registerFormToggle"
             className={styles.registerFormToggle}
           ></input>
-          <label for="registerFormToggle" className={styles.registerFormLabel}>
+          <label htmlFor="registerFormToggle" className={styles.registerFormLabel}>
             Register now!
           </label>
           <div className={styles.registerComponentWrapper}>
