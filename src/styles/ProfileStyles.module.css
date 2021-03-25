@@ -1,5 +1,9 @@
-.main_wrapper h3 {
+.main_wrapper h3, .h2_text {
   font-weight: bold;
+}
+
+.h2_text {
+margin-bottom: 4.5rem;
 }
 
 .colored_wrapper {
@@ -16,8 +20,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
-  text-shadow: 1px 1px 3px #03030391;
+  margin: 1rem;
+  border-bottom: solid #232b2b 1.4px;
+  padding: 15px;
 }
 
 .profile_info {
@@ -36,10 +41,6 @@
   justify-content: center;
 }
 
-.profile_info_innerwrapper p {
-  margin: 1rem;
-}
-
 .latest_order_wrapper {
   width: 100%;
   padding-top: 5rem;
@@ -48,10 +49,10 @@
 }
 .logout_wrapper {
   margin: 1rem;
-  width: 100%;
+  padding-bottom: 48px;
   display: flex;
   justify-content: center;
-  border-bottom: solid black 1.4px;
+  border-bottom: solid #232b2b 1.4px;
 }
 
 .logout_wrapper button {
@@ -110,8 +111,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin: 3rem;
   text-align: center;
+
 }
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 700px) {
@@ -124,8 +126,20 @@
     max-width: 90%;
   }
 
+  .profile_row1, {}
+
   .profile_info_innerwrapper p {
     margin: 2rem;
+  }
+
+  .user_name_wrapper {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .logout_wrapper {
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
 
