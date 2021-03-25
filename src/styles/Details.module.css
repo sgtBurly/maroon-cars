@@ -4,10 +4,7 @@
   width: 100%;
   max-width: 1800px;
   padding: 0rem;
-  margin: 1rem auto;
-  margin-bottom: 2rem;
-  justify-content: space-around;
-  display: flex;
+  margin: 2rem auto;
 }
 
 /* 1st children wrapper */
@@ -51,7 +48,6 @@
 /* main info cointainer */
 .infoContainer {
   margin: 0rem auto;
-  background-color: #fbfaf5;
   padding: 0rem 1rem;
   text-align: start;
   max-width: 576px;
