@@ -36,6 +36,8 @@ export function MemberProvider(props){
             toast.error("Already a member!")
         } else {
             setMembers([...members, {...newUser}]);
+            //seting setLoggedInMember variable to newUser (user is logged in when register)
+            setLoggedInMember(newUser);
             toast.success(`Welcome to Maroon Cars, ${newUser.firstName}!`);
         }
     };
