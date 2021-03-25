@@ -10,8 +10,12 @@ const ConfirmOrder = () => {
 
   useEffect(() => window.scrollTo(0, 0), []);
 
-  const hour = ('0' + loggedInMember.purchases[0].timestamp.getHours()).slice(-2);
-  const minutes = ('0' + loggedInMember.purchases[0].timestamp.getMinutes()).slice(-2);
+  const hour = ("0" + loggedInMember.purchases[0].timestamp.getHours()).slice(
+    -2
+  );
+  const minutes = (
+    "0" + loggedInMember.purchases[0].timestamp.getMinutes()
+  ).slice(-2);
 
   const renderConfirmation = () => {
     return (
@@ -71,20 +75,20 @@ const ConfirmOrder = () => {
               </p>
             </div>
           </div>
-          <div className={ConfirmOrderStyles.bottom_wrapper}>
-            <Link
-              className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}
-              to="/"
-            >
-              OK
-            </Link>
-            <Link
-              className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}
-              to="/orderReceipt"
-            >
-              Print
-            </Link>
-          </div>
+        </div>
+        <div className={ConfirmOrderStyles.bottom_wrapper}>
+          <Link
+            className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.ok}`}
+            to="/"
+          >
+            OK
+          </Link>
+          <Link
+            className={`${ConfirmOrderStyles.button} ${ConfirmOrderStyles.print}`}
+            to="/orderReceipt"
+          >
+            Print
+          </Link>
         </div>
       </div>
     );
