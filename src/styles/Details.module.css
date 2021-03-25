@@ -51,7 +51,7 @@
 /* main info cointainer */
 .infoContainer {
   margin: 0rem auto;
-  background-color: #ffffff;
+  background-color: #fbfaf5;
   padding: 0rem 1rem;
   text-align: start;
   max-width: 576px;
@@ -60,7 +60,7 @@
 /* Make Model */
 .infoContainer h3 {
   padding: 0;
-  text-shadow: 1px 1px 3px #03030391;
+  text-shadow: 1px 1px 3px #232b2b;
   text-align: start;
 }
 
@@ -81,7 +81,7 @@ div.buttonWrapper {
   height: 50px;
   border: 2px solid #ffbe0b;
   border-radius: 5px;
-  color: black;
+  color: #232b2b;
   font-size: 1.2rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-out;

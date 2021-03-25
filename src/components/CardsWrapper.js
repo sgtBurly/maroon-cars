@@ -1,7 +1,6 @@
 import CarCard from "./CarCard";
 import { CarContext } from "../contexts/CarContext";
 import { useContext } from "react";
-import CardsWrapperStyles from "../styles/CardsWrapperStyles.module.css";
 import NoSearchResult from "./NoSearchResult";
 
 function CardWrapper() {
@@ -14,7 +13,7 @@ function CardWrapper() {
       {noResults ? (
         <NoSearchResult />
       ) : (
-        <div className={CardsWrapperStyles.greenBorder}>
+        <div>
           <div className="row">
             {filteredCars.length > 0 &&
               filteredCars.map((car, i) => (
