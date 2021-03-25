@@ -10,6 +10,9 @@ const ConfirmOrder = () => {
 
   useEffect(() => window.scrollTo(0, 0), []);
 
+  const hour = ('0' + loggedInMember.purchases[0].timestamp.getHours()).slice(-2);
+  const minutes = ('0' + loggedInMember.purchases[0].timestamp.getMinutes()).slice(-2);
+
   const renderConfirmation = () => {
     return (
       <div className={ConfirmOrderStyles.main_wrapper}>
@@ -19,7 +22,7 @@ const ConfirmOrder = () => {
           <hr />
           {/* Can be used when loggedInMember.purchases[0]-variable has timestamp! */}
           <div className={ConfirmOrderStyles.info_date}>
-            {`${loggedInMember.purchases[0].timestamp.toDateString()} ${loggedInMember.purchases[0].timestamp.getHours()}:${loggedInMember.purchases[0].timestamp.getMinutes()}`}
+            {`${loggedInMember.purchases[0].timestamp.toDateString()} ${hour}:${minutes}`}
           </div>
           <p>{`${loggedInMember.firstName} ${loggedInMember.lastName}`}</p>
           <p>{loggedInMember.email}</p>
