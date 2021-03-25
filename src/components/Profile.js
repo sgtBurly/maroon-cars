@@ -38,7 +38,7 @@ const Profile = () => {
                 <h3>Your previous orders</h3>
                 {
                 //Checks if loggedInMember has any former purchases, if so render those purchases
-                loggedInMember.purchases.length > 0 ? <PreviousOrder /> : null
+                loggedInMember.purchases.length > 0 ? <PreviousOrder /> : <p>No orders made yet...</p>
                 }
             </div>
             <div className={Styles.logout_wrapper}>

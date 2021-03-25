@@ -42,9 +42,6 @@
 .cardWrapper img {
   max-width: 100%;
 }
-h2.cardHeading {
-  display: none;
-}
 
 .carImage {
   border-radius: 5px;
@@ -61,35 +58,6 @@ h2.cardHeading {
   margin-bottom: 5px;
 }
 
-.float {
-  float: left;
-}
-
-.trashBtn {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-
-.trashBtn:hover i {
-  cursor: pointer;
-  color: #ff0b0b;
-}
-
-.closeIcon {
-  display: none;
-}
-
-@media (min-width: 576px) {
-  h2 {
-    display: block;
-  }
-
-  .float {
-    float: right;
-  }
-}
-
 @media (min-width: 768px) {
   .flex {
     display: flex;
@@ -102,14 +70,6 @@ h2.cardHeading {
   .carPrice,
   .removeBtn {
     max-width: 200px;
-  }
-
-  .trashIcon {
-    display: none;
-  }
-
-  .trashBtn:hover i {
-    color: #ff0b0b;
   }
 
   .closeIcon {

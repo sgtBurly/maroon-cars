@@ -18,7 +18,6 @@ export const BasketProvider = (props) => {
     const [customerBasket, setCustomerBasket] = useState(basketStorageFunction());
     // The latest purchase made by a user. Updated by handlePurchase-func to be sent to Confirm-page
 
-
     // method to call by the "add to cart"-buttons.
     const addToBasket = car => {
         // If the car is already in the customerBasket it is not added again but if the customerBasket is empty the car is always added.
@@ -51,8 +50,12 @@ export const BasketProvider = (props) => {
     }
 
     const handlePurchase = (userData) => {
+        const timestamp = new Date();
+        console.log('timestamp = new Date()', timestamp);
+        console.log('timestamp.toDateString()', timestamp.toDateString());
 
-        let latestPurchase = {timestamp: new Date(), carsPurchased: [...customerBasket], deliveryMethod: userData.DeliveryMethod, paymentMethod: userData.PaymentMethod};
+        let latestPurchase = {timestamp: timestamp, carsPurchased: [...customerBasket], deliveryMethod: userData.DeliveryMethod, paymentMethod: userData.PaymentMethod};
+        console.log('latestPurchase.timestamp: ',latestPurchase.timestamp)
         addPurchase(latestPurchase);
         //resets the customerBasket
         setCustomerBasket([]);
