@@ -2,16 +2,25 @@ import React, { useState, createContext, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 export const MemberContext = createContext();
 
-export function MemberProvider(props) {
-  // Function for retrieving custom information from local storage
-  const getFromLocalStorage = (argument) => {
-    if (argument in localStorage) {
-      let parsedLocalContent = JSON.parse(localStorage.getItem(argument));
-      return parsedLocalContent;
-    } else {
-      return [];
-    }
-  };
+export function MemberProvider(props){
+
+    // Function for retrieving custom information from local storage
+    const getFromLocalStorage = argument => {
+        if(argument in localStorage){
+            let parsedLocalContent = JSON.parse(localStorage.getItem(argument));
+            if (argument === 'membersInStorage' && parsedLocalContent.length !== 0) {
+                parsedLocalContent.map(member => {
+                    member.purchases.map(order => order.timestamp = new Date(order.timestamp));
+                })
+            } else if (argument === 'loggedInMember' && parsedLocalContent.length !== 0) {
+                parsedLocalContent.purchases.map( order => order.timestamp = new Date(order.timestamp));
+            }
+            return parsedLocalContent
+        } else {
+            return []
+        }
+    };
+
 
   const [members, setMembers] = useState(
     getFromLocalStorage("membersInStorage")
