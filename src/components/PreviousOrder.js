@@ -10,8 +10,8 @@ const PreviousOrder = () => {
     <div className={styles.cardWrapperContainer}>
       <div className={styles.cardWrapper}>
         {/*Render out each order and its respective cars*/}
-        {loggedInMember.purchases.map(order => (
-          <div className={styles.order}>
+        {loggedInMember.purchases.map((order,i) => (
+          <div className={styles.order} key={i}>
             <h3 className={styles.timestamp}>{order.timestamp.toDateString()}</h3>
             {order.carsPurchased.map((car, i) => (
               <div className={styles.flex} key={i}>
