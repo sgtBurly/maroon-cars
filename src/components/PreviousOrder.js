@@ -7,7 +7,7 @@ import styles from "../styles/PreviousOrder.module.css";
 const Card = () => {
   let { customerBasket, calcBasket } = useContext(BasketContext);
   let { loggedInMember } = useContext(MemberContext);
-  console.log("this is loggedInMember", loggedInMember);
+  
   //total price for cars
   let totalPrice = calcBasket(customerBasket);
 
