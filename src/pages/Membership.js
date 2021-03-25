@@ -1,4 +1,4 @@
-import react, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Profile from "../components/Profile";
 import RegisterComponent from "../components/RegisterComponent";
 import LogIn from "../components/LogIn";
@@ -7,6 +7,9 @@ import styles from "../styles/Membership.module.css";
 
 const Membership = () => {
   const { loggedInMember } = useContext(MemberContext);
+
+  useEffect(() => window.scrollTo(0, 0), []);
+
   return (
     <div className="membership">
       {loggedInMember.email ? (
