@@ -1,6 +1,7 @@
 .main_wrapper h3 {
   font-weight: bold;
 }
+
 .colored_wrapper {
   min-height: 200px;
   width: 100%;
@@ -9,6 +10,7 @@
   background-position: center;
   background-size: cover;
 }
+
 .user_name_wrapper {
   display: flex;
   flex-direction: column;
@@ -71,7 +73,6 @@
   z-index: 10;
   margin: 1rem 0rem;
   display: block;
-
 }
 
 .logout_wrapper button:hover {
