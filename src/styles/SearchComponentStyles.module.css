@@ -83,7 +83,7 @@ h4.searchHeader {
 .filterWrapper {
   width: 350px;
   justify-content: space-around;
-  background-color: #232b2b;
+  background-color: #488b491e;
   border-radius: 15px;
   padding: 1rem;
 }
@@ -198,7 +198,6 @@ h4.searchHeader {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    background-color: #488b491e;
     width: 900px;
     padding: 2rem;
   }
