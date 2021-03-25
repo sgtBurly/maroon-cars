@@ -4,7 +4,7 @@
 
 h3.not_a_member_yet {
   text-align: center;
-  text-shadow: 1px 1px 1px #03030349;
+  text-shadow: 1px 1px 1px #232b2b;
 }
 
 /* the invinsible checkbox */
@@ -19,7 +19,7 @@ h3.not_a_member_yet {
   height: 50px;
   border: 2px solid #ffbe0b;
   border-radius: 5px;
-  color: black;
+  color: #232b2b;
   font-size: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-out;

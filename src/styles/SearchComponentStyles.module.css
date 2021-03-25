@@ -7,7 +7,7 @@
 }
 
 h4.searchHeader {
-  text-shadow: 1px 1px 3px #03030391;
+  text-shadow: 1px 1px 3px #232b2b;
   padding: 1rem;
   font-size: 1.6rem;
 }
@@ -62,13 +62,13 @@ h4.searchHeader {
 .toggleFilterBtn {
   border: 2px solid #488b49;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fbfaf5;
   padding: 0.3rem;
   margin: 1rem;
 }
 .toggleFilterBtn:hover {
   background-color: #488b49;
-  border: 2px solid black;
+  border: 2px solid #232b2b;
   transition: all 0.3s ease-in-out;
 }
 .toggleFilterBtn span {
@@ -79,7 +79,7 @@ h4.searchHeader {
 .filterWrapper {
   width: 350px;
   justify-content: space-around;
-  background-color: #488b491e;
+  background-color: #232b2b;
   border-radius: 15px;
   padding: 1rem;
 }
@@ -109,7 +109,7 @@ h4.searchHeader {
 }
 /* the values */
 .slider span span span span {
-  color: black;
+  color: #232b2b;
   position: relative;
   top: 37px;
   right: 34px;
@@ -155,24 +155,24 @@ h4.searchHeader {
 .clearFilterBtn {
   border: 2px solid;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fbfaf5;
   padding: 0.3rem;
   margin: 0.5rem;
 }
 .clearFilterBtn:hover {
   background-color: #ffbe0b;
-  border: 2px solid black;
+  border: 2px solid #232b2b;
   transition: all 0.2s ease-in-out;
 }
 .applyFilterBtn {
   border: 2px solid;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fbfaf5;
   padding: 0.3rem;
   margin: 0.5rem;
 }
 .applyFilterBtn:hover {
-  border: 2px solid black;
+  border: 2px solid #232b2b;
   /* color: white; */
   background-color: #488b49;
   transition: all 0.2s ease-in-out;
