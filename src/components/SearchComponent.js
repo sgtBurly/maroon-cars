@@ -249,9 +249,6 @@ const SearchComponent = () => {
                 >
                   Clear filter
                 </button>
-                <button type="submit" className={styles.applyFilterBtn}>
-                  Apply filter
-                </button>
               </div>
             </div>
           </div>

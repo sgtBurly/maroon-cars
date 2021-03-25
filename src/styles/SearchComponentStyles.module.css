@@ -42,6 +42,7 @@ h4.searchHeader {
   border-radius: 5px;
   position: relative;
   top: -10px;
+  background-color: #FBFAF5;
 }
 
 /* Förstoringsglaset */
@@ -61,14 +62,17 @@ h4.searchHeader {
 /* Toggle filter button */
 .toggleFilterBtn {
   border: 2px solid #488b49;
+  box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.5);
+  color: black;
   border-radius: 5px;
-  background-color: #fbfaf5;
+  background-color: transparent;
   padding: 0.3rem;
   margin: 1rem;
 }
+
 .toggleFilterBtn:hover {
+  color: white;
   background-color: #488b49;
-  border: 2px solid #232b2b;
   transition: all 0.3s ease-in-out;
 }
 .toggleFilterBtn span {
@@ -79,7 +83,7 @@ h4.searchHeader {
 .filterWrapper {
   width: 350px;
   justify-content: space-around;
-  background-color: #232b2b;
+  background-color: #488b491e;
   border-radius: 15px;
   padding: 1rem;
 }
@@ -153,29 +157,18 @@ h4.searchHeader {
 }
 
 .clearFilterBtn {
-  border: 2px solid;
+  border: 2px solid #488b49;
+  box-shadow: 1px 1px 5px rgba(119, 119, 119, 0.5);
+  color: black;
   border-radius: 5px;
-  background-color: #fbfaf5;
+  background-color: transparent;
   padding: 0.3rem;
   margin: 0.5rem;
 }
 .clearFilterBtn:hover {
-  background-color: #ffbe0b;
-  border: 2px solid #232b2b;
-  transition: all 0.2s ease-in-out;
-}
-.applyFilterBtn {
-  border: 2px solid;
-  border-radius: 5px;
-  background-color: #fbfaf5;
-  padding: 0.3rem;
-  margin: 0.5rem;
-}
-.applyFilterBtn:hover {
-  border: 2px solid #232b2b;
-  /* color: white; */
+  color: white;
   background-color: #488b49;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 /* --------------- MEDIA QUERIES --------------- */
@@ -205,7 +198,6 @@ h4.searchHeader {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
-    background-color: #488b491e;
     width: 900px;
     padding: 2rem;
   }
