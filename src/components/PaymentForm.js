@@ -31,7 +31,6 @@ const PaymentForm = () => {
 
   return (
     <div className={styles.PaymentForm}>
-      {/* <h2 className={styles.h2}>Please enter your preferred payment and delivery options</h2> */}
       <hr />
       <section className={styles.FormWrapper}>
         <form className={styles.Form} onSubmit={handleSubmit}>
@@ -45,8 +44,7 @@ const PaymentForm = () => {
                 name="paymentmethod"
                 required
               />
-              <i className="fab fa-cc-visa fa-2x"></i>
-              Visa
+              <i className="fab fa-cc-visa fa-3x"></i>
             </label>
             <label className={styles.RadioWrapper}>
               <input
@@ -56,8 +54,7 @@ const PaymentForm = () => {
                 name="paymentmethod"
                 required
               />
-              <i className="fab fa-bitcoin fa-2x"></i>
-              Bitcoin
+              <i className="fab fa-bitcoin fa-3x"></i>
             </label>
             <label className={styles.RadioWrapper}>
               <input
@@ -67,8 +64,7 @@ const PaymentForm = () => {
                 name="paymentmethod"
                 required
               />
-              <i className="fab fa-cc-paypal fa-2x"></i>
-              PayPal
+              <i className="fab fa-cc-paypal fa-3x"></i>
             </label>
             <label className={styles.RadioWrapper}>
               <input
@@ -78,8 +74,7 @@ const PaymentForm = () => {
                 name="paymentmethod"
                 required
               />
-              <i className="fab fa-cc-amex fa-2x"></i>
-              American Express
+              <i className="fab fa-cc-amex fa-3x"></i>
             </label>
           </div>
           {/* <hr /> */}
