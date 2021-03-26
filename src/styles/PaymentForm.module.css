@@ -19,7 +19,7 @@
 .FormWrapper {
   padding: 1rem 0.5rem;
   border-radius: 0.2rem;
-  max-width: 576px;
+  max-width: 700px;
   margin: auto;
 }
 .Form {
@@ -94,19 +94,6 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 690px) {
-  .inputWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-  }
-  .inputWrapper input {
-    width: 45%;
-  }
-  .FormWrapper {
-    min-width: 700px;
-    max-width: 700px !important;
-  }
   .DeliveryOptions {
     width: 100%;
     display: flex;
@@ -115,16 +102,4 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 700px) {
-  .FormWrapper {
-    min-width: 700px;
-    max-width: 700px !important;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
 }
