@@ -68,6 +68,7 @@ export const BasketProvider = (props) => {
     const basketPrice = customerBasket.reduce((a, { price }) => a + price, 0);
     return basketPrice;
   };
+  //Checks if there are any items in the basket from localstorage, if it does set those items into the basket
   useEffect(() => {
     if (localStorage.getItem("basketItems" > 0)) {
       setCustomerBasket(localStorage.getItem("basketItems"));
