@@ -83,9 +83,9 @@ const RegisterComponent = () => {
     <div>
       <form className={styles.Form} onSubmit={handleAccountSubmit}>
         <div className={styles.ContactInfo}>
-          <h3 className={styles.header}>
-            Please fill in your contact information to register
-          </h3>
+          <h2 className={styles.header}>
+            Sign Up
+          </h2>
 
           <div className={styles.inputWrapper}>
             <div className={styles.flexWrapperPersonal}>
