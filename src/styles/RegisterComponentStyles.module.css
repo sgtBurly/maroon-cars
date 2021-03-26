@@ -23,10 +23,10 @@
   margin-top: 3rem;
 }
 
-h3.header {
+h2.header {
   padding: 1.5rem 0rem;
-  text-shadow: 1px 1px 1px #232b2b;
-  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px #232b2b;
+  font-size: 2rem;
 }
 
 .inputWrapper,

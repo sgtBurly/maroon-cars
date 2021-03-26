@@ -4,7 +4,8 @@
 
 h3.not_a_member_yet {
   text-align: center;
-  text-shadow: 1px 1px 1px #232b2b;
+  text-shadow: 1px 1px 3px #232b2b;
+  font-size: 2rem;
 }
 
 /* the invinsible checkbox */
