@@ -1,0 +1,22 @@
+.nosearchContainer {
+  margin: 2rem 0;
+}
+.nosearchContainer h3 {
+  text-align: center;
+  margin: 2rem;
+}
+.recommendedContainer {
+  border-radius: 5px;
+  padding: 2rem;
+  width: 90%;
+  margin: 1rem auto;
+  border: 1px solid #488b49;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
+
+p.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1.4rem;
+  text-shadow: 1px 1px 3px #232b2b;
+}
